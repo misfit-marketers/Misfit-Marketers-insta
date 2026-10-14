@@ -8,19 +8,23 @@ needed once this is set up.
 GitHub Actions (on a timer)
    │  1. picks the next topic from content/topics.txt
    │  2. asks Gemini to write the carousel in the MISFIT style
-   │  3. renders 1080×1080 slides with the MISFIT template
+   │  3. renders 1080×1350 (4:5) slides with the MISFIT template
    ▼
 Telegram bot ──► you tap Approve / Redo / Skip (or reply with feedback)
    ▼
-GitHub Actions at 5 pm IST ──► Instagram API publishes the approved carousel
+GitHub Actions at 6 pm IST (8 pm back-up) ──► Instagram API publishes the carousel
 ```
 
 **Default schedule:** one post every day.
 - **Around 8 am IST:** the day's draft arrives in Telegram for review.
-- **5:00 pm IST:** the approved draft goes live on Instagram.
+- **6:00 pm IST:** the approved draft goes live on Instagram.
+- **8:00 pm IST:** back-up slot. If the draft wasn't approved by 6 pm, or
+  posting failed, it goes live at 8 pm instead. If 8 pm is missed too, it
+  moves to 6 pm the next day (then 8 pm), and so on until it's live.
 
 Your taps and replies are picked up within 30 minutes. Approve any time
-before 5 pm (up to 5:15 pm still counts for the same day).
+before 6 pm, or before 8 pm for the back-up slot (each slot still accepts
+approvals up to 15 minutes after it starts).
 
 ---
 
@@ -51,11 +55,14 @@ you can switch back at any time.
    That number is your **TELEGRAM_CHAT_ID**. If the page shows `"result":[]`,
    send the bot another message and refresh the page.
 
-### Step 3. Get a free Gemini API key
+### Step 3. Get a free AI key (Groq)
 
-1. Go to **aistudio.google.com** and sign in with a Google account.
-2. Click **Get API key → Create API key**.
-3. Save it as **GEMINI_API_KEY**. Don't add billing, so the key stays on the free tier.
+1. Go to **console.groq.com** and sign up (signing in with Google works).
+2. Open **API Keys → Create API Key**, give it any name, and copy the key.
+   It starts with `gsk_`.
+3. Save it as **GEMINI_API_KEY**. The secret keeps that name, and the bot
+   recognises a Groq key automatically. (A Gemini key from aistudio.google.com
+   also works if Google allows your account to use it.)
 
 ### Step 4. Create the Meta app and get the Instagram token
 
@@ -102,7 +109,7 @@ New repository secret** and add each one:
 
 | Name | Value |
 |---|---|
-| `GEMINI_API_KEY` | from step 3 |
+| `GEMINI_API_KEY` | your Groq key from step 3 |
 | `TELEGRAM_BOT_TOKEN` | from step 2 |
 | `TELEGRAM_CHAT_ID` | from step 2 |
 | `IG_ACCESS_TOKEN` | from step 4 |
@@ -124,7 +131,7 @@ Personal access tokens → Fine-grained tokens → Generate new token**.
 3. Run **0. Setup check** (click it, then **Run workflow**). Your bot should
    message you to say Gemini, Instagram and Telegram are all OK.
 4. Run **1. Write a new draft**. In a minute or two the slides arrive in Telegram.
-5. Tap **Approve**. The bot confirms it's scheduled for 5 pm. For this first
+5. Tap **Approve**. The bot confirms it's scheduled for 6 pm. For this first
    test, tap **Post now** instead: within 30 minutes the carousel appears on
    Instagram and the bot sends you the link.
 
@@ -132,12 +139,21 @@ From now on it runs by itself.
 
 ---
 
+## Posting right away
+
+1. Tap **Approve** in Telegram.
+2. On GitHub, open **Actions → 5. Go ahead and post → Run workflow**.
+
+It reads your Telegram taps first, so there's no need to wait for a check,
+and posts the approved draft immediately. The bot sends the Instagram link
+when it's live, or tells you why it couldn't post.
+
 ## Day-to-day use (all in Telegram)
 
 | You do | What happens |
 |---|---|
-| Tap **Approve** | It's scheduled for 5 pm IST today (or tomorrow, if you approve after 5:15 pm) |
-| Tap **Post now** | It posts within 30 minutes, without waiting for 5 pm |
+| Tap **Approve** | It's scheduled for the next slot: 6 pm, else 8 pm, else 6 pm tomorrow |
+| Tap **Post now** | It posts within 30 minutes, without waiting for the slot |
 | Tap **Redo** | It writes a fresh take on the same topic |
 | Tap **Skip** | It drops the draft, and the next one comes the next morning |
 | Reply with text, e.g. *"shorter slides, punchier hook"* | It revises the draft using your feedback |
@@ -146,10 +162,12 @@ From now on it runs by itself.
 | `/topic loss aversion in UPI cashback` | Adds the idea to the topic list |
 | `/topics` | Shows what's coming next |
 | `/status` | Shows what's waiting |
+| `/rerender` | Redraws the current draft's slides with the latest template, keeping the same text |
 
-If 5 pm comes and the draft isn't approved, nothing goes live that day and the
-bot tells you. Approving it after that schedules it for the next day's 5 pm
-slot, and no new draft is written that morning.
+If 8 pm comes and the draft still isn't approved, nothing goes live that day
+and the bot tells you. Approving it after that schedules it for 6 pm the next
+day, and no new draft is written that morning. If Instagram ever refuses a
+post, the bot tells you why and tries again at the next slot automatically.
 
 Each draft includes a **fact-check list** of the studies and numbers it uses.
 Check anything marked *medium* or *low* before approving, because the free
@@ -166,14 +184,16 @@ writer can't search the web.
   `.github/workflows/generate.yml`. Times are in UTC (IST minus 5:30), so
   `"15 2 * * *"` means every day at 7:45 am IST. GitHub often starts timers
   5 to 15 minutes late, which is why it's set a little before 8.
-- **When the post goes live:** change `"post_time_ist"` in `config.json`
-  (for example `"18:30"`), and also change the `cron:` line in
-  `.github/workflows/post.yml` to 10 to 15 minutes before that time, in UTC.
-  For 6:30 pm IST that's `"18 12 * * *"`.
+- **When posts go live:** change `"post_times_ist"` in `config.json`
+  (for example `["18:30", "21:00"]`), and also change the `cron:` line in
+  `.github/workflows/post.yml` so it runs about 30 minutes before each time,
+  in UTC (IST minus 5:30). The current `"57 11,13 * * *"` means 11:57 and
+  13:57 UTC, which is 5:27 pm and 7:27 pm IST. It starts early because GitHub
+  often runs timers late, then waits for the exact time.
 - **Skipping days:** in both cron lines, replace the last `*` with the days to
   run. For example, `1-6` means Monday to Saturday.
 - **Auto-post without review:** set `"auto_post_if_not_reviewed": true` in
-  `config.json`. A draft you haven't reviewed by 5 pm then posts anyway.
+  `config.json`. A draft you haven't reviewed by 6 pm then posts anyway.
 - **Light or dark slides:** `"theme"` can be `"alternate"`, `"light"` or `"dark"`.
 - **Follow slide at the end:** set `closing_slide.enabled` to `true`.
 - **Writing style:** voice, spelling and rules are in `config.json → writing`.
@@ -197,8 +217,10 @@ writer can't search the web.
   that fails, generate a new token (step 4) and update the `IG_ACCESS_TOKEN` secret.
 - **The bot's commits fail:** go to **Settings → Actions → General →
   Workflow permissions** and choose **Read and write permissions**.
-- **Gemini errors (quota or model not found):** the bot uses the newest free
-  Flash model automatically. You can pin one with `"gemini_model"` in `config.json`.
+- **Writer errors:** the bot picks the best free Groq model automatically. You
+  can pin one with `"groq_model"` in `config.json` (for example
+  `"llama-3.3-70b-versatile"`). If anything fails, the bot sends the error to
+  Telegram.
 - **GitHub pauses timers on repositories with no activity for 60 days.** The
   bot's own commits keep it active, but if you pause posting for months, re-enable
   the workflows from the Actions tab.
@@ -219,5 +241,6 @@ state/                 what's pending and what's been posted (the bot updates th
 posts/                 slides waiting for review (deleted after posting)
 github/workflows/      the timers (rename the folder to .github before uploading):
                        setup check, write draft (8 am), check Telegram (every
-                       30 min), renew token (monthly), post (5 pm)
+                       30 min), renew token (monthly), post (6 pm, 8 pm),
+                       go ahead and post (run by hand)
 ```

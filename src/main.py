@@ -3,7 +3,8 @@
 Commands
   generate        write + render a new draft and send it to Telegram (daily job)
   check           read Telegram taps/messages and act on them (every 30 min)
-  post-due        publish the approved draft at the daily post time (5 pm IST job)
+  post-due        publish the approved draft at a posting slot (6 pm and 8 pm IST jobs)
+  post-now        read Telegram, then post the approved draft immediately (manual job)
   refresh-token   renew the 60-day Instagram token (monthly job)
   setup-check     test every key and send a hello message to Telegram
   preview FILE    render a post JSON locally into posts/preview/ (no APIs)
@@ -26,11 +27,14 @@ from .render import render_post
 HELP = (
     "<b>MISFIT autopost bot</b>\n\n"
     "Buttons under each draft: <b>Approve</b> schedules it for the daily post time, <b>Redo</b> writes a new version, "
-    "<b>Skip</b> drops it. After approving you also get <b>Post now</b>.\n"
+    "<b>Skip</b> sets this version aside (the topic stays first in line). After approving you also get <b>Post now</b>.\n"
+    "A topic only leaves the list once it is live on Instagram.\n"
     "Reply with any text to revise the current draft using your feedback.\n\n"
     "/new  make a draft now from the next topic\n"
     "/new <i>idea</i>  make a draft now about your idea\n"
-    "/topic <i>idea</i>  add an idea to the topic list\n"
+    "/topic <i>idea</i>  add an idea to the end of the topic list\n"
+    "/next <i>idea</i>  put an idea at the front of the topic list\n"
+    "/drop  remove the current draft's topic for good and move on\n"
     "/topics  show the next topics\n"
     "/status  what is pending\n"
     "/rerender  redraw the current draft's slides (same text) with the latest template\n\n"
@@ -103,20 +107,23 @@ def describe(draft: dict) -> str:
 IST = timezone(timedelta(hours=5, minutes=30))
 
 
-def post_time(cfg: dict):
-    hh, mm = (int(x) for x in str(cfg.get("post_time_ist", "17:00")).split(":"))
-    return hh, mm
+def post_times(cfg: dict) -> list:
+    """Daily posting slots in IST, earliest first, e.g. [(18, 0), (20, 0)].
+    The later slots are back-ups for when an earlier one is missed."""
+    raw = cfg.get("post_times_ist") or [cfg.get("post_time_ist", "18:00")]
+    return sorted(tuple(int(x) for x in str(t).split(":")) for t in raw)
 
 
-def next_slot(cfg: dict, now: datetime = None) -> datetime:
-    """Today's post time in IST, or tomorrow's once today's has passed.
-    Approvals up to 15 minutes late still count for today."""
+def next_slot(cfg: dict, now: datetime = None, grace_min: int = 15) -> datetime:
+    """The next posting slot. A slot still counts for up to grace_min
+    minutes after it starts (so a tap at 6:10 pm still means 6 pm)."""
     now = (now or datetime.now(timezone.utc)).astimezone(IST)
-    hh, mm = post_time(cfg)
-    slot = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
-    if now >= slot + timedelta(minutes=15):
-        slot += timedelta(days=1)
-    return slot
+    for day in range(3):
+        for hh, mm in post_times(cfg):
+            slot = (now + timedelta(days=day)).replace(hour=hh, minute=mm, second=0, microsecond=0)
+            if now < slot + timedelta(minutes=grace_min):
+                return slot
+    raise RuntimeError("no posting slot found")
 
 
 def slot_text(slot_iso: str) -> str:
@@ -144,8 +151,9 @@ def generate(topic: str = None, series: str = None, feedback: str = None, redo_o
             telegram.send_message(f"Reminder: {describe(pending)} is still waiting for your review, "
                                   "so I did not write a new one today.", buttons=telegram.review_buttons(pending["id"]))
             return
-        # A manual /new replaces whatever was pending.
+        # A manual /new replaces whatever was pending; its topic is kept.
         history.append({**_hist(pending), "status": "replaced"})
+        keep_topic(pending)
         remove_draft_files(pending)
         state["pending"] = None
 
@@ -153,6 +161,7 @@ def generate(topic: str = None, series: str = None, feedback: str = None, redo_o
     if redo_of:
         series, topic = redo_of["series"], redo_of["topic"]
         theme, number = redo_of["theme"], redo_of["number"]
+        from_backlog = redo_of.get("backlog_line")
     else:
         if not topic:
             backlog = topic_backlog()
@@ -189,14 +198,12 @@ def generate(topic: str = None, series: str = None, feedback: str = None, redo_o
     if redo_of:
         history.append({**_hist(redo_of), "status": "redone", "feedback": feedback or ""})
         remove_draft_files(redo_of)
-    if from_backlog:
-        remove_topic_from_backlog(from_backlog)
 
     draft = {
         "id": draft_id, "series": series, "number": number, "tag": tag, "theme": theme,
         "topic": topic or post.get("topic"), "post": post, "caption": build_caption(post),
         "images": [str(p.relative_to(ROOT)) for p in paths], "created_at": now_iso(),
-        "status": "awaiting",
+        "status": "awaiting", "backlog_line": from_backlog,
     }
     state["pending"] = draft
     save_state(state)
@@ -220,9 +227,8 @@ def publish(draft: dict) -> bool:
         for u in urls:
             r = requests.get(u, timeout=30)
             if r.status_code != 200 or not r.headers.get("content-type", "").startswith("image/"):
-                telegram.send_message(f"Could not publish yet: an image is not reachable at\n{html.escape(u)}\n"
-                                      f"(HTTP {r.status_code}). Is the repository public? I'll keep the draft.",
-                                      buttons=telegram.scheduled_buttons(draft["id"]))
+                retry_later(draft, f"An image is not reachable at\n{html.escape(u)}\n(HTTP {r.status_code}). "
+                                   "Is the repository public?")
                 return False
     try:
         result = instagram.publish_carousel(urls, draft["caption"], cfg.get("instagram_api_version", "v25.0"), log)
@@ -230,8 +236,7 @@ def publish(draft: dict) -> bool:
         hint = ""
         if "token" in str(e).lower() or "OAuth" in str(e):
             hint = "\n\nThis looks like an access token problem. Generate a new token in the Meta app dashboard and update the IG_ACCESS_TOKEN secret."
-        telegram.send_message(f"Instagram publishing failed for {describe(draft)}:\n<code>{html.escape(str(e)[:900])}</code>{hint}\n\n"
-                              "Tap Post now to try again.", buttons=telegram.scheduled_buttons(draft["id"]))
+        retry_later(draft, f"Instagram said:\n<code>{html.escape(str(e)[:900])}</code>{hint}")
         return False
 
     history.append({**_hist(draft), "status": "posted", "posted_at": now_iso(),
@@ -240,10 +245,30 @@ def publish(draft: dict) -> bool:
     state["last_theme"] = draft["theme"]
     state["pending"] = None
     remove_draft_files(draft)
+    if draft.get("backlog_line"):
+        remove_topic_from_backlog(draft["backlog_line"])  # the topic is done only once it's live
     save_state(state)
     save_history(history)
     telegram.send_message(f"Posted {describe(draft)}\n{result.get('permalink', '')}")
     return True
+
+
+def retry_later(draft: dict, reason: str):
+    """A failed post moves to the next slot: 6 pm -> 8 pm -> next day 6 pm."""
+    cfg, state = load_config(), load_state()
+    pending = state.get("pending")
+    if pending and pending["id"] == draft["id"]:
+        slot = next_slot(cfg, grace_min=0)
+        pending["status"] = "approved"
+        pending["publish_at"] = slot.astimezone(timezone.utc).isoformat()
+        pending["failed_attempts"] = int(pending.get("failed_attempts", 0)) + 1
+        save_state(state)
+        when = slot_text(pending["publish_at"])
+    else:
+        when = "the next posting time"
+    telegram.send_message(f"Couldn't post {describe(draft)} yet. {reason}\n\n"
+                          f"I'll try again automatically at {when}, or tap Post now to retry sooner.",
+                          buttons=telegram.scheduled_buttons(draft["id"]))
 
 
 # ------------------------------------------------------------------ check
@@ -307,6 +332,14 @@ def check() -> None:
                 telegram.send_message(f"Added to the topic list: {html.escape(arg.strip())}")
             else:
                 telegram.send_message("Usage: /topic your idea")
+        elif cmd == "/next":
+            if arg.strip():
+                add_topic_to_backlog(clean_text(arg), front=True)
+                telegram.send_message(f"Next in line: {html.escape(arg.strip())}")
+            else:
+                telegram.send_message("Usage: /next your idea")
+        elif cmd == "/drop":
+            drop(pending)
         elif cmd == "/topics":
             nxt = topic_backlog()[:10]
             telegram.send_message("<b>Next topics</b>\n" + "\n".join(f"{i+1}. {html.escape(t)}" for i, t in enumerate(nxt))
@@ -332,7 +365,7 @@ def check() -> None:
         else:
             telegram.send_message("There is no draft to revise right now. Send /new to make one, or /help.")
 
-    # Safety net: if the 5 pm job was skipped or delayed by GitHub, post here.
+    # Safety net: if a posting job was skipped or delayed by GitHub, post here.
     state = load_state()
     pending = state.get("pending")
     if pending and pending.get("status") == "approved":
@@ -355,47 +388,81 @@ def approve(draft: dict):
 
 
 def post_due():
-    """Runs a few minutes before the post time, waits for it, then publishes."""
+    """Runs a few minutes before each posting slot (6 pm and 8 pm IST by
+    default), waits for it, then publishes the approved draft."""
     import time
-    cfg, state = load_config(), load_state()
-    hh, mm = post_time(cfg)
+    cfg = load_config()
     now = datetime.now(IST)
-    target = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
-    wait = (target - now).total_seconds()
-    if 0 < wait <= 25 * 60 and not DRY_RUN:
+    slots_today = [now.replace(hour=hh, minute=mm, second=0, microsecond=0) for hh, mm in post_times(cfg)]
+    # GitHub often starts timed jobs late, so this job is scheduled ~30 min
+    # early and waits here for the slot.
+    upcoming = [s for s in slots_today if 0 < (s - now).total_seconds() <= 45 * 60]
+    if upcoming and not DRY_RUN:
+        wait = (upcoming[0] - now).total_seconds()
         log(f"Waiting {int(wait)}s for the post time")
         time.sleep(wait)
+    now = datetime.now(IST)
+    later_today = [s for s in slots_today if s > now + timedelta(minutes=15)]
+
     # Pick up any Approve taps sent while this job was waiting. An approval
-    # for today is published right here by check()'s overdue step.
+    # for this slot is published right here by check()'s overdue step.
     check()
     state = load_state()
     pending = state.get("pending")
     if not pending:
-        today = datetime.now(IST).date()
+        today = now.date()
         posted_today = any(h.get("status") == "posted" and h.get("posted_at") and
                            datetime.fromisoformat(h["posted_at"]).astimezone(IST).date() == today
                            for h in load_history())
         log("Nothing to post")
-        if not posted_today:
+        if not posted_today and not later_today:
             telegram.send_message("There was no draft for today's post, so nothing went live. Send /new to make one.")
         return
     if pending.get("status") == "approved":
         if datetime.now(timezone.utc) >= datetime.fromisoformat(pending["publish_at"]) - timedelta(minutes=1):
-            publish(pending)
+            publish(pending)  # on failure this moves it to the next slot
         else:
-            log("Approved draft is scheduled for a later day")
+            log(f"Approved draft is scheduled for {pending['publish_at']}")
         return
     # Awaiting review at post time.
     if cfg.get("auto_post_if_not_reviewed"):
         telegram.send_message(f"You didn't review {describe(pending)}, so I'm posting it as planned.")
         publish(pending)
+        return
+    buttons = [telegram.review_buttons(pending["id"])[0],
+               [{"text": "Post now", "callback_data": f"postnow:{pending['id']}"}]]
+    if later_today:
+        nxt = later_today[0].strftime('%-I:%M %p').lower()
+        telegram.send_message(f"It's post time but {describe(pending)} isn't approved yet. "
+                              f"Approve it and it goes live at {nxt} IST instead.", buttons=buttons)
     else:
-        pending["status"] = "awaiting"
-        save_state(state)
-        telegram.send_message(f"It's post time but {describe(pending)} isn't approved, so nothing went live today. "
-                              "Approve it to schedule it for tomorrow, or tap Post now.",
-                              buttons=[telegram.review_buttons(pending["id"])[0],
-                                       [{"text": "Post now", "callback_data": f"postnow:{pending['id']}"}]])
+        first = post_times(cfg)[0]
+        first_txt = now.replace(hour=first[0], minute=first[1]).strftime('%-I:%M %p').lower()
+        telegram.send_message(f"{describe(pending)} wasn't approved, so nothing went live today. "
+                              f"Approve it and it goes live tomorrow at {first_txt} IST, or tap Post now.",
+                              buttons=buttons)
+
+
+def post_now_cmd():
+    """Manual 'Go ahead and post': pick up any Telegram taps first, then
+    publish the approved draft straight away, whatever the time."""
+    before = (load_state().get("pending") or {}).get("id")
+    check()
+    state = load_state()
+    pending = state.get("pending")
+    if not pending:
+        if before and any(h.get("id") == before and h.get("status") == "posted" for h in load_history()):
+            return  # check() already posted it (it was due) and sent the link
+        telegram.send_message("Go ahead and post: there's no draft waiting, so there's nothing to post. Send /new to make one.")
+        log("Nothing to post")
+        return
+    if pending.get("status") != "approved":
+        telegram.send_message(f"Go ahead and post: {describe(pending)} isn't approved yet. Tap Approve in Telegram, "
+                              "then run this again.", buttons=telegram.review_buttons(pending["id"]))
+        log("Draft not approved")
+        return
+    telegram.send_message(f"Posting {describe(pending)} now...")
+    publish(pending)
 
 
 def rerender(draft: dict):
@@ -422,14 +489,55 @@ def rerender(draft: dict):
         telegram.send_review(full)
 
 
+def keep_topic(draft: dict):
+    """Make sure a draft's topic stays first in line (it may have come from
+    /new or the writer rather than the topic list)."""
+    if draft.get("backlog_line") and draft["backlog_line"] in topic_backlog():
+        return
+    topic = draft.get("topic") or draft.get("post", {}).get("topic")
+    if not topic:
+        return
+    line = f"[{draft['series']}] {topic}" if draft.get("series") and draft["series"] != "MarketingTip" else topic
+    if line not in topic_backlog():
+        add_topic_to_backlog(line, front=True)
+
+
 def skip(draft: dict):
+    """Skip sets this version aside; the topic stays first in line so the
+    next draft is a fresh take on it. Nothing is lost until it's live."""
     state, history = load_state(), load_history()
     history.append({**_hist(draft), "status": "skipped"})
+    keep_topic(draft)
     state["pending"] = None
     remove_draft_files(draft)
     save_state(state)
     save_history(history)
-    telegram.send_message(f"Skipped {describe(draft)}. Send /new for another draft now, or wait for the next scheduled one.")
+    telegram.send_message(f"Set aside this version of {describe(draft)}. The topic stays first in line, so the next "
+                          "draft (tomorrow morning, or now with /new) will be a fresh take on it.\n"
+                          "To remove this topic for good instead, send /drop.")
+
+
+def drop(pending: dict):
+    state, history = load_state(), load_history()
+    if pending:
+        line = pending.get("backlog_line")
+        if line:
+            remove_topic_from_backlog(line)
+        history.append({**_hist(pending), "status": "dropped"})
+        state["pending"] = None
+        remove_draft_files(pending)
+        save_state(state)
+        save_history(history)
+        telegram.send_message(f"Dropped the topic of {describe(pending)} for good. Send /new for a draft on the next topic.")
+        return
+    backlog = topic_backlog()
+    if not backlog:
+        telegram.send_message("There is nothing to drop.")
+        return
+    remove_topic_from_backlog(backlog[0])
+    history.append({"status": "dropped", "topic": backlog[0], "at": now_iso()})
+    save_history(history)
+    telegram.send_message(f"Dropped the next topic for good: {html.escape(backlog[0])}")
 
 
 # ------------------------------------------------------------------ maintenance
@@ -515,6 +623,8 @@ def run(cmd: str):
         check()
     elif cmd == "post-due":
         post_due()
+    elif cmd == "post-now":
+        post_now_cmd()
     elif cmd == "refresh-token":
         refresh_token_cmd()
     elif cmd == "setup-check":
