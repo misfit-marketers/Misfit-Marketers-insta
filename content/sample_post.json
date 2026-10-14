@@ -1,0 +1,20 @@
+{
+  "topic": "Anchoring effect in pricing",
+  "principle": "Anchoring effect",
+  "hook": "Who really sets your price?",
+  "slides": [
+    "In 1974, psychologists **Amos Tversky** and **Daniel Kahneman** asked people to spin a wheel of fortune that was rigged to stop at either **10** or **65**.",
+    "Then they asked an unrelated question: what percentage of African countries are members of the United Nations?",
+    "People who saw 10 guessed around **25%**. People who saw 65 guessed around **45%**. A random number had quietly pulled their answers.",
+    "This is called the **anchoring effect**. The first number we see becomes a reference point, and every judgement after it adjusts from there.",
+    "Why does it happen? Our brains dislike starting from zero. An anchor gives us an **easy starting point**, so we take it, even when we know it is irrelevant.",
+    "Open any shopping app. The crossed-out MRP is the anchor, and the sale price is judged against it. That is why **Rs 2,999** feels like a steal next to Rs 7,999.",
+    "The same works for services. Show your **premium plan first**, and your mid-tier plan suddenly feels reasonable."
+  ],
+  "takeaway": "Decide what your customer sees first. Lead with a higher, honest reference point, such as the original price or your premium plan, before you reveal the price you want them to pick.",
+  "caption": "The first number your customer sees quietly decides how every other number feels.\n\nThat is the anchoring effect, and it is working on your pricing page whether you plan for it or not.\n\nWhich plan do you show first on your pricing page?",
+  "hashtags": ["#marketingpsychology", "#consumerpsychology", "#pricingstrategy", "#behaviouraleconomics", "#marketingtips", "#entrepreneurs", "#digitalmarketing"],
+  "fact_check": [
+    {"claim": "Wheel of fortune stopped at 10 or 65; median UN estimates of 25% and 45%", "source": "Tversky & Kahneman (1974), 'Judgment under Uncertainty: Heuristics and Biases', Science 185", "confidence": "high"}
+  ]
+}

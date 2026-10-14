@@ -1,0 +1,42 @@
+# One topic per line, used top to bottom. Delete or reorder freely.
+# Start a line with [MarketersAssemble] to make it a mindset post.
+# When this list runs out, the writer picks fresh topics on its own.
+# You can also add topics from Telegram with: /topic your idea
+Anchoring effect: why the first price a customer sees shapes every other price
+Decoy effect: how a third pricing plan makes the middle one sell
+Loss aversion: why "don't miss out" beats "get this"
+Social proof: why people trust what other people are already doing
+Scarcity: why "only 3 left" makes us want it more
+Reciprocity: why giving something useful first makes people buy later
+The endowment effect: why free trials and "try at home" work
+Commitment and consistency: the foot-in-the-door technique
+The IKEA effect: why people value what they help create
+The peak-end rule: why the last moment of a customer experience matters most
+The Zeigarnik effect: why open loops and cliffhangers hold attention
+The framing effect: "95% fat free" versus "5% fat"
+Cognitive fluency: why simple words and clean fonts feel more trustworthy
+The von Restorff (isolation) effect: why the thing that stands out gets remembered
+Charm pricing: why prices ending in 9 feel cheaper
+The halo effect: how one great trait makes the whole brand look good
+Authority bias: why credentials and experts move buyers
+The bandwagon effect: why bestseller badges sell
+Choice overload in checkout flows: fewer fields, more sales
+The goal-gradient effect: why progress bars and loyalty stamps work
+Pain of paying: why subscriptions and UPI autopay feel painless
+Mental accounting: why people treat "bonus" money differently
+The serial position effect: what to put first and last in a list
+Hyperbolic discounting: why "pay later" and instant rewards win
+The curse of knowledge: why experts write confusing marketing copy
+Storytelling and narrative transportation: why stories persuade better than facts
+The pratfall effect: why admitting a small flaw makes brands more likeable
+Status quo bias: why customers stick with what they already use
+The spotlight effect: why customers notice less than you fear
+Default effect: why pre-selected options win
+The power of "because": giving a reason increases compliance
+Priming: how earlier words and images shape later choices
+Unity and in-group identity: why "people like us" marketing works
+The labour illusion: why showing the work makes people value it more
+Price-quality heuristic: why a higher price can signal better quality
+[MarketersAssemble] Why great marketers study people before tactics
+[MarketersAssemble] Why copying a competitor's campaign rarely works
+[MarketersAssemble] The patience problem: why marketing results feel slow at first

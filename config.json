@@ -1,0 +1,48 @@
+{
+  "brand_name": "MISFIT",
+  "instagram_handle": "@your_handle_here",
+
+  "series": {
+    "MarketingTip": {
+      "tag": "MARKETINGTIP#{n}",
+      "next_number": 7,
+      "weight": 4,
+      "brief": "A marketing psychology tip: one named psychological principle, why it happens in the human mind, and how marketers should apply it."
+    },
+    "MarketersAssemble": {
+      "tag": "MARKETERSASSEMBLE#{n}",
+      "next_number": 2,
+      "weight": 1,
+      "brief": "A mindset post for marketers about the craft of marketing itself (uncertainty, experimentation, understanding prospects), still grounded in psychology."
+    }
+  },
+
+  "theme": "alternate",
+
+  "max_body_slides": 7,
+
+  "closing_slide": {
+    "enabled": false,
+    "text": "Follow **{handle}** to learn the psychology underneath marketing."
+  },
+
+  "writing": {
+    "spelling": "British/Indian English (colour, realise, behaviour, specialised)",
+    "voice": "We-voice of a consumer-psychology-driven marketing collective. Smart, plain, a little playful. Talks to marketers, designers, freelancers and entrepreneurs.",
+    "extra_rules": [
+      "Never use em dashes.",
+      "Avoid negative parallelism such as 'it's not X, it's Y' or 'not just X but Y'.",
+      "Use the serial (Oxford) comma in lists of three or more."
+    ]
+  },
+
+  "post_time_ist": "17:00",
+
+  "auto_post_if_not_reviewed": false,
+
+  "gemini_model": "auto",
+
+  "image_host": "raw",
+
+  "instagram_api_version": "v25.0"
+}
