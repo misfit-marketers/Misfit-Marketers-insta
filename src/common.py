@@ -52,8 +52,13 @@ def load_state() -> dict:
     state = load_json(STATE_FILE, {})
     state.setdefault("last_update_id", 0)
     state.setdefault("last_theme", "dark")
-    state.setdefault("pending", None)
     state.setdefault("series_counters", {})
+    state.setdefault("drafts", [])
+    state.setdefault("merged_seeds", [])
+    # Older versions kept a single "pending" draft.
+    old = state.pop("pending", None)
+    if old and not any(d.get("id") == old.get("id") for d in state["drafts"]):
+        state["drafts"].append(old)
     return state
 
 

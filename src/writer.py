@@ -114,7 +114,11 @@ def build_prompt(cfg: dict, series_name: str, topic: str, recent_topics: list, f
     rules = "\n".join(f"- {r}" for r in w.get("extra_rules", []))
     recent = "\n".join(f"- {t}" for t in recent_topics[-40:]) or "- (none yet)"
     topic_line = (f"TOPIC: {topic}" if topic else
-                  "TOPIC: choose a fresh, specific marketing psychology principle that is NOT in the recent list.")
+                  "TOPIC: choose a fresh, specific topic that fits this series and is NOT in the recent list.")
+    structure = series.get("structure") or ("Curiosity hook, then a relatable story, everyday observation or real study, "
+                                            "then name the principle, explain WHY it happens in the mind, show how it "
+                                            "appears in marketing with a concrete example, end with an actionable takeaway.")
+    label = series.get("takeaway_label", "Takeaway")
 
     prompt = f"""You write Instagram carousels for MISFIT, a page that teaches marketers and entrepreneurs the psychology underneath marketing.
 
@@ -125,17 +129,18 @@ VOICE: {w['voice']}
 SPELLING: {w['spelling']}
 
 HOUSE RULES:
-- Structure: curiosity hook, then a relatable story, everyday observation or real study, then name the principle, explain WHY it happens in the mind, show how it appears in marketing with a concrete example, end with an actionable takeaway.
-- Between 5 and {max_slides} body slides. One idea per slide. Each body slide is at most 45 words.
+- Structure for this series: {structure} These are beats, not slides: several beats can share one slide, and a beat can be skipped if it adds nothing.
+- Length: use as few body slides as the idea needs, anywhere from 2 to {max_slides}. Short carousels (2 to 4 body slides) are welcome when the idea is simple; go longer only when every extra slide adds something new. Never restate a point, pad, or repeat the hook. Respect the reader's time.
+- One idea per slide. Each body slide is at most 45 words.
 - Mark 1 to 3 key phrases per slide in **double asterisks**. Never bold a whole slide.
 - The hook is a short question or provocative line, at most 9 words, no asterisks.
-- The takeaway is one or two practical sentences (do not start it with the word 'Takeaway').
+- The "takeaway" field is the final slide: one or two practical sentences. It is shown after the label "{label}:", so do not start it with that word.
 - Accuracy matters more than drama. Only cite studies, researchers, years and numbers you are confident are real. If unsure, describe the finding generally without names or figures. Never invent quotes, statistics or experiments. Never claim MISFIT ran an experiment.
-- Use examples that make sense to a global audience.
+- Use examples that make sense to a US audience (US brands, apps, and everyday life), while staying understandable worldwide.
 - Write every price and money amount in US dollars with the $ sign (for example $29 or $1,200). Never use rupees, ₹, Rs or INR.
 {rules}
 
-RECENTLY POSTED (do not repeat these principles):
+RECENTLY POSTED OR ALREADY DRAFTED (do not repeat these topics or principles):
 {recent}
 
 STYLE REFERENCE (past posts):
@@ -176,11 +181,11 @@ def validate(post: dict, max_slides: int) -> dict:
                        + [str(x) for x in post.get("slides", [])])
     if RUPEE.search(visible):
         raise ValueError("writer used rupees; asking again for dollars")
-    if not isinstance(post["slides"], list) or len(post["slides"]) < 3:
+    if not isinstance(post["slides"], list) or len(post["slides"]) < 2:
         raise ValueError("writer returned too few slides")
     post["slides"] = [clean_text(s) for s in post["slides"][:max_slides] if str(s).strip()]
     post["hook"] = clean_text(post["hook"]).replace("**", "")
-    post["takeaway"] = clean_text(re.sub(r"^\**\s*takeaway\s*:?\s*\**\s*", "", post["takeaway"], flags=re.I))
+    post["takeaway"] = clean_text(re.sub(r"^\**\s*(takeaway|verdict|remember)\s*:\s*\**\s*", "", post["takeaway"], flags=re.I))
     post["caption"] = clean_text(post["caption"]).replace(", \n", "\n")
     tags = post.get("hashtags") or []
     post["hashtags"] = [t if t.startswith("#") else "#" + t for t in (str(x).strip().replace(" ", "") for x in tags) if t][:10]

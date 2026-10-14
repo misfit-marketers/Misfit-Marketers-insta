@@ -1,48 +1,81 @@
 {
   "brand_name": "MISFIT",
   "instagram_handle": "@misfit_marketers",
-
   "series": {
     "MarketingTip": {
       "tag": "MARKETINGTIP#{n}",
-      "next_number": 7,
-      "weight": 4,
-      "brief": "A marketing psychology tip: one named psychological principle, why it happens in the human mind, and how marketers should apply it."
+      "next_number": 8,
+      "weight": 5,
+      "brief": "A marketing psychology tip: one named psychological principle, why it happens in the human mind, and how marketers should apply it.",
+      "structure": "Curiosity hook, then a relatable story, everyday observation or real study, then name the principle, explain WHY it happens in the mind, show how it appears in marketing with a concrete example, end with an actionable takeaway."
+    },
+    "BrandBreakdown": {
+      "tag": "BRANDBREAKDOWN#{n}",
+      "next_number": 1,
+      "weight": 3,
+      "brief": "A real, well-known brand's marketing decision decoded through the psychology behind it.",
+      "structure": "Hook that names the brand move as a puzzle, then what the brand actually did (only well-documented, public facts), then the psychological principle that explains why it works, then why it works on customers' minds, then how a smaller business can borrow the idea, end with an actionable takeaway. If you are not sure a fact about the brand is true, leave it out."
+    },
+    "CopyClinic": {
+      "tag": "COPYCLINIC#{n}",
+      "next_number": 1,
+      "weight": 2,
+      "brief": "A before-and-after rewrite of a bland piece of marketing copy (headline, CTA button, pricing line, email subject, landing page line) using one psychological principle.",
+      "structure": "Hook about a common copy mistake, then a slide starting 'Before:' with a realistic bland example, then why it falls flat psychologically, then name the principle that fixes it, then a slide starting 'After:' with the rewritten version, then why the new version works in the reader's mind, optionally a second quick before/after, end with a takeaway the reader can apply to their own copy today. The before/after examples are invented illustrations, so never present them as real results or statistics."
+    },
+    "MythOrMagic": {
+      "tag": "MYTHORMAGIC#{n}",
+      "next_number": 1,
+      "weight": 2,
+      "brief": "A popular marketing belief tested against what psychology research actually shows.",
+      "structure": "Hook that states the belief as a question, then a slide starting 'The belief:' explaining why marketers believe it, then what the research actually found (only real, well-known findings), then the nuance (when the belief holds and when it does not), then what it means for marketers. The takeaway field is the verdict: start it with Myth, Magic, or It depends, then one practical line.",
+      "takeaway_label": "Verdict"
+    },
+    "PsychInTheWild": {
+      "tag": "PSYCHINTHEWILD#{n}",
+      "next_number": 1,
+      "weight": 2,
+      "brief": "An everyday moment the reader has lived through (streaming autoplay, supermarket layouts, surge pricing, sale countdowns) and the psychological principle quietly working on them.",
+      "structure": "Hook that puts the reader inside the everyday moment, then describe what they experience, then reveal what is happening in their mind and name the principle, then explain why it works, then show how the same idea can be used ethically in their own marketing, end with an actionable takeaway."
     },
     "MarketersAssemble": {
       "tag": "MARKETERSASSEMBLE#{n}",
       "next_number": 2,
       "weight": 1,
-      "brief": "A mindset post for marketers about the craft of marketing itself (uncertainty, experimentation, understanding prospects), still grounded in psychology."
+      "brief": "A mindset post for marketers about the craft of marketing itself (uncertainty, experimentation, understanding prospects, marketers vs the world), still grounded in psychology.",
+      "structure": "Bold provocative hook, then a short series of punchy one-idea slides that build an argument about the craft of marketing, grounded in how people think, ending with a rallying line for marketers in the takeaway.",
+      "takeaway_label": "Remember"
     }
   },
-
+  "slots": [
+    {
+      "name": "evening",
+      "time_ist": "19:30",
+      "backup_ist": "20:30"
+    },
+    {
+      "name": "night",
+      "time_ist": "03:30",
+      "backup_ist": "04:30"
+    }
+  ],
   "theme": "alternate",
-
   "max_body_slides": 7,
-
   "closing_slide": {
     "enabled": false,
     "text": "Follow **{handle}** to learn the psychology underneath marketing."
   },
-
   "writing": {
-    "spelling": "British/Indian English (colour, realise, behaviour, specialised)",
-    "voice": "We-voice of a consumer-psychology-driven marketing collective. Smart, plain, a little playful. Talks to marketers, designers, freelancers and entrepreneurs.",
+    "spelling": "American English (color, realize, behavior, specialized). The audience is mostly in the United States.",
+    "voice": "We-voice of a consumer-psychology-driven marketing collective. Smart, plain, a little playful. Talks to marketers, designers, freelancers and entrepreneurs, mostly in the US.",
     "extra_rules": [
       "Never use em dashes.",
       "Avoid negative parallelism such as 'it's not X, it's Y' or 'not just X but Y'.",
       "Use the serial (Oxford) comma in lists of three or more."
     ]
   },
-
-  "post_times_ist": ["18:00", "20:00"],
-
   "auto_post_if_not_reviewed": false,
-
   "gemini_model": "auto",
-
   "image_host": "raw",
-
   "instagram_api_version": "v25.0"
 }

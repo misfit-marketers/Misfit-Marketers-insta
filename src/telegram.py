@@ -86,12 +86,24 @@ def scheduled_buttons(draft_id: str):
     ]]
 
 
-def send_review(draft: dict):
-    """Album of slides, then one message with caption, fact-check and buttons."""
-    send_album(draft["images"])
+def _ids(result) -> list:
+    if isinstance(result, list):
+        return [m.get("message_id") for m in result if isinstance(m, dict) and m.get("message_id")]
+    if isinstance(result, dict) and result.get("message_id"):
+        return [result["message_id"]]
+    return []
+
+
+def send_review(draft: dict, when: str = "") -> list:
+    """Album of slides, then one message with caption, fact-check and buttons.
+    Returns the Telegram message ids, so replies can be matched to this draft."""
+    ids = _ids(send_album(draft["images"]))
     post = draft["post"]
     e = html.escape
-    lines = [f"<b>{e(draft['tag'])}</b> · {e(post.get('principle', ''))}", ""]
+    lines = []
+    if when:
+        lines.append(f"<b>For {e(when)}</b>")
+    lines += [f"<b>{e(draft['tag'])}</b> · {e(post.get('principle', ''))}", ""]
     lines.append("<b>Caption</b>")
     lines.append(e(draft["caption"]))
     checks = post.get("fact_check") or []
@@ -100,6 +112,7 @@ def send_review(draft: dict):
         for c in checks[:8]:
             conf = c.get("confidence", "?")
             lines.append(f"• {e(c.get('claim', ''))}\n   <i>{e(c.get('source', 'no source given'))}</i> [{e(conf)}]")
-    lines += ["", "<b>Approve</b> schedules it for today's post time. Or reply with feedback "
-              "(for example: <i>make the hook punchier</i>) to get a revised version."]
-    send_message("\n".join(lines), buttons=review_buttons(draft["id"]))
+    lines += ["", "<b>Approve</b> schedules it for the time above. To change it, <b>reply to this message</b> "
+              "with your feedback (for example: <i>make the hook punchier</i>)."]
+    ids += _ids(send_message("\n".join(lines), buttons=review_buttons(draft["id"])))
+    return ids

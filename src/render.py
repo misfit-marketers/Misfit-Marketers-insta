@@ -213,15 +213,16 @@ def draw_body(text, theme_name, tag):
     return img
 
 
-def render_post(post: dict, theme_name: str, tag: str, out_dir: Path, closing: str = None) -> list:
+def render_post(post: dict, theme_name: str, tag: str, out_dir: Path, closing: str = None,
+                label: str = "Takeaway") -> list:
     """Writes 01.jpg, 02.jpg ... and returns their paths."""
     out_dir.mkdir(parents=True, exist_ok=True)
     slides = [draw_hook(post["hook"], theme_name, tag)]
     for body in post["slides"]:
         slides.append(draw_body(body, theme_name, tag))
     takeaway = post["takeaway"].strip()
-    if not takeaway.lower().startswith("**takeaway"):
-        takeaway = "**Takeaway:** " + takeaway
+    if not takeaway.lower().lstrip("*").startswith(label.lower()):
+        takeaway = f"**{label}:** " + takeaway
     slides.append(draw_body(takeaway, theme_name, tag))
     if closing:
         slides.append(draw_body(closing, theme_name, tag))

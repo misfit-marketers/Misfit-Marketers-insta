@@ -12,19 +12,37 @@ GitHub Actions (on a timer)
    ▼
 Telegram bot ──► you tap Approve / Redo / Skip (or reply with feedback)
    ▼
-GitHub Actions at 6 pm IST (8 pm back-up) ──► Instagram API publishes the carousel
+GitHub Actions at 7:30 pm and 3:30 am IST ──► Instagram API publishes each carousel
 ```
 
-**Default schedule:** one post every day.
-- **Around 8 am IST:** the day's draft arrives in Telegram for review.
-- **6:00 pm IST:** the approved draft goes live on Instagram.
-- **8:00 pm IST:** back-up slot. If the draft wasn't approved by 6 pm, or
-  posting failed, it goes live at 8 pm instead. If 8 pm is missed too, it
-  moves to 6 pm the next day (then 8 pm), and so on until it's live.
+**Default schedule:** two posts every day, timed for the US.
 
-Your taps and replies are picked up within 30 minutes. Approve any time
-before 6 pm, or before 8 pm for the back-up slot (each slot still accepts
-approvals up to 15 minutes after it starts).
+| Slot (IST) | US time (while US clocks are on daylight time) | Back-up |
+|---|---|---|
+| 7:30 pm | 10 am Eastern, 7 am Pacific | 8:30 pm |
+| 3:30 am | 6 pm Eastern, 3 pm Pacific | 4:30 am |
+
+When the US switches to standard time in November, these land an hour
+earlier in US time.
+
+- **About 6:30 to 7 am IST:** one draft for each empty slot arrives in
+  Telegram, each labelled with its slot ("For 7:30 pm IST today", "For 3:30 am
+  IST tonight").
+- **At each slot:** approved drafts go live. If a draft isn't approved yet,
+  or Instagram refuses it, it goes out at the back-up time an hour later.
+  If that's missed too, it moves to the same slot the next day, and that
+  morning only the empty slot gets a new draft. Nothing is lost or skipped.
+
+Your taps and replies are picked up within 30 minutes. Each slot still
+accepts approvals up to 15 minutes after it starts.
+
+**Series:** MarketingTip, BrandBreakdown (real brands decoded), CopyClinic
+(before-and-after rewrites), MythOrMagic (beliefs tested against research),
+PsychInTheWild (everyday moments explained), and MarketersAssemble (mindset).
+The mix follows the `weight` of each series in `config.json`, and the two
+drafts of a day are always from different series when possible. Carousels are
+as long as the idea needs: short when it's simple, longer only when every
+slide adds something.
 
 ---
 
@@ -131,9 +149,7 @@ Personal access tokens → Fine-grained tokens → Generate new token**.
 3. Run **0. Setup check** (click it, then **Run workflow**). Your bot should
    message you to say Gemini, Instagram and Telegram are all OK.
 4. Run **1. Write a new draft**. In a minute or two the slides arrive in Telegram.
-5. Tap **Approve**. The bot confirms it's scheduled for 6 pm. For this first
-   test, tap **Post now** instead: within 30 minutes the carousel appears on
-   Instagram and the bot sends you the link.
+5. Tap **Approve**, then run **5. Go ahead and post** for an instant test.
 
 From now on it runs by itself.
 
@@ -142,32 +158,30 @@ From now on it runs by itself.
 ## Posting right away
 
 1. Tap **Approve** in Telegram.
-2. On GitHub, open **Actions → 5. Go ahead and post → Run workflow**.
+2. On GitHub, open **Actions → 5. Go ahead and post → Run workflow**, and
+   choose **next approved draft** or **all approved drafts**.
 
 It reads your Telegram taps first, so there's no need to wait for a check,
-and posts the approved draft immediately. The bot sends the Instagram link
-when it's live, or tells you why it couldn't post.
+and posts immediately. The bot sends the Instagram link when it's live, or
+tells you why it couldn't post. The scheduled slots carry on as normal.
 
 ## Day-to-day use (all in Telegram)
 
 | You do | What happens |
 |---|---|
-| Tap **Approve** | It's scheduled for the next slot: 6 pm, else 8 pm, else 6 pm tomorrow |
+| Tap **Approve** | It's scheduled for that draft's slot (or its back-up, if you approve late) |
 | Tap **Post now** | It posts within 30 minutes, without waiting for the slot |
-| Tap **Redo** | It writes a fresh take on the same topic |
-| Tap **Skip** | It drops the draft, and the next one comes the next morning |
-| Reply with text, e.g. *"shorter slides, punchier hook"* | It revises the draft using your feedback |
-| `/new` | Makes a draft now from the next topic |
-| `/new decoy pricing` | Makes a draft now on your idea |
-| `/topic loss aversion in UPI cashback` | Adds the idea to the topic list |
+| Tap **Redo** | It writes a fresh take on the same topic, for the same slot |
+| Tap **Skip** | It sets this version aside; the topic stays first in line and the slot is empty until you send /new or the next morning |
+| **Reply** to a draft's message with text, e.g. *"shorter, punchier hook"* | It revises that draft using your feedback |
+| `/new` | Fills an empty slot now with the next topic |
+| `/new decoy pricing` | Fills an empty slot now with your idea |
+| `/topic [CopyClinic] pricing page headlines` | Adds an idea to the topic list (the [Series] tag is optional) |
+| `/next ...` | Puts an idea at the front of the topic list |
 | `/topics` | Shows what's coming next |
-| `/status` | Shows what's waiting |
-| `/rerender` | Redraws the current draft's slides with the latest template, keeping the same text |
-
-If 8 pm comes and the draft still isn't approved, nothing goes live that day
-and the bot tells you. Approving it after that schedules it for 6 pm the next
-day, and no new draft is written that morning. If Instagram ever refuses a
-post, the bot tells you why and tries again at the next slot automatically.
+| `/status` | Shows each draft, its slot and whether it's approved |
+| `/drop` (as a reply to a draft) | Removes that draft's topic for good |
+| `/rerender` | Redraws the slides with the latest template (reply to one draft, or send alone for all) |
 
 Each draft includes a **fact-check list** of the studies and numbers it uses.
 Check anything marked *medium* or *low* before approving, because the free
@@ -177,23 +191,23 @@ writer can't search the web.
 
 ## Changing things
 
-- **Topics:** edit `content/topics.txt`. Lines are used top to bottom. Start
-  a line with `[MarketersAssemble]` to make it a mindset post. When the list
-  is empty, the writer chooses topics itself and avoids anything already posted.
-- **When the draft arrives:** edit the `cron:` line in
+- **Topics:** the bot keeps `content/topics.txt` up to date on GitHub, so add
+  ideas from Telegram with /topic or /next. Lines are used top to bottom per
+  series; untagged lines are MarketingTip. New topic batches can also be added
+  as files in `content/topic_seeds/` (each file is merged in once). When a
+  series runs out of topics, the writer chooses fresh ones itself.
+- **Series mix:** change each series' `weight` in `config.json`. A weight of 0
+  pauses a series.
+- **When drafts arrive:** edit the `cron:` line in
   `.github/workflows/generate.yml`. Times are in UTC (IST minus 5:30), so
-  `"15 2 * * *"` means every day at 7:45 am IST. GitHub often starts timers
-  5 to 15 minutes late, which is why it's set a little before 8.
-- **When posts go live:** change `"post_times_ist"` in `config.json`
-  (for example `["18:30", "21:00"]`), and also change the `cron:` line in
-  `.github/workflows/post.yml` so it runs about 30 minutes before each time,
-  in UTC (IST minus 5:30). The current `"57 11,13 * * *"` means 11:57 and
-  13:57 UTC, which is 5:27 pm and 7:27 pm IST. It starts early because GitHub
-  often runs timers late, then waits for the exact time.
-- **Skipping days:** in both cron lines, replace the last `*` with the days to
-  run. For example, `1-6` means Monday to Saturday.
+  `"57 0 * * *"` means every day at 6:27 am IST.
+- **When posts go live:** change `"slots"` in `config.json` (each slot has a
+  time and a back-up time, in IST), and change the `cron:` line in
+  `.github/workflows/post.yml` so it runs about 30 minutes before each slot
+  and back-up, in UTC. The current `"27 13,14,21,22 * * *"` covers 7:30 pm,
+  8:30 pm, 3:30 am and 4:30 am IST.
 - **Auto-post without review:** set `"auto_post_if_not_reviewed": true` in
-  `config.json`. A draft you haven't reviewed by 6 pm then posts anyway.
+  `config.json`. A draft you haven't reviewed by its slot then posts anyway.
 - **Light or dark slides:** `"theme"` can be `"alternate"`, `"light"` or `"dark"`.
 - **Follow slide at the end:** set `closing_slide.enabled` to `true`.
 - **Writing style:** voice, spelling and rules are in `config.json → writing`.
@@ -240,7 +254,7 @@ src/                   the code: writer, slide renderer, Telegram, Instagram
 state/                 what's pending and what's been posted (the bot updates this)
 posts/                 slides waiting for review (deleted after posting)
 github/workflows/      the timers (rename the folder to .github before uploading):
-                       setup check, write draft (8 am), check Telegram (every
-                       30 min), renew token (monthly), post (6 pm, 8 pm),
+                       setup check, write drafts (6:27 am), check Telegram (every
+                       30 min), renew token (monthly), post (slots),
                        go ahead and post (run by hand)
 ```

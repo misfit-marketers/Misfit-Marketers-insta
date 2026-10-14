@@ -1,0 +1,2 @@
+# Restores the topic that was skipped before topics were protected.
+Anchoring effect: why the first price a customer sees shapes every other price

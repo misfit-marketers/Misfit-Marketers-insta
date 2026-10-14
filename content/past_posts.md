@@ -1,6 +1,6 @@
 # Past MISFIT posts (style reference for the writer)
 
-These are real carousels from the page, lightly cleaned up (British spelling,
+These are real carousels from the page, lightly cleaned up (American spelling,
 no em dashes). The writer copies their rhythm: a curiosity hook, a relatable
 story or study, the named principle, why it happens, how it shows up in
 marketing, then an actionable takeaway. One idea per slide. **Bold** marks
@@ -8,23 +8,23 @@ the 1 to 3 phrases the eye should catch.
 
 ---
 
-## MARKETINGTIP#1: Which is the most addictive colour and why?
+## MARKETINGTIP#1: Which is the most addictive color and why?
 
-1. (hook) Do you know which is the most addictive colour and why?
-2. Humans' association with the colour **red** can be dated back to the days when they lived in caves and hunted for food.
+1. (hook) Do you know which is the most addictive color and why?
+2. Humans' association with the color **red** can be dated back to the days when they lived in caves and hunted for food.
 3. In such primal times, things that caught a caveman's attention were **fire** (heat), **blushing** (attraction), **rage**, and **blood** (danger); all of which were red.
-4. These things led to humans being wired in such a way that the colour red **increases our heart rate** and **catches our attention** first.
-5. Soon, brands realised the importance of the colour red and leveraged it. For example, **curvy sports cars** and **alluring outfits** are made in red for the very same reason.
-6. Another brand that continues to use the colour red is Facebook. They pioneered the **red notification icon**.
-7. Takeaway: Use the colour red at the right place to draw your prospect's attention to something important such as a **CTA** or your service's **USP**.
+4. These things led to humans being wired in such a way that the color red **increases our heart rate** and **catches our attention** first.
+5. Soon, brands realized the importance of the color red and leveraged it. For example, **curvy sports cars** and **alluring outfits** are made in red for the very same reason.
+6. Another brand that continues to use the color red is Facebook. They pioneered the **red notification icon**.
+7. Takeaway: Use the color red at the right place to draw your prospect's attention to something important such as a **CTA** or your service's **USP**.
 
 ## MARKETINGTIP#2: Is your marketing actually driving customers away?
 
 1. (hook) Is your marketing actually driving customers away?
 2. There is a phenomenon in psychology known as **aversiveness**.
-3. **What is aversiveness?** In general, aversiveness refers to avoidant behaviour towards something. For example, people who are not risk takers are averse to investing in stocks.
+3. **What is aversiveness?** In general, aversiveness refers to avoidant behavior towards something. For example, people who are not risk takers are averse to investing in stocks.
 4. **What is aversiveness in marketing?** It is when a person sees a marketing activity, such as an advertisement or an email, and immediately feels the need to avoid it or get rid of it.
-5. **Why does it happen?** Aversive behaviour happens when marketing feels forced, like an unsolicited sales pitch. It's the same reason people feel annoyed when a bank calls asking if you'd like a credit card.
+5. **Why does it happen?** Aversive behavior happens when marketing feels forced, like an unsolicited sales pitch. It's the same reason people feel annoyed when a bank calls asking if you'd like a credit card.
 6. **We conducted an experiment** and sent a newsletter to nearly 2,000 recipients with two ways to reach our website: a 'Visit Website' button, or a plain link in the text.
 7. **Results of the experiment?** The plain link did 3x better than the button. Button: 70 clicks. Link: 210 clicks.
 8. **Experiment interpretation:** Prospects feel that clicking a CTA button is a big commitment, while a plain link feels more transparent and involves less commitment.

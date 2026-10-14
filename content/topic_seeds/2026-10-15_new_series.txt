@@ -1,0 +1,110 @@
+# New topics for every series, added 2026-10-15. Merged into topics.txt once by the bot.
+
+[BrandBreakdown] The Economist's subscription offer: how a "pointless" print-only option sold more bundles
+[BrandBreakdown] Starbucks: why the smallest cup on the menu is called Tall
+[BrandBreakdown] Costco's $1.50 hot dog combo: why a price that never changes builds trust
+[BrandBreakdown] Duolingo streaks: how loss aversion keeps millions practicing daily
+[BrandBreakdown] Spotify Wrapped: why people happily advertise Spotify for free every December
+[BrandBreakdown] Coca-Cola's "Share a Coke": why seeing your own name on a bottle is so powerful
+[BrandBreakdown] IKEA's showroom path: why the store makes you walk past everything
+[BrandBreakdown] Domino's Pizza Tracker: why watching your pizza being made feels better
+[BrandBreakdown] Dropbox's referral program: how free storage turned users into marketers
+[BrandBreakdown] LinkedIn's profile strength meter: why an unfinished bar nags you to finish
+[BrandBreakdown] Booking.com's "only 1 room left": the power and the risk of scarcity messages
+[BrandBreakdown] Netflix's Top 10 row: why we watch what everyone else is watching
+[BrandBreakdown] Apple's storage tiers: how the middle option becomes the obvious choice
+[BrandBreakdown] Mailchimp's high-five animation: why a tiny reward makes a chore feel good
+[BrandBreakdown] De Beers' "A diamond is forever": how one line turned a stone into a symbol
+[BrandBreakdown] Dollar Shave Club's launch video: why being funny made people trust a new brand
+[BrandBreakdown] Amazon's "Customers who bought this also bought": social proof at checkout scale
+[BrandBreakdown] Nike's "Just Do It": how a slogan sells an identity
+[BrandBreakdown] Tesla's referral rewards: why a brand with little traditional advertising still spread
+[BrandBreakdown] Apple Stores: why demo devices are set up to be touched and held
+
+[CopyClinic] "Submit" buttons: why first-person CTAs like "Start my free trial" get more clicks
+[CopyClinic] "$365 a year" vs "$1 a day": reframing a price into a smaller unit
+[CopyClinic] "20% off" vs "$20 off": which discount format feels bigger, and when
+[CopyClinic] Feature headlines vs outcome headlines on a landing page
+[CopyClinic] "No credit card required": placing risk-removal copy where doubt appears
+[CopyClinic] Boring newsletter subject lines vs curiosity-gap subject lines
+[CopyClinic] "Sign up" vs "Join the marketers who...": adding social proof to a CTA
+[CopyClinic] Plan names: "Basic, Pro, Enterprise" vs names that describe who each plan is for
+[CopyClinic] About pages that talk about "we" vs pages that talk about "you"
+[CopyClinic] Product descriptions: generic adjectives vs sensory, specific words
+[CopyClinic] Abandoned-cart emails: guilt trips vs helpful reminders
+[CopyClinic] Free-shipping banners: "Free shipping over $50" vs "You're $7 away from free shipping"
+[CopyClinic] Prices ending in .99 vs round prices for premium products
+[CopyClinic] Waitlist copy that makes people want in
+[CopyClinic] Unsubscribe pages: letting people go gracefully (and keeping some of them)
+[CopyClinic] Error messages that blame the user vs ones that help
+[CopyClinic] Webinar invites: vague promises vs one concrete takeaway
+[CopyClinic] Testimonials: generic praise vs a specific before-and-after story
+[CopyClinic] Push notifications: "We miss you" vs a reason to come back
+[CopyClinic] Pricing page FAQs that answer the fear behind the question
+
+[MythOrMagic] "More choice always sells more": what the famous jam study really showed
+[MythOrMagic] "People buy with logic": the role emotion plays in decisions
+[MythOrMagic] "Red buttons convert better": does button color really matter?
+[MythOrMagic] "Our attention span is shorter than a goldfish's": where that claim came from
+[MythOrMagic] "Free always wins": the zero-price effect
+[MythOrMagic] "Subliminal ads make people buy": the popcorn-and-Coke story that wasn't true
+[MythOrMagic] "People read every word on your website": how people actually scan pages
+[MythOrMagic] "Discounts always boost sales": when price cuts hurt how a brand is seen
+[MythOrMagic] "Scarcity always works": what happens when urgency is obviously fake
+[MythOrMagic] "Social proof always helps": when "everyone is doing it" backfires
+[MythOrMagic] "Prices ending in 99 make no difference": the left-digit effect
+[MythOrMagic] "Long copy never works": when long pages outsell short ones
+[MythOrMagic] "The more people see an ad, the better": ad wear-out
+[MythOrMagic] "Fear sells": when fear appeals work and when they backfire
+[MythOrMagic] "Personalization always lifts results": the line between helpful and creepy
+[MythOrMagic] "Customers always want the cheapest option": the compromise effect
+[MythOrMagic] "Photos don't change whether people believe a claim": the truthiness effect
+[MythOrMagic] "You need seven touchpoints before someone buys": the rule of seven
+[MythOrMagic] "Customers can tell you what they want": why surveys and behavior disagree
+[MythOrMagic] "Happy customers always leave reviews": who actually writes reviews
+
+[PsychInTheWild] Netflix autoplay: why the next episode starts before you decide
+[PsychInTheWild] Why milk is usually at the back of the supermarket
+[PsychInTheWild] Surge pricing: why paying more feels worse when you see the multiplier
+[PsychInTheWild] Countdown timers on sale pages: why a ticking clock speeds you up
+[PsychInTheWild] Menus without dollar signs: why restaurants drop the $
+[PsychInTheWild] Infinite scroll: why you can't stop at "just one more"
+[PsychInTheWild] Pull-to-refresh: the slot machine in your pocket
+[PsychInTheWild] "Add $7 more for free shipping": why we buy things to save on shipping
+[PsychInTheWild] Gym sign-ups in January: the fresh start effect
+[PsychInTheWild] Loyalty cards with two stamps already filled in
+[PsychInTheWild] Hotel towel signs: "most guests reuse their towels"
+[PsychInTheWild] Movie theater popcorn sizes: why the large always looks like the deal
+[PsychInTheWild] "Only 2 left in stock": why you suddenly need it today
+[PsychInTheWild] Free trials that renew automatically: why so many people never cancel
+[PsychInTheWild] Free samples at the grocery store: why one taste leads to a purchase
+[PsychInTheWild] Tap-to-pay: why spending with your phone hurts less than cash
+[PsychInTheWild] Car dealership sticker prices: the number you were meant to see first
+[PsychInTheWild] Spotify's Discover Weekly: why Monday mornings feel like a gift
+[PsychInTheWild] Airline checkout add-ons: why the default choice is the one you keep
+[PsychInTheWild] Price tags that say "Was $80, now $49"
+
+[MarketersAssemble] Data tells you what happened. Psychology tells you why.
+[MarketersAssemble] Your customer is not you
+[MarketersAssemble] Stop chasing hacks, start studying humans
+[MarketersAssemble] Why great marketers love being proven wrong
+[MarketersAssemble] Clients want certainty, marketers sell experiments
+[MarketersAssemble] The unglamorous work behind every campaign that wins
+[MarketersAssemble] Marketing is a long game in a short-term world
+[MarketersAssemble] Why marketers should be professional skeptics
+
+The contrast effect: why the same price feels cheap or expensive depending on what's next to it
+The frequency illusion: why your brand suddenly seems to be everywhere
+Psychological reactance: why telling people what to do makes them push back
+The sunk cost fallacy: why customers stick with things they've already paid for
+The availability heuristic: why vivid stories beat statistics
+The picture superiority effect: why people remember images over words
+Weber's law: why some price increases go unnoticed and others cause outrage
+The affect heuristic: why how a brand makes people feel shapes what they believe about it
+The curiosity gap: why open questions make people click
+The Ben Franklin effect: why asking customers for a small favor builds loyalty
+The cocktail party effect: why people notice their own name everywhere
+The compromise effect: why the middle option wins so often
+The rhyme-as-reason effect: why slogans that rhyme feel more true
+The Barnum effect: why vague, personal-sounding messages feel accurate
+The self-reference effect: why "you" copy is remembered better
