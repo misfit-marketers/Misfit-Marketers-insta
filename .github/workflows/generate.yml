@@ -1,11 +1,11 @@
 name: 1. Write a new draft
 
-# Times are UTC. 02:15 UTC = 7:45 am IST, every day. GitHub sometimes starts
-# timers 5 to 15 minutes late, so the draft reaches Telegram around 8 am.
-# To skip a day of the week, replace the last "*" with e.g. "1-6" (Mon to Sat).
+# Times are UTC. 00:57 UTC = 6:27 am IST, every day. GitHub sometimes starts
+# timers 5 to 30 minutes late, so the drafts reach Telegram by about 7 am.
+# It writes one draft for each empty posting slot (7:30 pm and 3:30 am IST).
 on:
   schedule:
-    - cron: "15 2 * * *"
+    - cron: "57 0 * * *"
   workflow_dispatch:
     inputs:
       topic:

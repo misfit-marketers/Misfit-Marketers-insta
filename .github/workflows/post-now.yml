@@ -5,6 +5,14 @@ name: 5. Go ahead and post
 # Approve and then run this straight away.
 on:
   workflow_dispatch:
+    inputs:
+      which:
+        description: "Which approved drafts to post"
+        type: choice
+        options:
+          - next approved draft
+          - all approved drafts
+        default: next approved draft
 
 concurrency:
   group: misfit-bot
@@ -31,6 +39,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          POST_WHICH: ${{ github.event.inputs.which }}
       - name: Save drafts and state back to the repository
         if: always()
         run: |

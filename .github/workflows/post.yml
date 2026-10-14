@@ -1,13 +1,13 @@
-name: 4. Post at 6 pm and 8 pm IST
+name: 4. Post at the scheduled slots
 
-# Scheduled for 5:27 pm and 7:27 pm IST (11:57 and 13:57 UTC). GitHub often
-# starts timed jobs late, so it starts early, waits until exactly 6:00 / 8:00
-# pm IST, then publishes the approved draft. 8 pm is the back-up slot.
-# If you change post_times_ist in config.json, change these times too
-# (each should be about 30 minutes before a post time, in UTC).
+# Posting slots (IST): 7:30 pm and 3:30 am, with back-ups at 8:30 pm and 4:30 am.
+# GitHub often starts timers late, so each run starts about 33 minutes early
+# (13:27, 14:27, 21:27 and 22:27 UTC), waits for the exact time, then posts
+# whatever is approved and due. If you change "slots" in config.json, change
+# these times too (about 30 minutes before each slot and back-up, in UTC).
 on:
   schedule:
-    - cron: "57 11,13 * * *"
+    - cron: "27 13,14,21,22 * * *"
   workflow_dispatch:
 
 concurrency:
