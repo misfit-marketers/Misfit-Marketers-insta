@@ -1,8 +1,12 @@
 {
   "last_update_id": 825911666,
   "last_theme": "dark",
-  "pending": null,
   "series_counters": {
     "MarketingTip": 8
-  }
+  },
+  "drafts": [],
+  "merged_seeds": [
+    "2026-10-15_new_series.txt",
+    "front_2026-10-15_restore.txt"
+  ]
 }
