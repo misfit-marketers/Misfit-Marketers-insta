@@ -1,6 +1,61 @@
 {
-    "last_update_id": 0,
-    "last_theme": "light",
-    "pending": null,
-    "series_counters": {}
+  "last_update_id": 0,
+  "last_theme": "light",
+  "pending": {
+    "id": "20261014-110907",
+    "series": "MarketingTip",
+    "number": 7,
+    "tag": "MARKETINGTIP#7",
+    "theme": "dark",
+    "topic": "Anchoring effect: why the first price a customer sees shapes every other price",
+    "post": {
+      "topic": "Anchoring effect",
+      "principle": "Anchoring effect",
+      "hook": "What price does your first number set?",
+      "slides": [
+        "When we walk into a store and see a **Rs 1,999** tag first, our brain treats it as the reference point for every other price we encounter.",
+        "Psychology calls this the **anchoring effect** – the tendency to rely heavily on the first piece of information offered when making decisions.",
+        "Our mind anchors because the brain seeks efficiency; the initial number creates a mental benchmark that simplifies later comparisons.",
+        "Marketers use this by showing a **high‑priced ‘original’ tag** before the discounted price, making the sale feel like a bargain.",
+        "A simple trick: list a premium package first, then a slightly cheaper option; the second appears more affordable by contrast."
+      ],
+      "takeaway": "Start any pricing presentation with a deliberately high anchor, then reveal the actual offer. This makes the true price look more attractive and can lift conversion rates.",
+      "caption": "Ever wonder why a discount feels sweeter after you’ve seen the original price? It’s not magic – it’s anchoring.\n\nThe first number we encounter becomes a mental benchmark. When you present a higher ‘original’ price, every subsequent figure is judged against that anchor, often making the real price appear like a great deal.\n\nTry placing your premium tier or a struck‑through price first in your pricing tables or ads. Watch how the perceived value of your core offer rises.\n\nWhat anchoring tricks have you tried in your campaigns?",
+      "hashtags": [
+        "#marketingpsychology",
+        "#anchoringeffect",
+        "#pricingstrategy",
+        "#consumerbehaviour",
+        "#brandtips",
+        "#entrepreneurship",
+        "#designthinking"
+      ],
+      "fact_check": [
+        {
+          "claim": "Anchoring effect describes the tendency to rely heavily on the first piece of information offered when making decisions.",
+          "source": "Tversky & Kahneman, 1974, \"Judgment under Uncertainty: Heuristics and Biases\"",
+          "confidence": "high"
+        },
+        {
+          "claim": "Presenting a higher original price before a discount makes the discounted price seem more attractive.",
+          "source": "Cialdini, 2009, \"Influence: Science and Practice\"; numerous marketing studies on price anchoring",
+          "confidence": "high"
+        }
+      ],
+      "model": "groq:openai/gpt-oss-120b"
+    },
+    "caption": "Ever wonder why a discount feels sweeter after you’ve seen the original price? It’s not magic – it’s anchoring.\n\nThe first number we encounter becomes a mental benchmark. When you present a higher ‘original’ price, every subsequent figure is judged against that anchor, often making the real price appear like a great deal.\n\nTry placing your premium tier or a struck‑through price first in your pricing tables or ads. Watch how the perceived value of your core offer rises.\n\nWhat anchoring tricks have you tried in your campaigns?\n\n#marketingpsychology #anchoringeffect #pricingstrategy #consumerbehaviour #brandtips #entrepreneurship #designthinking",
+    "images": [
+      "posts/20261014-110907/01.jpg",
+      "posts/20261014-110907/02.jpg",
+      "posts/20261014-110907/03.jpg",
+      "posts/20261014-110907/04.jpg",
+      "posts/20261014-110907/05.jpg",
+      "posts/20261014-110907/06.jpg",
+      "posts/20261014-110907/07.jpg"
+    ],
+    "created_at": "2026-10-14T11:09:07+00:00",
+    "status": "awaiting"
+  },
+  "series_counters": {}
 }
