@@ -1,0 +1,43 @@
+name: 5. Go ahead and post
+
+# Run this by hand (Actions tab, Run workflow) to post the approved draft
+# right now. It reads your latest Telegram taps first, so you can tap
+# Approve and then run this straight away.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: misfit-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Read Telegram, then post the approved draft now
+        run: python -m src.main post-now
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      - name: Save drafts and state back to the repository
+        if: always()
+        run: |
+          git config user.name "misfit-bot"
+          git config user.email "misfit-bot@users.noreply.github.com"
+          git add -A posts state content
+          if git diff --cached --quiet; then echo "Nothing to save"; exit 0; fi
+          git commit -m "bot: update drafts and state"
+          git pull --rebase --autostash
+          git push

@@ -1,11 +1,13 @@
-name: 4. Post at 5 pm IST
+name: 4. Post at 6 pm and 8 pm IST
 
-# Starts at 4:48 pm IST (11:18 UTC), waits until exactly 5:00 pm IST, then
-# publishes the approved draft. If you change post_time_ist in config.json,
-# change this time too (it must be 5 to 20 minutes before the post time, in UTC).
+# Scheduled for 5:27 pm and 7:27 pm IST (11:57 and 13:57 UTC). GitHub often
+# starts timed jobs late, so it starts early, waits until exactly 6:00 / 8:00
+# pm IST, then publishes the approved draft. 8 pm is the back-up slot.
+# If you change post_times_ist in config.json, change these times too
+# (each should be about 30 minutes before a post time, in UTC).
 on:
   schedule:
-    - cron: "18 11 * * *"
+    - cron: "57 11,13 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -18,7 +20,7 @@ permissions:
 jobs:
   post:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
