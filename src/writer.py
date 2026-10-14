@@ -1,4 +1,7 @@
-"""Writes a carousel with Google's Gemini API (free tier)."""
+"""Writes a carousel with a free AI API: Groq (key starts with gsk_) or
+Google Gemini (key starts with AIza). Put either key in the GEMINI_API_KEY
+secret (or GROQ_API_KEY) and the right service is picked automatically."""
+import os
 import json
 import re
 import time
@@ -8,6 +11,66 @@ import requests
 from .common import CONTENT, DRY_RUN, clean_text, env, load_json
 
 API = "https://generativelanguage.googleapis.com/v1beta"
+GROQ_API = "https://api.groq.com/openai/v1"
+# Best first. Anything not listed is only used if none of these exist.
+GROQ_PREFERRED = ["openai/gpt-oss-120b", "llama-3.3-70b-versatile", "moonshotai/kimi-k2-instruct",
+                  "meta-llama/llama-4-maverick-17b-128e-instruct", "openai/gpt-oss-20b"]
+
+
+def providers() -> list:
+    """[(service, key)] for every key that is set, Groq first."""
+    keys = [os.environ.get("GROQ_API_KEY", "").strip(), os.environ.get("GEMINI_API_KEY", "").strip()]
+    out = []
+    for k in keys:
+        if not k:
+            continue
+        service = "groq" if k.startswith("gsk_") else "gemini"
+        if (service, k) not in out:
+            out.append((service, k))
+    return sorted(out, key=lambda p: p[0] != "groq")
+
+
+def _groq_models(key: str, preferred: str) -> list:
+    if preferred and preferred != "auto":
+        return [preferred]
+    r = requests.get(f"{GROQ_API}/models", headers={"Authorization": f"Bearer {key}"}, timeout=30)
+    r.raise_for_status()
+    available = [m["id"] for m in r.json().get("data", []) if m.get("active", True)]
+    ordered = [m for m in GROQ_PREFERRED if m in available]
+    skip = ("whisper", "guard", "tts", "playai", "orpheus", "compound", "prompt-guard", "safeguard")
+    ordered += [m for m in available if m not in ordered and not any(x in m.lower() for x in skip)]
+    return ordered
+
+
+def _groq_call(key: str, model: str, prompt: str) -> str:
+    body = {"model": model, "temperature": 0.9, "max_tokens": 3500,
+            "messages": [{"role": "user", "content": prompt}],
+            "response_format": {"type": "json_object"}}
+    if model.startswith("openai/gpt-oss"):
+        body["reasoning_effort"] = "low"
+    r = requests.post(f"{GROQ_API}/chat/completions", headers={"Authorization": f"Bearer {key}"},
+                      json=body, timeout=120)
+    if r.status_code == 400 and "response_format" in r.text:
+        body.pop("response_format")
+        r = requests.post(f"{GROQ_API}/chat/completions", headers={"Authorization": f"Bearer {key}"},
+                          json=body, timeout=120)
+    if r.status_code != 200:
+        raise RuntimeError(f"groq {model}: HTTP {r.status_code} {r.text[:300]}")
+    return r.json()["choices"][0]["message"]["content"]
+
+
+def describe_writer(cfg: dict) -> str:
+    """Used by the setup check: which service and model will write posts."""
+    ps = providers()
+    if not ps:
+        raise RuntimeError("no GROQ_API_KEY or GEMINI_API_KEY secret is set")
+    service, key = ps[0]
+    if service == "groq":
+        models = _groq_models(key, cfg.get("groq_model", "auto"))
+        if not models:
+            raise RuntimeError("Groq key works but lists no usable models")
+        return f"Groq, {models[0]}"
+    return f"Gemini, {_pick_models(key, cfg.get('gemini_model', 'auto'))[0]}"
 
 
 def _pick_models(key: str, preferred: str) -> list:
@@ -124,18 +187,30 @@ def write_post(cfg: dict, series_name: str, topic: str, recent_topics: list, fee
     if DRY_RUN:
         return validate(load_json(CONTENT / "sample_post.json", {}), max_slides)
 
-    key = env("GEMINI_API_KEY")
+    if not providers():
+        env("GEMINI_API_KEY")  # raises the usual "missing secret" message
     prompt = build_prompt(cfg, series_name, topic, recent_topics, feedback, previous)
     errors = []
-    for model in _pick_models(key, cfg.get("gemini_model", "auto"))[:4]:
-        for attempt in range(2):
-            try:
-                text = _call(key, model, prompt)
-                text = re.sub(r"^```(?:json)?|```$", "", text.strip()).strip()
-                post = validate(json.loads(text), max_slides)
-                post["model"] = model
-                return post
-            except Exception as e:  # try again, then the next model
-                errors.append(str(e)[:300])
-                time.sleep(5 if attempt == 0 else 1)
-    raise RuntimeError("All Gemini attempts failed:\n" + "\n".join(errors[-6:]))
+    for service, key in providers():
+        try:
+            if service == "groq":
+                models, call = _groq_models(key, cfg.get("groq_model", "auto"))[:3], _groq_call
+            else:
+                models, call = _pick_models(key, cfg.get("gemini_model", "auto"))[:3], _call
+        except Exception as e:
+            errors.append(f"{service}: could not list models: {str(e)[:250]}")
+            continue
+        for model in models:
+            for attempt in range(2):
+                try:
+                    text = call(key, model, prompt)
+                    text = re.sub(r"^```(?:json)?|```$", "", text.strip()).strip()
+                    post = validate(json.loads(text), max_slides)
+                    post["model"] = f"{service}:{model}"
+                    return post
+                except Exception as e:  # try again, then the next model
+                    errors.append(str(e)[:300])
+                    if "403" in str(e) or "401" in str(e):
+                        break  # access problems won't fix themselves on retry
+                    time.sleep(5 if attempt == 0 else 1)
+    raise RuntimeError("All writer attempts failed:\n" + "\n".join(errors[-6:]))

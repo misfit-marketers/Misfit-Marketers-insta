@@ -421,10 +421,9 @@ def setup_check():
     cfg = load_config()
     results = []
     try:
-        models = writer._pick_models(os.environ["GEMINI_API_KEY"], cfg.get("gemini_model", "auto"))
-        results.append(f"Gemini: OK (will use {models[0]})")
+        results.append(f"Writer: OK ({writer.describe_writer(cfg)})")
     except Exception as e:
-        results.append(f"Gemini: FAILED {e}")
+        results.append(f"Writer: FAILED {e}")
     try:
         me = instagram.whoami(cfg.get("instagram_api_version", "v25.0"))
         results.append(f"Instagram: OK (@{me.get('username')}, id {me.get('user_id')})")
@@ -463,6 +462,21 @@ def main():
         print(__doc__)
         return
     cmd = sys.argv[1]
+    try:
+        run(cmd)
+    except SystemExit:
+        raise
+    except Exception as e:
+        # Tell the user on Telegram instead of failing silently on GitHub.
+        try:
+            telegram.send_message(f"Something went wrong ({html.escape(cmd)}):\n"
+                                  f"<code>{html.escape(str(e)[-900:])}</code>")
+        except Exception:
+            pass
+        raise
+
+
+def run(cmd: str):
     if cmd == "generate":
         topic = os.environ.get("TOPIC", "").strip() or None
         generate(topic=topic, scheduled=os.environ.get("GITHUB_EVENT_NAME") == "schedule")

@@ -17,6 +17,14 @@ TOPICS_FILE = CONTENT / "topics.txt"
 
 DRY_RUN = os.environ.get("DRY_RUN") == "1"
 
+# The save step in the workflows expects a posts/ folder; create it if the
+# upload skipped the hidden posts/.gitkeep file.
+try:
+    POSTS.mkdir(exist_ok=True)
+    (POSTS / ".gitkeep").touch(exist_ok=True)
+except OSError:
+    pass
+
 
 def now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
