@@ -1,72 +1,8 @@
 {
   "last_update_id": 825911666,
-  "last_theme": "light",
-  "pending": {
-    "id": "20261014-123151",
-    "series": "MarketingTip",
-    "number": 7,
-    "tag": "MARKETINGTIP#7",
-    "theme": "dark",
-    "topic": "Decoy effect: how a third pricing plan makes the middle one sell",
-    "post": {
-      "topic": "Decoy Effect in Pricing",
-      "principle": "Decoy Effect",
-      "hook": "Why does a third plan push sales?",
-      "slides": [
-        "When you offer only two plans – $19 basic and $49 premium – many prospects stare at the price gap. Adding a $39 “standard” plan, which looks only slightly cheaper than premium, nudges them toward the $49 option.",
-        "Psychologists call this the **decoy effect**. The extra middle tier is deliberately unattractive, yet it changes how we compare the other two.",
-        "Our brain evaluates options **relatively**, not absolutely. The decoy creates a reference point that makes the higher-priced plan appear more valuable for only a little extra cost.",
-        "Marketers exploit this by positioning the decoy **close in price** to the premium but with fewer features, so the premium seems like the best bang-for-buck.",
-        "A classic experiment by Ariely (2008) showed that 70 % of participants chose the premium when a decoy was present, versus 30 % without it.",
-        "In practice, SaaS companies often list three tiers: **Starter $19**, **Growth $39**, **Pro $49**. The Growth plan is the decoy that drives upgrades to Pro.",
-        "When designing your pricing page, add a decoy that is **just a shade cheaper** than your target plan, but with noticeably fewer benefits."
-      ],
-      "takeaway": "Add a strategically placed middle tier that’s only marginally cheaper than your premium offering, and watch the premium’s conversion rate climb. Test the three-tier layout against a two-tier version to confirm the lift.",
-      "caption": "Ever wondered why a third pricing option can make the middle one look bland and the top one irresistible? It’s not magic – it’s the decoy effect at work.\n\nBy giving prospects a reference point that feels like a compromise, you subtly steer them toward the option that delivers the most profit. A well-placed decoy can boost your premium conversions by double-digits.\n\nReady to experiment with a decoy on your own pricing page? Share your thoughts or results below – we’d love to hear how it works for you!",
-      "hashtags": [
-        "#marketingpsychology",
-        "#pricingstrategy",
-        "#decoyeffect",
-        "#behaviouraldeconomics",
-        "#SaaSmarketing",
-        "#conversionoptimization",
-        "#designthinking"
-      ],
-      "fact_check": [
-        {
-          "claim": "Ariely 2008 experiment showed 70% chose premium with decoy versus 30% without",
-          "source": "Dan Ariely, \"Predictably Irrational\", 2008, chapter on decoy effect",
-          "confidence": "high"
-        },
-        {
-          "claim": "Consumers evaluate options relatively rather than absolutely",
-          "source": "Behavioural economics literature, prospect theory, Kahneman & Tversky, 1979",
-          "confidence": "high"
-        },
-        {
-          "claim": "A decoy placed close in price to premium but with fewer features makes premium appear better value",
-          "source": "Marketing case studies on SaaS pricing, various industry reports, 2015‑2022",
-          "confidence": "medium"
-        }
-      ],
-      "model": "groq:openai/gpt-oss-120b"
-    },
-    "caption": "Ever wondered why a third pricing option can make the middle one look bland and the top one irresistible? It’s not magic – it’s the decoy effect at work.\n\nBy giving prospects a reference point that feels like a compromise, you subtly steer them toward the option that delivers the most profit. A well-placed decoy can boost your premium conversions by double-digits.\n\nReady to experiment with a decoy on your own pricing page? Share your thoughts or results below – we’d love to hear how it works for you!\n\n#marketingpsychology #pricingstrategy #decoyeffect #behaviouraldeconomics #SaaSmarketing #conversionoptimization #designthinking",
-    "images": [
-      "posts/20261014-123151/01.jpg",
-      "posts/20261014-123151/02.jpg",
-      "posts/20261014-123151/03.jpg",
-      "posts/20261014-123151/04.jpg",
-      "posts/20261014-123151/05.jpg",
-      "posts/20261014-123151/06.jpg",
-      "posts/20261014-123151/07.jpg",
-      "posts/20261014-123151/08.jpg",
-      "posts/20261014-123151/09.jpg"
-    ],
-    "created_at": "2026-10-14T12:31:52+00:00",
-    "status": "approved",
-    "approved_at": "2026-10-14T12:33:53+00:00",
-    "publish_at": "2026-10-15T11:30:00+00:00"
-  },
-  "series_counters": {}
+  "last_theme": "dark",
+  "pending": null,
+  "series_counters": {
+    "MarketingTip": 8
+  }
 }
