@@ -1,14 +1,15 @@
-"""Turns a post (hook, body slides, takeaway) into 1080x1080 JPEG slides
+"""Turns a post (hook, body slides, takeaway) into 1080x1350 (4:5) JPEG slides
 that match the MISFIT look: solid black or light-grey background, logo top
 left, letter-spaced series tag at the top, centred text with **bold** words."""
 import re
+import unicodedata
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
 from .common import ASSETS
 
-SIZE = 1080
+W, H = 1080, 1350   # Instagram's recommended portrait carousel size (4:5)
 THEMES = {
     "light": {"bg": (217, 217, 217), "fg": (0, 0, 0), "logo": "logo_light.png"},
     "dark": {"bg": (0, 0, 0), "fg": (255, 255, 255), "logo": "logo_dark.png"},
@@ -34,6 +35,43 @@ def _font_path(kind: str) -> Path:
 
 
 _font_cache = {}
+_charset = None
+
+# Look-alike swaps for characters AI writers like to use but fonts often lack.
+SWAPS = {
+    "\u2010": "-", "\u2011": "-", "\u2012": "-", "\u2212": "-", "\u00ad": "",
+    "\u2014": ", ", "\u2015": ", ",
+    "\u00a0": " ", "\u2007": " ", "\u2009": " ", "\u200a": " ", "\u202f": " ", "\u2002": " ", "\u2003": " ",
+    "\u200b": "", "\u200c": "", "\u200d": "", "\u2060": "", "\ufeff": "",
+    "\u20b9": "Rs ", "\u2026": "...", "\u2032": "'", "\u2033": '"', "\u00d7": "x",
+}
+
+
+def supported_chars() -> set:
+    """Characters every font we draw with actually contains."""
+    global _charset
+    if _charset is None:
+        try:
+            from fontTools.ttLib import TTFont
+            sets = [set(TTFont(str(_font_path(k))).getBestCmap()) for k in ("body", "bold", "hook")]
+            _charset = set.intersection(*sets)
+        except Exception:
+            _charset = set(range(32, 127))  # plain ASCII if fontTools is missing
+    return _charset
+
+
+def safe_text(text: str) -> str:
+    """Replace or drop any character the fonts can't draw, so no empty boxes appear."""
+    ok = supported_chars()
+    out = []
+    for ch in text:
+        if ch in SWAPS:
+            ch = SWAPS[ch]
+        elif ord(ch) not in ok and ch not in "\n":
+            base = unicodedata.normalize("NFKD", ch).encode("ascii", "ignore").decode()
+            ch = base if base and all(ord(c) in ok for c in base) else ""
+        out.append(ch)
+    return re.sub(r" {2,}", " ", "".join(out))
 
 
 def font(kind: str, size: int) -> ImageFont.FreeTypeFont:
@@ -110,7 +148,7 @@ def layout_body(text, size, max_width):
 
 def _base(theme_name, tag):
     theme = THEMES[theme_name]
-    img = Image.new("RGB", (SIZE, SIZE), theme["bg"])
+    img = Image.new("RGB", (W, H), theme["bg"])
     logo = Image.open(ASSETS / theme["logo"]).convert("RGB")
     img.paste(logo, (18, 25))
     d = ImageDraw.Draw(img)
@@ -119,7 +157,7 @@ def _base(theme_name, tag):
     tracking = 6.5
     chars = list(tag.upper())
     total = sum(f.getlength(c) for c in chars) + tracking * (len(chars) - 1)
-    x = (SIZE - total) / 2
+    x = (W - total) / 2
     for c in chars:
         d.text((x, 93), c, font=f, fill=theme["fg"], anchor="ls")
         x += f.getlength(c) + tracking
@@ -128,7 +166,7 @@ def _base(theme_name, tag):
 
 def draw_hook(text, theme_name, tag):
     img, d, theme = _base(theme_name, tag)
-    text = text.replace("**", "")
+    text = safe_text(text).replace("**", "")
     max_w = 880
     for size in range(112, 60, -4):
         f = font("hook", size)
@@ -141,18 +179,19 @@ def draw_hook(text, theme_name, tag):
             else:
                 line = trial
         lines.append(line)
-        if len(lines) <= 4:
+        if len(lines) <= 5:
             break
     lh = int(size * 1.2)
-    top = SIZE / 2 - lh * len(lines) / 2 + size * 0.85
+    top = H / 2 - lh * len(lines) / 2 + size * 0.85
     for i, ln in enumerate(lines):
-        d.text((SIZE / 2, top + i * lh), ln, font=f, fill=theme["fg"], anchor="ms")
+        d.text((W / 2, top + i * lh), ln, font=f, fill=theme["fg"], anchor="ms")
     return img
 
 
 def draw_body(text, theme_name, tag):
     img, d, theme = _base(theme_name, tag)
-    max_w, max_h = 930, 720
+    text = safe_text(text)
+    max_w, max_h = 930, 980
     for size in range(46, 27, -2):
         lines = layout_body(text, size, max_w)
         lh = int(size * 1.55)
@@ -160,9 +199,9 @@ def draw_body(text, theme_name, tag):
             break
     space = font("body", size).getlength(" ")
     block_h = lh * len(lines)
-    baseline = SIZE / 2 - block_h / 2 + size * 1.05
+    baseline = H / 2 - block_h / 2 + size * 1.05
     for i, (line, width) in enumerate(lines):
-        x = (SIZE - width) / 2
+        x = (W - width) / 2
         y = baseline + i * lh
         for k, word in enumerate(line):
             if k:

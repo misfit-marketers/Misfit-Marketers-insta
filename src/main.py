@@ -32,7 +32,8 @@ HELP = (
     "/new <i>idea</i>  make a draft now about your idea\n"
     "/topic <i>idea</i>  add an idea to the topic list\n"
     "/topics  show the next topics\n"
-    "/status  what is pending\n\n"
+    "/status  what is pending\n"
+    "/rerender  redraw the current draft's slides (same text) with the latest template\n\n"
     "I act on your taps and replies at the next check, which runs every 30 minutes."
 )
 
@@ -310,6 +311,12 @@ def check() -> None:
             nxt = topic_backlog()[:10]
             telegram.send_message("<b>Next topics</b>\n" + "\n".join(f"{i+1}. {html.escape(t)}" for i, t in enumerate(nxt))
                                   if nxt else "The topic list is empty, so the writer will pick fresh topics itself.")
+        elif cmd == "/rerender":
+            if pending:
+                telegram.send_message("Redrawing the slides...")
+                rerender(pending)
+            else:
+                telegram.send_message("There is no draft to redraw right now.")
         elif cmd == "/new":
             if pending and pending.get("status") == "approved":
                 telegram.send_message(f"{describe(pending)} is already scheduled. Skip it first if you want a new draft.",
@@ -389,6 +396,30 @@ def post_due():
                               "Approve it to schedule it for tomorrow, or tap Post now.",
                               buttons=[telegram.review_buttons(pending["id"])[0],
                                        [{"text": "Post now", "callback_data": f"postnow:{pending['id']}"}]])
+
+
+def rerender(draft: dict):
+    """Same words, fresh slides: useful after changing the template or fonts."""
+    cfg, state = load_config(), load_state()
+    draft = state["pending"]
+    new_id = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
+    while (POSTS / new_id).exists() or new_id == draft["id"]:
+        new_id += "b"
+    closing = None
+    if cfg.get("closing_slide", {}).get("enabled"):
+        closing = cfg["closing_slide"]["text"].format(handle=cfg.get("instagram_handle", ""))
+    paths = render_post(draft["post"], draft["theme"], draft["tag"], POSTS / new_id, closing=closing)
+    remove_draft_files(draft)
+    draft["id"] = new_id
+    draft["images"] = [str(p.relative_to(ROOT)) for p in paths]
+    save_state(state)
+    full = {**draft, "images": [str(ROOT / p) for p in draft["images"]]}
+    if draft.get("status") == "approved":
+        telegram.send_album(full["images"])
+        telegram.send_message(f"Redrawn. {describe(draft)} is still scheduled for {slot_text(draft['publish_at'])}.",
+                              buttons=telegram.scheduled_buttons(new_id))
+    else:
+        telegram.send_review(full)
 
 
 def skip(draft: dict):

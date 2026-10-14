@@ -83,7 +83,14 @@ def clean_text(text: str) -> str:
     if not text:
         return text
     # No em dashes: turn " — " / "—" into a comma pause.
-    text = re.sub(r"\s*—\s*", ", ", text)
+    text = re.sub(r"\s*[—―]\s*", ", ", text)
+    # Plain hyphens and spaces instead of the special Unicode ones AI writers use.
+    for ch in "\u2010\u2011\u2012\u2212":
+        text = text.replace(ch, "-")
+    for ch in "\u00a0\u2007\u2009\u200a\u202f":
+        text = text.replace(ch, " ")
+    for ch in "\u200b\u200c\u200d\u2060\ufeff\u00ad":
+        text = text.replace(ch, "")
     # The bundled fonts have no rupee glyph.
     text = text.replace("₹", "Rs ")
     # Collapse doubled spaces and stray spaces before punctuation.
