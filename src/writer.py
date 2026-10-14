@@ -131,7 +131,8 @@ HOUSE RULES:
 - The hook is a short question or provocative line, at most 9 words, no asterisks.
 - The takeaway is one or two practical sentences (do not start it with the word 'Takeaway').
 - Accuracy matters more than drama. Only cite studies, researchers, years and numbers you are confident are real. If unsure, describe the finding generally without names or figures. Never invent quotes, statistics or experiments. Never claim MISFIT ran an experiment.
-- Use examples that make sense to an Indian and global audience.
+- Use examples that make sense to a global audience.
+- Write every price and money amount in US dollars with the $ sign (for example $29 or $1,200). Never use rupees, ₹, Rs or INR.
 {rules}
 
 RECENTLY POSTED (do not repeat these principles):
@@ -164,10 +165,17 @@ Return ONLY a JSON object with exactly these keys:
     return prompt
 
 
+RUPEE = re.compile(r"₹|\bRs\.?\s?\d|\bINR\b|\brupees?\b", re.I)
+
+
 def validate(post: dict, max_slides: int) -> dict:
     for k in ("hook", "slides", "takeaway", "caption"):
         if not post.get(k):
             raise ValueError(f"writer output missing '{k}'")
+    visible = " ".join([str(post.get("hook", "")), str(post.get("takeaway", "")), str(post.get("caption", ""))]
+                       + [str(x) for x in post.get("slides", [])])
+    if RUPEE.search(visible):
+        raise ValueError("writer used rupees; asking again for dollars")
     if not isinstance(post["slides"], list) or len(post["slides"]) < 3:
         raise ValueError("writer returned too few slides")
     post["slides"] = [clean_text(s) for s in post["slides"][:max_slides] if str(s).strip()]
