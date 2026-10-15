@@ -1,0 +1,67 @@
+name: 6. App action
+
+# Started by the MISFIT app (never on a timer). Each button in the app runs
+# this once. You can ignore it in the Actions list; the app shows its progress.
+run-name: "App: ${{ inputs.action }} [${{ inputs.request_id }}]"
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "What to do (sent by the app)"
+        required: true
+        type: string
+      draft_id:
+        description: "Draft id"
+        required: false
+        type: string
+        default: ""
+      text:
+        description: "Extra input"
+        required: false
+        type: string
+        default: ""
+      request_id:
+        description: "Request id the app uses to follow this run"
+        required: true
+        type: string
+
+concurrency:
+  group: misfit-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  act:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Do what the app asked
+        run: python -m src.main app
+        env:
+          APP_ACTION: ${{ inputs.action }}
+          APP_DRAFT: ${{ inputs.draft_id }}
+          APP_TEXT: ${{ inputs.text }}
+          APP_REQUEST: ${{ inputs.request_id }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      - name: Save drafts and state back to the repository
+        if: always()
+        run: |
+          git config user.name "misfit-bot"
+          git config user.email "misfit-bot@users.noreply.github.com"
+          git add -A posts state content
+          if git diff --cached --quiet; then echo "Nothing to save"; exit 0; fi
+          git commit -m "bot: update drafts and state (app)"
+          git pull --rebase --autostash
+          git push
