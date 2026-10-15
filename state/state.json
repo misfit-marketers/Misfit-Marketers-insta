@@ -1,5 +1,5 @@
 {
-  "last_update_id": 825911666,
+  "last_update_id": 825911674,
   "last_theme": "dark",
   "series_counters": {
     "MarketingTip": 8
@@ -64,11 +64,11 @@
         "posts/20261015-012352/07.jpg"
       ],
       "created_at": "2026-10-15T01:23:52+00:00",
-      "status": "awaiting",
+      "status": "approved",
       "backlog_line": "[BrandBreakdown] The Economist's subscription offer: how a \"pointless\" print-only option sold more bundles",
       "slot": "evening",
       "slot_at": "2026-10-15T14:00:00+00:00",
-      "publish_at": null,
+      "publish_at": "2026-10-15T14:00:00+00:00",
       "reminded": false,
       "msg_ids": [
         40,
@@ -79,7 +79,8 @@
         45,
         46,
         47
-      ]
+      ],
+      "approved_at": "2026-10-15T08:29:23+00:00"
     },
     {
       "id": "20261015-012357",
@@ -135,11 +136,11 @@
         "posts/20261015-012357/07.jpg"
       ],
       "created_at": "2026-10-15T01:23:57+00:00",
-      "status": "awaiting",
+      "status": "approved",
       "backlog_line": "[CopyClinic] \"Submit\" buttons: why first-person CTAs like \"Start my free trial\" get more clicks",
       "slot": "night",
       "slot_at": "2026-10-15T22:00:00+00:00",
-      "publish_at": null,
+      "publish_at": "2026-10-15T22:00:00+00:00",
       "reminded": false,
       "msg_ids": [
         48,
@@ -150,11 +151,17 @@
         53,
         54,
         55
-      ]
+      ],
+      "approved_at": "2026-10-15T08:29:24+00:00"
     }
   ],
   "merged_seeds": [
     "2026-10-15_new_series.txt",
     "front_2026-10-15_restore.txt"
+  ],
+  "seen_updates": [
+    825911672,
+    825911673,
+    825911674
   ]
 }
