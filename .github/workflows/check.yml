@@ -1,9 +1,9 @@
 name: 2. Check Telegram for approvals
 
-# Every 30 minutes. Reads your button taps and replies, then acts on them.
+# Every 10 minutes. Reads your button taps and replies, then acts on them.
 on:
   schedule:
-    - cron: "7,37 * * * *"
+    - cron: "3,13,23,33,43,53 * * * *"
   workflow_dispatch:
 
 concurrency:
