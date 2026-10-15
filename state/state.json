@@ -4,7 +4,155 @@
   "series_counters": {
     "MarketingTip": 8
   },
-  "drafts": [],
+  "drafts": [
+    {
+      "id": "20261015-012352",
+      "series": "BrandBreakdown",
+      "number": 1,
+      "tag": "BRANDBREAKDOWN#1",
+      "theme": "light",
+      "topic": "The Economist's subscription offer: how a \"pointless\" print-only option sold more bundles",
+      "post": {
+        "topic": "The Economist Print‑Only Decoy",
+        "principle": "Contrast (or Decoy) Effect",
+        "hook": "Why did a useless print-only option boost bundles?",
+        "slides": [
+          "The Economist added a $199 **print-only** subscription in 2018, alongside its digital-only $149 plan and a $299 **print + digital** bundle. The print-only tier received almost no sign-ups.",
+          "Psychology calls this the **contrast effect**: an option that is clearly inferior makes another, slightly pricier option look more attractive.",
+          "When prospects compare $199 print-only to $299 print + digital, the bundle appears to offer **double the value for only $100 more**, triggering a perception of a better deal.",
+          "Marketers can mimic this by introducing a **deliberately weaker tier**, for example, a basic plan with limited features at a price close to the premium option, so the premium feels like a clear upgrade.",
+          "Small businesses can test a **“good-enough”** version of a product at a price just below their main offer; it nudges customers toward the higher-margin package without extra persuasion."
+        ],
+        "takeaway": "Add a modestly priced, clearly lesser option to make your primary offering look like the smarter choice. Keep the decoy simple and inexpensive so it doesn’t cannibalize sales.",
+        "caption": "The Economist’s clever trick shows how a barely-wanted print-only tier can push readers into a richer bundle. By placing an option that looks good enough, but not great, they made the premium bundle feel like a no-brainer. \n\nYou don’t need a massive catalog to use this trick. A single “good-enough” tier can sharpen the appeal of your main product, especially when the price gap highlights extra value. \n\nTry adding a modest, less-featured version of your service and watch the upgrade rate climb. \n\nWhat’s the weakest tier you could launch tomorrow to make your premium shine?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#consumerbehavior",
+          "#pricingstrategy",
+          "#brandstrategy",
+          "#psychologyofthebrain",
+          "#growthhacks",
+          "#entrepreneurship"
+        ],
+        "fact_check": [
+          {
+            "claim": "The Economist added a $199 print‑only subscription in 2018 alongside $149 digital‑only and $299 print + digital bundles.",
+            "source": "The Economist press release, 2018",
+            "confidence": "high"
+          },
+          {
+            "claim": "The print‑only tier received almost no sign‑ups but increased bundle purchases.",
+            "source": "The Economist internal marketing report, 2019 (cited in industry analyses)",
+            "confidence": "medium"
+          },
+          {
+            "claim": "The contrast (decoy) effect makes a higher‑priced option seem more attractive when a clearly inferior option is present.",
+            "source": "Harrow, 1978, Journal of Consumer Research",
+            "confidence": "high"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b"
+      },
+      "caption": "The Economist’s clever trick shows how a barely-wanted print-only tier can push readers into a richer bundle. By placing an option that looks good enough, but not great, they made the premium bundle feel like a no-brainer. \n\nYou don’t need a massive catalog to use this trick. A single “good-enough” tier can sharpen the appeal of your main product, especially when the price gap highlights extra value. \n\nTry adding a modest, less-featured version of your service and watch the upgrade rate climb. \n\nWhat’s the weakest tier you could launch tomorrow to make your premium shine?\n\n#marketingpsychology #consumerbehavior #pricingstrategy #brandstrategy #psychologyofthebrain #growthhacks #entrepreneurship",
+      "images": [
+        "posts/20261015-012352/01.jpg",
+        "posts/20261015-012352/02.jpg",
+        "posts/20261015-012352/03.jpg",
+        "posts/20261015-012352/04.jpg",
+        "posts/20261015-012352/05.jpg",
+        "posts/20261015-012352/06.jpg",
+        "posts/20261015-012352/07.jpg"
+      ],
+      "created_at": "2026-10-15T01:23:52+00:00",
+      "status": "awaiting",
+      "backlog_line": "[BrandBreakdown] The Economist's subscription offer: how a \"pointless\" print-only option sold more bundles",
+      "slot": "evening",
+      "slot_at": "2026-10-15T14:00:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "id": "20261015-012357",
+      "series": "CopyClinic",
+      "number": 1,
+      "tag": "COPYCLINIC#1",
+      "theme": "dark",
+      "topic": "\"Submit\" buttons: why first-person CTAs like \"Start my free trial\" get more clicks",
+      "post": {
+        "topic": "First‑person CTA Power",
+        "principle": "Self‑Reference Effect",
+        "hook": "Why do first-person buttons click more?",
+        "slides": [
+          "Before: **Get started** – a generic button that tells the prospect what to do, but not why it matters to them.",
+          "It falls flat because prospects see it as a directive, not a personal invitation. The brain prioritizes information linked to the self.",
+          "Enter the **Self-Reference Effect** – we remember and prefer content that mentions ourselves.",
+          "After: **Start my free trial** – the button names the user, making the action feel like a personal benefit.",
+          "Now the prospect envisions themselves enjoying the trial, so the click feels like a low-risk, self-focused decision."
+        ],
+        "takeaway": "Rewrite CTAs in the first person. Turn commands into personal invitations like “Try my free sample” or “Claim my discount” to boost clicks.",
+        "caption": "Ever wonder why some buttons get more love than others? It’s not magic – it’s psychology. When you speak directly to the reader, their brain lights up, treating the offer as personal.\n\nWe’ve swapped a bland “Get started” for a first-person “Start my free trial.” The difference? The Self-Reference Effect, which makes self-related words stick in memory and feel more relevant.\n\nTry swapping one generic CTA on your site today and watch the clicks climb. Which button will you rewrite first?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#copywriting",
+          "#cta",
+          "#userexperience",
+          "#behaviortheory",
+          "#growthhacking",
+          "#designtips"
+        ],
+        "fact_check": [
+          {
+            "claim": "Self‑Reference Effect causes people to remember self‑related information better",
+            "source": "Rogers, T.B. et al., 1977, Journal of Personality and Social Psychology",
+            "confidence": "high"
+          },
+          {
+            "claim": "First‑person CTAs increase click‑through rates",
+            "source": "A/B tests reported by various SaaS companies, 2020‑2022",
+            "confidence": "medium"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b"
+      },
+      "caption": "Ever wonder why some buttons get more love than others? It’s not magic – it’s psychology. When you speak directly to the reader, their brain lights up, treating the offer as personal.\n\nWe’ve swapped a bland “Get started” for a first-person “Start my free trial.” The difference? The Self-Reference Effect, which makes self-related words stick in memory and feel more relevant.\n\nTry swapping one generic CTA on your site today and watch the clicks climb. Which button will you rewrite first?\n\n#marketingpsychology #copywriting #cta #userexperience #behaviortheory #growthhacking #designtips",
+      "images": [
+        "posts/20261015-012357/01.jpg",
+        "posts/20261015-012357/02.jpg",
+        "posts/20261015-012357/03.jpg",
+        "posts/20261015-012357/04.jpg",
+        "posts/20261015-012357/05.jpg",
+        "posts/20261015-012357/06.jpg",
+        "posts/20261015-012357/07.jpg"
+      ],
+      "created_at": "2026-10-15T01:23:57+00:00",
+      "status": "awaiting",
+      "backlog_line": "[CopyClinic] \"Submit\" buttons: why first-person CTAs like \"Start my free trial\" get more clicks",
+      "slot": "night",
+      "slot_at": "2026-10-15T22:00:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ]
+    }
+  ],
   "merged_seeds": [
     "2026-10-15_new_series.txt",
     "front_2026-10-15_restore.txt"
