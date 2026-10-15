@@ -573,6 +573,7 @@ def post_due():
         wait = (upcoming[0] - now).total_seconds()
         log(f"Waiting {int(wait)}s for {upcoming[0].isoformat()}")
         time.sleep(wait)
+    os.environ["CHECK_REPORT"] = "0"
     check()  # picks up last-minute taps, then process_due() posts what's due
 
 
@@ -581,6 +582,7 @@ def post_now_cmd():
     straight away. POST_WHICH=all posts every approved draft."""
     which = os.environ.get("POST_WHICH", "next").strip().lower()
     before = {d["id"] for d in load_state()["drafts"]}
+    os.environ["CHECK_REPORT"] = "0"
     check()
     state = load_state()
     approved = [d for d in drafts_of(state) if d["status"] == "approved"]
@@ -709,18 +711,37 @@ def check() -> None:
     merge_topic_seeds(cfg)
     state = load_state()
     authorised = str(telegram.chat_id())
-    updates = telegram.get_updates(int(state["last_update_id"]) + 1)
-    log(f"{len(updates)} new Telegram update(s)")
+    seen = [int(x) for x in state.get("seen_updates", [])]
+    # Peek first (this confirms nothing), handle every update not handled before,
+    # then confirm. Earlier versions asked only for ids above the last one seen,
+    # which silently threw away taps if Telegram's numbering ever went backwards.
+    updates = sorted(telegram.get_updates(), key=lambda u: u["update_id"])
+    fresh = [u for u in updates if u["update_id"] not in seen]
+    report = {"read": len(updates), "fresh": len(fresh), "handled": 0, "other_chat": 0}
+    ids = [u["update_id"] for u in updates]
+    log(f"Telegram: {len(updates)} waiting update(s), {len(fresh)} new; ids {ids[:1]}..{ids[-1:]}; "
+        f"last handled {state['last_update_id']}")
+    if not updates:
+        try:
+            info = telegram.webhook_info()
+            log(f"Webhook info: url={info.get('url') or 'none'} pending={info.get('pending_update_count')} "
+                f"last_error={info.get('last_error_message')}")
+            report["webhook"] = info.get("url") or ""
+        except Exception as e:
+            log(f"Webhook info failed: {e}")
 
-    for upd in updates:
+    for upd in fresh:
         state = load_state()
-        state["last_update_id"] = upd["update_id"]
+        state["last_update_id"] = max(int(state["last_update_id"]), upd["update_id"])
+        state["seen_updates"] = (state.get("seen_updates", []) + [upd["update_id"]])[-300:]
         save_state(state)
 
         if "callback_query" in upd:
             cq = upd["callback_query"]
             if str(cq.get("message", {}).get("chat", {}).get("id")) != authorised:
+                report["other_chat"] += 1
                 continue
+            report["handled"] += 1
             action, _, draft_id = cq.get("data", "").partition(":")
             if not find(state, draft_id):
                 telegram.answer_callback(cq["id"], "This draft is no longer active.")
@@ -741,7 +762,9 @@ def check() -> None:
 
         msg = upd.get("message") or {}
         if str(msg.get("chat", {}).get("id")) != authorised:
+            report["other_chat"] += 1
             continue
+        report["handled"] += 1
         text = (msg.get("text") or "").strip()
         if not text:
             continue
@@ -798,7 +821,32 @@ def check() -> None:
         else:
             telegram.send_message("There is no draft to revise right now. Send /new to make one, or /help.")
 
+    if updates:  # tell Telegram these are done, so they aren't sent again
+        telegram.get_updates(offset=updates[-1]["update_id"] + 1, limit=1)
     process_due(notify=True)
+    if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch" and os.environ.get("CHECK_REPORT", "1") == "1":
+        send_check_report(report)
+
+
+def send_check_report(report: dict):
+    """Sent when you run '2. Check Telegram for approvals' by hand, so you can see it working."""
+    state = load_state()
+    lines = ["<b>Manual check</b>",
+             f"Taps and messages I found in Telegram: {report['fresh']} new"
+             + (f" ({report['read'] - report['fresh']} already handled)" if report["read"] > report["fresh"] else "")]
+    if report["other_chat"]:
+        lines.append(f"{report['other_chat']} came from a different chat than TELEGRAM_CHAT_ID, so I ignored them. "
+                     "Check that secret.")
+    if report.get("webhook"):
+        lines.append("Another service is connected to this bot (a webhook), and it takes your taps before GitHub "
+                     "can read them.")
+    if report["fresh"] == 0:
+        lines.append("If you tapped a button or sent a message in the last day and I found nothing, another app or "
+                     "website is using this bot's token and reading your messages first. Fix: in BotFather send "
+                     "/revoke, pick this bot, and put the new token in the TELEGRAM_BOT_TOKEN secret on GitHub.")
+    lines.append("")
+    lines.append(status_text(state))
+    telegram.send_message("\n".join(lines))
 
 
 # ------------------------------------------------------------------ maintenance

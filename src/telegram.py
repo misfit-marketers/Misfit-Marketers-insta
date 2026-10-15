@@ -51,16 +51,36 @@ def send_album(paths: list):
             fh.close()
 
 
-def get_updates(offset: int) -> list:
+def get_updates(offset: int = None, limit: int = 100) -> list:
+    """Without an offset this only peeks: Telegram keeps the updates until a
+    later call confirms them with a higher offset."""
     if DRY_RUN:
         return []
-    r = requests.get(_url("getUpdates"), params={"offset": offset, "timeout": 0,
-                                                  "allowed_updates": json.dumps(["message", "callback_query"])},
-                     timeout=60)
+    params = {"timeout": 0, "limit": limit, "allowed_updates": json.dumps(["message", "callback_query"])}
+    if offset is not None:
+        params["offset"] = offset
+    r = requests.get(_url("getUpdates"), params=params, timeout=60)
     body = r.json()
     if not body.get("ok"):
+        desc = str(body.get("description", ""))
+        if "webhook" in desc.lower():
+            raise RuntimeError("Another service is connected to this Telegram bot (a webhook is set), so GitHub "
+                               "cannot read your taps. Remove that connection, or make a new bot token in "
+                               f"BotFather and put it in the TELEGRAM_BOT_TOKEN secret. Telegram said: {desc}")
+        if "terminated by other getupdates" in desc.lower():
+            raise RuntimeError("Another program is reading this bot's messages at the same time as GitHub. "
+                               f"Telegram said: {desc}")
         raise RuntimeError(f"Telegram getUpdates failed: {body}")
     return body["result"]
+
+
+def webhook_info() -> dict:
+    """Shows whether some other service has taken over this bot."""
+    if DRY_RUN:
+        return {}
+    r = requests.get(_url("getWebhookInfo"), timeout=30)
+    body = r.json()
+    return body.get("result", {}) if body.get("ok") else {"error": body}
 
 
 def answer_callback(callback_id: str, text: str = ""):
