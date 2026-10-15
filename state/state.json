@@ -2,86 +2,10 @@
   "last_update_id": 825911674,
   "last_theme": "dark",
   "series_counters": {
-    "MarketingTip": 8
+    "MarketingTip": 8,
+    "BrandBreakdown": 2
   },
   "drafts": [
-    {
-      "id": "20261015-012352",
-      "series": "BrandBreakdown",
-      "number": 1,
-      "tag": "BRANDBREAKDOWN#1",
-      "theme": "light",
-      "topic": "The Economist's subscription offer: how a \"pointless\" print-only option sold more bundles",
-      "post": {
-        "topic": "The Economist Print‑Only Decoy",
-        "principle": "Contrast (or Decoy) Effect",
-        "hook": "Why did a useless print-only option boost bundles?",
-        "slides": [
-          "The Economist added a $199 **print-only** subscription in 2018, alongside its digital-only $149 plan and a $299 **print + digital** bundle. The print-only tier received almost no sign-ups.",
-          "Psychology calls this the **contrast effect**: an option that is clearly inferior makes another, slightly pricier option look more attractive.",
-          "When prospects compare $199 print-only to $299 print + digital, the bundle appears to offer **double the value for only $100 more**, triggering a perception of a better deal.",
-          "Marketers can mimic this by introducing a **deliberately weaker tier**, for example, a basic plan with limited features at a price close to the premium option, so the premium feels like a clear upgrade.",
-          "Small businesses can test a **“good-enough”** version of a product at a price just below their main offer; it nudges customers toward the higher-margin package without extra persuasion."
-        ],
-        "takeaway": "Add a modestly priced, clearly lesser option to make your primary offering look like the smarter choice. Keep the decoy simple and inexpensive so it doesn’t cannibalize sales.",
-        "caption": "The Economist’s clever trick shows how a barely-wanted print-only tier can push readers into a richer bundle. By placing an option that looks good enough, but not great, they made the premium bundle feel like a no-brainer. \n\nYou don’t need a massive catalog to use this trick. A single “good-enough” tier can sharpen the appeal of your main product, especially when the price gap highlights extra value. \n\nTry adding a modest, less-featured version of your service and watch the upgrade rate climb. \n\nWhat’s the weakest tier you could launch tomorrow to make your premium shine?",
-        "hashtags": [
-          "#marketingpsychology",
-          "#consumerbehavior",
-          "#pricingstrategy",
-          "#brandstrategy",
-          "#psychologyofthebrain",
-          "#growthhacks",
-          "#entrepreneurship"
-        ],
-        "fact_check": [
-          {
-            "claim": "The Economist added a $199 print‑only subscription in 2018 alongside $149 digital‑only and $299 print + digital bundles.",
-            "source": "The Economist press release, 2018",
-            "confidence": "high"
-          },
-          {
-            "claim": "The print‑only tier received almost no sign‑ups but increased bundle purchases.",
-            "source": "The Economist internal marketing report, 2019 (cited in industry analyses)",
-            "confidence": "medium"
-          },
-          {
-            "claim": "The contrast (decoy) effect makes a higher‑priced option seem more attractive when a clearly inferior option is present.",
-            "source": "Harrow, 1978, Journal of Consumer Research",
-            "confidence": "high"
-          }
-        ],
-        "model": "groq:openai/gpt-oss-120b"
-      },
-      "caption": "The Economist’s clever trick shows how a barely-wanted print-only tier can push readers into a richer bundle. By placing an option that looks good enough, but not great, they made the premium bundle feel like a no-brainer. \n\nYou don’t need a massive catalog to use this trick. A single “good-enough” tier can sharpen the appeal of your main product, especially when the price gap highlights extra value. \n\nTry adding a modest, less-featured version of your service and watch the upgrade rate climb. \n\nWhat’s the weakest tier you could launch tomorrow to make your premium shine?\n\n#marketingpsychology #consumerbehavior #pricingstrategy #brandstrategy #psychologyofthebrain #growthhacks #entrepreneurship",
-      "images": [
-        "posts/20261015-012352/01.jpg",
-        "posts/20261015-012352/02.jpg",
-        "posts/20261015-012352/03.jpg",
-        "posts/20261015-012352/04.jpg",
-        "posts/20261015-012352/05.jpg",
-        "posts/20261015-012352/06.jpg",
-        "posts/20261015-012352/07.jpg"
-      ],
-      "created_at": "2026-10-15T01:23:52+00:00",
-      "status": "approved",
-      "backlog_line": "[BrandBreakdown] The Economist's subscription offer: how a \"pointless\" print-only option sold more bundles",
-      "slot": "evening",
-      "slot_at": "2026-10-15T14:00:00+00:00",
-      "publish_at": "2026-10-15T14:00:00+00:00",
-      "reminded": false,
-      "msg_ids": [
-        40,
-        41,
-        42,
-        43,
-        44,
-        45,
-        46,
-        47
-      ],
-      "approved_at": "2026-10-15T08:29:23+00:00"
-    },
     {
       "id": "20261015-012357",
       "series": "CopyClinic",
@@ -163,5 +87,12 @@
     825911672,
     825911673,
     825911674
+  ],
+  "events": [
+    {
+      "at": "2026-10-15T14:01:06+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Posted BRANDBREAKDOWN#1 (Contrast (or Decoy) Effect)\nhttps://www.instagram.com/p/DehH8iAlW10/"
+    }
   ]
 }
