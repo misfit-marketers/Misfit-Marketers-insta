@@ -139,3 +139,16 @@ def add_topic_to_backlog(topic: str, front: bool = False) -> None:
     else:
         lines.append(topic.strip())
     TOPICS_FILE.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+
+
+def set_backlog(topics: list) -> None:
+    """Rewrite the topic list in a new order, keeping the comment lines at the top."""
+    lines = TOPICS_FILE.read_text(encoding="utf-8").splitlines() if TOPICS_FILE.exists() else []
+    header = []
+    for line in lines:
+        if line.startswith("#") or not line.strip():
+            header.append(line)
+        else:
+            break
+    body = [t.strip() for t in topics if t.strip()]
+    TOPICS_FILE.write_text("\n".join(header + body).rstrip() + "\n", encoding="utf-8")

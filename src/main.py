@@ -434,6 +434,8 @@ def approve(draft_id: str):
     d["status"] = "approved"
     d["approved_at"] = now_iso()
     d["publish_at"] = iso(at)
+    d["note"] = ("" if at == primary else
+                 f"Approved after its {when_text(iso(primary))} slot, so it goes live at {when_text(d['publish_at'])}.")
     save_state(state)
     telegram.send_message(f"Approved. {describe(d)} goes live at {when_text(d['publish_at'])}.\n"
                           "Tap Post now if you want it up straight away.",
@@ -493,6 +495,8 @@ def retry_later(draft_id: str, reason: str):
         d["slot_at"] = d["publish_at"] = iso(new_slot)
     d["status"] = "approved"
     d["failed_attempts"] = int(d.get("failed_attempts", 0)) + 1
+    d["last_error"] = plain(reason)[:600]
+    d["note"] = f"Couldn't post last time, so it will try again at {when_text(d['publish_at'])}."
     save_state(state)
     telegram.send_message(f"Couldn't post {describe(d)} yet. {reason}\n\n"
                           f"I'll try again automatically at {when_text(d['publish_at'])}, or tap Post now to retry sooner.",
@@ -539,6 +543,7 @@ def process_due(notify: bool = True):
         if now >= backup + GRACE:
             new_slot = next_free_same_slot(cfg, state["drafts"], d, now)
             d["slot_at"], d["reminded"] = iso(new_slot), False
+            d["note"] = f"It wasn't approved in time, so it moved to {when_text(d['slot_at'])}."
             save_state(state)
             if notify:
                 telegram.send_message(f"{describe(d)} wasn't approved in time, so it moved to "
@@ -569,7 +574,7 @@ def post_due():
         for day in (now.date() - timedelta(days=1), now.date(), now.date() + timedelta(days=1)):
             times += list(occurrence(sdef, day))
     upcoming = sorted(t for t in times if 0 < (t - now).total_seconds() <= 45 * 60)
-    if upcoming and not DRY_RUN:
+    if upcoming and not DRY_RUN and os.environ.get("NO_WAIT") != "1":
         wait = (upcoming[0] - now).total_seconds()
         log(f"Waiting {int(wait)}s for {upcoming[0].isoformat()}")
         time.sleep(wait)
@@ -665,6 +670,7 @@ def rerender(draft_id: str):
     if d:
         d["msg_ids"] = (d.get("msg_ids") or []) + ids
         save_state(state)
+    return new_id
 
 
 def redo(draft_id: str, feedback: str = None):
@@ -672,7 +678,7 @@ def redo(draft_id: str, feedback: str = None):
     d = find(state, draft_id)
     if not d:
         return
-    write_draft(cfg, d["slot"], datetime.fromisoformat(d["slot_at"]), redo_of=d, feedback=feedback)
+    return write_draft(cfg, d["slot"], datetime.fromisoformat(d["slot_at"]), redo_of=d, feedback=feedback)
 
 
 def status_text(state: dict) -> str:
@@ -709,6 +715,10 @@ def target_draft(state: dict, msg: dict, text: str):
 def check() -> None:
     cfg = load_config()
     merge_topic_seeds(cfg)
+    if not telegram.enabled():
+        log("Telegram is switched off in config.json; only posting what's due")
+        process_due(notify=True)
+        return
     state = load_state()
     authorised = str(telegram.chat_id())
     seen = [int(x) for x in state.get("seen_updates", [])]
@@ -774,9 +784,9 @@ def check() -> None:
         replied = find_by_message(state, (msg.get("reply_to_message") or {}).get("message_id"))
 
         if cmd in ("/start", "/help"):
-            telegram.send_message(HELP)
+            telegram.send_message(HELP, log_event=False)
         elif cmd == "/status":
-            telegram.send_message(status_text(state))
+            telegram.send_message(status_text(state), log_event=False)
         elif cmd == "/topic":
             if arg.strip():
                 add_topic_to_backlog(clean_text(arg))
@@ -792,7 +802,8 @@ def check() -> None:
         elif cmd == "/topics":
             nxt = topic_backlog()[:12]
             telegram.send_message("<b>Next topics</b>\n" + "\n".join(f"{i + 1}. {html.escape(t)}" for i, t in enumerate(nxt))
-                                  if nxt else "The topic list is empty, so the writer will pick fresh topics itself.")
+                                  if nxt else "The topic list is empty, so the writer will pick fresh topics itself.",
+                                  log_event=False)
         elif cmd == "/drop":
             drop((replied or (target if len(state["drafts"]) == 1 else None) or {}).get("id"))
         elif cmd == "/rerender":
@@ -811,7 +822,7 @@ def check() -> None:
                 name, slot_at = free[0]
                 write_draft(cfg, name, slot_at, topic=arg.strip() or None)
         elif text.startswith("/"):
-            telegram.send_message(HELP)
+            telegram.send_message(HELP, log_event=False)
         elif target:
             telegram.send_message(f"Revising {describe(target)} with your feedback...")
             redo(target["id"], feedback=text)
@@ -846,7 +857,7 @@ def send_check_report(report: dict):
                      "/revoke, pick this bot, and put the new token in the TELEGRAM_BOT_TOKEN secret on GitHub.")
     lines.append("")
     lines.append(status_text(state))
-    telegram.send_message("\n".join(lines))
+    telegram.send_message("\n".join(lines), log_event=False)
 
 
 # ------------------------------------------------------------------ maintenance
@@ -921,13 +932,34 @@ def main():
     except SystemExit:
         raise
     except Exception as e:
-        # Tell the user on Telegram instead of failing silently on GitHub.
+        # Tell the user (Telegram and the app) instead of failing silently on GitHub.
         try:
             telegram.send_message(f"Something went wrong ({html.escape(cmd)}):\n"
                                   f"<code>{html.escape(str(e)[-900:])}</code>")
         except Exception:
             pass
         raise
+    finally:
+        save_events(cmd)
+
+
+def plain(text: str) -> str:
+    """Telegram HTML -> plain text for the app."""
+    return html.unescape(re.sub(r"<[^>]+>", "", str(text or ""))).strip()
+
+
+def save_events(cmd: str):
+    if not telegram.EVENTS or cmd == "preview" or DRY_RUN and os.environ.get("KEEP_EVENTS") != "1":
+        return
+    try:
+        state = load_state()
+        job = os.environ.get("GITHUB_WORKFLOW", cmd)
+        state["events"] = (state.get("events", []) + [{"at": now_iso(), "job": job, "text": plain(t)[:700]}
+                                                      for t in telegram.EVENTS])[-80:]
+        save_state(state)
+        telegram.EVENTS.clear()
+    except Exception as e:
+        log(f"Could not save events: {e}")
 
 
 def run(cmd: str):
@@ -936,6 +968,9 @@ def run(cmd: str):
         generate(scheduled=os.environ.get("GITHUB_EVENT_NAME") == "schedule", topic=topic)
     elif cmd == "check":
         check()
+    elif cmd == "app":
+        from .app_actions import app_cmd
+        app_cmd()
     elif cmd == "post-due":
         post_due()
     elif cmd == "post-now":

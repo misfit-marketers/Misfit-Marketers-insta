@@ -5,7 +5,23 @@ from pathlib import Path
 
 import requests
 
-from .common import DRY_RUN, env
+from .common import DRY_RUN, env, load_config
+
+# Everything the bot says is also collected here, so the app can show it:
+# OUTBOX holds every message of this run, EVENTS the ones worth keeping in the
+# app's activity feed. main.py saves EVENTS into state.json at the end of a run.
+OUTBOX = []
+EVENTS = []
+
+
+def enabled() -> bool:
+    """Telegram can be switched off in config.json ("telegram": {"enabled": false})
+    without removing any code. The app keeps working either way."""
+    return bool(load_config().get("telegram", {}).get("enabled", True))
+
+
+def event(text: str):
+    EVENTS.append(text)
 
 
 def _url(method: str) -> str:
@@ -28,7 +44,12 @@ def chat_id() -> str:
     return env("TELEGRAM_CHAT_ID")
 
 
-def send_message(text: str, buttons=None, parse_html: bool = True):
+def send_message(text: str, buttons=None, parse_html: bool = True, log_event: bool = True):
+    OUTBOX.append(text)
+    if log_event:
+        event(text)
+    if not enabled():
+        return {}
     payload = {"chat_id": chat_id(), "text": text[:4000], "disable_web_page_preview": True}
     if parse_html:
         payload["parse_mode"] = "HTML"
@@ -39,6 +60,8 @@ def send_message(text: str, buttons=None, parse_html: bool = True):
 
 def send_album(paths: list):
     """Sends up to 10 images as one album (uploaded directly, no public URL needed)."""
+    if not enabled():
+        return []
     media, files = [], {}
     for i, p in enumerate(paths[:10]):
         key = f"img{i}"
@@ -135,5 +158,9 @@ def send_review(draft: dict, when: str = "") -> list:
     lines += ["", "<b>Approve</b> schedules it for the time above. I'll confirm the exact posting time within "
               "about 10 minutes of your tap (the button may keep loading until then; that's normal).",
               "To change it, <b>reply to this message</b> with your feedback (for example: <i>make the hook punchier</i>)."]
-    ids += _ids(send_message("\n".join(lines), buttons=review_buttons(draft["id"])))
+    event(f"New draft ready for review: {draft['tag']} ({post.get('principle', '')})"
+          + (f" for {when}" if when else ""))
+    if not enabled():
+        return ids
+    ids += _ids(send_message("\n".join(lines), buttons=review_buttons(draft["id"]), log_event=False))
     return ids

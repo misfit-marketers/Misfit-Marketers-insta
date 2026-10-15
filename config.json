@@ -75,6 +75,9 @@
     ]
   },
   "auto_post_if_not_reviewed": false,
+  "telegram": {
+    "enabled": true
+  },
   "gemini_model": "auto",
   "image_host": "raw",
   "instagram_api_version": "v25.0"
