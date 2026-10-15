@@ -2,7 +2,7 @@
 
 Commands
   generate        write drafts for every empty posting slot and send them to Telegram (morning job)
-  check           read Telegram taps/messages and act on them (every 30 min)
+  check           read Telegram taps/messages and act on them (every 10 min)
   post-due        publish approved drafts at their posting slot (slot jobs)
   post-now        read Telegram, then post approved drafts immediately (manual job)
   refresh-token   renew the 60-day Instagram token (monthly job)
@@ -49,7 +49,7 @@ HELP = (
     "/topics  show the next topics\n"
     "/drop  (as a reply to a draft) remove that draft's topic for good\n"
     "/rerender  redraw the slides (same text); reply to one draft, or send on its own to redraw all\n\n"
-    "I act on your taps and replies at the next check, which runs every 30 minutes. "
+    "I act on your taps and replies at the next check, which runs every 10 minutes (GitHub sometimes runs a few minutes late). "
     "To post an approved draft right away, run <b>5. Go ahead and post</b> on GitHub."
 )
 

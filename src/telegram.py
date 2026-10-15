@@ -112,7 +112,8 @@ def send_review(draft: dict, when: str = "") -> list:
         for c in checks[:8]:
             conf = c.get("confidence", "?")
             lines.append(f"• {e(c.get('claim', ''))}\n   <i>{e(c.get('source', 'no source given'))}</i> [{e(conf)}]")
-    lines += ["", "<b>Approve</b> schedules it for the time above. To change it, <b>reply to this message</b> "
-              "with your feedback (for example: <i>make the hook punchier</i>)."]
+    lines += ["", "<b>Approve</b> schedules it for the time above. I'll confirm the exact posting time within "
+              "about 10 minutes of your tap (the button may keep loading until then; that's normal).",
+              "To change it, <b>reply to this message</b> with your feedback (for example: <i>make the hook punchier</i>)."]
     ids += _ids(send_message("\n".join(lines), buttons=review_buttons(draft["id"])))
     return ids

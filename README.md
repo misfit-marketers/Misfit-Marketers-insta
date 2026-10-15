@@ -33,7 +33,8 @@ earlier in US time.
   If that's missed too, it moves to the same slot the next day, and that
   morning only the empty slot gets a new draft. Nothing is lost or skipped.
 
-Your taps and replies are picked up within 30 minutes. Each slot still
+Your taps and replies are picked up within about 10 minutes, and the bot
+confirms each approval with the exact posting time. Each slot still
 accepts approvals up to 15 minutes after it starts.
 
 **Series:** MarketingTip, BrandBreakdown (real brands decoded), CopyClinic
@@ -170,7 +171,7 @@ tells you why it couldn't post. The scheduled slots carry on as normal.
 | You do | What happens |
 |---|---|
 | Tap **Approve** | It's scheduled for that draft's slot (or its back-up, if you approve late) |
-| Tap **Post now** | It posts within 30 minutes, without waiting for the slot |
+| Tap **Post now** | It posts within about 10 minutes, without waiting for the slot |
 | Tap **Redo** | It writes a fresh take on the same topic, for the same slot |
 | Tap **Skip** | It sets this version aside; the topic stays first in line and the slot is empty until you send /new or the next morning |
 | **Reply** to a draft's message with text, e.g. *"shorter, punchier hook"* | It revises that draft using your feedback |
@@ -255,6 +256,6 @@ state/                 what's pending and what's been posted (the bot updates th
 posts/                 slides waiting for review (deleted after posting)
 github/workflows/      the timers (rename the folder to .github before uploading):
                        setup check, write drafts (6:27 am), check Telegram (every
-                       30 min), renew token (monthly), post (slots),
+                       10 min), renew token (monthly), post (slots),
                        go ahead and post (run by hand)
 ```
