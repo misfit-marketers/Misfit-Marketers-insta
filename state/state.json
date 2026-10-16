@@ -6,7 +6,152 @@
     "BrandBreakdown": 2,
     "CopyClinic": 2
   },
-  "drafts": [],
+  "drafts": [
+    {
+      "id": "20261016-012307",
+      "series": "MythOrMagic",
+      "number": 1,
+      "tag": "MYTHORMAGIC#1",
+      "theme": "light",
+      "topic": "\"More choice always sells more\": what the famous jam study really showed",
+      "post": {
+        "topic": "More Choice Sells More?",
+        "principle": "Paradox of Choice",
+        "hook": "Does offering more options boost sales?",
+        "slides": [
+          "The belief: Marketers assume that giving customers a wider assortment, like 12 flavor options for a soda, will increase conversion because shoppers love variety.",
+          "What research actually found: In the classic jam study (Iyengar & Lepper, 2000), shoppers faced 24 jam varieties bought fewer jars (3%) than those who saw only 6 varieties (30%).",
+          "Nuance: Choice overload hurts when options exceed a modest set and when decisions are low-involvement. In high-involvement or luxury contexts, more curated options can enhance perceived exclusivity.",
+          "What it means for marketers: Limit core choices to 3-5 well-differentiated options, then use filters or bundles for deeper variety without crowding the decision screen."
+        ],
+        "takeaway": "It depends: keep the primary selection simple, then let power users dive deeper. Offer 3-5 headline products and hide extra variants behind filters or ‘more flavors’ tabs.",
+        "caption": "Marketers love the idea that “the more, the merrier” when it comes to product assortments. But a landmark study from Princeton showed that drowning shoppers in choices can actually shrink sales.\n\nWhen shoppers saw 24 jam flavors, they felt overwhelmed and bought far less than those who saw just six. The paradox of choice isn’t about eliminating variety, it’s about presenting it in a way that feels manageable.\n\nFor your brand, start with a clean, focused lineup on the main page. Then, let curious customers explore deeper through filters, bundles, or a “see all flavors” section. This balances excitement with ease.\n\nHow many options do you think your audience can comfortably handle?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#paradoxofchoice",
+          "#consumerbehavior",
+          "#branding",
+          "#UXdesign",
+          "#productstrategy",
+          "#entrepreneur"
+        ],
+        "fact_check": [
+          {
+            "claim": "Iyengar & Lepper 2000 jam study showed lower purchase rates with 24 options versus 6",
+            "source": "Iyengar, Sheena S., and Mark Lepper. 2000. \"When Choice is Demotivating: Can One Desire Too Much of a Good Thing?\" Journal of Personality and Social Psychology, 79(6), 995‑1006.",
+            "confidence": "high"
+          },
+          {
+            "claim": "Purchase rates: 3% for 24 jam varieties, 30% for 6 varieties",
+            "source": "Same study; exact percentages reported in the article’s results section.",
+            "confidence": "medium"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b"
+      },
+      "caption": "Marketers love the idea that “the more, the merrier” when it comes to product assortments. But a landmark study from Princeton showed that drowning shoppers in choices can actually shrink sales.\n\nWhen shoppers saw 24 jam flavors, they felt overwhelmed and bought far less than those who saw just six. The paradox of choice isn’t about eliminating variety, it’s about presenting it in a way that feels manageable.\n\nFor your brand, start with a clean, focused lineup on the main page. Then, let curious customers explore deeper through filters, bundles, or a “see all flavors” section. This balances excitement with ease.\n\nHow many options do you think your audience can comfortably handle?\n\n#marketingpsychology #paradoxofchoice #consumerbehavior #branding #UXdesign #productstrategy #entrepreneur",
+      "images": [
+        "posts/20261016-012307/01.jpg",
+        "posts/20261016-012307/02.jpg",
+        "posts/20261016-012307/03.jpg",
+        "posts/20261016-012307/04.jpg",
+        "posts/20261016-012307/05.jpg",
+        "posts/20261016-012307/06.jpg"
+      ],
+      "created_at": "2026-10-16T01:23:07+00:00",
+      "status": "awaiting",
+      "backlog_line": "[MythOrMagic] \"More choice always sells more\": what the famous jam study really showed",
+      "slot": "evening",
+      "slot_at": "2026-10-16T14:00:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": [
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ]
+    },
+    {
+      "id": "20261016-012312",
+      "series": "MarketingTip",
+      "number": 8,
+      "tag": "MARKETINGTIP#8",
+      "theme": "dark",
+      "topic": "Anchoring effect: why the first price a customer sees shapes every other price",
+      "post": {
+        "topic": "Anchoring Effect",
+        "principle": "Anchoring Effect",
+        "hook": "Why does the first price you see stick?",
+        "slides": [
+          "When you walk into a coffee shop and see a latte listed at **$5**, every other drink suddenly feels cheap or pricey in relation to that anchor.",
+          "Psychologists call this the **anchoring effect**: our brain latches onto the first numeric value it encounters and uses it as a reference point for all later judgments.",
+          "The brain does this because it relies on **heuristics**, mental shortcuts, to simplify complex decisions, especially when numbers are involved.",
+          "Marketers exploit this by showing a **high-priced premium option** first, then placing the target price next to it. For example, a streaming service lists $19.99 for the elite plan, then $9.99 for the standard plan, making $9.99 feel like a deal.",
+          "Even without a visible anchor, you can create one with **price framing**: say “Save $30 off the regular $199 price!” The $199 becomes the mental anchor, so $169 seems like a bargain."
+        ],
+        "takeaway": "Start every pricing layout with a deliberately high anchor, then position your core offering right after. Test different anchor levels to see which maximizes perceived value and conversion.",
+        "caption": "Ever wonder why a $9.99 price tag feels like a steal after you’ve seen $19.99? It’s not magic, it’s the anchoring effect at work.\n\nOur brains use the first number they encounter as a reference point, shaping every subsequent judgment about price. Marketers have been leveraging this shortcut for decades, from retail tags to subscription tiers.\n\nWant to make your pricing feel more attractive? Lead with a higher-priced option or a bold “regular price” strike-through, then place your main offer right after. The contrast does the heavy lifting.\n\nWhat anchor have you used recently that changed how you perceived a price?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#anchoringeffect",
+          "#pricingstrategy",
+          "#consumerbehavior",
+          "#designthinking",
+          "#entrepreneurship",
+          "#growthhacks"
+        ],
+        "fact_check": [
+          {
+            "claim": "The anchoring effect was first described by Tversky and Kahneman in 1974",
+            "source": "Tversky, D., & Kahneman, D. (1974). Judgment under Uncertainty: Heuristics and Biases. Science.",
+            "confidence": "high"
+          },
+          {
+            "claim": "People use heuristics to simplify decisions involving numbers",
+            "source": "Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.",
+            "confidence": "high"
+          },
+          {
+            "claim": "Displaying a higher‑priced premium option first makes the subsequent price seem like a better deal",
+            "source": "Northcraft, G. B., & Neale, M. A. (1987). Experts, amateurs, and real estate: An anchoring-and-adjustment perspective. Organizational Behavior and Human Decision Processes.",
+            "confidence": "medium"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b"
+      },
+      "caption": "Ever wonder why a $9.99 price tag feels like a steal after you’ve seen $19.99? It’s not magic, it’s the anchoring effect at work.\n\nOur brains use the first number they encounter as a reference point, shaping every subsequent judgment about price. Marketers have been leveraging this shortcut for decades, from retail tags to subscription tiers.\n\nWant to make your pricing feel more attractive? Lead with a higher-priced option or a bold “regular price” strike-through, then place your main offer right after. The contrast does the heavy lifting.\n\nWhat anchor have you used recently that changed how you perceived a price?\n\n#marketingpsychology #anchoringeffect #pricingstrategy #consumerbehavior #designthinking #entrepreneurship #growthhacks",
+      "images": [
+        "posts/20261016-012312/01.jpg",
+        "posts/20261016-012312/02.jpg",
+        "posts/20261016-012312/03.jpg",
+        "posts/20261016-012312/04.jpg",
+        "posts/20261016-012312/05.jpg",
+        "posts/20261016-012312/06.jpg",
+        "posts/20261016-012312/07.jpg"
+      ],
+      "created_at": "2026-10-16T01:23:12+00:00",
+      "status": "awaiting",
+      "backlog_line": "Anchoring effect: why the first price a customer sees shapes every other price",
+      "slot": "night",
+      "slot_at": "2026-10-16T22:00:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": [
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ]
+    }
+  ],
   "merged_seeds": [
     "2026-10-15_new_series.txt",
     "front_2026-10-15_restore.txt"
@@ -26,6 +171,16 @@
       "at": "2026-10-15T22:00:55+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Posted COPYCLINIC#1 (Self‑Reference Effect)\nhttps://www.instagram.com/p/Deh-2t_GjHA/"
+    },
+    {
+      "at": "2026-10-16T01:23:15+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: MYTHORMAGIC#1 (Paradox of Choice) for 7:30 pm IST today"
+    },
+    {
+      "at": "2026-10-16T01:23:15+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: MARKETINGTIP#8 (Anchoring Effect) for 3:30 am IST tonight"
     }
   ]
 }
