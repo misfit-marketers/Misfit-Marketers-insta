@@ -4,7 +4,8 @@
   "series_counters": {
     "MarketingTip": 8,
     "BrandBreakdown": 2,
-    "CopyClinic": 2
+    "CopyClinic": 2,
+    "MythOrMagic": 2
   },
   "drafts": [
     {
@@ -143,165 +144,6 @@
       ],
       "approved_at": "2026-10-16T09:47:40+00:00",
       "note": ""
-    },
-    {
-      "id": "20261016-135738",
-      "series": "MythOrMagic",
-      "number": 1,
-      "tag": "MYTHORMAGIC#1",
-      "theme": "light",
-      "topic": "\"People buy with logic\": the role emotion plays in decisions",
-      "post": {
-        "topic": "People buy with logic",
-        "principle": "Emotion vs. logic in decision making",
-        "hook": "Do people really buy with logic?",
-        "slides": [
-          "The belief: Marketers assume consumers act like calculators, weighing features and price before buying. **Logical decision**, **rational choice**, **cost-benefit analysis**.",
-          "What research shows: Neuroscience shows the **amygdala** lights up before the prefrontal cortex in purchase moments; emotional response predicts buying 2-3× better than self-reported reasons (Plassmann et al., 2008).",
-          "Nuance: Logic dominates when risk is high, stakes low, or the product is utilitarian (insurance, B2B software). Emotion drives low-involvement, hedonic, or identity-linked purchases (clothing, snacks).",
-          "What it means: Lead with an emotion cue, story, vivid image, or sensory detail, then layer facts, specs, and guarantees to satisfy the rational mind."
-        ],
-        "takeaway": "It depends – start your copy with a feeling that resonates, then back it up with clear logical evidence to guide the buyer toward action.",
-        "caption": "Marketers love the idea of the rational consumer. We picture a shopper ticking boxes, comparing specs, and choosing the best price.\n\nBut brain scans tell a different story: the emotional centers fire up before the rational ones, and that feeling often decides the purchase.\n\nThe trick isn’t to ditch data or price points. It’s to let emotion open the door, then let logic seal the deal. Start with a story, a vivid image, or a sensory cue, and follow with the specs and guarantees that satisfy the analytical mind.\n\nHow do you blend emotion and logic in your messaging?",
-        "hashtags": [
-          "#marketingpsychology",
-          "#consumerbehavior",
-          "#emotionselling",
-          "#rationalmarketing",
-          "#brandingtips",
-          "#copywriting",
-          "#entrepreneur"
-        ],
-        "fact_check": [
-          {
-            "claim": "Marketers assume consumers act like calculators, weighing features and price before buying.",
-            "source": "Common marketing textbooks and practice",
-            "confidence": "high"
-          },
-          {
-            "claim": "Neuroscience shows the amygdala lights up before the prefrontal cortex in purchase moments; emotional response predicts buying 2‑3× better than self‑reported reasons.",
-            "source": "Plassmann, H., O'Doherty, J., & Rangel, A., 2008, *Neuron*",
-            "confidence": "high"
-          },
-          {
-            "claim": "Logic dominates when risk is high, stakes low, or the product is utilitarian (insurance, B2B software).",
-            "source": "Kahneman, D., & Tversky, A., 1979, *Prospect Theory*; later applied to consumer decisions",
-            "confidence": "medium"
-          },
-          {
-            "claim": "Emotion drives low‑involvement, hedonic, or identity‑linked purchases (clothing, snacks).",
-            "source": "Pham, M.T., 1998, *Journal of Consumer Research* on affective decision making",
-            "confidence": "medium"
-          }
-        ],
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "buy with logic",
-            "emoji": [
-              "🧠",
-              "💡"
-            ],
-            "subtitle": "Why emotions outrank rational thought",
-            "note": "your brain loves stories"
-          },
-          "slides": [
-            {
-              "heading": "**Logic** Myth",
-              "emoji": "💡",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "Brain Shows **Emotion**",
-              "emoji": "🧠",
-              "layout": "standard",
-              "note": "",
-              "quote": "emotion predicts buying"
-            },
-            {
-              "heading": "Logic dominates when",
-              "emoji": "",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "Lead with an",
-              "emoji": "",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "Feel then Proof",
-            "emoji": "✅",
-            "note": ""
-          },
-          "for": "576f07349fad",
-          "style": "essay",
-          "source": "ai",
-          "note": ""
-        }
-      },
-      "caption": "Marketers love the idea of the rational consumer. We picture a shopper ticking boxes, comparing specs, and choosing the best price.\n\nBut brain scans tell a different story: the emotional centers fire up before the rational ones, and that feeling often decides the purchase.\n\nThe trick isn’t to ditch data or price points. It’s to let emotion open the door, then let logic seal the deal. Start with a story, a vivid image, or a sensory cue, and follow with the specs and guarantees that satisfy the analytical mind.\n\nHow do you blend emotion and logic in your messaging?\n\n#marketingpsychology #consumerbehavior #emotionselling #rationalmarketing #brandingtips #copywriting #entrepreneur",
-      "images": [
-        "posts/20261016-135738/01.jpg",
-        "posts/20261016-135738/02.jpg",
-        "posts/20261016-135738/03.jpg",
-        "posts/20261016-135738/04.jpg",
-        "posts/20261016-135738/05.jpg",
-        "posts/20261016-135738/06.jpg"
-      ],
-      "created_at": "2026-10-16T06:02:55+00:00",
-      "status": "approved",
-      "backlog_line": "[MythOrMagic] \"People buy with logic\": the role emotion plays in decisions",
-      "slot": "evening",
-      "slot_at": "2026-10-16T14:00:00+00:00",
-      "publish_at": "2026-10-16T14:00:00+00:00",
-      "reminded": false,
-      "msg_ids": [
-        79,
-        80,
-        81,
-        82,
-        83,
-        84,
-        85,
-        86,
-        87,
-        88,
-        89,
-        90,
-        91,
-        92,
-        96,
-        97,
-        98,
-        99,
-        100,
-        101,
-        102,
-        111,
-        112,
-        113,
-        114,
-        115,
-        116,
-        117,
-        118,
-        119,
-        120,
-        121,
-        122,
-        123,
-        124
-      ],
-      "approved_at": "2026-10-16T09:46:11+00:00",
-      "note": "",
-      "style": null
     }
   ],
   "merged_seeds": [
@@ -379,6 +221,11 @@
       "at": "2026-10-16T13:57:49+00:00",
       "job": "6. App action",
       "text": "App: Redesigned MYTHORMAGIC#1 (Emotion vs. logic in decision making) in the Essay style. It's still scheduled for 7:30 pm IST today."
+    },
+    {
+      "at": "2026-10-16T14:00:49+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Posted MYTHORMAGIC#1 (Emotion vs. logic in decision making)\nhttps://www.instagram.com/p/DejstI5FoL-/"
     }
   ],
   "app_requests": [
