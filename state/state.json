@@ -145,11 +145,11 @@
         "posts/20261016-090749/06.jpg"
       ],
       "created_at": "2026-10-16T06:02:55+00:00",
-      "status": "awaiting",
+      "status": "approved",
       "backlog_line": "[MythOrMagic] \"People buy with logic\": the role emotion plays in decisions",
       "slot": "evening",
       "slot_at": "2026-10-16T14:00:00+00:00",
-      "publish_at": null,
+      "publish_at": "2026-10-16T14:00:00+00:00",
       "reminded": false,
       "msg_ids": [
         79,
@@ -166,7 +166,9 @@
         90,
         91,
         92
-      ]
+      ],
+      "approved_at": "2026-10-16T09:46:11+00:00",
+      "note": ""
     }
   ],
   "merged_seeds": [
@@ -213,6 +215,11 @@
       "at": "2026-10-16T09:07:53+00:00",
       "job": "6. App action",
       "text": "App: Saved your edits and redrew the slides. Approve it when you're happy."
+    },
+    {
+      "at": "2026-10-16T09:46:11+00:00",
+      "job": "6. App action",
+      "text": "App: Approved. MYTHORMAGIC#1 (Emotion vs. logic in decision making) goes live at 7:30 pm IST today."
     }
   ],
   "app_requests": [
@@ -242,6 +249,15 @@
       "ok": true,
       "message": "Saved your edits and redrew the slides. Approve it when you're happy.",
       "at": "2026-10-16T09:07:53+00:00"
+    },
+    {
+      "id": "mvas8p0fub84ry",
+      "action": "approve",
+      "draft_id": "20261016-090749",
+      "new_draft_id": "20261016-090749",
+      "ok": true,
+      "message": "Approved. MYTHORMAGIC#1 (Emotion vs. logic in decision making) goes live at 7:30 pm IST today.",
+      "at": "2026-10-16T09:46:11+00:00"
     }
   ]
 }
