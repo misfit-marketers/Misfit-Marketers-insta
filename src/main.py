@@ -333,6 +333,7 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
     if redo_of:
         series, topic, backlog_line = redo_of["series"], redo_of["topic"], redo_of.get("backlog_line")
         theme, number = redo_of["theme"], redo_of["number"]
+        style = redo_of.get("style")
     else:
         if topic:
             hint, topic = parse_topic(topic)
@@ -345,6 +346,7 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
                 topic = parse_topic(backlog_line)[1]
         theme = next_theme(cfg, state)
         number = series_number(cfg, state, series)
+        style = None
 
     recent = [h.get("principle") or h.get("topic") for h in history if h.get("status") == "posted"]
     recent += [d["post"].get("principle") or d.get("topic") for d in state["drafts"]
@@ -358,7 +360,7 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
         draft_id += "b"
     tag = cfg["series"][series]["tag"].format(n=number)
     paths = render_post(post, theme, tag, POSTS / draft_id, closing=closing_text(cfg),
-                        label=series_label(cfg, series), series=series, cfg=cfg)
+                        label=series_label(cfg, series), series=series, cfg=cfg, style=style)
 
     state = load_state()  # reload: the writer call can take a while
     if redo_of:
@@ -371,7 +373,7 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
         state["last_theme"] = theme
 
     draft = {
-        "id": draft_id, "series": series, "number": number, "tag": tag, "theme": theme,
+        "id": draft_id, "series": series, "number": number, "tag": tag, "theme": theme, "style": style,
         "topic": topic or post.get("topic"), "post": post, "caption": build_caption(post),
         "images": [str(p.relative_to(ROOT)) for p in paths], "created_at": now_iso(),
         "status": "awaiting", "backlog_line": backlog_line,
@@ -652,7 +654,7 @@ def rerender(draft_id: str):
     while (POSTS / new_id).exists() or find(state, new_id):
         new_id += "b"
     paths = render_post(d["post"], d["theme"], d["tag"], POSTS / new_id, closing=closing_text(cfg),
-                        label=series_label(cfg, d["series"]), series=d["series"], cfg=cfg)
+                        label=series_label(cfg, d["series"]), series=d["series"], cfg=cfg, style=d.get("style"))
     remove_draft_files(d)
     d["id"] = new_id
     d["images"] = [str(p.relative_to(ROOT)) for p in paths]

@@ -45,7 +45,17 @@ def save_json(path: Path, data) -> None:
 
 
 def load_config() -> dict:
-    return load_json(ROOT / "config.json", {})
+    """config.json, plus any slide-style choices made in the app (saved in
+    state.json as "design_styles", because the app can't change config.json)."""
+    cfg = load_json(ROOT / "config.json", {})
+    picks = load_json(STATE_FILE, {}).get("design_styles") or {}
+    if picks and isinstance(cfg.get("design"), dict):
+        styles = dict(cfg["design"].get("styles") or {})
+        for series, pick in picks.items():
+            if isinstance(pick, dict):
+                styles[series] = {**styles.get(series, {}), **pick}
+        cfg["design"]["styles"] = styles
+    return cfg
 
 
 def load_state() -> dict:

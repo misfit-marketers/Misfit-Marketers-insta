@@ -213,24 +213,30 @@ def draw_body(text, theme_name, tag):
     return img
 
 
-def style_for(cfg: dict, series: str):
-    """(style, accent) for a series from config "design", or None for the classic look."""
+STYLE_NAMES = ("poster", "editorial", "essay", "notebook", "classic")
+
+
+def style_for(cfg: dict, series: str, override: str = None):
+    """(style, accent) for a series from config "design", or None for the classic
+    look. override is a style picked for one draft in the app's Redesign."""
     dz = (cfg or {}).get("design") or {}
     if not dz.get("enabled") or not series:
         return None
-    pick = (dz.get("styles") or {}).get(series)
-    if not pick or pick.get("style") in (None, "classic"):
+    pick = dict((dz.get("styles") or {}).get(series) or {})
+    if override in STYLE_NAMES:
+        pick["style"] = override
+    if not pick or pick.get("style") in (None, "classic") or pick.get("style") not in STYLE_NAMES:
         return None
     return pick["style"], pick.get("accent", "#FF4D2E")
 
 
 def render_post(post: dict, theme_name: str, tag: str, out_dir: Path, closing: str = None,
-                label: str = "Takeaway", series: str = None, cfg: dict = None) -> list:
+                label: str = "Takeaway", series: str = None, cfg: dict = None, style: str = None) -> list:
     """Writes 01.jpg, 02.jpg ... and returns their paths. Series with a design
     style in config.json get the new look; anything that goes wrong there
     falls back to the classic look so a draft is never lost."""
     out_dir.mkdir(parents=True, exist_ok=True)
-    pick = style_for(cfg, series)
+    pick = style_for(cfg, series, style)
     if pick:
         try:
             from . import design, styles

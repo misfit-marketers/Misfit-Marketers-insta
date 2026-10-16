@@ -205,11 +205,105 @@ def a_topic_order(draft_id, text):
     return None, "Saved the new topic order."
 
 
+# ------------------------------------------------------------------ slide styles
+
+STYLE_WORDS = {"poster": "Poster", "editorial": "Editorial", "essay": "Essay", "notebook": "Notebook",
+               "classic": "Classic"}
+
+
+def _styles_on(cfg):
+    if not (cfg.get("design") or {}).get("enabled"):
+        raise Refused("Slide styles are switched off in config.json (design.enabled is false).")
+
+
+def _series_style(cfg, series):
+    return ((cfg["design"].get("styles") or {}).get(series) or {}).get("style", "classic")
+
+
+def a_redesign(draft_id, text):
+    """Same words, new art direction. Optional: a style for just this draft
+    and a note for the AI designer (for example 'fewer emoji')."""
+    from .render import STYLE_NAMES, style_for
+    _draft(draft_id)
+    data = _json(text)
+    cfg = load_config()
+    _styles_on(cfg)
+    style = str(data.get("style") or "").strip().lower()
+    if style and style not in STYLE_NAMES:
+        raise Refused("I don't know that style. Pick Poster, Editorial, Essay, Notebook or Classic.")
+    note = clean_text(str(data.get("note") or ""))[:300]
+    state = load_state()
+    d = m.find(state, draft_id)
+    d["style"] = style if style and style != _series_style(cfg, d["series"]) else None
+    d["post"].pop("design", None)
+    if note:
+        d["post"]["design_note"] = note
+    else:
+        d["post"].pop("design_note", None)
+    save_state(state)
+    new_id = m.rerender(draft_id) or draft_id
+    d = m.find(load_state(), new_id)
+    if not d:
+        raise Refused("The draft changed while I was redrawing it. Pull down to refresh.")
+    used = (style_for(cfg, d["series"], d.get("style")) or ("classic",))[0]
+    post = d["post"]
+    if post.get("design_error"):
+        msg = f"Couldn't draw {_name(d)} in the new style, so it kept the classic look. ({post['design_error'][:160]})"
+    else:
+        msg = f"Redesigned {_name(d)} in the {STYLE_WORDS[used]} style."
+        if (post.get("design") or {}).get("source") == "fallback":
+            msg += " The AI designer didn't answer, so it used plain highlights. Try Redesign again in a minute."
+    tail = (f" It's still scheduled for {m.when_text(d['publish_at'])}." if d["status"] == "approved"
+            else " Approve it when you're happy.")
+    return new_id, msg + tail
+
+
+def a_styles_set(draft_id, text):
+    """Choose the style (and highlight colour) a series uses from now on.
+    Saved in state.json; config.json keeps the original defaults."""
+    import re
+    from .render import STYLE_NAMES
+    data = _json(text)
+    cfg = load_config()
+    _styles_on(cfg)
+    series = data.get("series")
+    if series not in cfg["series"]:
+        raise Refused("I don't know that series.")
+    state = load_state()
+    picks = state.setdefault("design_styles", {})
+    if data.get("reset"):
+        picks.pop(series, None)
+    else:
+        style = str(data.get("style") or "").strip().lower()
+        if style not in STYLE_NAMES:
+            raise Refused("I don't know that style. Pick Poster, Editorial, Essay, Notebook or Classic.")
+        accent = str(data.get("accent") or "").strip()
+        if accent and not re.fullmatch(r"#[0-9A-Fa-f]{6}", accent):
+            raise Refused("That colour doesn't look right. Use a hex colour like #FF4D2E.")
+        picks[series] = {"style": style, **({"accent": accent.upper()} if accent else {})}
+    save_state(state)
+    cfg = load_config()
+    now = _series_style(cfg, series)
+    msg = f"{series} now uses the {STYLE_WORDS.get(now, now)} style" + (" (back to the default)." if data.get("reset") else ".")
+    redrawn = 0
+    if data.get("redraw"):
+        for d in [x for x in load_state()["drafts"] if x["series"] == series and not x.get("style")]:
+            if m.rerender(d["id"]):
+                redrawn += 1
+    if redrawn:
+        msg += f" Redrew {redrawn} waiting draft{'s' if redrawn != 1 else ''}."
+    elif data.get("redraw"):
+        msg += " No waiting drafts in this series to redraw."
+    else:
+        msg += " New drafts will use it."
+    return "", msg
+
+
 ACTIONS = {
     "approve": a_approve, "unapprove": a_unapprove, "postnow": a_postnow, "skip": a_skip, "drop": a_drop,
     "redo": a_redo, "edit": a_edit, "postpone": a_postpone, "new": a_new,
     "topic_add": a_topic_add, "topic_remove": a_topic_remove, "topic_edit": a_topic_edit,
-    "topic_order": a_topic_order,
+    "topic_order": a_topic_order, "redesign": a_redesign, "styles_set": a_styles_set,
 }
 
 

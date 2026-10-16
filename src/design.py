@@ -120,14 +120,16 @@ def validate(raw: dict, post: dict) -> dict:
     return {"cover": cover_out, "slides": slides, "takeaway": take}
 
 
-def build_prompt(post: dict, series: str, style: str) -> str:
+def build_prompt(post: dict, series: str, style: str, note: str = "") -> str:
     slides = "\n".join(f"{i + 1}. {s}" for i, s in enumerate(post["slides"]))
+    note_line = (f"\nEDITOR'S NOTE (follow it as long as it fits the rules below): {note.strip()}\n"
+                 if (note or "").strip() else "")
     return f"""You are the art director for MISFIT, an Instagram page about marketing psychology.
 A writer finished this carousel. Do NOT change the wording. Decide how it should look.
 
 SERIES: {series}
 LOOK: {SERIES_HINTS.get(style, '')}
-
+{note_line}
 HOOK (cover): {post['hook']}
 BODY SLIDES:
 {slides}
@@ -176,21 +178,23 @@ def _ask_ai(cfg: dict, prompt: str) -> dict:
 
 
 def ensure(post: dict, series: str, style: str, cfg: dict) -> dict:
-    """Returns post['design'], creating it (or refreshing it after an edit)."""
+    """Returns post['design'], creating it (or refreshing it after an edit).
+    post["design_note"] (set by the app's Redesign) steers the art director."""
     fp = fingerprint(post)
+    note = str(post.get("design_note") or "")[:300]
     d = post.get("design")
-    if isinstance(d, dict) and d.get("for") == fp and d.get("style") == style:
+    if isinstance(d, dict) and d.get("for") == fp and d.get("style") == style and d.get("note", "") == note:
         return d
     if DRY_RUN:
         raw, source = sample_design(post), "sample"
     else:
         try:
-            raw, source = _ask_ai(cfg, build_prompt(post, series, style)), "ai"
+            raw, source = _ask_ai(cfg, build_prompt(post, series, style, note)), "ai"
         except Exception as e:
             print(f"Design step fell back to plain highlights: {e}")
             raw, source = fallback(post, style), "fallback"
     d = validate(raw, post)
-    d.update({"for": fp, "style": style, "source": source})
+    d.update({"for": fp, "style": style, "source": source, "note": note})
     post["design"] = d
     return d
 
