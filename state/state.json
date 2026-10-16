@@ -252,6 +252,11 @@
       "at": "2026-10-16T14:33:50+00:00",
       "job": "6. App action",
       "text": "App: PsychInTheWild now uses the Notebook style. New drafts will use it."
+    },
+    {
+      "at": "2026-10-16T14:34:10+00:00",
+      "job": "6. App action",
+      "text": "App: MarketersAssemble now uses the Poster style. New drafts will use it."
     }
   ],
   "app_requests": [
@@ -335,11 +340,24 @@
       "ok": true,
       "message": "PsychInTheWild now uses the Notebook style. New drafts will use it.",
       "at": "2026-10-16T14:33:50+00:00"
+    },
+    {
+      "id": "mvb2ihv18lmqll",
+      "action": "styles_set",
+      "draft_id": "",
+      "new_draft_id": "",
+      "ok": true,
+      "message": "MarketersAssemble now uses the Poster style. New drafts will use it.",
+      "at": "2026-10-16T14:34:10+00:00"
     }
   ],
   "design_styles": {
     "PsychInTheWild": {
       "style": "notebook",
+      "accent": "#FF4D2E"
+    },
+    "MarketersAssemble": {
+      "style": "poster",
       "accent": "#FF4D2E"
     }
   }
