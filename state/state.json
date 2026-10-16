@@ -9,7 +9,7 @@
   },
   "drafts": [
     {
-      "id": "20261016-101619",
+      "id": "20261016-142832",
       "series": "MarketingTip",
       "number": 8,
       "tag": "MARKETINGTIP#8",
@@ -62,60 +62,67 @@
               "🧠",
               "💡"
             ],
-            "subtitle": "How anchoring shapes buying decisions",
-            "note": "your brain loves shortcuts"
+            "subtitle": "learn how anchors shape perception",
+            "note": "your brain does this daily"
           },
           "slides": [
             {
-              "heading": "**Latte** Anchor",
+              "heading": "The **$5** latte",
               "emoji": "💰",
+              "layout": "standard",
               "note": "",
-              "quote": "Seeing $5 sets the price reference"
+              "quote": ""
             },
             {
-              "heading": "**Anchoring** Effect",
+              "heading": "",
               "emoji": "🤔",
+              "layout": "standard",
               "note": "",
-              "quote": "First number becomes our reference point"
+              "quote": ""
             },
             {
-              "heading": "**Heuristics** Shortcut",
+              "heading": "**Heuristics** shortcut",
               "emoji": "⚡",
+              "layout": "standard",
               "note": "",
-              "quote": "Brain uses shortcuts for quick decisions"
+              "quote": ""
             },
             {
-              "heading": "**Premium** Trick",
+              "heading": "",
               "emoji": "💸",
-              "note": "use high first",
-              "quote": "Show pricey option then target price feels like deal"
+              "layout": "standard",
+              "note": "",
+              "quote": ""
             },
             {
-              "heading": "Price **Framing**",
+              "heading": "",
               "emoji": "📈",
+              "layout": "standard",
               "note": "",
-              "quote": "Fake anchor makes discount look bigger"
+              "quote": ""
             }
           ],
           "takeaway": {
-            "heading": "Use Anchors",
+            "heading": "Use high anchors",
             "emoji": "✅",
             "note": ""
           },
           "for": "eb84c6cca082",
           "style": "poster",
-          "source": "ai"
+          "source": "ai",
+          "note": "",
+          "v": 2
         }
       },
       "caption": "Ever wonder why a $9.99 price tag feels like a steal after you’ve seen $19.99? It’s not magic, it’s the anchoring effect at work.\n\nOur brains use the first number they encounter as a reference point, shaping every subsequent judgment about price. Marketers have been leveraging this shortcut for decades, from retail tags to subscription tiers.\n\nWant to make your pricing feel more attractive? Lead with a higher-priced option or a bold “regular price” strike-through, then place your main offer right after. The contrast does the heavy lifting.\n\nWhat anchor have you used recently that changed how you perceived a price?\n\n#marketingpsychology #anchoringeffect #pricingstrategy #consumerbehavior #designthinking #entrepreneurship #growthhacks",
       "images": [
-        "posts/20261016-101619/01.jpg",
-        "posts/20261016-101619/02.jpg",
-        "posts/20261016-101619/03.jpg",
-        "posts/20261016-101619/04.jpg",
-        "posts/20261016-101619/05.jpg",
-        "posts/20261016-101619/06.jpg",
-        "posts/20261016-101619/07.jpg"
+        "posts/20261016-142832/01.jpg",
+        "posts/20261016-142832/02.jpg",
+        "posts/20261016-142832/03.jpg",
+        "posts/20261016-142832/04.jpg",
+        "posts/20261016-142832/05.jpg",
+        "posts/20261016-142832/06.jpg",
+        "posts/20261016-142832/07.jpg"
       ],
       "created_at": "2026-10-16T01:23:12+00:00",
       "status": "approved",
@@ -140,10 +147,19 @@
         107,
         108,
         109,
-        110
+        110,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133
       ],
       "approved_at": "2026-10-16T09:47:40+00:00",
-      "note": ""
+      "note": "",
+      "style": null
     }
   ],
   "merged_seeds": [
@@ -226,6 +242,11 @@
       "at": "2026-10-16T14:00:49+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Posted MYTHORMAGIC#1 (Emotion vs. logic in decision making)\nhttps://www.instagram.com/p/DejstI5FoL-/"
+    },
+    {
+      "at": "2026-10-16T14:28:47+00:00",
+      "job": "6. App action",
+      "text": "App: Redesigned MARKETINGTIP#8 (Anchoring Effect) in the Poster style. It's still scheduled for 3:30 am IST tonight."
     }
   ],
   "app_requests": [
@@ -291,6 +312,15 @@
       "ok": true,
       "message": "Redesigned MYTHORMAGIC#1 (Emotion vs. logic in decision making) in the Essay style. It's still scheduled for 7:30 pm IST today.",
       "at": "2026-10-16T13:57:49+00:00"
+    },
+    {
+      "id": "mvb2bnnn0wqbij",
+      "action": "redesign",
+      "draft_id": "20261016-101619",
+      "new_draft_id": "20261016-142832",
+      "ok": true,
+      "message": "Redesigned MARKETINGTIP#8 (Anchoring Effect) in the Poster style. It's still scheduled for 3:30 am IST tonight.",
+      "at": "2026-10-16T14:28:47+00:00"
     }
   ]
 }
