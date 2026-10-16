@@ -45,15 +45,18 @@ def first_bold(text: str) -> str:
     return m.group(1).strip() if m else ""
 
 
-LABEL = re.compile(r"^\s*\**\s*([A-Z][A-Za-z' ]{1,24}?)\s*:\s*\**\s*")
+# "The belief: ..." or "**The belief:** ...". The closing ** is only eaten when
+# the label itself was bold, so a bold phrase right after the colon survives.
+LABEL = re.compile(r"^\s*(\*\*)?\s*([A-Z][A-Za-z' ]{1,24}?)\s*:\s*(?(1)\*\*)\s*")
 
 
 def split_label(text: str):
     """'The belief: Marketers assume...' -> ('The belief', 'Marketers assume...')."""
     m = LABEL.match(text or "")
-    if m and len(m.group(1).split()) <= 4:
+    if m and len(m.group(2).split()) <= 4:
         rest = text[m.end():].strip()
-        return m.group(1).strip(), rest[:1].upper() + rest[1:]
+        k = 2 if rest.startswith("**") else 0
+        return m.group(2).strip(), rest[:k] + rest[k:k + 1].upper() + rest[k + 1:]
     return "", (text or "").strip()
 
 
@@ -87,7 +90,11 @@ def _short(text, words, chars=60):
     return t[:chars].strip(" ,;:-")
 
 
-def validate(raw: dict, post: dict) -> dict:
+BIG_MAX_WORDS = 18
+QUOTE_STYLES = ("editorial", "essay")
+
+
+def validate(raw: dict, post: dict, style: str = "") -> dict:
     n = len(post.get("slides", []))
     hook = plain(post.get("hook", ""))
     cover = raw.get("cover") or {}
@@ -112,8 +119,24 @@ def validate(raw: dict, post: dict) -> dict:
         if not head:
             body = split_label(post["slides"][i])[1]
             head = (first_bold(body) or _words(body, 3))[:40]
-        slides.append({"heading": head, "emoji": _clean_emoji(s.get("emoji")),
+        layout = str(s.get("layout") or "standard").strip().lower()
+        words = len(plain(split_label(post["slides"][i])[1]).split())
+        if layout != "big" or words > BIG_MAX_WORDS:
+            layout = "standard"
+        slides.append({"heading": head, "emoji": _clean_emoji(s.get("emoji")), "layout": layout,
                        "note": _short(s.get("note"), 7, 40), "quote": _short(s.get("quote"), 14, 95)})
+    # Variety, not clutter: at most 2 big statement slides and at most 1 pull
+    # quote per carousel (quotes only where the look uses them, and never on a
+    # big slide or a slide that is already short).
+    bigs = [k for k, x in enumerate(slides) if x["layout"] == "big"]
+    for k in bigs[2:]:
+        slides[k]["layout"] = "standard"
+    seen_quote = False
+    for k, x in enumerate(slides):
+        short = len(plain(split_label(post["slides"][k])[1]).split()) < 14
+        if x["quote"] and (seen_quote or style not in QUOTE_STYLES or x["layout"] == "big" or short):
+            x["quote"] = ""
+        seen_quote = seen_quote or bool(x["quote"])
     t = raw.get("takeaway") or {}
     take = {"heading": _short(t.get("heading"), 4, 30), "emoji": _clean_emoji(t.get("emoji")),
             "note": _short(t.get("note"), 7, 40)}
@@ -145,7 +168,8 @@ Rules:
   - heading_highlight: one word from the heading to emphasise.
   - emoji: one emoji from the list that fits the slide, or "" if nothing fits. Never repeat the same emoji twice in a row.
   - note: a tiny handwritten aside for at most 2 of the slides (at most 6 words), otherwise "".
-  - quote: a punchy line of at most 12 words that restates the slide's key point, for the pull quote, or "". Never add facts, numbers or names that the slide does not contain.
+  - layout: "big" or "standard". "big" shows only the slide's words, very large, like a poster line; use it for 1 or 2 short, punchy slides (the ones that land the idea), so the carousel has rhythm. Everything else is "standard".
+  - quote: usually "". At most ONE slide in the whole carousel may have a pull quote (at most 10 words restating that slide's point), and only if it adds punch. Never add facts, numbers or names that the slide does not contain.
 - takeaway: {{"heading": 1 to 3 words for the final slide, "emoji": one emoji from the list, "note": "" or at most 6 words}}.
 - American spelling. Never use em dashes. Avoid "it's not X, it's Y" phrasing.
 
@@ -193,7 +217,7 @@ def ensure(post: dict, series: str, style: str, cfg: dict) -> dict:
         except Exception as e:
             print(f"Design step fell back to plain highlights: {e}")
             raw, source = fallback(post, style), "fallback"
-    d = validate(raw, post)
+    d = validate(raw, post, style)
     d.update({"for": fp, "style": style, "source": source, "note": note})
     post["design"] = d
     return d
@@ -210,7 +234,7 @@ def sample_design(post: dict) -> dict:
         words = (first_bold(body) or _words(body, 3)).split()[:3]
         slides.append({"heading": " ".join(words).title(), "heading_highlight": words[-1] if words else "",
                        "emoji": pool[i % len(pool)], "note": "you've felt this" if i == 0 else "",
-                       "quote": _words(body, 10) if i == 1 else ""})
+                       "quote": _words(body, 10) if i == 1 else "", "layout": "big" if i == 2 else "standard"})
     return {"cover": {"highlight": hl, "emoji": ["💸", "🧠"], "subtitle": post.get("principle", ""),
                       "note": "your brain does this daily"},
             "slides": slides, "takeaway": {"heading": "Try this", "emoji": "✅", "note": "save this one"}}

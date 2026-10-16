@@ -131,10 +131,10 @@ SPELLING: {w['spelling']}
 HOUSE RULES:
 - Structure for this series: {structure} These are beats, not slides: several beats can share one slide, and a beat can be skipped if it adds nothing.
 - Length: use as few body slides as the idea needs, anywhere from 2 to {max_slides}. Short carousels (2 to 4 body slides) are welcome when the idea is simple; go longer only when every extra slide adds something new. Never restate a point, pad, or repeat the hook. Respect the reader's time.
-- One idea per slide. Each body slide is at most 40 words: short, punchy sentences that read well in big type. A designer adds a short heading, an emoji and highlights to every slide later, so do not add headings, emoji or labels yourself (except the labels the series structure asks for, such as 'Before:' or 'The belief:').
-- Mark 1 to 3 key phrases per slide in **double asterisks**. Never bold a whole slide.
+- One idea per slide, written like a poster, not a paragraph. Each body slide is at most 20 words: one short sentence, or two very short ones. Cut every word that isn't doing work. If an idea needs more words, split it across two slides instead of cramming. A designer adds a short heading, an emoji and highlights to every slide later, so do not add headings, emoji or labels yourself (except the labels the series structure asks for, such as 'Before:' or 'The belief:'). Labels don't count toward the 20 words.
+- Mark 1 or 2 key phrases per slide in **double asterisks** (short ones, 1 to 3 words). Never bold a whole slide.
 - The hook is a short question or provocative line, at most 9 words, no asterisks.
-- The "takeaway" field is the final slide: one or two practical sentences. It is shown after the label "{label}:", so do not start it with that word.
+- The "takeaway" field is the final slide: one practical sentence of at most 18 words. It is shown after the label "{label}:", so do not start it with that word.
 - Accuracy matters more than drama. Only cite studies, researchers, years and numbers you are confident are real. If unsure, describe the finding generally without names or figures. Never invent quotes, statistics or experiments. Never claim MISFIT ran an experiment.
 - Use examples that make sense to a US audience (US brands, apps, and everyday life), while staying understandable worldwide.
 - Write every price and money amount in US dollars with the $ sign (for example $29 or $1,200). Never use rupees, ₹, Rs or INR.
@@ -194,6 +194,18 @@ def validate(post: dict, max_slides: int) -> dict:
     return post
 
 
+SLIDE_WORDS, TAKEAWAY_WORDS = 20, 18
+
+
+def overrun(post: dict) -> int:
+    """How many words past the limits the writer went (0 = within limits).
+    Labels such as 'The belief:' don't count. A little slack is allowed."""
+    from .design import split_label
+    n = lambda t: len(re.sub(r"\*\*", "", t).split())
+    over = sum(max(0, n(split_label(x)[1]) - (SLIDE_WORDS + 6)) for x in post["slides"])
+    return over + max(0, n(post["takeaway"]) - (TAKEAWAY_WORDS + 6))
+
+
 def write_post(cfg: dict, series_name: str, topic: str, recent_topics: list, feedback: str = None,
                previous: dict = None) -> dict:
     max_slides = int(cfg.get("max_body_slides", 7))
@@ -203,7 +215,7 @@ def write_post(cfg: dict, series_name: str, topic: str, recent_topics: list, fee
     if not providers():
         env("GEMINI_API_KEY")  # raises the usual "missing secret" message
     prompt = build_prompt(cfg, series_name, topic, recent_topics, feedback, previous)
-    errors = []
+    errors, wordy, wordy_tries = [], None, 0  # wordy: the shortest too-long draft, used only if nothing shorter comes back
     for service, key in providers():
         try:
             if service == "groq":
@@ -220,10 +232,20 @@ def write_post(cfg: dict, series_name: str, topic: str, recent_topics: list, fee
                     text = re.sub(r"^```(?:json)?|```$", "", text.strip()).strip()
                     post = validate(json.loads(text), max_slides)
                     post["model"] = f"{service}:{model}"
-                    return post
+                    extra = overrun(post)
+                    if not extra:
+                        return post
+                    if wordy is None or extra < wordy[0]:
+                        wordy = (extra, post)
+                    wordy_tries += 1
+                    if wordy_tries >= 3:
+                        return wordy[1]  # three tries is enough; use the tightest one
+                    raise ValueError(f"slides too wordy ({extra} words over the limit); asking again")
                 except Exception as e:  # try again, then the next model
                     errors.append(str(e)[:300])
                     if "403" in str(e) or "401" in str(e):
                         break  # access problems won't fix themselves on retry
                     time.sleep(5 if attempt == 0 else 1)
+    if wordy:
+        return wordy[1]
     raise RuntimeError("All writer attempts failed:\n" + "\n".join(errors[-6:]))

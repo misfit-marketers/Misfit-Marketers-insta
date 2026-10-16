@@ -208,13 +208,41 @@ def spaced(d, xy, text, font, fill, spacing=4, right=False, centre=False):
     return total
 
 
-def logo(img, xy, size, box=(0, 0, 0), ink=(255, 255, 255)):
-    d = ImageDraw.Draw(img)
-    x, y = xy
-    d.rectangle((x, y, x + size, y + size), fill=box)
-    f = F("kumbh", size * 0.36)
-    for i, word in enumerate(("MIS", "FIT")):
-        d.text((x + (size - f.getlength(word)) / 2, y + size * (0.19 + i * 0.36)), word, font=f, fill=ink)
+LOGO_ORANGE = (255, 77, 46)
+_logo_cache = {}
+
+
+def logo_tile(size, box=(17, 17, 17), ink=(241, 235, 223), odd=LOGO_ORANGE):
+    """The MISFIT mark: MIS on top, F I T below, with the I knocked out of line
+    in orange. Drawn 4x larger and scaled down so it stays crisp when small."""
+    key = (int(size), tuple(box), tuple(ink), tuple(odd))
+    if key in _logo_cache:
+        return _logo_cache[key]
+    S = int(size) * 4
+    im = Image.new("RGB", (S, S), box)
+    d = ImageDraw.Draw(im)
+    f = F("anton", S * 0.30)
+    l, t, r, b = d.textbbox((0, 0), "MIS", font=f, anchor="ls")
+    d.text((S / 2 - (r + l) / 2, S * 0.33 - (b + t) / 2), "MIS", font=f, fill=ink, anchor="ls")
+    sp = S * 0.02
+    wF, wI, wT = f.getlength("F"), f.getlength("I"), f.getlength("T")
+    x = S / 2 - (wF + wI + wT + 2 * sp) / 2
+    base = S * 0.80
+    d.text((x, base), "F", font=f, fill=ink, anchor="ls")
+    d.text((x + wF + wI + 2 * sp, base), "T", font=f, fill=ink, anchor="ls")
+    l, t, r, b = f.getbbox("I", anchor="ls")
+    g = Image.new("RGBA", (r - l + 4, b - t + 4), (0, 0, 0, 0))
+    ImageDraw.Draw(g).text((2 - l, 2 - t), "I", font=f, fill=odd, anchor="ls")
+    g = g.rotate(-16, resample=Image.BICUBIC, expand=True)
+    cx, cy = x + wF + sp + wI / 2, base + (t + b) / 2 - S * 0.025
+    im.paste(g, (int(cx - g.width / 2), int(cy - g.height / 2)), g)
+    im = im.resize((int(size), int(size)), Image.LANCZOS)
+    _logo_cache[key] = im
+    return im
+
+
+def logo(img, xy, size, box=(17, 17, 17), ink=(241, 235, 223)):
+    img.paste(logo_tile(size, box, ink), (int(xy[0]), int(xy[1])))
 
 
 # ------------------------------------------------------------------ rich text
@@ -362,7 +390,7 @@ def pieces(post, design, label):
         extra = ds[i] if i < len(ds) else {}
         out.append({"kind": "body", "label": lab, "text": body, "heading": extra.get("heading", ""),
                     "emoji": extra.get("emoji", ""), "note": extra.get("note", ""), "quote": extra.get("quote", ""),
-                    "index": i + 1})
+                    "layout": extra.get("layout", "standard"), "index": i + 1})
     t = design.get("takeaway", {})
     out.append({"kind": "takeaway", "label": label, "text": post["takeaway"], "heading": t.get("heading", ""),
                 "emoji": t.get("emoji", ""), "note": t.get("note", "")})
@@ -373,7 +401,8 @@ class Style:
     name = "base"
 
     def __init__(self, accent, tag, handle, total, series_name):
-        self.accent, self.tag, self.handle, self.total, self.series = rgb(accent), tag, handle, total, series_name
+        self.accent, self.tag, self.total, self.series = rgb(accent), tag, total, series_name
+        self.handle = (handle or "").lstrip("@")  # Sachin: the name reads better without the @
 
     def cover(self, s, i):
         raise NotImplementedError
@@ -386,6 +415,9 @@ class Style:
 
     def closing(self, text, i):
         return self.takeaway({"kind": "takeaway", "label": "", "text": text, "heading": "", "emoji": "", "note": ""}, i)
+
+    def big(self, s, i):
+        return self.body(s, i)
 
 
 # ================================================================== POSTER
@@ -458,7 +490,7 @@ class Poster(Style):
 
         mk = lambda z: Type(inter(z, "Medium"), inter(z, "ExtraBold"), int(z * 1.4))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, range(60, 30, -2), W - 150, bottom - top - used)
+        ty, lines = fit(safe(s["text"]), mk, range(66, 30, -2), W - 150, bottom - top - used)
         blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 70, y, (self.ink, self.ink), deco=marker)))
         stack(blocks, top, bottom, 0.35)
         note = safe(s.get("note") or "")
@@ -472,6 +504,23 @@ class Poster(Style):
         label = (s.get("label") or "Takeaway").upper()
         s = dict(s, heading=s.get("heading") or "", label="")
         return self.body(s, i, number=label)
+
+    def big(self, s, i):
+        """One short line, poster size, with the emphasis in the accent colour."""
+        img, d = self.base(i, small=True)
+        text = safe(s["text"]) if "**" in s["text"] else mark(safe(s["text"]), s.get("heading", "").replace("*", ""))
+        mk = lambda z: Type(F("anton", z), F("anton", z), int(z * 1.04), upper=True)
+        ty, lines = fit(text, mk, range(170, 70, -6), W - 140, 760, 6)
+        top = 230 + max(0, (840 - len(lines) * ty.lh) // 2)
+        draw_text(d, lines, ty, 70, top, (self.ink, self.accent))
+        if s.get("emoji"):
+            sticker(img, s["emoji"], (W - 250, H - 380), 170, angle=-10)
+        note = safe(s.get("note") or "")
+        if note:
+            ok = sticker(img, "👉", (70, H - 190), 76, shadow=False)
+            d.text((170 if ok else 70, H - 176), note, font=inter(34, "SemiBold"), fill=self.ink)
+        page_dots(d, W - 170, H - 150, self.total, i, self.ink, (190, 185, 176))
+        return img
 
 
 # ================================================================== EDITORIAL
@@ -545,7 +594,7 @@ class Editorial(Style):
         qh = (50 + 62 * len(ql)) if ql else 0
         mk = lambda z: Type(inter(z, "Regular"), inter(z, "SemiBold"), int(z * 1.45))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, range(52, 30, -2), W - 160, bottom - top - used - qh)
+        ty, lines = fit(safe(s["text"]), mk, range(58, 30, -2), W - 160, bottom - top - used - qh)
         blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 70, y, (self.ink, self.ink))))
         if ql:
             def q(y):
@@ -575,6 +624,21 @@ class Editorial(Style):
             sticker(img, s["emoji"], (W - 210, H - 330), 120, angle=-6)
         if s.get("note"):
             self.note(d, safe(s["note"]), 70, H - 200)
+        return img
+
+    def big(self, s, i):
+        """A single line set like a magazine pull-out, highlighter on the key words."""
+        kicker = f"{s.get('index', i):02d}  /  {s.get('label') or 'the point'}"
+        img, d = self.base(kicker, i)
+        text = safe(s["text"]) if "**" in s["text"] else mark(safe(s["text"]), s.get("heading", "").replace("*", ""))
+        mk = lambda z: Type(F("serif", z), F("serif-i", z), int(z * 1.12))
+        ty, lines = fit(text, mk, range(120, 56, -4), W - 180, 820, 7)
+        top = 220 + max(0, (880 - len(lines) * ty.lh) // 2)
+        end = draw_text(d, lines, ty, 90, top, (self.ink, self.ink), align="centre", deco=self.hl, boxw=W - 180)
+        if s.get("emoji"):
+            sticker(img, s["emoji"], (W / 2 - 55, max(150, top - 150)), 110, angle=6)
+        if s.get("note"):
+            self.note(d, safe(s["note"]), 560, min(end + 60, H - 250))
         return img
 
 
@@ -639,7 +703,7 @@ class Essay(Style):
         qh = (56 + 62 * len(ql)) if ql else 0
         mk = lambda z: Type(inter(z, "Regular"), inter(z, "SemiBold"), int(z * 1.48))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, range(48, 28, -2), W - 160, bottom - top - used - qh)
+        ty, lines = fit(safe(s["text"]), mk, range(54, 28, -2), W - 160, bottom - top - used - qh)
         blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 70, y, (p["mute"], p["ink"]))))
         if ql:
             def q(y):
@@ -659,6 +723,18 @@ class Essay(Style):
         heading = f"**{heading.replace('*', '')}**" if heading else ""
         return self.body(dict(s, heading=heading, text=text, quote=""), i,
                          label=f"§ {s.get('label') or 'Takeaway'}")
+
+    def big(self, s, i):
+        """Capitals that fill the page, with the key words on the band."""
+        img, d, p = self.base(i)
+        lab = f"\u00a7 {s['label']}" if s.get("label") else f"\u00a7 {s.get('index', i):02d}"
+        spaced(d, (70, 250), lab.upper(), F("mono-b", 26), self.accent, 5)
+        text = safe(s["text"]) if "**" in s["text"] else mark(safe(s["text"]), s.get("heading", "").replace("*", ""))
+        mk = lambda z: Type(F("anton", z), F("anton", z), int(z * 1.12), upper=True)
+        ty, lines = fit(text, mk, range(160, 64, -6), W - 180, 820, 7)
+        top = 320 + max(0, (820 - len(lines) * ty.lh) // 3)
+        draw_text(d, lines, ty, 84, top, (p["ink"], p["ink"]), deco=self.band(p))
+        return img
 
 
 # ================================================================== NOTEBOOK
@@ -703,9 +779,7 @@ class Notebook(Style):
         if note:
             self.note(d, f"({note})" if not note.startswith("(") else note, 600, min(y + 70, H - 330),
                       target=(560, y - 20))
-        d.ellipse((150, H - 165, 220, H - 95), fill=self.ink)
-        f = F("kumbh", 28)
-        d.text((185 - f.getlength("MF") / 2, H - 146), "MF", font=f, fill=self.bg)
+        logo(img, (150, H - 165), 70)
         d.text((240, H - 148), self.handle, font=inter(32, "SemiBold"), fill=self.ink)
         d.text((W - 230, H - 148), "Swipe", font=inter(32, "SemiBold"), fill=self.ink)
         arrow(d, W - 120, H - 128, 46, self.ink, width=5, head=14)
@@ -734,7 +808,7 @@ class Notebook(Style):
             blocks.append((len(hl) * hty.lh + 50, lambda y: draw_text(d, hl, hty, 150, y, (self.ink, self.ink), deco=self.under)))
         mk = lambda z: Type(inter(z, "Medium"), inter(z, "Bold"), int(z * 1.3))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, range(54, 30, -2), W - 230, bottom - top - used)
+        ty, lines = fit(safe(s["text"]), mk, range(62, 30, -2), W - 230, bottom - top - used)
         if kind == "before":
             blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 150, y, (self.grey, self.grey))))
         else:
@@ -764,6 +838,28 @@ class Notebook(Style):
         page_dots(d, W / 2 + 40, H - 110, self.total, i, self.ink, (205, 196, 172))
         return img
 
+    def big(self, s, i):
+        """A handwritten-notebook statement: bold words, pen underline, a note."""
+        img, d = self.base(i)
+        label = (s.get("label") or "").strip()
+        if label:
+            kind = label.lower()
+            wdt = spaced(d, (150, 240), label.upper(), F("mono-b", 26), self.grey if kind == "before" else self.accent, 5)
+            if kind in ("before", "after"):
+                sticker(img, "❌" if kind == "before" else "✅", (150 + wdt + 20, 228), 52, shadow=False)
+        text = safe(s["text"]) if "**" in s["text"] else mark(safe(s["text"]), s.get("heading", "").replace("*", ""))
+        mk = lambda z: Type(inter(z, "Black"), inter(z, "Black"), int(z * 1.18))
+        ty, lines = fit(text, mk, range(110, 52, -4), W - 230, 760, 7)
+        top = 260 + max(0, (760 - len(lines) * ty.lh) // 3)
+        end = draw_text(d, lines, ty, 150, top, (self.ink, self.ink), deco=self.under)
+        if s.get("emoji"):
+            sticker(img, s["emoji"], (W - 230, 190), 140, angle=8)
+        if s.get("note"):
+            self.note(d, safe(s["note"]), 560, min(end + 70, H - 280), target=(500, end - 10))
+        page_dots(d, W / 2 + 40, H - 110, self.total, i, self.ink, (205, 196, 172))
+        return img
+
+
 
 STYLES = {"poster": Poster, "editorial": Editorial, "essay": Essay, "notebook": Notebook}
 
@@ -777,6 +873,8 @@ def render(post, design, style, accent, tag, out_dir: Path, handle="@misfit_mark
     images = []
     for i, s in enumerate(specs):
         fn = {"cover": st.cover, "body": st.body, "takeaway": st.takeaway}[s["kind"]]
+        if s["kind"] == "body" and s.get("layout") == "big":
+            fn = st.big
         images.append(fn(s, i))
     if closing:
         images.append(st.closing(closing, len(images)))
