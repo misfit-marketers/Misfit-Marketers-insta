@@ -15,7 +15,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from .common import ASSETS
-from .design import split_label
+from .design import heading_prefix, split_label
 
 W, H = 1080, 1350
 FONTS = ASSETS / "fonts"
@@ -407,6 +407,18 @@ def body(size, w="Regular"):
 
 # ------------------------------------------------------------------ the carousel model
 
+def drop_words(text, n):
+    """Remove the first n words of text, keeping **bold** markers balanced, so
+    'Logic dominates when **risk is high**' minus 3 words is '**risk is high**'."""
+    if n <= 0:
+        return text
+    words = text.split(" ")
+    gone, kept = words[:n], words[n:]
+    if " ".join(gone).count("**") % 2 and kept:
+        kept[0] = "**" + kept[0]  # a bold phrase began inside the removed words
+    return " ".join(kept).strip()
+
+
 def pieces(post, design, label):
     """Turns a post + design into a list of slide specs."""
     out = [{"kind": "cover", "text": mark(post["hook"].replace("**", ""), design["cover"].get("highlight")),
@@ -415,6 +427,8 @@ def pieces(post, design, label):
     for i, s in enumerate(post["slides"]):
         lab, body = split_label(s)
         extra = ds[i] if i < len(ds) else {}
+        if extra.get("layout") != "big":
+            body = drop_words(body, heading_prefix(extra.get("heading", ""), body))
         out.append({"kind": "body", "label": lab, "text": body, "heading": extra.get("heading", ""),
                     "emoji": extra.get("emoji", ""), "note": extra.get("note", ""), "quote": extra.get("quote", ""),
                     "layout": extra.get("layout", "standard"), "index": i + 1})

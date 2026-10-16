@@ -714,9 +714,30 @@ def target_draft(state: dict, msg: dict, text: str):
     return None
 
 
+def refresh_old_designs():
+    """Drafts drawn with older art-direction rules get redesigned once, as long
+    as they aren't about to go live. Approvals and slots are kept."""
+    from . import design
+    state = load_state()
+    soon = now_utc() + timedelta(minutes=20)
+    for d in list(state.get("drafts", [])):
+        dz = (d.get("post") or {}).get("design")
+        if not isinstance(dz, dict) or dz.get("v") == design.DESIGN_VERSION:
+            continue
+        when = d.get("publish_at") or d.get("slot_at")
+        if when and datetime.fromisoformat(when) <= soon:
+            continue
+        log(f"Redesigning {describe(d)} with the latest slide rules")
+        try:
+            rerender(d["id"])
+        except Exception as e:
+            log(f"Couldn't redesign {d['id']}: {e}")
+
+
 def check() -> None:
     cfg = load_config()
     merge_topic_seeds(cfg)
+    refresh_old_designs()
     if not telegram.enabled():
         log("Telegram is switched off in config.json; only posting what's due")
         process_due(notify=True)

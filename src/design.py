@@ -31,6 +31,36 @@ SERIES_HINTS = {
 }
 
 
+# Bump when the art-direction rules change, so drafts that haven't posted yet
+# get redesigned with the new rules (main.refresh_old_designs).
+# 2: headings never repeat the slide text (Sachin, 2026-10-16).
+DESIGN_VERSION = 2
+
+STOP = set("a an the and or but of to in on for with at by from is are was be it its this that these those "
+           "your you we our their they his her as so if not no do does did can will just than then".split())
+
+
+def _words_of(text):
+    return [w for w in re.sub(r"[^a-z0-9$%' ]", " ", plain(text).lower()).split() if w]
+
+
+def heading_prefix(heading: str, body: str) -> int:
+    """How many words at the start of body repeat the heading (0 if it doesn't start with it)."""
+    h, b = _words_of(heading), _words_of(body)
+    if len(h) >= 2 and b[:len(h)] == h:
+        return len(h)
+    return 0
+
+
+def repeats(heading: str, body: str) -> bool:
+    """True when the heading mostly restates words that are already in the slide text."""
+    key = [w for w in _words_of(heading) if w not in STOP and len(w) > 2]
+    if len(key) < 2:
+        return False  # one shared word (the topic itself) is fine
+    found = set(_words_of(body))
+    return sum(w in found for w in key) / len(key) >= 0.6
+
+
 def fingerprint(post: dict) -> str:
     raw = json.dumps([post.get("hook"), post.get("slides"), post.get("takeaway")], ensure_ascii=False)
     return hashlib.sha1(raw.encode()).hexdigest()[:12]
@@ -70,8 +100,7 @@ def fallback(post: dict, style: str) -> dict:
     slides = []
     for s in post.get("slides", []):
         label, body = split_label(s)
-        heading = first_bold(body) or _words(body, 3)
-        slides.append({"heading": heading[:40], "emoji": "", "note": "", "quote": ""})
+        slides.append({"heading": "", "emoji": "", "note": "", "quote": ""})  # no heading beats a repeated one
     hook = plain(post.get("hook", ""))
     words = hook.split()
     hl = " ".join(words[len(words) // 3: len(words) // 3 + 2]) if len(words) > 3 else ""
@@ -116,9 +145,13 @@ def validate(raw: dict, post: dict, style: str = "") -> dict:
         if hw and hw.lower() in head.lower():
             idx = head.lower().index(hw.lower())
             head = head[:idx] + "**" + head[idx:idx + len(hw)] + "**" + head[idx + len(hw):]
-        if not head:
-            body = split_label(post["slides"][i])[1]
-            head = (first_bold(body) or _words(body, 3))[:40]
+        body = split_label(post["slides"][i])[1]
+        # The heading sits right above the slide text, so it must not say the same
+        # thing twice. If the text starts with the heading, the slide is drawn as
+        # one continuous line (heading, then the rest of the sentence); otherwise a
+        # heading that just restates the text is dropped.
+        if head and not heading_prefix(head, body) and repeats(head, body):
+            head = ""
         layout = str(s.get("layout") or "standard").strip().lower()
         words = len(plain(split_label(post["slides"][i])[1]).split())
         if layout != "big" or words > BIG_MAX_WORDS:
@@ -164,7 +197,7 @@ Rules:
 - cover.emoji: 0 to 2 emoji stickers that fit the topic. Choose ONLY from this list: {' '.join(EMOJI)}
 - cover.note: a tiny handwritten aside, at most 6 words, lower case, friendly (for example "your brain does this daily"), or "".
 - slides: exactly {len(post['slides'])} objects, one per body slide, in order. Each has:
-  - heading: 2 to 4 punchy words that sum up that slide (for example "The $5 latte" or "Why it works"). No colon.
+  - heading: 2 to 4 punchy words shown in big type right above the slide's text. The text is printed in full underneath, so the heading must NEVER repeat or paraphrase it. Either frame it with a fresh angle (for example heading "The $5 latte" over "A latte at the top of the menu makes every other drink look cheap") or use the slide's own opening words so the text reads as the continuation (for example heading "Logic dominates when" over "Logic dominates when risk is high"; the repeated words are then shown only once). No colon.
   - heading_highlight: one word from the heading to emphasise.
   - emoji: one emoji from the list that fits the slide, or "" if nothing fits. Never repeat the same emoji twice in a row.
   - note: a tiny handwritten aside for at most 2 of the slides (at most 6 words), otherwise "".
@@ -207,7 +240,8 @@ def ensure(post: dict, series: str, style: str, cfg: dict) -> dict:
     fp = fingerprint(post)
     note = str(post.get("design_note") or "")[:300]
     d = post.get("design")
-    if isinstance(d, dict) and d.get("for") == fp and d.get("style") == style and d.get("note", "") == note:
+    if (isinstance(d, dict) and d.get("for") == fp and d.get("style") == style and d.get("note", "") == note
+            and d.get("v") == DESIGN_VERSION):
         return d
     if DRY_RUN:
         raw, source = sample_design(post), "sample"
@@ -218,7 +252,7 @@ def ensure(post: dict, series: str, style: str, cfg: dict) -> dict:
             print(f"Design step fell back to plain highlights: {e}")
             raw, source = fallback(post, style), "fallback"
     d = validate(raw, post, style)
-    d.update({"for": fp, "style": style, "source": source, "note": note})
+    d.update({"for": fp, "style": style, "source": source, "note": note, "v": DESIGN_VERSION})
     post["design"] = d
     return d
 
