@@ -23,6 +23,7 @@ FILES = {
     "anton": "Anton-Regular.ttf", "serif": "DMSerifDisplay-Regular.ttf", "serif-i": "DMSerifDisplay-Italic.ttf",
     "quote": "InstrumentSerif-Italic.ttf", "hand": "Caveat-Variable.ttf", "inter": "Inter-Variable.ttf",
     "mono": "SpaceMono-Regular.ttf", "mono-b": "SpaceMono-Bold.ttf", "kumbh": "KumbhSans-Bold.ttf",
+    "dm": "DMSans-Variable.ttf",
 }
 EMOJI_FONT = FONTS / "NotoColorEmoji.ttf"
 
@@ -60,7 +61,7 @@ def charset():
     global _charset
     if _charset is None:
         from fontTools.ttLib import TTFont
-        sets = [set(TTFont(str(FONTS / FILES[k])).getBestCmap()) for k in ("anton", "serif", "inter", "hand", "quote")]
+        sets = [set(TTFont(str(FONTS / FILES[k])).getBestCmap()) for k in ("anton", "serif", "inter", "hand", "quote", "dm")]
         _charset = set.intersection(*sets)
     return _charset
 
@@ -374,8 +375,34 @@ def line_ends(lines, ty, x, y, align="left", boxw=0):
     return out
 
 
+# Body copy: one fixed size per look so every slide matches (Sachin, 2026-10-16:
+# keep it consistent and on the smaller side). Instagram guides put body text at
+# 28 to 36 px on a 1080 px slide; these sit just above that so they still read
+# comfortably on a phone, close to the smaller sizes Sachin liked. A slide only drops below its size if it would overflow.
+BODY = {"poster": 40, "editorial": 38, "essay": 36, "notebook": 40}
+BODY_LEADING = 1.22  # line height as a multiple of the font size (tight, like the references)
+
+
+def body_sizes(size):
+    return range(size, 25, -2)
+
+
 def inter(size, w="Regular"):
     return F("inter", size, w)
+
+
+WEIGHTS = {"Regular": 400, "Medium": 500, "SemiBold": 600, "Bold": 700, "ExtraBold": 800, "Black": 900}
+
+
+def body(size, w="Regular"):
+    """DM Sans, the body-copy font Sachin picked (2026-10-16)."""
+    size = int(size)
+    key = ("dm", size, w)
+    if key not in _fonts:
+        f = ImageFont.truetype(str(FONTS / FILES["dm"]), size)
+        f.set_variation_by_axes([14, WEIGHTS.get(w, 400)])
+        _fonts[key] = f
+    return _fonts[key]
 
 
 # ------------------------------------------------------------------ the carousel model
@@ -460,11 +487,11 @@ class Poster(Style):
                     used.append(-999 - len(used))
         sub = safe(s.get("subtitle") or "")
         if sub:
-            f = inter(34, "SemiBold")
+            f = body(34, "SemiBold")
             sl = layout(sub, Type(f, f, 44), 600)[:2]
             draw_text(d, sl, Type(f, f, 44), 70, H - 100 - 44 * len(sl), (self.ink, self.ink))
         d.rounded_rectangle((W - 290, H - 140, W - 70, H - 70), radius=35, fill=self.ink)
-        d.text((W - 262, H - 128), "Swipe", font=inter(36, "Bold"), fill=self.bg)
+        d.text((W - 262, H - 128), "Swipe", font=body(36, "Bold"), fill=self.bg)
         arrow(d, W - 140, H - 105, 46, self.bg, width=6, head=14)
         return img
 
@@ -483,20 +510,15 @@ class Poster(Style):
             mk = lambda z: Type(F("anton", z), F("anton", z), int(z * 1.02), upper=True)
             hty, hl = fit(head, mk, range(130, 60, -6), W - 140, 270, 2)
             blocks.append((len(hl) * hty.lh + 48, lambda y: draw_text(d, hl, hty, 70, y, (self.ink, self.accent))))
-        tint = mix(self.accent, self.bg, 0.68)
-
-        def marker(d, x0, x1, base, ty):
-            d.rectangle((x0 - 6, base - ty.n.size * 0.38, x1 + 6, base + ty.n.size * 0.12), fill=tint)
-
-        mk = lambda z: Type(inter(z, "Medium"), inter(z, "ExtraBold"), int(z * 1.4))
+        mk = lambda z: Type(body(z, "Regular"), body(z, "Bold"), int(z * BODY_LEADING))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, range(66, 30, -2), W - 150, bottom - top - used)
-        blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 70, y, (self.ink, self.ink), deco=marker)))
-        stack(blocks, top, bottom, 0.35)
+        ty, lines = fit(safe(s["text"]), mk, body_sizes(BODY["poster"]), W - 150, bottom - top - used)
+        blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 70, y, (self.ink, self.ink))))
+        stack(blocks, top, bottom, 0.42)
         note = safe(s.get("note") or "")
         if note:
             ok = sticker(img, "👉", (70, H - 190), 76, shadow=False)
-            d.text((170 if ok else 70, H - 176), note, font=inter(34, "SemiBold"), fill=self.ink)
+            d.text((170 if ok else 70, H - 176), note, font=body(34, "SemiBold"), fill=self.ink)
         page_dots(d, W - 170, H - 150, self.total, i, self.ink, (190, 185, 176))
         return img
 
@@ -518,7 +540,7 @@ class Poster(Style):
         note = safe(s.get("note") or "")
         if note:
             ok = sticker(img, "👉", (70, H - 190), 76, shadow=False)
-            d.text((170 if ok else 70, H - 176), note, font=inter(34, "SemiBold"), fill=self.ink)
+            d.text((170 if ok else 70, H - 176), note, font=body(34, "SemiBold"), fill=self.ink)
         page_dots(d, W - 170, H - 150, self.total, i, self.ink, (190, 185, 176))
         return img
 
@@ -592,16 +614,16 @@ class Editorial(Style):
         qt = Type(qf, qf, 62)
         ql = layout(f"\u201c{quote}\u201d", qt, W - 220)[:2] if quote else []
         qh = (50 + 62 * len(ql)) if ql else 0
-        mk = lambda z: Type(inter(z, "Regular"), inter(z, "SemiBold"), int(z * 1.45))
+        mk = lambda z: Type(body(z, "Regular"), body(z, "Bold"), int(z * BODY_LEADING))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, range(58, 30, -2), W - 160, bottom - top - used - qh)
+        ty, lines = fit(safe(s["text"]), mk, body_sizes(BODY["editorial"]), W - 160, bottom - top - used - qh)
         blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 70, y, (self.ink, self.ink))))
         if ql:
             def q(y):
                 d.line((70, y + 46, 70, y + 46 + 62 * len(ql)), fill=self.pen, width=4)
                 draw_text(d, ql, qt, 100, y + 40, (self.ink, self.ink))
             blocks.append((qh, q))
-        end = stack(blocks, top, bottom, 0.3)
+        end = stack(blocks, top, bottom, 0.42)
         if s.get("note"):
             self.note(d, safe(s["note"]), 560, H - 250, target=(440, min(end + 25, H - 310)))
         return img
@@ -677,7 +699,7 @@ class Essay(Style):
         y = draw_text(d, lines, ty, 84, top, (p["ink"], p["bg"]), deco=self.band(p))
         sub = safe(s.get("subtitle") or "")
         if sub:
-            f = inter(36, "Medium")
+            f = body(36, "Medium")
             sl = layout(sub, Type(f, f, 48), 760)[:2]
             draw_text(d, sl, Type(f, f, 48), 70, y + 70, (p["mute"], p["mute"]))
         return img
@@ -701,16 +723,16 @@ class Essay(Style):
         qt = Type(qf, qf, 62)
         ql = layout(f"\u201c{quote}\u201d", qt, W - 220)[:2] if quote else []
         qh = (56 + 62 * len(ql)) if ql else 0
-        mk = lambda z: Type(inter(z, "Regular"), inter(z, "SemiBold"), int(z * 1.48))
+        mk = lambda z: Type(body(z, "Regular"), body(z, "SemiBold"), int(z * BODY_LEADING))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, range(54, 28, -2), W - 160, bottom - top - used - qh)
+        ty, lines = fit(safe(s["text"]), mk, body_sizes(BODY["essay"]), W - 160, bottom - top - used - qh)
         blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 70, y, (p["mute"], p["ink"]))))
         if ql:
             def q(y):
                 d.line((70, y + 52, 70, y + 52 + 62 * len(ql)), fill=self.accent, width=4)
                 draw_text(d, ql, qt, 100, y + 46, (p["ink"], p["ink"]))
             blocks.append((qh, q))
-        stack(blocks, top, bottom, 0.3)
+        stack(blocks, top, bottom, 0.42)
         return img
 
     def takeaway(self, s, i):
@@ -780,8 +802,8 @@ class Notebook(Style):
             self.note(d, f"({note})" if not note.startswith("(") else note, 600, min(y + 70, H - 330),
                       target=(560, y - 20))
         logo(img, (150, H - 165), 70)
-        d.text((240, H - 148), self.handle, font=inter(32, "SemiBold"), fill=self.ink)
-        d.text((W - 230, H - 148), "Swipe", font=inter(32, "SemiBold"), fill=self.ink)
+        d.text((240, H - 148), self.handle, font=body(32, "SemiBold"), fill=self.ink)
+        d.text((W - 230, H - 148), "Swipe", font=body(32, "SemiBold"), fill=self.ink)
         arrow(d, W - 120, H - 128, 46, self.ink, width=5, head=14)
         return img
 
@@ -806,14 +828,14 @@ class Notebook(Style):
             mk = lambda z: Type(inter(z, "Black"), inter(z, "Black"), int(z * 1.15))
             hty, hl = fit(head, mk, range(88, 50, -4), W - 230 - (170 if s.get("emoji") else 0), 300, 3)
             blocks.append((len(hl) * hty.lh + 50, lambda y: draw_text(d, hl, hty, 150, y, (self.ink, self.ink), deco=self.under)))
-        mk = lambda z: Type(inter(z, "Medium"), inter(z, "Bold"), int(z * 1.3))
+        mk = lambda z: Type(body(z, "Regular"), body(z, "Bold"), int(z * BODY_LEADING))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, range(62, 30, -2), W - 230, bottom - top - used)
+        ty, lines = fit(safe(s["text"]), mk, body_sizes(BODY["notebook"]), W - 230, bottom - top - used)
         if kind == "before":
             blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 150, y, (self.grey, self.grey))))
         else:
             blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 150, y, (self.ink, self.ink), deco=self.under)))
-        end = stack(blocks, top, bottom, 0.3)
+        end = stack(blocks, top, bottom, 0.42)
         if s.get("note"):
             self.note(d, safe(s["note"]), 560, H - 270, target=(470, min(end + 20, H - 310)))
         page_dots(d, W / 2 + 40, H - 110, self.total, i, self.ink, (205, 196, 172))
@@ -830,8 +852,8 @@ class Notebook(Style):
             ty = Type(inter(90, "Black"), inter(90, "Black"), 104)
             y = draw_text(d, layout(head, ty, W - 400)[:2], ty, 150, y, (self.ink, self.ink)) + 40
         sticker(img, s.get("emoji") or "✅", (W - 250, 230), 150, angle=-8)
-        mk = lambda z: Type(inter(z, "SemiBold"), inter(z, "Black"), int(z * 1.3))
-        ty, lines = fit(safe(s["text"]), mk, range(60, 34, -2), W - 230, H - 320 - y)
+        mk = lambda z: Type(body(z, "Medium"), body(z, "Bold"), int(z * BODY_LEADING))
+        ty, lines = fit(safe(s["text"]), mk, body_sizes(BODY["notebook"]), W - 230, H - 320 - y)
         y = draw_text(d, lines, ty, 150, y, (self.ink, self.ink), deco=self.under)
         if s.get("note"):
             self.note(d, safe(s["note"]), 560, H - 260)
