@@ -145,7 +145,7 @@
       "note": ""
     },
     {
-      "id": "20261016-134013",
+      "id": "20261016-135738",
       "series": "MythOrMagic",
       "number": 1,
       "tag": "MYTHORMAGIC#1",
@@ -197,47 +197,47 @@
         "model": "groq:openai/gpt-oss-120b",
         "design": {
           "cover": {
-            "highlight": "really buy",
+            "highlight": "buy with logic",
             "emoji": [
               "🧠",
               "💡"
             ],
-            "subtitle": "Why emotion beats logic in purchases",
-            "note": "your brain does this"
+            "subtitle": "Why emotions outrank rational thought",
+            "note": "your brain loves stories"
           },
           "slides": [
             {
-              "heading": "Logic **Myth**",
-              "emoji": "📈",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Brain** Lights Up",
-              "emoji": "🧠",
-              "layout": "standard",
-              "note": "amygdala first",
-              "quote": ""
-            },
-            {
-              "heading": "When **Logic** Wins",
-              "emoji": "✅",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "Blend **Emotion** First",
+              "heading": "**Logic** Myth",
               "emoji": "💡",
               "layout": "standard",
-              "note": "start with feeling",
-              "quote": "Feel first, then prove"
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "Brain Shows **Emotion**",
+              "emoji": "🧠",
+              "layout": "standard",
+              "note": "",
+              "quote": "emotion predicts buying"
+            },
+            {
+              "heading": "Logic dominates when",
+              "emoji": "",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "Lead with an",
+              "emoji": "",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
             }
           ],
           "takeaway": {
-            "heading": "Feel + Facts",
-            "emoji": "🔑",
+            "heading": "Feel then Proof",
+            "emoji": "✅",
             "note": ""
           },
           "for": "576f07349fad",
@@ -248,12 +248,12 @@
       },
       "caption": "Marketers love the idea of the rational consumer. We picture a shopper ticking boxes, comparing specs, and choosing the best price.\n\nBut brain scans tell a different story: the emotional centers fire up before the rational ones, and that feeling often decides the purchase.\n\nThe trick isn’t to ditch data or price points. It’s to let emotion open the door, then let logic seal the deal. Start with a story, a vivid image, or a sensory cue, and follow with the specs and guarantees that satisfy the analytical mind.\n\nHow do you blend emotion and logic in your messaging?\n\n#marketingpsychology #consumerbehavior #emotionselling #rationalmarketing #brandingtips #copywriting #entrepreneur",
       "images": [
-        "posts/20261016-134013/01.jpg",
-        "posts/20261016-134013/02.jpg",
-        "posts/20261016-134013/03.jpg",
-        "posts/20261016-134013/04.jpg",
-        "posts/20261016-134013/05.jpg",
-        "posts/20261016-134013/06.jpg"
+        "posts/20261016-135738/01.jpg",
+        "posts/20261016-135738/02.jpg",
+        "posts/20261016-135738/03.jpg",
+        "posts/20261016-135738/04.jpg",
+        "posts/20261016-135738/05.jpg",
+        "posts/20261016-135738/06.jpg"
       ],
       "created_at": "2026-10-16T06:02:55+00:00",
       "status": "approved",
@@ -290,7 +290,14 @@
         114,
         115,
         116,
-        117
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124
       ],
       "approved_at": "2026-10-16T09:46:11+00:00",
       "note": "",
@@ -367,6 +374,11 @@
       "at": "2026-10-16T13:40:19+00:00",
       "job": "6. App action",
       "text": "App: Redesigned MYTHORMAGIC#1 (Emotion vs. logic in decision making) in the Essay style. It's still scheduled for 7:30 pm IST today."
+    },
+    {
+      "at": "2026-10-16T13:57:49+00:00",
+      "job": "6. App action",
+      "text": "App: Redesigned MYTHORMAGIC#1 (Emotion vs. logic in decision making) in the Essay style. It's still scheduled for 7:30 pm IST today."
     }
   ],
   "app_requests": [
@@ -423,6 +435,15 @@
       "ok": true,
       "message": "Redesigned MYTHORMAGIC#1 (Emotion vs. logic in decision making) in the Essay style. It's still scheduled for 7:30 pm IST today.",
       "at": "2026-10-16T13:40:19+00:00"
+    },
+    {
+      "id": "mvb17yt2s3hrgi",
+      "action": "redesign",
+      "draft_id": "20261016-134013",
+      "new_draft_id": "20261016-135738",
+      "ok": true,
+      "message": "Redesigned MYTHORMAGIC#1 (Emotion vs. logic in decision making) in the Essay style. It's still scheduled for 7:30 pm IST today.",
+      "at": "2026-10-16T13:57:49+00:00"
     }
   ]
 }
