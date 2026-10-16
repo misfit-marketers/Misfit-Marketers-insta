@@ -358,7 +358,7 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
         draft_id += "b"
     tag = cfg["series"][series]["tag"].format(n=number)
     paths = render_post(post, theme, tag, POSTS / draft_id, closing=closing_text(cfg),
-                        label=series_label(cfg, series))
+                        label=series_label(cfg, series), series=series, cfg=cfg)
 
     state = load_state()  # reload: the writer call can take a while
     if redo_of:
@@ -652,7 +652,7 @@ def rerender(draft_id: str):
     while (POSTS / new_id).exists() or find(state, new_id):
         new_id += "b"
     paths = render_post(d["post"], d["theme"], d["tag"], POSTS / new_id, closing=closing_text(cfg),
-                        label=series_label(cfg, d["series"]))
+                        label=series_label(cfg, d["series"]), series=d["series"], cfg=cfg)
     remove_draft_files(d)
     d["id"] = new_id
     d["images"] = [str(p.relative_to(ROOT)) for p in paths]
@@ -918,7 +918,7 @@ def preview(path: str):
     for theme in ("light", "dark"):
         out = POSTS / "preview" / theme
         paths = render_post(post, theme, cfg["series"][series]["tag"].format(n=0), out,
-                            label=series_label(cfg, series))
+                            label=series_label(cfg, series), series=series, cfg=cfg)
         log(f"{theme}: {len(paths)} slides in {out}")
 
 

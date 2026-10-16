@@ -213,10 +213,39 @@ def draw_body(text, theme_name, tag):
     return img
 
 
+def style_for(cfg: dict, series: str):
+    """(style, accent) for a series from config "design", or None for the classic look."""
+    dz = (cfg or {}).get("design") or {}
+    if not dz.get("enabled") or not series:
+        return None
+    pick = (dz.get("styles") or {}).get(series)
+    if not pick or pick.get("style") in (None, "classic"):
+        return None
+    return pick["style"], pick.get("accent", "#FF4D2E")
+
+
 def render_post(post: dict, theme_name: str, tag: str, out_dir: Path, closing: str = None,
-                label: str = "Takeaway") -> list:
-    """Writes 01.jpg, 02.jpg ... and returns their paths."""
+                label: str = "Takeaway", series: str = None, cfg: dict = None) -> list:
+    """Writes 01.jpg, 02.jpg ... and returns their paths. Series with a design
+    style in config.json get the new look; anything that goes wrong there
+    falls back to the classic look so a draft is never lost."""
     out_dir.mkdir(parents=True, exist_ok=True)
+    pick = style_for(cfg, series)
+    if pick:
+        try:
+            from . import design, styles
+            for old in out_dir.glob("*.jpg"):
+                old.unlink()
+            d = design.ensure(post, series, pick[0], cfg)
+            post.pop("design_error", None)
+            return styles.render(post, d, pick[0], pick[1], tag, out_dir,
+                                 handle=cfg.get("instagram_handle", "@misfit_marketers"),
+                                 label=label, closing=closing, series_name=series)
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            print(f"New style failed ({e}); using the classic look for this draft.")
+            post.setdefault("design_error", str(e)[:300])
     slides = [draw_hook(post["hook"], theme_name, tag)]
     for body in post["slides"]:
         slides.append(draw_body(body, theme_name, tag))

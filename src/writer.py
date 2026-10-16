@@ -131,7 +131,7 @@ SPELLING: {w['spelling']}
 HOUSE RULES:
 - Structure for this series: {structure} These are beats, not slides: several beats can share one slide, and a beat can be skipped if it adds nothing.
 - Length: use as few body slides as the idea needs, anywhere from 2 to {max_slides}. Short carousels (2 to 4 body slides) are welcome when the idea is simple; go longer only when every extra slide adds something new. Never restate a point, pad, or repeat the hook. Respect the reader's time.
-- One idea per slide. Each body slide is at most 45 words.
+- One idea per slide. Each body slide is at most 40 words: short, punchy sentences that read well in big type. A designer adds a short heading, an emoji and highlights to every slide later, so do not add headings, emoji or labels yourself (except the labels the series structure asks for, such as 'Before:' or 'The belief:').
 - Mark 1 to 3 key phrases per slide in **double asterisks**. Never bold a whole slide.
 - The hook is a short question or provocative line, at most 9 words, no asterisks.
 - The "takeaway" field is the final slide: one or two practical sentences. It is shown after the label "{label}:", so do not start it with that word.

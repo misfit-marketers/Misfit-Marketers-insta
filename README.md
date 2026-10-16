@@ -209,7 +209,18 @@ writer can't search the web.
   8:30 pm, 3:30 am and 4:30 am IST.
 - **Auto-post without review:** set `"auto_post_if_not_reviewed": true` in
   `config.json`. A draft you haven't reviewed by its slot then posts anyway.
-- **Light or dark slides:** `"theme"` can be `"alternate"`, `"light"` or `"dark"`.
+- **Slide styles per series:** `config.json → design → styles` gives each series
+  a look and a highlight colour: `poster` (huge capitals, emoji stickers),
+  `editorial` (serif headings, yellow highlighter, handwritten notes), `essay`
+  (capital headings on a red band, section labels, pull quotes) or `notebook`
+  (ruled paper, pen underlines, handwritten notes). Use `classic` for the old
+  plain look, or set `design.enabled` to `false` to switch all of it off.
+  After the writer, a second AI call decides the highlights, headings, emoji
+  and notes for each slide (saved as `design` in the draft). If that call
+  fails, the slides still render with plain highlights. An edit to the text
+  gets fresh art direction automatically. /rerender redraws waiting drafts.
+- **Light or dark slides:** `"theme"` can be `"alternate"`, `"light"` or `"dark"`
+  (only used by series on the `classic` look).
 - **Follow slide at the end:** set `closing_slide.enabled` to `true`.
 - **Writing style:** voice, spelling and rules are in `config.json → writing`.
   The example posts the writer copies are in `content/past_posts.md`.

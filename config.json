@@ -60,6 +60,36 @@
     }
   ],
   "theme": "alternate",
+  "design": {
+    "enabled": true,
+    "about": "Each series gets its own look. style: poster, editorial, essay, notebook or classic (the old plain look). accent: the highlight colour.",
+    "styles": {
+      "MarketingTip": {
+        "style": "poster",
+        "accent": "#FF4D2E"
+      },
+      "MarketersAssemble": {
+        "style": "poster",
+        "accent": "#2F5BFF"
+      },
+      "BrandBreakdown": {
+        "style": "editorial",
+        "accent": "#F5C842"
+      },
+      "MythOrMagic": {
+        "style": "essay",
+        "accent": "#E5483B"
+      },
+      "CopyClinic": {
+        "style": "notebook",
+        "accent": "#D93A2B"
+      },
+      "PsychInTheWild": {
+        "style": "notebook",
+        "accent": "#2B59C3"
+      }
+    }
+  },
   "max_body_slides": 7,
   "closing_slide": {
     "enabled": false,

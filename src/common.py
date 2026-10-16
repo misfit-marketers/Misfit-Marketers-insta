@@ -89,6 +89,8 @@ def clean_text(text: str) -> str:
         return text
     # No em dashes: turn " — " / "—" into a comma pause.
     text = re.sub(r"\s*[—―]\s*", ", ", text)
+    # A spaced en dash used as a dash ("It depends – start...") reads like an em dash too.
+    text = re.sub(r"\s+–\s+", ", ", text)
     # Plain hyphens and spaces instead of the special Unicode ones AI writers use.
     for ch in "\u2010\u2011\u2012\u2212":
         text = text.replace(ch, "-")
