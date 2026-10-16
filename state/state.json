@@ -247,6 +247,11 @@
       "at": "2026-10-16T14:28:47+00:00",
       "job": "6. App action",
       "text": "App: Redesigned MARKETINGTIP#8 (Anchoring Effect) in the Poster style. It's still scheduled for 3:30 am IST tonight."
+    },
+    {
+      "at": "2026-10-16T14:33:50+00:00",
+      "job": "6. App action",
+      "text": "App: PsychInTheWild now uses the Notebook style. New drafts will use it."
     }
   ],
   "app_requests": [
@@ -321,6 +326,21 @@
       "ok": true,
       "message": "Redesigned MARKETINGTIP#8 (Anchoring Effect) in the Poster style. It's still scheduled for 3:30 am IST tonight.",
       "at": "2026-10-16T14:28:47+00:00"
+    },
+    {
+      "id": "mvb2iflwvahkf2",
+      "action": "styles_set",
+      "draft_id": "",
+      "new_draft_id": "",
+      "ok": true,
+      "message": "PsychInTheWild now uses the Notebook style. New drafts will use it.",
+      "at": "2026-10-16T14:33:50+00:00"
     }
-  ]
+  ],
+  "design_styles": {
+    "PsychInTheWild": {
+      "style": "notebook",
+      "accent": "#FF4D2E"
+    }
+  }
 }
