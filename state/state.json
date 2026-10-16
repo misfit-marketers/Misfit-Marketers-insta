@@ -84,7 +84,7 @@
       ]
     },
     {
-      "id": "20261016-060255",
+      "id": "20261016-090749",
       "series": "MythOrMagic",
       "number": 1,
       "tag": "MYTHORMAGIC#1",
@@ -96,7 +96,7 @@
         "hook": "Do people really buy with logic?",
         "slides": [
           "The belief: Marketers assume consumers act like calculators, weighing features and price before buying. **Logical decision**, **rational choice**, **cost-benefit analysis**.",
-          "What research shows: Neuroscience shows the **amygdala** lights up before the prefrontal cortex in purchase moments; emotional response predicts buying 2-3× better than self-reported reasons (Plassmann et al., 2008, *Neuron*).",
+          "What research shows: Neuroscience shows the **amygdala** lights up before the prefrontal cortex in purchase moments; emotional response predicts buying 2-3× better than self-reported reasons (Plassmann et al., 2008).",
           "Nuance: Logic dominates when risk is high, stakes low, or the product is utilitarian (insurance, B2B software). Emotion drives low-involvement, hedonic, or identity-linked purchases (clothing, snacks).",
           "What it means: Lead with an emotion cue, story, vivid image, or sensory detail, then layer facts, specs, and guarantees to satisfy the rational mind."
         ],
@@ -137,12 +137,12 @@
       },
       "caption": "Marketers love the idea of the rational consumer. We picture a shopper ticking boxes, comparing specs, and choosing the best price.\n\nBut brain scans tell a different story: the emotional centers fire up before the rational ones, and that feeling often decides the purchase.\n\nThe trick isn’t to ditch data or price points. It’s to let emotion open the door, then let logic seal the deal. Start with a story, a vivid image, or a sensory cue, and follow with the specs and guarantees that satisfy the analytical mind.\n\nHow do you blend emotion and logic in your messaging?\n\n#marketingpsychology #consumerbehavior #emotionselling #rationalmarketing #brandingtips #copywriting #entrepreneur",
       "images": [
-        "posts/20261016-060255/01.jpg",
-        "posts/20261016-060255/02.jpg",
-        "posts/20261016-060255/03.jpg",
-        "posts/20261016-060255/04.jpg",
-        "posts/20261016-060255/05.jpg",
-        "posts/20261016-060255/06.jpg"
+        "posts/20261016-090749/01.jpg",
+        "posts/20261016-090749/02.jpg",
+        "posts/20261016-090749/03.jpg",
+        "posts/20261016-090749/04.jpg",
+        "posts/20261016-090749/05.jpg",
+        "posts/20261016-090749/06.jpg"
       ],
       "created_at": "2026-10-16T06:02:55+00:00",
       "status": "awaiting",
@@ -158,7 +158,14 @@
         82,
         83,
         84,
-        85
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92
       ]
     }
   ],
@@ -201,6 +208,11 @@
       "at": "2026-10-16T06:02:58+00:00",
       "job": "6. App action",
       "text": "App: New draft ready: MYTHORMAGIC#1 (Emotion vs. logic in decision making) for 7:30 pm IST today. Have a look and approve it."
+    },
+    {
+      "at": "2026-10-16T09:07:53+00:00",
+      "job": "6. App action",
+      "text": "App: Saved your edits and redrew the slides. Approve it when you're happy."
     }
   ],
   "app_requests": [
@@ -221,6 +233,15 @@
       "ok": true,
       "message": "New draft ready: MYTHORMAGIC#1 (Emotion vs. logic in decision making) for 7:30 pm IST today. Have a look and approve it.",
       "at": "2026-10-16T06:02:58+00:00"
+    },
+    {
+      "id": "mvaqv988mye5c2",
+      "action": "edit",
+      "draft_id": "20261016-060255",
+      "new_draft_id": "20261016-090749",
+      "ok": true,
+      "message": "Saved your edits and redrew the slides. Approve it when you're happy.",
+      "at": "2026-10-16T09:07:53+00:00"
     }
   ]
 }
