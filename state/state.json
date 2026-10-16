@@ -8,74 +8,6 @@
   },
   "drafts": [
     {
-      "id": "20261016-012307",
-      "series": "MythOrMagic",
-      "number": 1,
-      "tag": "MYTHORMAGIC#1",
-      "theme": "light",
-      "topic": "\"More choice always sells more\": what the famous jam study really showed",
-      "post": {
-        "topic": "More Choice Sells More?",
-        "principle": "Paradox of Choice",
-        "hook": "Does offering more options boost sales?",
-        "slides": [
-          "The belief: Marketers assume that giving customers a wider assortment, like 12 flavor options for a soda, will increase conversion because shoppers love variety.",
-          "What research actually found: In the classic jam study (Iyengar & Lepper, 2000), shoppers faced 24 jam varieties bought fewer jars (3%) than those who saw only 6 varieties (30%).",
-          "Nuance: Choice overload hurts when options exceed a modest set and when decisions are low-involvement. In high-involvement or luxury contexts, more curated options can enhance perceived exclusivity.",
-          "What it means for marketers: Limit core choices to 3-5 well-differentiated options, then use filters or bundles for deeper variety without crowding the decision screen."
-        ],
-        "takeaway": "It depends: keep the primary selection simple, then let power users dive deeper. Offer 3-5 headline products and hide extra variants behind filters or ‘more flavors’ tabs.",
-        "caption": "Marketers love the idea that “the more, the merrier” when it comes to product assortments. But a landmark study from Princeton showed that drowning shoppers in choices can actually shrink sales.\n\nWhen shoppers saw 24 jam flavors, they felt overwhelmed and bought far less than those who saw just six. The paradox of choice isn’t about eliminating variety, it’s about presenting it in a way that feels manageable.\n\nFor your brand, start with a clean, focused lineup on the main page. Then, let curious customers explore deeper through filters, bundles, or a “see all flavors” section. This balances excitement with ease.\n\nHow many options do you think your audience can comfortably handle?",
-        "hashtags": [
-          "#marketingpsychology",
-          "#paradoxofchoice",
-          "#consumerbehavior",
-          "#branding",
-          "#UXdesign",
-          "#productstrategy",
-          "#entrepreneur"
-        ],
-        "fact_check": [
-          {
-            "claim": "Iyengar & Lepper 2000 jam study showed lower purchase rates with 24 options versus 6",
-            "source": "Iyengar, Sheena S., and Mark Lepper. 2000. \"When Choice is Demotivating: Can One Desire Too Much of a Good Thing?\" Journal of Personality and Social Psychology, 79(6), 995‑1006.",
-            "confidence": "high"
-          },
-          {
-            "claim": "Purchase rates: 3% for 24 jam varieties, 30% for 6 varieties",
-            "source": "Same study; exact percentages reported in the article’s results section.",
-            "confidence": "medium"
-          }
-        ],
-        "model": "groq:openai/gpt-oss-120b"
-      },
-      "caption": "Marketers love the idea that “the more, the merrier” when it comes to product assortments. But a landmark study from Princeton showed that drowning shoppers in choices can actually shrink sales.\n\nWhen shoppers saw 24 jam flavors, they felt overwhelmed and bought far less than those who saw just six. The paradox of choice isn’t about eliminating variety, it’s about presenting it in a way that feels manageable.\n\nFor your brand, start with a clean, focused lineup on the main page. Then, let curious customers explore deeper through filters, bundles, or a “see all flavors” section. This balances excitement with ease.\n\nHow many options do you think your audience can comfortably handle?\n\n#marketingpsychology #paradoxofchoice #consumerbehavior #branding #UXdesign #productstrategy #entrepreneur",
-      "images": [
-        "posts/20261016-012307/01.jpg",
-        "posts/20261016-012307/02.jpg",
-        "posts/20261016-012307/03.jpg",
-        "posts/20261016-012307/04.jpg",
-        "posts/20261016-012307/05.jpg",
-        "posts/20261016-012307/06.jpg"
-      ],
-      "created_at": "2026-10-16T01:23:07+00:00",
-      "status": "awaiting",
-      "backlog_line": "[MythOrMagic] \"More choice always sells more\": what the famous jam study really showed",
-      "slot": "evening",
-      "slot_at": "2026-10-16T14:00:00+00:00",
-      "publish_at": null,
-      "reminded": false,
-      "msg_ids": [
-        63,
-        64,
-        65,
-        66,
-        67,
-        68,
-        69
-      ]
-    },
-    {
       "id": "20261016-012312",
       "series": "MarketingTip",
       "number": 8,
@@ -181,6 +113,22 @@
       "at": "2026-10-16T01:23:15+00:00",
       "job": "1. Write a new draft",
       "text": "New draft ready for review: MARKETINGTIP#8 (Anchoring Effect) for 3:30 am IST tonight"
+    },
+    {
+      "at": "2026-10-16T06:01:57+00:00",
+      "job": "6. App action",
+      "text": "App: Removed the topic of MYTHORMAGIC#1 (Paradox of Choice) for good. Its slot is free: tap Write a draft to fill it."
+    }
+  ],
+  "app_requests": [
+    {
+      "id": "mvak88q3tdfb3q",
+      "action": "drop",
+      "draft_id": "20261016-012307",
+      "new_draft_id": null,
+      "ok": true,
+      "message": "Removed the topic of MYTHORMAGIC#1 (Paradox of Choice) for good. Its slot is free: tap Write a draft to fill it.",
+      "at": "2026-10-16T06:01:57+00:00"
     }
   ]
 }
