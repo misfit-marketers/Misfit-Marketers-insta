@@ -2,166 +2,12 @@
   "last_update_id": 825911675,
   "last_theme": "light",
   "series_counters": {
-    "MarketingTip": 8,
+    "MarketingTip": 9,
     "BrandBreakdown": 2,
     "CopyClinic": 2,
     "MythOrMagic": 2
   },
-  "drafts": [
-    {
-      "id": "20261016-142832",
-      "series": "MarketingTip",
-      "number": 8,
-      "tag": "MARKETINGTIP#8",
-      "theme": "dark",
-      "topic": "Anchoring effect: why the first price a customer sees shapes every other price",
-      "post": {
-        "topic": "Anchoring Effect",
-        "principle": "Anchoring Effect",
-        "hook": "Why does the first price you see stick?",
-        "slides": [
-          "When you walk into a coffee shop and see a latte listed at **$5**, every other drink suddenly feels cheap or pricey in relation to that anchor.",
-          "Psychologists call this the **anchoring effect**: our brain latches onto the first numeric value it encounters and uses it as a reference point for all later judgments.",
-          "The brain does this because it relies on **heuristics**, mental shortcuts, to simplify complex decisions, especially when numbers are involved.",
-          "Marketers exploit this by showing a **high-priced premium option** first, then placing the target price next to it. For example, a streaming service lists $19.99 for the elite plan, then $9.99 for the standard plan, making $9.99 feel like a deal.",
-          "Even without a visible anchor, you can create one with **price framing**: say “Save $30 off the regular $199 price!” The $199 becomes the mental anchor, so $169 seems like a bargain."
-        ],
-        "takeaway": "Start every pricing layout with a deliberately high anchor, then position your core offering right after. Test different anchor levels to see which maximizes perceived value and conversion.",
-        "caption": "Ever wonder why a $9.99 price tag feels like a steal after you’ve seen $19.99? It’s not magic, it’s the anchoring effect at work.\n\nOur brains use the first number they encounter as a reference point, shaping every subsequent judgment about price. Marketers have been leveraging this shortcut for decades, from retail tags to subscription tiers.\n\nWant to make your pricing feel more attractive? Lead with a higher-priced option or a bold “regular price” strike-through, then place your main offer right after. The contrast does the heavy lifting.\n\nWhat anchor have you used recently that changed how you perceived a price?",
-        "hashtags": [
-          "#marketingpsychology",
-          "#anchoringeffect",
-          "#pricingstrategy",
-          "#consumerbehavior",
-          "#designthinking",
-          "#entrepreneurship",
-          "#growthhacks"
-        ],
-        "fact_check": [
-          {
-            "claim": "The anchoring effect was first described by Tversky and Kahneman in 1974",
-            "source": "Tversky, D., & Kahneman, D. (1974). Judgment under Uncertainty: Heuristics and Biases. Science.",
-            "confidence": "high"
-          },
-          {
-            "claim": "People use heuristics to simplify decisions involving numbers",
-            "source": "Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.",
-            "confidence": "high"
-          },
-          {
-            "claim": "Displaying a higher‑priced premium option first makes the subsequent price seem like a better deal",
-            "source": "Northcraft, G. B., & Neale, M. A. (1987). Experts, amateurs, and real estate: An anchoring-and-adjustment perspective. Organizational Behavior and Human Decision Processes.",
-            "confidence": "medium"
-          }
-        ],
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "first price you",
-            "emoji": [
-              "🧠",
-              "💡"
-            ],
-            "subtitle": "learn how anchors shape perception",
-            "note": "your brain does this daily"
-          },
-          "slides": [
-            {
-              "heading": "The **$5** latte",
-              "emoji": "💰",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "🤔",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Heuristics** shortcut",
-              "emoji": "⚡",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "💸",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "📈",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "Use high anchors",
-            "emoji": "✅",
-            "note": ""
-          },
-          "for": "eb84c6cca082",
-          "style": "poster",
-          "source": "ai",
-          "note": "",
-          "v": 2
-        }
-      },
-      "caption": "Ever wonder why a $9.99 price tag feels like a steal after you’ve seen $19.99? It’s not magic, it’s the anchoring effect at work.\n\nOur brains use the first number they encounter as a reference point, shaping every subsequent judgment about price. Marketers have been leveraging this shortcut for decades, from retail tags to subscription tiers.\n\nWant to make your pricing feel more attractive? Lead with a higher-priced option or a bold “regular price” strike-through, then place your main offer right after. The contrast does the heavy lifting.\n\nWhat anchor have you used recently that changed how you perceived a price?\n\n#marketingpsychology #anchoringeffect #pricingstrategy #consumerbehavior #designthinking #entrepreneurship #growthhacks",
-      "images": [
-        "posts/20261016-142832/01.jpg",
-        "posts/20261016-142832/02.jpg",
-        "posts/20261016-142832/03.jpg",
-        "posts/20261016-142832/04.jpg",
-        "posts/20261016-142832/05.jpg",
-        "posts/20261016-142832/06.jpg",
-        "posts/20261016-142832/07.jpg"
-      ],
-      "created_at": "2026-10-16T01:23:12+00:00",
-      "status": "approved",
-      "backlog_line": "Anchoring effect: why the first price a customer sees shapes every other price",
-      "slot": "night",
-      "slot_at": "2026-10-16T22:00:00+00:00",
-      "publish_at": "2026-10-16T22:00:00+00:00",
-      "reminded": false,
-      "msg_ids": [
-        70,
-        71,
-        72,
-        73,
-        74,
-        75,
-        76,
-        77,
-        103,
-        104,
-        105,
-        106,
-        107,
-        108,
-        109,
-        110,
-        126,
-        127,
-        128,
-        129,
-        130,
-        131,
-        132,
-        133
-      ],
-      "approved_at": "2026-10-16T09:47:40+00:00",
-      "note": "",
-      "style": null
-    }
-  ],
+  "drafts": [],
   "merged_seeds": [
     "2026-10-15_new_series.txt",
     "front_2026-10-15_restore.txt"
@@ -257,6 +103,11 @@
       "at": "2026-10-16T14:34:10+00:00",
       "job": "6. App action",
       "text": "App: MarketersAssemble now uses the Poster style. New drafts will use it."
+    },
+    {
+      "at": "2026-10-16T22:01:02+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Posted MARKETINGTIP#8 (Anchoring Effect)\nhttps://www.instagram.com/p/DekjqaKGBga/"
     }
   ],
   "app_requests": [
