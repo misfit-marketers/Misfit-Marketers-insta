@@ -94,7 +94,6 @@ Price-quality heuristic: why a higher price can signal better quality
 [MythOrMagic] "You need seven touchpoints before someone buys": the rule of seven
 [MythOrMagic] "Customers can tell you what they want": why surveys and behavior disagree
 [MythOrMagic] "Happy customers always leave reviews": who actually writes reviews
-[PsychInTheWild] Netflix autoplay: why the next episode starts before you decide
 [PsychInTheWild] Why milk is usually at the back of the supermarket
 [PsychInTheWild] Surge pricing: why paying more feels worse when you see the multiplier
 [PsychInTheWild] Countdown timers on sale pages: why a ticking clock speeds you up
