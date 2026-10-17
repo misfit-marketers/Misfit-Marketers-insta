@@ -131,7 +131,7 @@
       "slot": "evening",
       "slot_at": "2026-10-17T14:00:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "msg_ids": [
         143,
         144,
@@ -373,6 +373,11 @@
       "at": "2026-10-17T01:24:31+00:00",
       "job": "1. Write a new draft",
       "text": "New draft ready for review: MARKETERSASSEMBLE#2 (Human‑Centered Insight) for 3:30 am IST tonight"
+    },
+    {
+      "at": "2026-10-17T14:00:18+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but PSYCHINTHEWILD#1 (Default Effect) isn't approved yet. Approve it and it goes live at 8:30 pm IST instead."
     }
   ],
   "app_requests": [
