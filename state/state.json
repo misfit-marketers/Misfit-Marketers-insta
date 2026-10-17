@@ -6,131 +6,10 @@
     "BrandBreakdown": 2,
     "CopyClinic": 2,
     "MythOrMagic": 2,
-    "PsychInTheWild": 2
+    "PsychInTheWild": 2,
+    "MarketersAssemble": 3
   },
-  "drafts": [
-    {
-      "id": "20261017-012428",
-      "series": "MarketersAssemble",
-      "number": 2,
-      "tag": "MARKETERSASSEMBLE#2",
-      "theme": "light",
-      "style": null,
-      "topic": "Why great marketers study people before tactics",
-      "post": {
-        "topic": "Study People First",
-        "principle": "Human‑Centered Insight",
-        "hook": "Why do great marketers study people before tactics?",
-        "slides": [
-          "People are **behavioral patterns**, not just data points.",
-          "Psychology shows first impressions shape **decision pathways**.",
-          "Skipping research creates **misaligned messaging** and wasted spend.",
-          "Begin every campaign with a quick **empathy interview**."
-        ],
-        "takeaway": "Spend time learning your audience before any creative, it's the smartest investment.",
-        "caption": "We’ve all felt the sting of a campaign that missed the mark. The reason? Jumping straight to tactics without truly knowing who you’re speaking to.\n\nResearch in psychology tells us that first impressions guide the way prospects evaluate options. If your message doesn’t match their mental models, you lose attention, and budget.\n\nThe antidote is simple: start with a brief empathy interview. Ask real customers about their goals, frustrations, and language. Those insights become the foundation for every headline, visual, and offer.\n\nWhat’s one question you always ask to uncover a prospect’s true needs?",
-        "hashtags": [
-          "#marketingpsychology",
-          "#humaninsight",
-          "#empathyresearch",
-          "#marketingstrategy",
-          "#entrepreneurship",
-          "#designthinking"
-        ],
-        "fact_check": [
-          {
-            "claim": "Psychology shows first impressions shape decision pathways",
-            "source": "Kahneman, 2011, Thinking, Fast and Slow",
-            "confidence": "medium"
-          },
-          {
-            "claim": "Skipping research creates misaligned messaging and wasted spend",
-            "source": "Industry surveys on campaign performance, 2020–2022",
-            "confidence": "medium"
-          }
-        ],
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "great marketers",
-            "emoji": [
-              "🧠",
-              "📈"
-            ],
-            "subtitle": "learn why studying people matters",
-            "note": ""
-          },
-          "slides": [
-            {
-              "heading": "",
-              "emoji": "🤔",
-              "layout": "big",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "👀",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Research** = focus",
-              "emoji": "❌",
-              "layout": "standard",
-              "note": "avoid waste",
-              "quote": ""
-            },
-            {
-              "heading": "**Empathy** first",
-              "emoji": "💬",
-              "layout": "big",
-              "note": "",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "Invest wisely",
-            "emoji": "💰",
-            "note": ""
-          },
-          "for": "c47361dad742",
-          "style": "poster",
-          "source": "ai",
-          "note": "",
-          "v": 2
-        }
-      },
-      "caption": "We’ve all felt the sting of a campaign that missed the mark. The reason? Jumping straight to tactics without truly knowing who you’re speaking to.\n\nResearch in psychology tells us that first impressions guide the way prospects evaluate options. If your message doesn’t match their mental models, you lose attention, and budget.\n\nThe antidote is simple: start with a brief empathy interview. Ask real customers about their goals, frustrations, and language. Those insights become the foundation for every headline, visual, and offer.\n\nWhat’s one question you always ask to uncover a prospect’s true needs?\n\n#marketingpsychology #humaninsight #empathyresearch #marketingstrategy #entrepreneurship #designthinking",
-      "images": [
-        "posts/20261017-012428/01.jpg",
-        "posts/20261017-012428/02.jpg",
-        "posts/20261017-012428/03.jpg",
-        "posts/20261017-012428/04.jpg",
-        "posts/20261017-012428/05.jpg",
-        "posts/20261017-012428/06.jpg"
-      ],
-      "created_at": "2026-10-17T01:24:29+00:00",
-      "status": "approved",
-      "backlog_line": "[MarketersAssemble] Why great marketers study people before tactics",
-      "slot": "night",
-      "slot_at": "2026-10-17T22:00:00+00:00",
-      "publish_at": "2026-10-17T22:00:00+00:00",
-      "reminded": false,
-      "msg_ids": [
-        151,
-        152,
-        153,
-        154,
-        155,
-        156,
-        157
-      ],
-      "approved_at": "2026-10-17T14:08:48+00:00",
-      "note": ""
-    }
-  ],
+  "drafts": [],
   "merged_seeds": [
     "2026-10-15_new_series.txt",
     "front_2026-10-15_restore.txt"
@@ -261,6 +140,11 @@
       "at": "2026-10-17T14:08:49+00:00",
       "job": "6. App action",
       "text": "App: Approved. MARKETERSASSEMBLE#2 (Human‑Centered Insight) goes live at 3:30 am IST tonight."
+    },
+    {
+      "at": "2026-10-17T22:00:59+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Posted MARKETERSASSEMBLE#2 (Human‑Centered Insight)\nhttps://www.instagram.com/p/DenIc6RAZ5i/"
     }
   ],
   "app_requests": [
