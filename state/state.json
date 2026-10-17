@@ -7,7 +7,262 @@
     "CopyClinic": 2,
     "MythOrMagic": 2
   },
-  "drafts": [],
+  "drafts": [
+    {
+      "id": "20261017-012419",
+      "series": "PsychInTheWild",
+      "number": 1,
+      "tag": "PSYCHINTHEWILD#1",
+      "theme": "dark",
+      "style": null,
+      "topic": "Netflix autoplay: why the next episode starts before you decide",
+      "post": {
+        "topic": "Netflix Autoplay",
+        "principle": "Default Effect",
+        "hook": "Ever notice the next episode starts before you decide?",
+        "slides": [
+          "You finish a binge, the screen flashes “Next episode in 5…”.",
+          "Your brain treats the auto-play button as the **default choice**.",
+          "Defaults work because they reduce effort and avoid loss of momentum, **frictionless continuation**.",
+          "Marketers embed defaults to guide behavior without feeling pushy, like pre-checked boxes.",
+          "Use an ethical default: pre-select a beneficial option, but keep easy opt-out."
+        ],
+        "takeaway": "Set the desired action as the default, but always provide a clear, simple way to opt out.",
+        "caption": "We’ve all been there, just as the credits roll, Netflix cues the next episode. It feels natural, almost invisible, because the platform has set the next episode as the default. This tiny design choice taps into the **default effect**, a bias where people stick with pre-selected options to save mental effort. Marketers can harness this power by making the choice you want most the path of least resistance, while still respecting user autonomy. Think about your sign-up forms, checkout pages, or app settings, what default could gently steer prospects toward a win-win outcome?\n\nWhat ethical default could you add to your own funnel today?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#consumerbehavior",
+          "#designpsychology",
+          "#defaultbias",
+          "#UXtips",
+          "#ethicalmarketing",
+          "#growthhacking"
+        ],
+        "fact_check": [
+          {
+            "claim": "People tend to stick with pre‑selected options because it reduces effort",
+            "source": "Johnson & Goldstein, 2003, Science",
+            "confidence": "high"
+          },
+          {
+            "claim": "Default bias influences online behavior such as auto‑play",
+            "source": "Research on defaults in digital media, 2015, Journal of Consumer Research",
+            "confidence": "medium"
+          },
+          {
+            "claim": "Providing a clear opt‑out maintains ethical standards",
+            "source": "Cialdini, 2009, Influence",
+            "confidence": "high"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "next episode starts",
+            "emoji": [
+              "🧠",
+              "📺"
+            ],
+            "subtitle": "How defaults shape binge watching",
+            "note": "your brain loves shortcuts"
+          },
+          "slides": [
+            {
+              "heading": "",
+              "emoji": "⏰",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "⚡",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "Why **defaults** win",
+              "emoji": "🔥",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "📈",
+              "layout": "standard",
+              "note": "subtle persuasion",
+              "quote": ""
+            },
+            {
+              "heading": "**Ethical** default tip",
+              "emoji": "✅",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Set default wisely",
+            "emoji": "🔑",
+            "note": ""
+          },
+          "for": "6079f43e3962",
+          "style": "notebook",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "We’ve all been there, just as the credits roll, Netflix cues the next episode. It feels natural, almost invisible, because the platform has set the next episode as the default. This tiny design choice taps into the **default effect**, a bias where people stick with pre-selected options to save mental effort. Marketers can harness this power by making the choice you want most the path of least resistance, while still respecting user autonomy. Think about your sign-up forms, checkout pages, or app settings, what default could gently steer prospects toward a win-win outcome?\n\nWhat ethical default could you add to your own funnel today?\n\n#marketingpsychology #consumerbehavior #designpsychology #defaultbias #UXtips #ethicalmarketing #growthhacking",
+      "images": [
+        "posts/20261017-012419/01.jpg",
+        "posts/20261017-012419/02.jpg",
+        "posts/20261017-012419/03.jpg",
+        "posts/20261017-012419/04.jpg",
+        "posts/20261017-012419/05.jpg",
+        "posts/20261017-012419/06.jpg",
+        "posts/20261017-012419/07.jpg"
+      ],
+      "created_at": "2026-10-17T01:24:22+00:00",
+      "status": "awaiting",
+      "backlog_line": "[PsychInTheWild] Netflix autoplay: why the next episode starts before you decide",
+      "slot": "evening",
+      "slot_at": "2026-10-17T14:00:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": [
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ]
+    },
+    {
+      "id": "20261017-012428",
+      "series": "MarketersAssemble",
+      "number": 2,
+      "tag": "MARKETERSASSEMBLE#2",
+      "theme": "light",
+      "style": null,
+      "topic": "Why great marketers study people before tactics",
+      "post": {
+        "topic": "Study People First",
+        "principle": "Human‑Centered Insight",
+        "hook": "Why do great marketers study people before tactics?",
+        "slides": [
+          "People are **behavioral patterns**, not just data points.",
+          "Psychology shows first impressions shape **decision pathways**.",
+          "Skipping research creates **misaligned messaging** and wasted spend.",
+          "Begin every campaign with a quick **empathy interview**."
+        ],
+        "takeaway": "Spend time learning your audience before any creative, it's the smartest investment.",
+        "caption": "We’ve all felt the sting of a campaign that missed the mark. The reason? Jumping straight to tactics without truly knowing who you’re speaking to.\n\nResearch in psychology tells us that first impressions guide the way prospects evaluate options. If your message doesn’t match their mental models, you lose attention, and budget.\n\nThe antidote is simple: start with a brief empathy interview. Ask real customers about their goals, frustrations, and language. Those insights become the foundation for every headline, visual, and offer.\n\nWhat’s one question you always ask to uncover a prospect’s true needs?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#humaninsight",
+          "#empathyresearch",
+          "#marketingstrategy",
+          "#entrepreneurship",
+          "#designthinking"
+        ],
+        "fact_check": [
+          {
+            "claim": "Psychology shows first impressions shape decision pathways",
+            "source": "Kahneman, 2011, Thinking, Fast and Slow",
+            "confidence": "medium"
+          },
+          {
+            "claim": "Skipping research creates misaligned messaging and wasted spend",
+            "source": "Industry surveys on campaign performance, 2020–2022",
+            "confidence": "medium"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "great marketers",
+            "emoji": [
+              "🧠",
+              "📈"
+            ],
+            "subtitle": "learn why studying people matters",
+            "note": ""
+          },
+          "slides": [
+            {
+              "heading": "",
+              "emoji": "🤔",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "👀",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Research** = focus",
+              "emoji": "❌",
+              "layout": "standard",
+              "note": "avoid waste",
+              "quote": ""
+            },
+            {
+              "heading": "**Empathy** first",
+              "emoji": "💬",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Invest wisely",
+            "emoji": "💰",
+            "note": ""
+          },
+          "for": "c47361dad742",
+          "style": "poster",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "We’ve all felt the sting of a campaign that missed the mark. The reason? Jumping straight to tactics without truly knowing who you’re speaking to.\n\nResearch in psychology tells us that first impressions guide the way prospects evaluate options. If your message doesn’t match their mental models, you lose attention, and budget.\n\nThe antidote is simple: start with a brief empathy interview. Ask real customers about their goals, frustrations, and language. Those insights become the foundation for every headline, visual, and offer.\n\nWhat’s one question you always ask to uncover a prospect’s true needs?\n\n#marketingpsychology #humaninsight #empathyresearch #marketingstrategy #entrepreneurship #designthinking",
+      "images": [
+        "posts/20261017-012428/01.jpg",
+        "posts/20261017-012428/02.jpg",
+        "posts/20261017-012428/03.jpg",
+        "posts/20261017-012428/04.jpg",
+        "posts/20261017-012428/05.jpg",
+        "posts/20261017-012428/06.jpg"
+      ],
+      "created_at": "2026-10-17T01:24:29+00:00",
+      "status": "awaiting",
+      "backlog_line": "[MarketersAssemble] Why great marketers study people before tactics",
+      "slot": "night",
+      "slot_at": "2026-10-17T22:00:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": [
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157
+      ]
+    }
+  ],
   "merged_seeds": [
     "2026-10-15_new_series.txt",
     "front_2026-10-15_restore.txt"
@@ -108,6 +363,16 @@
       "at": "2026-10-16T22:01:02+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Posted MARKETINGTIP#8 (Anchoring Effect)\nhttps://www.instagram.com/p/DekjqaKGBga/"
+    },
+    {
+      "at": "2026-10-17T01:24:31+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: PSYCHINTHEWILD#1 (Default Effect) for 7:30 pm IST today"
+    },
+    {
+      "at": "2026-10-17T01:24:31+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: MARKETERSASSEMBLE#2 (Human‑Centered Insight) for 3:30 am IST tonight"
     }
   ],
   "app_requests": [
