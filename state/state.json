@@ -112,11 +112,11 @@
         "posts/20261017-012428/06.jpg"
       ],
       "created_at": "2026-10-17T01:24:29+00:00",
-      "status": "awaiting",
+      "status": "approved",
       "backlog_line": "[MarketersAssemble] Why great marketers study people before tactics",
       "slot": "night",
       "slot_at": "2026-10-17T22:00:00+00:00",
-      "publish_at": null,
+      "publish_at": "2026-10-17T22:00:00+00:00",
       "reminded": false,
       "msg_ids": [
         151,
@@ -126,7 +126,9 @@
         155,
         156,
         157
-      ]
+      ],
+      "approved_at": "2026-10-17T14:08:48+00:00",
+      "note": ""
     }
   ],
   "merged_seeds": [
@@ -254,6 +256,11 @@
       "at": "2026-10-17T14:06:46+00:00",
       "job": "6. App action",
       "text": "Posted PSYCHINTHEWILD#1 (Default Effect)\nhttps://www.instagram.com/p/DemSL1FFOv6/"
+    },
+    {
+      "at": "2026-10-17T14:08:49+00:00",
+      "job": "6. App action",
+      "text": "App: Approved. MARKETERSASSEMBLE#2 (Human‑Centered Insight) goes live at 3:30 am IST tonight."
     }
   ],
   "app_requests": [
@@ -355,6 +362,15 @@
       "ok": true,
       "message": "Approved. PSYCHINTHEWILD#1 (Default Effect) goes live at 7:30 pm IST today.",
       "at": "2026-10-17T14:06:07+00:00"
+    },
+    {
+      "id": "mvch1w7borxihp",
+      "action": "approve",
+      "draft_id": "20261017-012428",
+      "new_draft_id": "20261017-012428",
+      "ok": true,
+      "message": "Approved. MARKETERSASSEMBLE#2 (Human‑Centered Insight) goes live at 3:30 am IST tonight.",
+      "at": "2026-10-17T14:08:49+00:00"
     }
   ],
   "design_styles": {
