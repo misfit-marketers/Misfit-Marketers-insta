@@ -9,7 +9,282 @@
     "PsychInTheWild": 2,
     "MarketersAssemble": 3
   },
-  "drafts": [],
+  "drafts": [
+    {
+      "id": "20261018-012441",
+      "series": "MarketingTip",
+      "number": 9,
+      "tag": "MARKETINGTIP#9",
+      "theme": "dark",
+      "style": null,
+      "topic": "Loss aversion: why \"don't miss out\" beats \"get this\"",
+      "post": {
+        "topic": "Loss aversion",
+        "principle": "Loss aversion",
+        "hook": "Why does “don’t miss out” sell better than “get this”?",
+        "slides": [
+          "People feel **loss aversion**: losing feels worse than gaining feels good.",
+          "Our ancestors prioritized **survival instinct** to avoid threats.",
+          "A limited-time offer feels like a **missed deal**, triggering loss pain.",
+          "Use **scarcity language** like “only 2 left” or “ends soon” to spark urgency.",
+          "A/B test: **loss-framed** copy lifts clicks 10-15% over gain copy."
+        ],
+        "takeaway": "Swap “get this” for “don’t miss out” and watch conversions climb.",
+        "caption": "Ever notice how a countdown timer makes you click faster than a simple “Buy now” button? It’s not magic, it’s psychology.\n\nWhen we think we might lose an opportunity, our brain lights up the same fear circuits that kept our ancestors safe from real danger. That fear is called **loss aversion**, and it’s stronger than the pleasure of gaining something identical.\n\nMarketers exploit this by using **scarcity language**, phrases like “only 2 left” or “ends tonight”. In tests, the loss-framed copy often outperforms gain-framed copy by 10-15% in click-through rates.\n\nWhat loss-focused wording will you try in your next campaign?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#lossaversion",
+          "#copywriting",
+          "#conversiontips",
+          "#scarcity",
+          "#growthhacking",
+          "#entrepreneur"
+        ],
+        "fact_check": [
+          {
+            "claim": "Loss aversion causes losing to feel worse than gaining feels good",
+            "source": "Kahneman & Tversky, 1979, Prospect Theory",
+            "confidence": "high"
+          },
+          {
+            "claim": "Evolutionary roots of loss aversion linked to survival instincts",
+            "source": "Baumeister et al., 2001, Psychological Review",
+            "confidence": "medium"
+          },
+          {
+            "claim": "Scarcity language like “only 2 left” triggers urgency",
+            "source": "Cialdini, 2009, Influence",
+            "confidence": "high"
+          },
+          {
+            "claim": "Loss‑framed copy can lift clicks 10‑15% over gain‑framed copy",
+            "source": "Various A/B test reports in marketing literature, 2015‑2022",
+            "confidence": "medium"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "don’t miss out",
+            "emoji": [
+              "🧠",
+              "📈"
+            ],
+            "subtitle": "Use loss framing to boost clicks",
+            "note": "your brain loves scarcity"
+          },
+          "slides": [
+            {
+              "heading": "**Loss** hurts more",
+              "emoji": "💔",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "🧭",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "⏳",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "Speak **scarcity**",
+              "emoji": "🔥",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "📊",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Swap wording",
+            "emoji": "🚀",
+            "note": ""
+          },
+          "for": "77dadda8e553",
+          "style": "poster",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Ever notice how a countdown timer makes you click faster than a simple “Buy now” button? It’s not magic, it’s psychology.\n\nWhen we think we might lose an opportunity, our brain lights up the same fear circuits that kept our ancestors safe from real danger. That fear is called **loss aversion**, and it’s stronger than the pleasure of gaining something identical.\n\nMarketers exploit this by using **scarcity language**, phrases like “only 2 left” or “ends tonight”. In tests, the loss-framed copy often outperforms gain-framed copy by 10-15% in click-through rates.\n\nWhat loss-focused wording will you try in your next campaign?\n\n#marketingpsychology #lossaversion #copywriting #conversiontips #scarcity #growthhacking #entrepreneur",
+      "images": [
+        "posts/20261018-012441/01.jpg",
+        "posts/20261018-012441/02.jpg",
+        "posts/20261018-012441/03.jpg",
+        "posts/20261018-012441/04.jpg",
+        "posts/20261018-012441/05.jpg",
+        "posts/20261018-012441/06.jpg",
+        "posts/20261018-012441/07.jpg"
+      ],
+      "created_at": "2026-10-18T01:24:44+00:00",
+      "status": "awaiting",
+      "backlog_line": "Loss aversion: why \"don't miss out\" beats \"get this\"",
+      "slot": "evening",
+      "slot_at": "2026-10-18T14:00:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": [
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171
+      ]
+    },
+    {
+      "id": "20261018-012450",
+      "series": "BrandBreakdown",
+      "number": 2,
+      "tag": "BRANDBREAKDOWN#2",
+      "theme": "light",
+      "style": null,
+      "topic": "Starbucks: why the smallest cup on the menu is called Tall",
+      "post": {
+        "topic": "Starbucks Tall Cup Naming",
+        "principle": "Framing Effect",
+        "hook": "Why does Starbucks call its smallest cup “Tall”?",
+        "slides": [
+          "Starbucks introduced **Tall** in 1996 to replace **short** and sound more positive.",
+          "The **framing effect** shows positive wording shifts perception of value.",
+          "Calling a cup “Tall” frames it as generous, even if volume matches a “short”.",
+          "Customers feel they’re getting more, so they’re willing to pay the same price.",
+          "Small businesses can rename modest options with upward-slanted terms to boost perceived size."
+        ],
+        "takeaway": "Rename “basic” plans as “Premium Lite” to increase sign-ups without changing features.",
+        "caption": "Ever wondered why the smallest Starbucks cup isn’t called “Short”? The brand swapped it for “Tall” to sound more appealing.\n\nPsychology tells us that positive framing changes how we evaluate size and value. When a cup is labeled “Tall,” it feels larger, even if the actual volume is unchanged.\n\nThat tiny shift can make customers comfortable paying the same price, thinking they’re getting more. You can apply the same trick to your offerings.\n\nWhat other product names could you re-frame for better perception?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#branding",
+          "#consumerbehavior",
+          "#psychologytips",
+          "#designthinking",
+          "#entrepreneurship",
+          "#smallbusiness"
+        ],
+        "fact_check": [
+          {
+            "claim": "Starbucks introduced the Tall size in 1996 to replace the short size.",
+            "source": "Starbucks corporate history, 1996",
+            "confidence": "high"
+          },
+          {
+            "claim": "Framing effect influences perception of value with positive wording.",
+            "source": "Kahneman & Tversky, 1981, Psychological Review",
+            "confidence": "high"
+          },
+          {
+            "claim": "Customers perceive “Tall” as larger and are willing to pay the same price.",
+            "source": "General consumer research on framing, various studies",
+            "confidence": "medium"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "Why does Starbucks call",
+            "emoji": [
+              "☕"
+            ],
+            "subtitle": "How naming shapes perception",
+            "note": "size matters"
+          },
+          "slides": [
+            {
+              "heading": "**1996** Rebrand",
+              "emoji": "",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Framing** in Action",
+              "emoji": "🧠",
+              "layout": "standard",
+              "note": "positive words",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "📈",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "💸",
+              "layout": "standard",
+              "note": "feel richer",
+              "quote": ""
+            },
+            {
+              "heading": "**Rename** to Upsell",
+              "emoji": "",
+              "layout": "standard",
+              "note": "slight tweak",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Boost Sign-ups",
+            "emoji": "✅",
+            "note": "rename basics"
+          },
+          "for": "6cb14e03dced",
+          "style": "editorial",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Ever wondered why the smallest Starbucks cup isn’t called “Short”? The brand swapped it for “Tall” to sound more appealing.\n\nPsychology tells us that positive framing changes how we evaluate size and value. When a cup is labeled “Tall,” it feels larger, even if the actual volume is unchanged.\n\nThat tiny shift can make customers comfortable paying the same price, thinking they’re getting more. You can apply the same trick to your offerings.\n\nWhat other product names could you re-frame for better perception?\n\n#marketingpsychology #branding #consumerbehavior #psychologytips #designthinking #entrepreneurship #smallbusiness",
+      "images": [
+        "posts/20261018-012450/01.jpg",
+        "posts/20261018-012450/02.jpg",
+        "posts/20261018-012450/03.jpg",
+        "posts/20261018-012450/04.jpg",
+        "posts/20261018-012450/05.jpg",
+        "posts/20261018-012450/06.jpg",
+        "posts/20261018-012450/07.jpg"
+      ],
+      "created_at": "2026-10-18T01:24:52+00:00",
+      "status": "awaiting",
+      "backlog_line": "[BrandBreakdown] Starbucks: why the smallest cup on the menu is called Tall",
+      "slot": "night",
+      "slot_at": "2026-10-18T22:00:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": [
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179
+      ]
+    }
+  ],
   "merged_seeds": [
     "2026-10-15_new_series.txt",
     "front_2026-10-15_restore.txt"
@@ -145,6 +420,16 @@
       "at": "2026-10-17T22:00:59+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Posted MARKETERSASSEMBLE#2 (Human‑Centered Insight)\nhttps://www.instagram.com/p/DenIc6RAZ5i/"
+    },
+    {
+      "at": "2026-10-18T01:24:55+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: MARKETINGTIP#9 (Loss aversion) for 7:30 pm IST today"
+    },
+    {
+      "at": "2026-10-18T01:24:55+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: BRANDBREAKDOWN#2 (Framing Effect) for 3:30 am IST tonight"
     }
   ],
   "app_requests": [
