@@ -2,7 +2,7 @@
   "last_update_id": 825911675,
   "last_theme": "light",
   "series_counters": {
-    "MarketingTip": 9,
+    "MarketingTip": 10,
     "BrandBreakdown": 2,
     "CopyClinic": 2,
     "MythOrMagic": 2,
@@ -10,148 +10,6 @@
     "MarketersAssemble": 3
   },
   "drafts": [
-    {
-      "id": "20261018-012441",
-      "series": "MarketingTip",
-      "number": 9,
-      "tag": "MARKETINGTIP#9",
-      "theme": "dark",
-      "style": null,
-      "topic": "Loss aversion: why \"don't miss out\" beats \"get this\"",
-      "post": {
-        "topic": "Loss aversion",
-        "principle": "Loss aversion",
-        "hook": "Why does “don’t miss out” sell better than “get this”?",
-        "slides": [
-          "People feel **loss aversion**: losing feels worse than gaining feels good.",
-          "Our ancestors prioritized **survival instinct** to avoid threats.",
-          "A limited-time offer feels like a **missed deal**, triggering loss pain.",
-          "Use **scarcity language** like “only 2 left” or “ends soon” to spark urgency.",
-          "A/B test: **loss-framed** copy lifts clicks 10-15% over gain copy."
-        ],
-        "takeaway": "Swap “get this” for “don’t miss out” and watch conversions climb.",
-        "caption": "Ever notice how a countdown timer makes you click faster than a simple “Buy now” button? It’s not magic, it’s psychology.\n\nWhen we think we might lose an opportunity, our brain lights up the same fear circuits that kept our ancestors safe from real danger. That fear is called **loss aversion**, and it’s stronger than the pleasure of gaining something identical.\n\nMarketers exploit this by using **scarcity language**, phrases like “only 2 left” or “ends tonight”. In tests, the loss-framed copy often outperforms gain-framed copy by 10-15% in click-through rates.\n\nWhat loss-focused wording will you try in your next campaign?",
-        "hashtags": [
-          "#marketingpsychology",
-          "#lossaversion",
-          "#copywriting",
-          "#conversiontips",
-          "#scarcity",
-          "#growthhacking",
-          "#entrepreneur"
-        ],
-        "fact_check": [
-          {
-            "claim": "Loss aversion causes losing to feel worse than gaining feels good",
-            "source": "Kahneman & Tversky, 1979, Prospect Theory",
-            "confidence": "high"
-          },
-          {
-            "claim": "Evolutionary roots of loss aversion linked to survival instincts",
-            "source": "Baumeister et al., 2001, Psychological Review",
-            "confidence": "medium"
-          },
-          {
-            "claim": "Scarcity language like “only 2 left” triggers urgency",
-            "source": "Cialdini, 2009, Influence",
-            "confidence": "high"
-          },
-          {
-            "claim": "Loss‑framed copy can lift clicks 10‑15% over gain‑framed copy",
-            "source": "Various A/B test reports in marketing literature, 2015‑2022",
-            "confidence": "medium"
-          }
-        ],
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "don’t miss out",
-            "emoji": [
-              "🧠",
-              "📈"
-            ],
-            "subtitle": "Use loss framing to boost clicks",
-            "note": "your brain loves scarcity"
-          },
-          "slides": [
-            {
-              "heading": "**Loss** hurts more",
-              "emoji": "💔",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "🧭",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "⏳",
-              "layout": "big",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "Speak **scarcity**",
-              "emoji": "🔥",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "📊",
-              "layout": "big",
-              "note": "",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "Swap wording",
-            "emoji": "🚀",
-            "note": ""
-          },
-          "for": "77dadda8e553",
-          "style": "poster",
-          "source": "ai",
-          "note": "",
-          "v": 2
-        }
-      },
-      "caption": "Ever notice how a countdown timer makes you click faster than a simple “Buy now” button? It’s not magic, it’s psychology.\n\nWhen we think we might lose an opportunity, our brain lights up the same fear circuits that kept our ancestors safe from real danger. That fear is called **loss aversion**, and it’s stronger than the pleasure of gaining something identical.\n\nMarketers exploit this by using **scarcity language**, phrases like “only 2 left” or “ends tonight”. In tests, the loss-framed copy often outperforms gain-framed copy by 10-15% in click-through rates.\n\nWhat loss-focused wording will you try in your next campaign?\n\n#marketingpsychology #lossaversion #copywriting #conversiontips #scarcity #growthhacking #entrepreneur",
-      "images": [
-        "posts/20261018-012441/01.jpg",
-        "posts/20261018-012441/02.jpg",
-        "posts/20261018-012441/03.jpg",
-        "posts/20261018-012441/04.jpg",
-        "posts/20261018-012441/05.jpg",
-        "posts/20261018-012441/06.jpg",
-        "posts/20261018-012441/07.jpg"
-      ],
-      "created_at": "2026-10-18T01:24:44+00:00",
-      "status": "approved",
-      "backlog_line": "Loss aversion: why \"don't miss out\" beats \"get this\"",
-      "slot": "evening",
-      "slot_at": "2026-10-18T14:00:00+00:00",
-      "publish_at": "2026-10-18T14:00:00+00:00",
-      "reminded": false,
-      "msg_ids": [
-        164,
-        165,
-        166,
-        167,
-        168,
-        169,
-        170,
-        171
-      ],
-      "approved_at": "2026-10-18T04:53:07+00:00",
-      "note": ""
-    },
     {
       "id": "20261018-012450",
       "series": "BrandBreakdown",
@@ -444,6 +302,11 @@
       "at": "2026-10-18T05:55:34+00:00",
       "job": "6. App action",
       "text": "App: Approved. BRANDBREAKDOWN#2 (Framing Effect) goes live at 3:30 am IST tonight."
+    },
+    {
+      "at": "2026-10-18T14:01:07+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Posted MARKETINGTIP#9 (Loss aversion)\nhttps://www.instagram.com/p/Deo2U3ZEadQ/"
     }
   ],
   "app_requests": [
