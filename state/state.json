@@ -3,150 +3,13 @@
   "last_theme": "light",
   "series_counters": {
     "MarketingTip": 10,
-    "BrandBreakdown": 2,
+    "BrandBreakdown": 3,
     "CopyClinic": 2,
     "MythOrMagic": 2,
     "PsychInTheWild": 2,
     "MarketersAssemble": 3
   },
-  "drafts": [
-    {
-      "id": "20261018-012450",
-      "series": "BrandBreakdown",
-      "number": 2,
-      "tag": "BRANDBREAKDOWN#2",
-      "theme": "light",
-      "style": null,
-      "topic": "Starbucks: why the smallest cup on the menu is called Tall",
-      "post": {
-        "topic": "Starbucks Tall Cup Naming",
-        "principle": "Framing Effect",
-        "hook": "Why does Starbucks call its smallest cup “Tall”?",
-        "slides": [
-          "Starbucks introduced **Tall** in 1996 to replace **short** and sound more positive.",
-          "The **framing effect** shows positive wording shifts perception of value.",
-          "Calling a cup “Tall” frames it as generous, even if volume matches a “short”.",
-          "Customers feel they’re getting more, so they’re willing to pay the same price.",
-          "Small businesses can rename modest options with upward-slanted terms to boost perceived size."
-        ],
-        "takeaway": "Rename “basic” plans as “Premium Lite” to increase sign-ups without changing features.",
-        "caption": "Ever wondered why the smallest Starbucks cup isn’t called “Short”? The brand swapped it for “Tall” to sound more appealing.\n\nPsychology tells us that positive framing changes how we evaluate size and value. When a cup is labeled “Tall,” it feels larger, even if the actual volume is unchanged.\n\nThat tiny shift can make customers comfortable paying the same price, thinking they’re getting more. You can apply the same trick to your offerings.\n\nWhat other product names could you re-frame for better perception?",
-        "hashtags": [
-          "#marketingpsychology",
-          "#branding",
-          "#consumerbehavior",
-          "#psychologytips",
-          "#designthinking",
-          "#entrepreneurship",
-          "#smallbusiness"
-        ],
-        "fact_check": [
-          {
-            "claim": "Starbucks introduced the Tall size in 1996 to replace the short size.",
-            "source": "Starbucks corporate history, 1996",
-            "confidence": "high"
-          },
-          {
-            "claim": "Framing effect influences perception of value with positive wording.",
-            "source": "Kahneman & Tversky, 1981, Psychological Review",
-            "confidence": "high"
-          },
-          {
-            "claim": "Customers perceive “Tall” as larger and are willing to pay the same price.",
-            "source": "General consumer research on framing, various studies",
-            "confidence": "medium"
-          }
-        ],
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "Why does Starbucks call",
-            "emoji": [
-              "☕"
-            ],
-            "subtitle": "How naming shapes perception",
-            "note": "size matters"
-          },
-          "slides": [
-            {
-              "heading": "**1996** Rebrand",
-              "emoji": "",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Framing** in Action",
-              "emoji": "🧠",
-              "layout": "standard",
-              "note": "positive words",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "📈",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "💸",
-              "layout": "standard",
-              "note": "feel richer",
-              "quote": ""
-            },
-            {
-              "heading": "**Rename** to Upsell",
-              "emoji": "",
-              "layout": "standard",
-              "note": "slight tweak",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "Boost Sign-ups",
-            "emoji": "✅",
-            "note": "rename basics"
-          },
-          "for": "6cb14e03dced",
-          "style": "editorial",
-          "source": "ai",
-          "note": "",
-          "v": 2
-        }
-      },
-      "caption": "Ever wondered why the smallest Starbucks cup isn’t called “Short”? The brand swapped it for “Tall” to sound more appealing.\n\nPsychology tells us that positive framing changes how we evaluate size and value. When a cup is labeled “Tall,” it feels larger, even if the actual volume is unchanged.\n\nThat tiny shift can make customers comfortable paying the same price, thinking they’re getting more. You can apply the same trick to your offerings.\n\nWhat other product names could you re-frame for better perception?\n\n#marketingpsychology #branding #consumerbehavior #psychologytips #designthinking #entrepreneurship #smallbusiness",
-      "images": [
-        "posts/20261018-012450/01.jpg",
-        "posts/20261018-012450/02.jpg",
-        "posts/20261018-012450/03.jpg",
-        "posts/20261018-012450/04.jpg",
-        "posts/20261018-012450/05.jpg",
-        "posts/20261018-012450/06.jpg",
-        "posts/20261018-012450/07.jpg"
-      ],
-      "created_at": "2026-10-18T01:24:52+00:00",
-      "status": "approved",
-      "backlog_line": "[BrandBreakdown] Starbucks: why the smallest cup on the menu is called Tall",
-      "slot": "night",
-      "slot_at": "2026-10-18T22:00:00+00:00",
-      "publish_at": "2026-10-18T22:00:00+00:00",
-      "reminded": false,
-      "msg_ids": [
-        172,
-        173,
-        174,
-        175,
-        176,
-        177,
-        178,
-        179
-      ],
-      "approved_at": "2026-10-18T05:55:34+00:00",
-      "note": ""
-    }
-  ],
+  "drafts": [],
   "merged_seeds": [
     "2026-10-15_new_series.txt",
     "front_2026-10-15_restore.txt"
@@ -307,6 +170,11 @@
       "at": "2026-10-18T14:01:07+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Posted MARKETINGTIP#9 (Loss aversion)\nhttps://www.instagram.com/p/Deo2U3ZEadQ/"
+    },
+    {
+      "at": "2026-10-18T22:00:56+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Posted BRANDBREAKDOWN#2 (Framing Effect)\nhttps://www.instagram.com/p/DeptQR2D9eG/"
     }
   ],
   "app_requests": [
