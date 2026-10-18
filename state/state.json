@@ -269,11 +269,11 @@
         "posts/20261018-012450/07.jpg"
       ],
       "created_at": "2026-10-18T01:24:52+00:00",
-      "status": "awaiting",
+      "status": "approved",
       "backlog_line": "[BrandBreakdown] Starbucks: why the smallest cup on the menu is called Tall",
       "slot": "night",
       "slot_at": "2026-10-18T22:00:00+00:00",
-      "publish_at": null,
+      "publish_at": "2026-10-18T22:00:00+00:00",
       "reminded": false,
       "msg_ids": [
         172,
@@ -284,7 +284,9 @@
         177,
         178,
         179
-      ]
+      ],
+      "approved_at": "2026-10-18T05:55:34+00:00",
+      "note": ""
     }
   ],
   "merged_seeds": [
@@ -437,6 +439,11 @@
       "at": "2026-10-18T04:53:08+00:00",
       "job": "6. App action",
       "text": "App: Approved. MARKETINGTIP#9 (Loss aversion) goes live at 7:30 pm IST today."
+    },
+    {
+      "at": "2026-10-18T05:55:34+00:00",
+      "job": "6. App action",
+      "text": "App: Approved. BRANDBREAKDOWN#2 (Framing Effect) goes live at 3:30 am IST tonight."
     }
   ],
   "app_requests": [
@@ -556,6 +563,15 @@
       "ok": true,
       "message": "Approved. MARKETINGTIP#9 (Loss aversion) goes live at 7:30 pm IST today.",
       "at": "2026-10-18T04:53:08+00:00"
+    },
+    {
+      "id": "mvdevqa48sf83x",
+      "action": "approve",
+      "draft_id": "20261018-012450",
+      "new_draft_id": "20261018-012450",
+      "ok": true,
+      "message": "Approved. BRANDBREAKDOWN#2 (Framing Effect) goes live at 3:30 am IST tonight.",
+      "at": "2026-10-18T05:55:34+00:00"
     }
   ],
   "design_styles": {
