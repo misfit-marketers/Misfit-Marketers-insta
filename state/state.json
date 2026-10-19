@@ -123,11 +123,11 @@
         "posts/20261019-012725/07.jpg"
       ],
       "created_at": "2026-10-19T01:27:27+00:00",
-      "status": "awaiting",
+      "status": "approved",
       "backlog_line": "Social proof: why people trust what other people are already doing",
       "slot": "evening",
       "slot_at": "2026-10-19T12:30:00+00:00",
-      "publish_at": null,
+      "publish_at": "2026-10-19T12:30:00+00:00",
       "reminded": false,
       "msg_ids": [
         184,
@@ -139,7 +139,8 @@
         190,
         191
       ],
-      "note": "The posting time changed, so it moved to 6:00 pm IST today."
+      "note": "",
+      "approved_at": "2026-10-19T07:05:17+00:00"
     },
     {
       "id": "20261019-012732",
@@ -460,6 +461,11 @@
       "at": "2026-10-19T06:55:51+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "The posting time changed, so these drafts moved (approvals are kept):\n• MARKETINGTIP#10 (Social proof): 6:00 pm IST today\n• COPYCLINIC#2 (Unit Bias): 6:00 pm IST tomorrow"
+    },
+    {
+      "at": "2026-10-19T07:05:18+00:00",
+      "job": "6. App action",
+      "text": "App: Approved. MARKETINGTIP#10 (Social proof) goes live at 6:00 pm IST today."
     }
   ],
   "app_requests": [
@@ -588,6 +594,15 @@
       "ok": true,
       "message": "Approved. BRANDBREAKDOWN#2 (Framing Effect) goes live at 3:30 am IST tonight.",
       "at": "2026-10-18T05:55:34+00:00"
+    },
+    {
+      "id": "mvewt8g70gx76p",
+      "action": "approve",
+      "draft_id": "20261019-012725",
+      "new_draft_id": "20261019-012725",
+      "ok": true,
+      "message": "Approved. MARKETINGTIP#10 (Social proof) goes live at 6:00 pm IST today.",
+      "at": "2026-10-19T07:05:18+00:00"
     }
   ],
   "design_styles": {
