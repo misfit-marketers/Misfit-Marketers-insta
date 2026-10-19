@@ -9,7 +9,275 @@
     "PsychInTheWild": 2,
     "MarketersAssemble": 3
   },
-  "drafts": [],
+  "drafts": [
+    {
+      "id": "20261019-012725",
+      "series": "MarketingTip",
+      "number": 10,
+      "tag": "MARKETINGTIP#10",
+      "theme": "dark",
+      "style": null,
+      "topic": "Social proof: why people trust what other people are already doing",
+      "post": {
+        "topic": "Social proof",
+        "principle": "Social proof",
+        "hook": "Why do we follow the crowd?",
+        "slides": [
+          "We look to others when unsure which product fits us.",
+          "Study: 2007 shoppers preferred items **most others** purchased.",
+          "Our brain treats group choices as a shortcut to safety.",
+          "Brands add **customer testimonials**, **review counts**, or “trending now” badges to boost trust.",
+          "When a product shows **5-star rating**, conversion rates often jump noticeably."
+        ],
+        "takeaway": "Show real social proof, reviews, ratings, user counts, to guide prospects toward buying.",
+        "caption": "Ever wonder why a product with dozens of reviews feels safer than an unknown one? It's not magic, it's psychology.\n\nWhen we’re uncertain, we lean on the choices of others. Studies show people pick items that **most others** buy, using the crowd as a shortcut to safety.\n\nBrands tap this by displaying **customer testimonials**, **review counts**, or “trending now” tags. Even a simple **5-star rating** can lift conversion rates.\n\nWhat social proof element has worked best for your business?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#socialproof",
+          "#consumerbehavior",
+          "#branding",
+          "#UXdesign",
+          "#entrepreneurship",
+          "#digitalmarketing"
+        ],
+        "fact_check": [
+          {
+            "claim": "2007 shoppers preferred items most others purchased",
+            "source": "Cialdini, 2007, Influence: Science and Practice",
+            "confidence": "high"
+          },
+          {
+            "claim": "5‑star rating can noticeably increase conversion rates",
+            "source": "Various e‑commerce A/B tests reported in 2020 industry surveys",
+            "confidence": "medium"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "follow the crowd",
+            "emoji": [
+              "🧠",
+              "👀"
+            ],
+            "subtitle": "How social proof drives buying decisions",
+            "note": "your brain loves shortcuts"
+          },
+          "slides": [
+            {
+              "heading": "Seeking social **cues**",
+              "emoji": "👀",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "2007 **study** reveals",
+              "emoji": "📊",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "Brain uses **shortcuts**",
+              "emoji": "🧠",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "💬",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "5-star **boost**",
+              "emoji": "⭐",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Show real proof",
+            "emoji": "📈",
+            "note": ""
+          },
+          "for": "faa4bf795392",
+          "style": "poster",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Ever wonder why a product with dozens of reviews feels safer than an unknown one? It's not magic, it's psychology.\n\nWhen we’re uncertain, we lean on the choices of others. Studies show people pick items that **most others** buy, using the crowd as a shortcut to safety.\n\nBrands tap this by displaying **customer testimonials**, **review counts**, or “trending now” tags. Even a simple **5-star rating** can lift conversion rates.\n\nWhat social proof element has worked best for your business?\n\n#marketingpsychology #socialproof #consumerbehavior #branding #UXdesign #entrepreneurship #digitalmarketing",
+      "images": [
+        "posts/20261019-012725/01.jpg",
+        "posts/20261019-012725/02.jpg",
+        "posts/20261019-012725/03.jpg",
+        "posts/20261019-012725/04.jpg",
+        "posts/20261019-012725/05.jpg",
+        "posts/20261019-012725/06.jpg",
+        "posts/20261019-012725/07.jpg"
+      ],
+      "created_at": "2026-10-19T01:27:27+00:00",
+      "status": "awaiting",
+      "backlog_line": "Social proof: why people trust what other people are already doing",
+      "slot": "evening",
+      "slot_at": "2026-10-19T14:00:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": [
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191
+      ]
+    },
+    {
+      "id": "20261019-012732",
+      "series": "CopyClinic",
+      "number": 2,
+      "tag": "COPYCLINIC#2",
+      "theme": "light",
+      "style": null,
+      "topic": "\"$365 a year\" vs \"$1 a day\": reframing a price into a smaller unit",
+      "post": {
+        "topic": "Price unit framing",
+        "principle": "Unit Bias",
+        "hook": "Are you pricing in the wrong unit?",
+        "slides": [
+          "Before: \"Subscribe for $365 a year\"",
+          "Why it falls flat: big number feels costly, triggers loss aversion.",
+          "Principle: **Unit Bias**, people prefer smaller, familiar units.",
+          "After: \"Just $1 a day\"",
+          "Why it works: daily unit feels trivial, lowers perceived cost.",
+          "Quick before/after: \"Annual plan $1,200\" → \"Only $3.30 per day\""
+        ],
+        "takeaway": "Break large prices into small, familiar units to make offers feel affordable instantly.",
+        "caption": "Ever wondered why a $365 yearly fee feels pricey, while $1 a day sounds almost free? It’s not magic, it’s **Unit Bias** at work. When we see a smaller, familiar unit, our brain treats the cost as negligible.\n\nBy simply reframing the same price into daily or weekly amounts, you lower the perceived barrier and boost conversion. Try swapping \"$299 per month\" for \"just $10 a day\" in your next email or landing page.\n\nWhat other price formats have you tested? Share your results below!",
+        "hashtags": [
+          "#marketingpsychology",
+          "#copywriting",
+          "#pricingstrategy",
+          "#unitbias",
+          "#conversiontips",
+          "#branding",
+          "#entrepreneurship"
+        ],
+        "fact_check": [
+          {
+            "claim": "Unit Bias causes people to prefer smaller, familiar units",
+            "source": "Wansink, 1996, Journal of Consumer Research",
+            "confidence": "high"
+          },
+          {
+            "claim": "Large numbers trigger loss aversion",
+            "source": "Kahneman & Tversky, 1979, Prospect Theory",
+            "confidence": "high"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "pricing in",
+            "emoji": [],
+            "subtitle": "Unit Bias",
+            "note": ""
+          },
+          "slides": [
+            {
+              "heading": "",
+              "emoji": "",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "",
+            "emoji": "",
+            "note": ""
+          },
+          "for": "e3c2efd83246",
+          "style": "notebook",
+          "source": "fallback",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Ever wondered why a $365 yearly fee feels pricey, while $1 a day sounds almost free? It’s not magic, it’s **Unit Bias** at work. When we see a smaller, familiar unit, our brain treats the cost as negligible.\n\nBy simply reframing the same price into daily or weekly amounts, you lower the perceived barrier and boost conversion. Try swapping \"$299 per month\" for \"just $10 a day\" in your next email or landing page.\n\nWhat other price formats have you tested? Share your results below!\n\n#marketingpsychology #copywriting #pricingstrategy #unitbias #conversiontips #branding #entrepreneurship",
+      "images": [
+        "posts/20261019-012732/01.jpg",
+        "posts/20261019-012732/02.jpg",
+        "posts/20261019-012732/03.jpg",
+        "posts/20261019-012732/04.jpg",
+        "posts/20261019-012732/05.jpg",
+        "posts/20261019-012732/06.jpg",
+        "posts/20261019-012732/07.jpg",
+        "posts/20261019-012732/08.jpg"
+      ],
+      "created_at": "2026-10-19T01:27:33+00:00",
+      "status": "awaiting",
+      "backlog_line": "[CopyClinic] \"$365 a year\" vs \"$1 a day\": reframing a price into a smaller unit",
+      "slot": "night",
+      "slot_at": "2026-10-19T22:00:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": [
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200
+      ]
+    }
+  ],
   "merged_seeds": [
     "2026-10-15_new_series.txt",
     "front_2026-10-15_restore.txt"
@@ -175,6 +443,16 @@
       "at": "2026-10-18T22:00:56+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Posted BRANDBREAKDOWN#2 (Framing Effect)\nhttps://www.instagram.com/p/DeptQR2D9eG/"
+    },
+    {
+      "at": "2026-10-19T01:27:37+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: MARKETINGTIP#10 (Social proof) for 7:30 pm IST today"
+    },
+    {
+      "at": "2026-10-19T01:27:37+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: COPYCLINIC#2 (Unit Bias) for 3:30 am IST tonight"
     }
   ],
   "app_requests": [
