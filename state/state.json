@@ -2,7 +2,7 @@
   "last_update_id": 825911675,
   "last_theme": "light",
   "series_counters": {
-    "MarketingTip": 10,
+    "MarketingTip": 11,
     "BrandBreakdown": 3,
     "CopyClinic": 2,
     "MythOrMagic": 2,
@@ -10,138 +10,6 @@
     "MarketersAssemble": 3
   },
   "drafts": [
-    {
-      "id": "20261019-012725",
-      "series": "MarketingTip",
-      "number": 10,
-      "tag": "MARKETINGTIP#10",
-      "theme": "dark",
-      "style": null,
-      "topic": "Social proof: why people trust what other people are already doing",
-      "post": {
-        "topic": "Social proof",
-        "principle": "Social proof",
-        "hook": "Why do we follow the crowd?",
-        "slides": [
-          "We look to others when unsure which product fits us.",
-          "Study: 2007 shoppers preferred items **most others** purchased.",
-          "Our brain treats group choices as a shortcut to safety.",
-          "Brands add **customer testimonials**, **review counts**, or “trending now” badges to boost trust.",
-          "When a product shows **5-star rating**, conversion rates often jump noticeably."
-        ],
-        "takeaway": "Show real social proof, reviews, ratings, user counts, to guide prospects toward buying.",
-        "caption": "Ever wonder why a product with dozens of reviews feels safer than an unknown one? It's not magic, it's psychology.\n\nWhen we’re uncertain, we lean on the choices of others. Studies show people pick items that **most others** buy, using the crowd as a shortcut to safety.\n\nBrands tap this by displaying **customer testimonials**, **review counts**, or “trending now” tags. Even a simple **5-star rating** can lift conversion rates.\n\nWhat social proof element has worked best for your business?",
-        "hashtags": [
-          "#marketingpsychology",
-          "#socialproof",
-          "#consumerbehavior",
-          "#branding",
-          "#UXdesign",
-          "#entrepreneurship",
-          "#digitalmarketing"
-        ],
-        "fact_check": [
-          {
-            "claim": "2007 shoppers preferred items most others purchased",
-            "source": "Cialdini, 2007, Influence: Science and Practice",
-            "confidence": "high"
-          },
-          {
-            "claim": "5‑star rating can noticeably increase conversion rates",
-            "source": "Various e‑commerce A/B tests reported in 2020 industry surveys",
-            "confidence": "medium"
-          }
-        ],
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "follow the crowd",
-            "emoji": [
-              "🧠",
-              "👀"
-            ],
-            "subtitle": "How social proof drives buying decisions",
-            "note": "your brain loves shortcuts"
-          },
-          "slides": [
-            {
-              "heading": "Seeking social **cues**",
-              "emoji": "👀",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "2007 **study** reveals",
-              "emoji": "📊",
-              "layout": "big",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "Brain uses **shortcuts**",
-              "emoji": "🧠",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "💬",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "5-star **boost**",
-              "emoji": "⭐",
-              "layout": "big",
-              "note": "",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "Show real proof",
-            "emoji": "📈",
-            "note": ""
-          },
-          "for": "faa4bf795392",
-          "style": "poster",
-          "source": "ai",
-          "note": "",
-          "v": 2
-        }
-      },
-      "caption": "Ever wonder why a product with dozens of reviews feels safer than an unknown one? It's not magic, it's psychology.\n\nWhen we’re uncertain, we lean on the choices of others. Studies show people pick items that **most others** buy, using the crowd as a shortcut to safety.\n\nBrands tap this by displaying **customer testimonials**, **review counts**, or “trending now” tags. Even a simple **5-star rating** can lift conversion rates.\n\nWhat social proof element has worked best for your business?\n\n#marketingpsychology #socialproof #consumerbehavior #branding #UXdesign #entrepreneurship #digitalmarketing",
-      "images": [
-        "posts/20261019-012725/01.jpg",
-        "posts/20261019-012725/02.jpg",
-        "posts/20261019-012725/03.jpg",
-        "posts/20261019-012725/04.jpg",
-        "posts/20261019-012725/05.jpg",
-        "posts/20261019-012725/06.jpg",
-        "posts/20261019-012725/07.jpg"
-      ],
-      "created_at": "2026-10-19T01:27:27+00:00",
-      "status": "approved",
-      "backlog_line": "Social proof: why people trust what other people are already doing",
-      "slot": "evening",
-      "slot_at": "2026-10-19T12:30:00+00:00",
-      "publish_at": "2026-10-19T12:30:00+00:00",
-      "reminded": false,
-      "msg_ids": [
-        184,
-        185,
-        186,
-        187,
-        188,
-        189,
-        190,
-        191
-      ],
-      "note": "",
-      "approved_at": "2026-10-19T07:05:17+00:00"
-    },
     {
       "id": "20261019-070635",
       "series": "CopyClinic",
@@ -481,6 +349,11 @@
       "at": "2026-10-19T07:08:30+00:00",
       "job": "6. App action",
       "text": "App: Approved. COPYCLINIC#2 (Unit Bias) goes live at 6:00 pm IST tomorrow."
+    },
+    {
+      "at": "2026-10-19T12:31:03+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Posted MARKETINGTIP#10 (Social proof)\nhttps://www.instagram.com/p/DerQ0VlG5AL/"
     }
   ],
   "app_requests": [
