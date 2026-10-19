@@ -1,14 +1,14 @@
 name: 4. Post at the scheduled slots
 
-# Posting slots (IST): 7:30 pm and 3:30 am, with back-ups at 8:30 pm and 4:30 am.
+# Posting slot (IST): 6 pm every day, with a back-up at 7 pm.
 # GitHub often starts timers late, so each run starts about 33 minutes early
-# (13:27, 14:27, 21:27 and 22:27 UTC). The first job only waits for the exact
+# (11:57 and 12:57 UTC, which is 5:27 pm and 6:27 pm IST). The first job only waits for the exact
 # time (so the app's buttons keep working meanwhile); the second job posts
 # whatever is approved and due. If you change "slots" in config.json, change
 # these times too (about 30 minutes before each slot and back-up, in UTC).
 on:
   schedule:
-    - cron: "27 13,14,21,22 * * *"
+    - cron: "57 11,12 * * *"
   workflow_dispatch:
 
 permissions:
