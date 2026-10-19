@@ -143,7 +143,7 @@
       "approved_at": "2026-10-19T07:05:17+00:00"
     },
     {
-      "id": "20261019-012732",
+      "id": "20261019-070635",
       "series": "CopyClinic",
       "number": 2,
       "tag": "COPYCLINIC#2",
@@ -153,25 +153,25 @@
       "post": {
         "topic": "Price unit framing",
         "principle": "Unit Bias",
-        "hook": "Are you pricing in the wrong unit?",
+        "hook": "Pricing in the wrong unit?",
         "slides": [
-          "Before: \"Subscribe for $365 a year\"",
+          "Before: “Subscribe for Rs 365 a year”",
           "Why it falls flat: big number feels costly, triggers loss aversion.",
           "Principle: **Unit Bias**, people prefer smaller, familiar units.",
-          "After: \"Just $1 a day\"",
-          "Why it works: daily unit feels trivial, lowers perceived cost.",
-          "Quick before/after: \"Annual plan $1,200\" → \"Only $3.30 per day\""
+          "After: “Just Rs 1 a day”",
+          "Why it works: daily amount feels trivial, lowers perceived cost.",
+          "Quick before/after: “Annual plan Rs 1,200” → “Only Rs 3.30 per day”"
         ],
-        "takeaway": "Break large prices into small, familiar units to make offers feel affordable instantly.",
-        "caption": "Ever wondered why a $365 yearly fee feels pricey, while $1 a day sounds almost free? It’s not magic, it’s **Unit Bias** at work. When we see a smaller, familiar unit, our brain treats the cost as negligible.\n\nBy simply reframing the same price into daily or weekly amounts, you lower the perceived barrier and boost conversion. Try swapping \"$299 per month\" for \"just $10 a day\" in your next email or landing page.\n\nWhat other price formats have you tested? Share your results below!",
+        "takeaway": "Break large prices into small, familiar units to make offers feel instantly affordable.",
+        "caption": "Ever wondered why a Rs 365 yearly fee feels pricey, while Rs 1 a day sounds almost free? It’s not magic, it’s **Unit Bias** at work.\n\nWhen prospects see a smaller, familiar unit, their brain treats the cost as negligible. Reframe the same amount into daily or weekly slices and watch the perceived barrier shrink.\n\nTry swapping “Rs 299 per month” for “just Rs 10 a day” in your next email or landing page.\n\nWhat price formats have you experimented with?",
         "hashtags": [
           "#marketingpsychology",
           "#copywriting",
           "#pricingstrategy",
           "#unitbias",
           "#conversiontips",
-          "#branding",
-          "#entrepreneurship"
+          "#entrepreneurship",
+          "#indiabusiness"
         ],
         "fact_check": [
           {
@@ -188,79 +188,83 @@
         "model": "groq:openai/gpt-oss-120b",
         "design": {
           "cover": {
-            "highlight": "pricing in",
-            "emoji": [],
-            "subtitle": "Unit Bias",
-            "note": ""
+            "highlight": "wrong unit",
+            "emoji": [
+              "💰",
+              "📈"
+            ],
+            "subtitle": "How to reframe prices for instant affordability",
+            "note": "your brain loves small"
           },
           "slides": [
             {
-              "heading": "",
-              "emoji": "",
+              "heading": "**Big** annual price",
+              "emoji": "💸",
               "layout": "standard",
               "note": "",
               "quote": ""
             },
             {
               "heading": "",
-              "emoji": "",
+              "emoji": "⚠",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "Unit **Bias**",
+              "emoji": "🔑",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Tiny** daily cost",
+              "emoji": "✅",
               "layout": "standard",
               "note": "",
               "quote": ""
             },
             {
               "heading": "",
-              "emoji": "",
-              "layout": "standard",
+              "emoji": "💡",
+              "layout": "big",
               "note": "",
               "quote": ""
             },
             {
               "heading": "",
-              "emoji": "",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "",
+              "emoji": "📊",
               "layout": "standard",
               "note": "",
               "quote": ""
             }
           ],
           "takeaway": {
-            "heading": "",
-            "emoji": "",
+            "heading": "Break big prices",
+            "emoji": "🧩",
             "note": ""
           },
-          "for": "e3c2efd83246",
+          "for": "443fd11193d6",
           "style": "notebook",
-          "source": "fallback",
+          "source": "ai",
           "note": "",
           "v": 2
         }
       },
-      "caption": "Ever wondered why a $365 yearly fee feels pricey, while $1 a day sounds almost free? It’s not magic, it’s **Unit Bias** at work. When we see a smaller, familiar unit, our brain treats the cost as negligible.\n\nBy simply reframing the same price into daily or weekly amounts, you lower the perceived barrier and boost conversion. Try swapping \"$299 per month\" for \"just $10 a day\" in your next email or landing page.\n\nWhat other price formats have you tested? Share your results below!\n\n#marketingpsychology #copywriting #pricingstrategy #unitbias #conversiontips #branding #entrepreneurship",
+      "caption": "Ever wondered why a Rs 365 yearly fee feels pricey, while Rs 1 a day sounds almost free? It’s not magic, it’s **Unit Bias** at work.\n\nWhen prospects see a smaller, familiar unit, their brain treats the cost as negligible. Reframe the same amount into daily or weekly slices and watch the perceived barrier shrink.\n\nTry swapping “Rs 299 per month” for “just Rs 10 a day” in your next email or landing page.\n\nWhat price formats have you experimented with?\n\n#marketingpsychology #copywriting #pricingstrategy #unitbias #conversiontips #entrepreneurship #indiabusiness",
       "images": [
-        "posts/20261019-012732/01.jpg",
-        "posts/20261019-012732/02.jpg",
-        "posts/20261019-012732/03.jpg",
-        "posts/20261019-012732/04.jpg",
-        "posts/20261019-012732/05.jpg",
-        "posts/20261019-012732/06.jpg",
-        "posts/20261019-012732/07.jpg",
-        "posts/20261019-012732/08.jpg"
+        "posts/20261019-070635/01.jpg",
+        "posts/20261019-070635/02.jpg",
+        "posts/20261019-070635/03.jpg",
+        "posts/20261019-070635/04.jpg",
+        "posts/20261019-070635/05.jpg",
+        "posts/20261019-070635/06.jpg",
+        "posts/20261019-070635/07.jpg",
+        "posts/20261019-070635/08.jpg"
       ],
-      "created_at": "2026-10-19T01:27:33+00:00",
+      "created_at": "2026-10-19T07:06:38+00:00",
+      "reel": null,
       "status": "awaiting",
       "backlog_line": "[CopyClinic] \"$365 a year\" vs \"$1 a day\": reframing a price into a smaller unit",
       "slot": "evening",
@@ -268,17 +272,16 @@
       "publish_at": null,
       "reminded": false,
       "msg_ids": [
-        192,
-        193,
-        194,
-        195,
-        196,
-        197,
-        198,
-        199,
-        200
-      ],
-      "note": "The posting time changed, so it moved to 6:00 pm IST tomorrow."
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211
+      ]
     }
   ],
   "merged_seeds": [
@@ -466,6 +469,11 @@
       "at": "2026-10-19T07:05:18+00:00",
       "job": "6. App action",
       "text": "App: Approved. MARKETINGTIP#10 (Social proof) goes live at 6:00 pm IST today."
+    },
+    {
+      "at": "2026-10-19T07:06:43+00:00",
+      "job": "6. App action",
+      "text": "App: Rewrote COPYCLINIC#2 (Unit Bias) with your feedback. Have a look and approve it when you're happy."
     }
   ],
   "app_requests": [
@@ -603,6 +611,15 @@
       "ok": true,
       "message": "Approved. MARKETINGTIP#10 (Social proof) goes live at 6:00 pm IST today.",
       "at": "2026-10-19T07:05:18+00:00"
+    },
+    {
+      "id": "mvewusibxaz50k",
+      "action": "redo",
+      "draft_id": "20261019-012732",
+      "new_draft_id": "20261019-070635",
+      "ok": true,
+      "message": "Rewrote COPYCLINIC#2 (Unit Bias) with your feedback. Have a look and approve it when you're happy.",
+      "at": "2026-10-19T07:06:43+00:00"
     }
   ],
   "design_styles": {

@@ -234,5 +234,17 @@
       "total_interactions": 3,
       "updated_at": "2026-10-19T06:55:49+00:00"
     }
+  },
+  {
+    "id": "20261019-012732",
+    "series": "CopyClinic",
+    "number": 2,
+    "tag": "COPYCLINIC#2",
+    "topic": "\"$365 a year\" vs \"$1 a day\": reframing a price into a smaller unit",
+    "slot": "evening",
+    "principle": "Unit Bias",
+    "at": "2026-10-19T07:06:38+00:00",
+    "status": "redone",
+    "feedback": "In the last slide, the text is not aligned in the middle vertically, so overlaps with the emoji on the top right"
   }
 ]
