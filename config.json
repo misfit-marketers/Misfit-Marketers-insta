@@ -50,13 +50,8 @@
   "slots": [
     {
       "name": "evening",
-      "time_ist": "19:30",
-      "backup_ist": "20:30"
-    },
-    {
-      "name": "night",
-      "time_ist": "03:30",
-      "backup_ist": "04:30"
+      "time_ist": "18:00",
+      "backup_ist": "19:00"
     }
   ],
   "theme": "alternate",
@@ -96,8 +91,8 @@
     "text": "Follow **{handle}** to learn the psychology underneath marketing."
   },
   "writing": {
-    "spelling": "American English (color, realize, behavior, specialized). The audience is mostly in the United States.",
-    "voice": "We-voice of a consumer-psychology-driven marketing collective. Smart, plain, a little playful. Talks to marketers, designers, freelancers and entrepreneurs, mostly in the US.",
+    "spelling": "British/Indian English (colour, realise, behaviour, specialised, programme). The audience is mostly in India.",
+    "voice": "We-voice of a consumer-psychology-driven marketing collective. Smart, plain, a little playful. Talks to marketers, designers, freelancers, founders and small business owners, mostly in India.",
     "extra_rules": [
       "Never use em dashes.",
       "Avoid negative parallelism such as 'it's not X, it's Y' or 'not just X but Y'.",
@@ -110,5 +105,21 @@
   },
   "gemini_model": "auto",
   "image_host": "raw",
-  "instagram_api_version": "v25.0"
+  "instagram_api_version": "v25.0",
+  "audience": {
+    "about": "Who the posts are for. Change these lines to switch audience.",
+    "region": "India",
+    "examples": "Use examples that make sense to an Indian audience (Indian brands, apps and everyday life such as Swiggy, Zomato, Flipkart, Myntra, Zepto, Jio, Tata, Amul, kirana stores, festive sales, UPI), while staying understandable worldwide. Global brands are fine when the example is famous.",
+    "currency": "INR",
+    "money": "Write prices and money amounts in Indian rupees as Rs with no dot (for example Rs 499 or Rs 1,200, and lakh or crore for big numbers). Never use dollars unless the example is about a US company."
+  },
+  "reels": {
+    "about": "Reels made from each carousel. make: build a Reel for every draft (shown in the app). post: off, both (carousel and Reel at the same time) or reel (the Reel instead of the carousel).",
+    "make": false,
+    "post": "off"
+  },
+  "stats": {
+    "about": "Views, reach, likes, comments, saves and shares for each live post, fetched from Instagram every 2 hours and shown in the app's History.",
+    "enabled": true
+  }
 }

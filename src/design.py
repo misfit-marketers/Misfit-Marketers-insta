@@ -176,7 +176,7 @@ def validate(raw: dict, post: dict, style: str = "") -> dict:
     return {"cover": cover_out, "slides": slides, "takeaway": take}
 
 
-def build_prompt(post: dict, series: str, style: str, note: str = "") -> str:
+def build_prompt(post: dict, series: str, style: str, note: str = "", spelling: str = "American English") -> str:
     slides = "\n".join(f"{i + 1}. {s}" for i, s in enumerate(post["slides"]))
     note_line = (f"\nEDITOR'S NOTE (follow it as long as it fits the rules below): {note.strip()}\n"
                  if (note or "").strip() else "")
@@ -204,7 +204,7 @@ Rules:
   - layout: "big" or "standard". "big" shows only the slide's words, very large, like a poster line; use it for 1 or 2 short, punchy slides (the ones that land the idea), so the carousel has rhythm. Everything else is "standard".
   - quote: usually "". At most ONE slide in the whole carousel may have a pull quote (at most 10 words restating that slide's point), and only if it adds punch. Never add facts, numbers or names that the slide does not contain.
 - takeaway: {{"heading": 1 to 3 words for the final slide, "emoji": one emoji from the list, "note": "" or at most 6 words}}.
-- American spelling. Never use em dashes. Avoid "it's not X, it's Y" phrasing.
+- Spelling: {spelling}. Never use em dashes. Avoid "it's not X, it's Y" phrasing.
 
 Return ONLY JSON:
 {{"cover": {{"highlight": "", "subtitle": "", "emoji": [], "note": ""}},
@@ -247,7 +247,7 @@ def ensure(post: dict, series: str, style: str, cfg: dict) -> dict:
         raw, source = sample_design(post), "sample"
     else:
         try:
-            raw, source = _ask_ai(cfg, build_prompt(post, series, style, note)), "ai"
+            raw, source = _ask_ai(cfg, build_prompt(post, series, style, note, ((cfg.get("writing") or {}).get("spelling") or "American English").split(" (")[0])), "ai"
         except Exception as e:
             print(f"Design step fell back to plain highlights: {e}")
             raw, source = fallback(post, style), "fallback"

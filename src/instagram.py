@@ -65,6 +65,26 @@ def publish_carousel(image_urls: list, caption: str, version: str, log=print) ->
     return {"id": media_id, "permalink": permalink}
 
 
+def publish_reel(video_url: str, caption: str, version: str, log=print) -> dict:
+    """A Reel from a public MP4 URL. Instagram downloads and processes the video
+    first, which can take a minute or two."""
+    if DRY_RUN:
+        log(f"[dry-run] would publish a Reel from {video_url}")
+        return {"id": "dry-run-reel", "permalink": "https://instagram.com/reel/dry-run"}
+    me = whoami(version)
+    ig_id = me.get("user_id") or me.get("id")
+    c = _req("POST", f"{ig_id}/media", version, media_type="REELS", video_url=video_url, caption=caption,
+             share_to_feed="true")
+    _wait_until_ready(c["id"], version, timeout_s=600)
+    published = _req("POST", f"{ig_id}/media_publish", version, creation_id=c["id"])
+    media_id = published["id"]
+    try:
+        permalink = _req("GET", media_id, version, fields="permalink").get("permalink", "")
+    except InstagramError:
+        permalink = ""
+    return {"id": media_id, "permalink": permalink}
+
+
 def _wait_until_ready(container_id: str, version: str, timeout_s: int = 180):
     start = time.time()
     while time.time() - start < timeout_s:

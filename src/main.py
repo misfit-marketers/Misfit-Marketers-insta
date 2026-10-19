@@ -10,7 +10,7 @@ Commands
   preview FILE    render a post JSON locally into posts/preview/ (no APIs)
 
 How posting works
-  The config lists daily slots (by default 7:30 pm and 3:30 am IST), each with a
+  The config lists daily slots (by default 6 pm IST), each with a
   back-up time one hour later. Every draft belongs to one upcoming slot. Approve
   it and it goes live at that slot; if it's missed or Instagram refuses it, it
   moves to the back-up time, then to the same slot the next day, until it's live.
@@ -88,6 +88,40 @@ def image_urls(draft: dict, cfg: dict) -> list:
     if cfg.get("image_host") == "jsdelivr":
         return [f"https://cdn.jsdelivr.net/gh/{repo}@{branch}/{r}" for r in rels]
     return [f"https://raw.githubusercontent.com/{repo}/{branch}/{r}" for r in rels]
+
+
+def reels_cfg(cfg: dict) -> dict:
+    r = cfg.get("reels") or {}
+    return {"make": bool(r.get("make")) or r.get("post", "off") != "off", "post": r.get("post", "off")}
+
+
+def build_reel(post: dict, series: str, tag: str, out_dir: Path, cfg: dict, style: str = None):
+    """A Reel version of the slides, if Reels are switched on. Never blocks a draft."""
+    if not reels_cfg(cfg)["make"]:
+        return None
+    try:
+        from . import reel
+        from .design import split_label
+        from .render import style_for
+        imgs = sorted(out_dir.glob("[0-9][0-9].jpg"))
+        n = lambda t: len(re.sub(r"\*\*", "", t or "").split())
+        words = [n(post["hook"])] + [n(split_label(x)[1]) for x in post["slides"]] + [n(post["takeaway"])]
+        words = (words + [12] * len(imgs))[:len(imgs)]
+        pick = style_for(cfg, series, style)
+        accent = tuple(int(pick[1].lstrip("#")[i:i + 2], 16) for i in (0, 2, 4)) if pick else (255, 77, 46)
+        path = reel.make_reel(imgs, out_dir / "reel.mp4", words=words, accent=accent,
+                              handle=cfg.get("instagram_handle", "misfit_marketers").lstrip("@"), seed=tag, log=log)
+        return str(path.relative_to(ROOT))
+    except Exception as e:
+        log(f"Couldn't make the Reel: {e}")
+        return None
+
+
+def video_url(path: str) -> str:
+    """jsDelivr serves the video with the right type and from the exact commit."""
+    repo = os.environ.get("GITHUB_REPOSITORY", "OWNER/REPO")
+    ref = os.environ.get("GITHUB_SHA") or os.environ.get("GITHUB_REF_NAME", "main")
+    return f"https://cdn.jsdelivr.net/gh/{repo}@{ref}/{Path(path).as_posix()}"
 
 
 def remove_draft_files(draft: dict):
@@ -361,6 +395,7 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
     tag = cfg["series"][series]["tag"].format(n=number)
     paths = render_post(post, theme, tag, POSTS / draft_id, closing=closing_text(cfg),
                         label=series_label(cfg, series), series=series, cfg=cfg, style=style)
+    reel_path = build_reel(post, series, tag, POSTS / draft_id, cfg, style)
 
     state = load_state()  # reload: the writer call can take a while
     if redo_of:
@@ -375,7 +410,7 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
     draft = {
         "id": draft_id, "series": series, "number": number, "tag": tag, "theme": theme, "style": style,
         "topic": topic or post.get("topic"), "post": post, "caption": build_caption(post),
-        "images": [str(p.relative_to(ROOT)) for p in paths], "created_at": now_iso(),
+        "images": [str(p.relative_to(ROOT)) for p in paths], "created_at": now_iso(), "reel": reel_path,
         "status": "awaiting", "backlog_line": backlog_line,
         "slot": slot_name, "slot_at": iso(slot_at), "publish_at": None, "reminded": False,
     }
@@ -435,6 +470,7 @@ def approve(draft_id: str):
         d["slot_at"], at = iso(new_slot), new_slot
     d["status"] = "approved"
     d["approved_at"] = now_iso()
+    d.pop("unapproved_by_change", None)
     d["publish_at"] = iso(at)
     d["note"] = ("" if at == primary else
                  f"Approved after its {when_text(iso(primary))} slot, so it goes live at {when_text(d['publish_at'])}.")
@@ -457,8 +493,21 @@ def publish(draft_id: str) -> bool:
                 retry_later(draft_id, f"An image is not reachable at\n{html.escape(u)}\n(HTTP {r.status_code}). "
                                       "Is the repository public?")
                 return False
+    version = cfg.get("instagram_api_version", "v25.0")
+    mode = reels_cfg(cfg)["post"]
+    has_reel = bool(draft.get("reel")) and (ROOT / draft["reel"]).exists()
+    reel_result, reel_error = None, ""
     try:
-        result = instagram.publish_carousel(urls, draft["caption"], cfg.get("instagram_api_version", "v25.0"), log)
+        if mode == "reel" and has_reel:
+            result = instagram.publish_reel(video_url(draft["reel"]), draft["caption"], version, log)
+            reel_result = result
+        else:
+            result = instagram.publish_carousel(urls, draft["caption"], version, log)
+            if mode == "both" and has_reel:
+                try:
+                    reel_result = instagram.publish_reel(video_url(draft["reel"]), draft["caption"], version, log)
+                except Exception as e:  # the carousel is live; the Reel just gets reported
+                    reel_error = str(e)[:300]
     except Exception as e:
         hint = ""
         if "token" in str(e).lower() or "OAuth" in str(e):
@@ -468,8 +517,12 @@ def publish(draft_id: str) -> bool:
         return False
 
     state, history = load_state(), load_history()
-    history.append({**_hist(draft), "status": "posted", "posted_at": now_iso(),
-                    "ig_media_id": result["id"], "permalink": result.get("permalink", "")})
+    entry = {**_hist(draft), "status": "posted", "posted_at": now_iso(),
+             "ig_media_id": result["id"], "permalink": result.get("permalink", ""),
+             "format": "reel" if (mode == "reel" and reel_result is result) else "carousel"}
+    if reel_result and reel_result is not result:
+        entry["reel_media_id"], entry["reel_permalink"] = reel_result["id"], reel_result.get("permalink", "")
+    history.append(entry)
     counters = state["series_counters"]
     counters[draft["series"]] = max(int(counters.get(draft["series"], 0)), int(draft["number"]) + 1)
     remove(state, draft_id)
@@ -478,7 +531,12 @@ def publish(draft_id: str) -> bool:
         remove_topic_from_backlog(draft["backlog_line"])  # a topic is done only once it's live
     save_state(state)
     save_history(history)
-    telegram.send_message(f"Posted {describe(draft)}\n{result.get('permalink', '')}")
+    extra = ""
+    if reel_result and reel_result is not result:
+        extra = f"\nReel: {reel_result.get('permalink', '')}"
+    elif reel_error:
+        extra = f"\nThe Reel didn't go up: {html.escape(reel_error)}"
+    telegram.send_message(f"Posted {describe(draft)}\n{result.get('permalink', '')}{extra}")
     return True
 
 
@@ -518,8 +576,34 @@ def normalise_drafts(cfg: dict):
             if d.get("status") == "approved":
                 d["publish_at"] = d["slot_at"]
             changed = True
+    # The posting times changed (for example 7:30 pm and 3:30 am became 6 pm):
+    # drafts still sitting at an old time move to the next free new slot,
+    # keeping their approval.
+    defs = {sd["name"]: sd for sd in slot_defs(cfg)}
+    moved = []
+    for d in sorted(state["drafts"], key=lambda x: (x.get("status") != "approved", x.get("slot_at") or "")):
+        if not d.get("slot_at"):
+            continue
+        sdef = defs.get(d.get("slot"))
+        at = datetime.fromisoformat(d["slot_at"]).astimezone(IST)
+        if sdef and (at.hour, at.minute) == sdef["time"]:
+            continue
+        d["slot"] = (sdef or slot_defs(cfg)[0])["name"]
+        d["slot_at"] = iso(next_free_same_slot(cfg, state["drafts"], d, now_utc() + timedelta(minutes=20)))
+        d["reminded"] = False
+        if d.get("status") == "approved":
+            d["publish_at"] = d["slot_at"]
+        d["note"] = f"The posting time changed, so it moved to {when_text(d['slot_at'])}."
+        moved.append(f"• {describe(d)}: {when_text(d['slot_at'])}")
+        changed = True
     if changed:
         save_state(state)
+    if moved:
+        try:
+            telegram.send_message("The posting time changed, so these drafts moved (approvals are kept):\n"
+                                  + "\n".join(moved))
+        except Exception as e:  # noqa: BLE001
+            log(f"Couldn't send the move notice: {e}")
 
 
 def process_due(notify: bool = True):
@@ -644,8 +728,10 @@ def drop(draft_id: str = None):
     telegram.send_message("Reply /drop to the draft whose topic you want to remove.")
 
 
-def rerender(draft_id: str):
-    """Same words, fresh slides: useful after changing the template or fonts."""
+def rerender(draft_id: str, reason: str = "Redrawn"):
+    """Fresh slides for a draft. Any change to an approved draft (new words, new
+    design, new look) takes its approval back: Sachin approves what goes live,
+    so a changed post needs his approval again (his rule, 2026-10-18)."""
     cfg, state = load_config(), load_state()
     d = find(state, draft_id)
     if not d:
@@ -655,18 +741,17 @@ def rerender(draft_id: str):
         new_id += "b"
     paths = render_post(d["post"], d["theme"], d["tag"], POSTS / new_id, closing=closing_text(cfg),
                         label=series_label(cfg, d["series"]), series=d["series"], cfg=cfg, style=d.get("style"))
+    d["reel"] = build_reel(d["post"], d["series"], d["tag"], POSTS / new_id, cfg, d.get("style"))
     remove_draft_files(d)
     d["id"] = new_id
     d["images"] = [str(p.relative_to(ROOT)) for p in paths]
+    if d["status"] == "approved":
+        d["status"], d["publish_at"], d["reminded"] = "awaiting", None, False
+        d["note"] = f"{reason} after you approved it, so it needs your approval again."
+        d["unapproved_by_change"] = True
     save_state(state)
     full = {**d, "images": [str(ROOT / p) for p in d["images"]]}
-    if d["status"] == "approved":
-        ids = telegram._ids(telegram.send_album(full["images"]))
-        ids += telegram._ids(telegram.send_message(
-            f"Redrawn. {describe(d)} is still scheduled for {when_text(d['publish_at'])}.",
-            buttons=telegram.scheduled_buttons(new_id)))
-    else:
-        ids = telegram.send_review(full, when=when_text(d["slot_at"]))
+    ids = telegram.send_review(full, when=when_text(d["slot_at"]))
     state = load_state()
     d = find(state, new_id)
     if d:
@@ -729,7 +814,7 @@ def refresh_old_designs():
             continue
         log(f"Redesigning {describe(d)} with the latest slide rules")
         try:
-            rerender(d["id"])
+            rerender(d["id"], reason="Redesigned with the latest slide rules")
         except Exception as e:
             log(f"Couldn't redesign {d['id']}: {e}")
 
@@ -738,6 +823,11 @@ def check() -> None:
     cfg = load_config()
     merge_topic_seeds(cfg)
     refresh_old_designs()
+    try:
+        from . import stats
+        stats.refresh(cfg, log)
+    except Exception as e:  # numbers are nice to have; never block posting
+        log(f"Stats refresh failed: {e}")
     if not telegram.enabled():
         log("Telegram is switched off in config.json; only posting what's due")
         process_due(notify=True)

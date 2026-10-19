@@ -12,22 +12,15 @@ GitHub Actions (on a timer)
    ▼
 Telegram bot ──► you tap Approve / Redo / Skip (or reply with feedback)
    ▼
-GitHub Actions at 7:30 pm and 3:30 am IST ──► Instagram API publishes each carousel
+GitHub Actions at 6 pm IST ──► Instagram API publishes the carousel (and Reel)
 ```
 
-**Default schedule:** two posts every day, timed for the US.
+**Default schedule:** one post every day at 6 pm IST (back-up 7 pm), for an
+audience that is mostly in India. Examples use Indian brands and everyday life,
+and prices are in rupees (`config.json → audience`).
 
-| Slot (IST) | US time (while US clocks are on daylight time) | Back-up |
-|---|---|---|
-| 7:30 pm | 10 am Eastern, 7 am Pacific | 8:30 pm |
-| 3:30 am | 6 pm Eastern, 3 pm Pacific | 4:30 am |
-
-When the US switches to standard time in November, these land an hour
-earlier in US time.
-
-- **About 6:30 to 7 am IST:** one draft for each empty slot arrives in
-  Telegram, each labelled with its slot ("For 7:30 pm IST today", "For 3:30 am
-  IST tonight").
+- **About 6:30 to 7 am IST:** the day's draft arrives in Telegram and the app,
+  labelled with its slot ("For 6:00 pm IST today").
 - **At each slot:** approved drafts go live. If a draft isn't approved yet,
   or Instagram refuses it, it goes out at the back-up time an hour later.
   If that's missed too, it moves to the same slot the next day, and that
@@ -205,8 +198,21 @@ writer can't search the web.
 - **When posts go live:** change `"slots"` in `config.json` (each slot has a
   time and a back-up time, in IST), and change the `cron:` line in
   `.github/workflows/post.yml` so it runs about 30 minutes before each slot
-  and back-up, in UTC. The current `"27 13,14,21,22 * * *"` covers 7:30 pm,
-  8:30 pm, 3:30 am and 4:30 am IST.
+  and back-up, in UTC. The current `"57 11,12 * * *"` covers 6 pm and 7 pm
+  IST. Drafts still sitting at an old time move to the next free new slot by
+  themselves, keeping their approval.
+- **Reels:** `config.json → reels`. `make: true` builds a 9:16 Reel from every
+  draft (the slides as swiping cards with music), shown on the post's page in
+  the app. `post` decides what goes live: `off` (carousel only), `both`
+  (carousel and Reel) or `reel` (the Reel instead of the carousel). Music: put
+  tracks you have the right to use in `assets/music/` (.mp3, .m4a or .wav) and
+  one is picked per post; otherwise an original lo-fi loop is generated.
+  Instagram's in-app music library can't be added through the API.
+- **Stats:** `config.json → stats`. Every 2 hours the check job reads views,
+  reach, likes, comments, saves and shares for posts from the last 60 days,
+  plus the follower count, and the app's History shows them. Views, reach,
+  saves and shares need the `instagram_business_manage_insights` permission on
+  the access token; without it only likes and comments come through.
 - **Auto-post without review:** set `"auto_post_if_not_reviewed": true` in
   `config.json`. A draft you haven't reviewed by its slot then posts anyway.
 - **Slide styles per series:** `config.json → design → styles` gives each series

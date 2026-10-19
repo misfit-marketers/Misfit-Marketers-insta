@@ -119,6 +119,7 @@ def build_prompt(cfg: dict, series_name: str, topic: str, recent_topics: list, f
                                             "then name the principle, explain WHY it happens in the mind, show how it "
                                             "appears in marketing with a concrete example, end with an actionable takeaway.")
     label = series.get("takeaway_label", "Takeaway")
+    aud = cfg.get("audience") or {}
 
     prompt = f"""You write Instagram carousels for MISFIT, a page that teaches marketers and entrepreneurs the psychology underneath marketing.
 
@@ -136,8 +137,8 @@ HOUSE RULES:
 - The hook is a short question or provocative line, at most 9 words, no asterisks.
 - The "takeaway" field is the final slide: one practical sentence of at most 18 words. It is shown after the label "{label}:", so do not start it with that word.
 - Accuracy matters more than drama. Only cite studies, researchers, years and numbers you are confident are real. If unsure, describe the finding generally without names or figures. Never invent quotes, statistics or experiments. Never claim MISFIT ran an experiment.
-- Use examples that make sense to a US audience (US brands, apps, and everyday life), while staying understandable worldwide.
-- Write every price and money amount in US dollars with the $ sign (for example $29 or $1,200). Never use rupees, ₹, Rs or INR.
+- {aud.get('examples', 'Use examples that make sense to a US audience (US brands, apps, and everyday life), while staying understandable worldwide.')}
+- {aud.get('money', 'Write every price and money amount in US dollars with the $ sign (for example $29 or $1,200). Never use rupees, ₹, Rs or INR.')}
 {rules}
 
 RECENTLY POSTED OR ALREADY DRAFTED (do not repeat these topics or principles):
@@ -170,6 +171,7 @@ Return ONLY a JSON object with exactly these keys:
     return prompt
 
 
+CURRENCY = "USD"  # set from config.json "audience" when the writer runs
 RUPEE = re.compile(r"₹|\bRs\.?\s?\d|\bINR\b|\brupees?\b", re.I)
 
 
@@ -179,7 +181,7 @@ def validate(post: dict, max_slides: int) -> dict:
             raise ValueError(f"writer output missing '{k}'")
     visible = " ".join([str(post.get("hook", "")), str(post.get("takeaway", "")), str(post.get("caption", ""))]
                        + [str(x) for x in post.get("slides", [])])
-    if RUPEE.search(visible):
+    if CURRENCY == "USD" and RUPEE.search(visible):
         raise ValueError("writer used rupees; asking again for dollars")
     if not isinstance(post["slides"], list) or len(post["slides"]) < 2:
         raise ValueError("writer returned too few slides")
@@ -208,6 +210,8 @@ def overrun(post: dict) -> int:
 
 def write_post(cfg: dict, series_name: str, topic: str, recent_topics: list, feedback: str = None,
                previous: dict = None) -> dict:
+    global CURRENCY
+    CURRENCY = (cfg.get("audience") or {}).get("currency", "USD")
     max_slides = int(cfg.get("max_body_slides", 7))
     if DRY_RUN:
         return validate(load_json(CONTENT / "sample_post.json", {}), max_slides)

@@ -114,11 +114,15 @@ def a_edit(draft_id, text):
     d = m.find(state, draft_id)
     d["post"], d["caption"] = post, m.build_caption(post)
     save_state(state)
-    new_id = m.rerender(draft_id) or draft_id
+    new_id = m.rerender(draft_id, reason="Edited") or draft_id
     d = m.find(load_state(), new_id)
-    tail = (f" It's still scheduled for {m.when_text(d['publish_at'])}." if d and d["status"] == "approved"
-            else " Approve it when you're happy.")
-    return new_id, "Saved your edits and redrew the slides." + tail
+    return new_id, "Saved your edits and redrew the slides." + _reapprove_tail(d)
+
+
+def _reapprove_tail(d) -> str:
+    if d and d.get("unapproved_by_change"):
+        return " It was approved before, so it needs your approval again."
+    return " Approve it when you're happy."
 
 
 def a_postpone(draft_id, text):
@@ -241,7 +245,7 @@ def a_redesign(draft_id, text):
     else:
         d["post"].pop("design_note", None)
     save_state(state)
-    new_id = m.rerender(draft_id) or draft_id
+    new_id = m.rerender(draft_id, reason="Redesigned") or draft_id
     d = m.find(load_state(), new_id)
     if not d:
         raise Refused("The draft changed while I was redrawing it. Pull down to refresh.")
@@ -253,9 +257,7 @@ def a_redesign(draft_id, text):
         msg = f"Redesigned {_name(d)} in the {STYLE_WORDS[used]} style."
         if (post.get("design") or {}).get("source") == "fallback":
             msg += " The AI designer didn't answer, so it used plain highlights. Try Redesign again in a minute."
-    tail = (f" It's still scheduled for {m.when_text(d['publish_at'])}." if d["status"] == "approved"
-            else " Approve it when you're happy.")
-    return new_id, msg + tail
+    return new_id, msg + _reapprove_tail(d)
 
 
 def a_styles_set(draft_id, text):
@@ -288,7 +290,7 @@ def a_styles_set(draft_id, text):
     redrawn = 0
     if data.get("redraw"):
         for d in [x for x in load_state()["drafts"] if x["series"] == series and not x.get("style")]:
-            if m.rerender(d["id"]):
+            if m.rerender(d["id"], reason="Redrawn in the new look"):
                 redrawn += 1
     if redrawn:
         msg += f" Redrew {redrawn} waiting draft{'s' if redrawn != 1 else ''}."
@@ -299,11 +301,21 @@ def a_styles_set(draft_id, text):
     return "", msg
 
 
+
+def a_stats(draft_id, text):
+    """Fetch the latest numbers from Instagram now."""
+    from . import stats
+    stats.refresh(load_config(), m.log, force=True)
+    acc = load_state().get("account") or {}
+    tail = f" {acc['followers']} followers." if acc.get("followers") is not None else ""
+    return "", "Fetched the latest numbers from Instagram." + tail
+
+
 ACTIONS = {
     "approve": a_approve, "unapprove": a_unapprove, "postnow": a_postnow, "skip": a_skip, "drop": a_drop,
     "redo": a_redo, "edit": a_edit, "postpone": a_postpone, "new": a_new,
     "topic_add": a_topic_add, "topic_remove": a_topic_remove, "topic_edit": a_topic_edit,
-    "topic_order": a_topic_order, "redesign": a_redesign, "styles_set": a_styles_set,
+    "topic_order": a_topic_order, "redesign": a_redesign, "styles_set": a_styles_set, "stats": a_stats,
 }
 
 
