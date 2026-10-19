@@ -112,7 +112,7 @@
       "saved": 0,
       "shares": 5,
       "total_interactions": 9,
-      "updated_at": "2026-10-19T11:28:03+00:00"
+      "updated_at": "2026-10-19T13:29:38+00:00"
     }
   },
   {
@@ -136,7 +136,7 @@
       "saved": 0,
       "shares": 3,
       "total_interactions": 5,
-      "updated_at": "2026-10-19T11:28:03+00:00"
+      "updated_at": "2026-10-19T13:29:39+00:00"
     }
   },
   {
@@ -160,7 +160,7 @@
       "saved": 0,
       "shares": 6,
       "total_interactions": 8,
-      "updated_at": "2026-10-19T11:28:03+00:00"
+      "updated_at": "2026-10-19T13:29:39+00:00"
     }
   },
   {
@@ -184,7 +184,7 @@
       "saved": 0,
       "shares": 6,
       "total_interactions": 8,
-      "updated_at": "2026-10-19T11:28:04+00:00"
+      "updated_at": "2026-10-19T13:29:40+00:00"
     }
   },
   {
@@ -208,7 +208,7 @@
       "saved": 1,
       "shares": 0,
       "total_interactions": 3,
-      "updated_at": "2026-10-19T11:28:04+00:00"
+      "updated_at": "2026-10-19T13:29:40+00:00"
     }
   },
   {
@@ -232,7 +232,7 @@
       "saved": 0,
       "shares": 3,
       "total_interactions": 6,
-      "updated_at": "2026-10-19T11:28:05+00:00"
+      "updated_at": "2026-10-19T13:29:41+00:00"
     }
   },
   {
@@ -260,6 +260,16 @@
     "posted_at": "2026-10-19T12:31:02+00:00",
     "ig_media_id": "18047494634818990",
     "permalink": "https://www.instagram.com/p/DerQ0VlG5AL/",
-    "format": "carousel"
+    "format": "carousel",
+    "stats": {
+      "views": 4,
+      "reach": 2,
+      "likes": 1,
+      "comments": 0,
+      "saved": 1,
+      "shares": 2,
+      "total_interactions": 4,
+      "updated_at": "2026-10-19T13:29:41+00:00"
+    }
   }
 ]
