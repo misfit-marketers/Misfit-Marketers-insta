@@ -20,7 +20,17 @@
     "status": "posted",
     "posted_at": "2026-10-14T13:38:41+00:00",
     "ig_media_id": "18109809902267380",
-    "permalink": "https://www.instagram.com/p/DeeglhIG1E9/"
+    "permalink": "https://www.instagram.com/p/DeeglhIG1E9/",
+    "stats": {
+      "views": 15,
+      "reach": 3,
+      "likes": 2,
+      "comments": 0,
+      "saved": 2,
+      "shares": 1,
+      "total_interactions": 5,
+      "updated_at": "2026-10-19T06:55:45+00:00"
+    }
   },
   {
     "id": "20261015-012352",
@@ -34,7 +44,17 @@
     "status": "posted",
     "posted_at": "2026-10-15T14:01:06+00:00",
     "ig_media_id": "17990591034071371",
-    "permalink": "https://www.instagram.com/p/DehH8iAlW10/"
+    "permalink": "https://www.instagram.com/p/DehH8iAlW10/",
+    "stats": {
+      "views": 19,
+      "reach": 4,
+      "likes": 2,
+      "comments": 0,
+      "saved": 2,
+      "shares": 9,
+      "total_interactions": 13,
+      "updated_at": "2026-10-19T06:55:46+00:00"
+    }
   },
   {
     "id": "20261015-012357",
@@ -48,7 +68,17 @@
     "status": "posted",
     "posted_at": "2026-10-15T22:00:54+00:00",
     "ig_media_id": "18072247676750128",
-    "permalink": "https://www.instagram.com/p/Deh-2t_GjHA/"
+    "permalink": "https://www.instagram.com/p/Deh-2t_GjHA/",
+    "stats": {
+      "views": 20,
+      "reach": 4,
+      "likes": 2,
+      "comments": 2,
+      "saved": 0,
+      "shares": 4,
+      "total_interactions": 8,
+      "updated_at": "2026-10-19T06:55:46+00:00"
+    }
   },
   {
     "id": "20261016-012307",
@@ -73,7 +103,17 @@
     "status": "posted",
     "posted_at": "2026-10-16T14:00:48+00:00",
     "ig_media_id": "18021074690728585",
-    "permalink": "https://www.instagram.com/p/DejstI5FoL-/"
+    "permalink": "https://www.instagram.com/p/DejstI5FoL-/",
+    "stats": {
+      "views": 26,
+      "reach": 6,
+      "likes": 2,
+      "comments": 2,
+      "saved": 0,
+      "shares": 5,
+      "total_interactions": 9,
+      "updated_at": "2026-10-19T06:55:46+00:00"
+    }
   },
   {
     "id": "20261016-142832",
@@ -87,7 +127,17 @@
     "status": "posted",
     "posted_at": "2026-10-16T22:01:01+00:00",
     "ig_media_id": "18118336753978642",
-    "permalink": "https://www.instagram.com/p/DekjqaKGBga/"
+    "permalink": "https://www.instagram.com/p/DekjqaKGBga/",
+    "stats": {
+      "views": 14,
+      "reach": 2,
+      "likes": 2,
+      "comments": 0,
+      "saved": 0,
+      "shares": 3,
+      "total_interactions": 5,
+      "updated_at": "2026-10-19T06:55:47+00:00"
+    }
   },
   {
     "id": "20261017-012419",
@@ -101,7 +151,17 @@
     "status": "posted",
     "posted_at": "2026-10-17T14:06:45+00:00",
     "ig_media_id": "18076075142563694",
-    "permalink": "https://www.instagram.com/p/DemSL1FFOv6/"
+    "permalink": "https://www.instagram.com/p/DemSL1FFOv6/",
+    "stats": {
+      "views": 15,
+      "reach": 3,
+      "likes": 2,
+      "comments": 0,
+      "saved": 0,
+      "shares": 6,
+      "total_interactions": 8,
+      "updated_at": "2026-10-19T06:55:47+00:00"
+    }
   },
   {
     "id": "20261017-012428",
@@ -115,7 +175,17 @@
     "status": "posted",
     "posted_at": "2026-10-17T22:00:58+00:00",
     "ig_media_id": "18112423114878263",
-    "permalink": "https://www.instagram.com/p/DenIc6RAZ5i/"
+    "permalink": "https://www.instagram.com/p/DenIc6RAZ5i/",
+    "stats": {
+      "views": 17,
+      "reach": 3,
+      "likes": 2,
+      "comments": 0,
+      "saved": 0,
+      "shares": 6,
+      "total_interactions": 8,
+      "updated_at": "2026-10-19T06:55:47+00:00"
+    }
   },
   {
     "id": "20261018-012441",
@@ -129,7 +199,17 @@
     "status": "posted",
     "posted_at": "2026-10-18T14:01:07+00:00",
     "ig_media_id": "18130815998500121",
-    "permalink": "https://www.instagram.com/p/Deo2U3ZEadQ/"
+    "permalink": "https://www.instagram.com/p/Deo2U3ZEadQ/",
+    "stats": {
+      "views": 7,
+      "reach": 2,
+      "likes": 2,
+      "comments": 0,
+      "saved": 1,
+      "shares": 0,
+      "total_interactions": 3,
+      "updated_at": "2026-10-19T06:55:48+00:00"
+    }
   },
   {
     "id": "20261018-012450",
@@ -143,6 +223,16 @@
     "status": "posted",
     "posted_at": "2026-10-18T22:00:56+00:00",
     "ig_media_id": "18116493800323062",
-    "permalink": "https://www.instagram.com/p/DeptQR2D9eG/"
+    "permalink": "https://www.instagram.com/p/DeptQR2D9eG/",
+    "stats": {
+      "views": 13,
+      "reach": 2,
+      "likes": 2,
+      "comments": 1,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 3,
+      "updated_at": "2026-10-19T06:55:49+00:00"
+    }
   }
 ]

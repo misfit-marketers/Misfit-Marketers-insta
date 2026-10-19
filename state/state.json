@@ -126,7 +126,7 @@
       "status": "awaiting",
       "backlog_line": "Social proof: why people trust what other people are already doing",
       "slot": "evening",
-      "slot_at": "2026-10-19T14:00:00+00:00",
+      "slot_at": "2026-10-19T12:30:00+00:00",
       "publish_at": null,
       "reminded": false,
       "msg_ids": [
@@ -138,7 +138,8 @@
         189,
         190,
         191
-      ]
+      ],
+      "note": "The posting time changed, so it moved to 6:00 pm IST today."
     },
     {
       "id": "20261019-012732",
@@ -261,8 +262,8 @@
       "created_at": "2026-10-19T01:27:33+00:00",
       "status": "awaiting",
       "backlog_line": "[CopyClinic] \"$365 a year\" vs \"$1 a day\": reframing a price into a smaller unit",
-      "slot": "night",
-      "slot_at": "2026-10-19T22:00:00+00:00",
+      "slot": "evening",
+      "slot_at": "2026-10-20T12:30:00+00:00",
       "publish_at": null,
       "reminded": false,
       "msg_ids": [
@@ -275,7 +276,8 @@
         198,
         199,
         200
-      ]
+      ],
+      "note": "The posting time changed, so it moved to 6:00 pm IST tomorrow."
     }
   ],
   "merged_seeds": [
@@ -453,6 +455,11 @@
       "at": "2026-10-19T01:27:37+00:00",
       "job": "1. Write a new draft",
       "text": "New draft ready for review: COPYCLINIC#2 (Unit Bias) for 3:30 am IST tonight"
+    },
+    {
+      "at": "2026-10-19T06:55:51+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "The posting time changed, so these drafts moved (approvals are kept):\n• MARKETINGTIP#10 (Social proof): 6:00 pm IST today\n• COPYCLINIC#2 (Unit Bias): 6:00 pm IST tomorrow"
     }
   ],
   "app_requests": [
@@ -592,5 +599,12 @@
       "style": "poster",
       "accent": "#FF4D2E"
     }
-  }
+  },
+  "account": {
+    "followers": 89,
+    "posts": 19,
+    "username": "misfit_marketers",
+    "updated_at": "2026-10-19T06:55:49+00:00"
+  },
+  "stats_checked_at": "2026-10-19T06:55:49+00:00"
 }
