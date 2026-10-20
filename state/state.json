@@ -1,6 +1,6 @@
 {
   "last_update_id": 825911675,
-  "last_theme": "light",
+  "last_theme": "dark",
   "series_counters": {
     "MarketingTip": 11,
     "BrandBreakdown": 3,
@@ -152,6 +152,120 @@
       ],
       "approved_at": "2026-10-19T07:08:29+00:00",
       "note": ""
+    },
+    {
+      "id": "20261020-053704",
+      "series": "MythOrMagic",
+      "number": 2,
+      "tag": "MYTHORMAGIC#2",
+      "theme": "dark",
+      "style": null,
+      "topic": "\"Red buttons convert better\": does button color really matter?",
+      "post": {
+        "topic": "Red buttons convert better",
+        "principle": "Colour psychology",
+        "hook": "Do red buttons really boost conversions?",
+        "slides": [
+          "The belief: Marketers think a **red CTA** draws eyes and raises clicks.",
+          "Research: Studies (e.g., Labrecque & Milne 2009) show colour alone changes **attention**, not conversion rates.",
+          "Nuance: Red helps when surrounding elements are muted, or in **urgent contexts** like sales timers.",
+          "What it means: Use red for **priority actions**, but test against neutral tones for your audience."
+        ],
+        "takeaway": "It depends: red can boost clicks in low-competition spots, otherwise colour choice matters little.",
+        "caption": "Ever wondered why many brands splash red on their call-to-action buttons? The intuition is that red grabs attention and nudges users to click.\n\nResearch shows colour alone rarely drives higher conversion rates; it mainly affects visual **attention**, not the decision to purchase. A 2009 study by Labrecque and Milne found no consistent click-through lift for red versus other hues.\n\nThe magic happens when red is used strategically, against a neutral background or to signal urgency, like a limited-time offer. In such settings, the colour can highlight the **priority action** and improve response.\n\nSo, before you paint every button red, consider the context and run A/B tests. Does your audience respond to bold colours, or do they prefer subtle cues?\n\nWhat’s your experience with button colours on your campaigns?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#colourscience",
+          "#UXdesign",
+          "#conversionrate",
+          "#digitalmarketing",
+          "#branding",
+          "#IndianStartups",
+          "#MISFIT"
+        ],
+        "fact_check": [
+          {
+            "claim": "Labrecque & Milne 2009 found colour alone changes attention, not conversion rates.",
+            "source": "Labrecque, L., & Milne, G. (2009). To be or not to be different: Exploration of norms and benefits of colour in advertising. Journal of Advertising Research.",
+            "confidence": "high"
+          },
+          {
+            "claim": "Red helps in urgent contexts like sales timers.",
+            "source": "General findings on colour signalling urgency in marketing literature.",
+            "confidence": "medium"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "red buttons really",
+            "emoji": [
+              "🧠",
+              "📈"
+            ],
+            "subtitle": "Why colour isn’t always the answer",
+            "note": "colour tricks your mind"
+          },
+          "slides": [
+            {
+              "heading": "Common **assumption**",
+              "emoji": "🤔",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "What **research** shows",
+              "emoji": "📊",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "⏳",
+              "layout": "standard",
+              "note": "context matters",
+              "quote": ""
+            },
+            {
+              "heading": "Actionable **tip**",
+              "emoji": "✅",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Test and adapt",
+            "emoji": "🔑",
+            "note": ""
+          },
+          "for": "b7e7dbd61745",
+          "style": "essay",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Ever wondered why many brands splash red on their call-to-action buttons? The intuition is that red grabs attention and nudges users to click.\n\nResearch shows colour alone rarely drives higher conversion rates; it mainly affects visual **attention**, not the decision to purchase. A 2009 study by Labrecque and Milne found no consistent click-through lift for red versus other hues.\n\nThe magic happens when red is used strategically, against a neutral background or to signal urgency, like a limited-time offer. In such settings, the colour can highlight the **priority action** and improve response.\n\nSo, before you paint every button red, consider the context and run A/B tests. Does your audience respond to bold colours, or do they prefer subtle cues?\n\nWhat’s your experience with button colours on your campaigns?\n\n#marketingpsychology #colourscience #UXdesign #conversionrate #digitalmarketing #branding #IndianStartups #MISFIT",
+      "images": [
+        "posts/20261020-053704/01.jpg",
+        "posts/20261020-053704/02.jpg",
+        "posts/20261020-053704/03.jpg",
+        "posts/20261020-053704/04.jpg",
+        "posts/20261020-053704/05.jpg",
+        "posts/20261020-053704/06.jpg"
+      ],
+      "created_at": "2026-10-20T05:37:06+00:00",
+      "reel": null,
+      "status": "awaiting",
+      "backlog_line": "[MythOrMagic] \"Red buttons convert better\": does button color really matter?",
+      "slot": "evening",
+      "slot_at": "2026-10-21T12:30:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": []
     }
   ],
   "merged_seeds": [
@@ -359,6 +473,11 @@
       "at": "2026-10-20T01:26:24+00:00",
       "job": "1. Write a new draft",
       "text": "Every upcoming slot already has a draft, so I didn't write new ones."
+    },
+    {
+      "at": "2026-10-20T05:37:06+00:00",
+      "job": "6. App action",
+      "text": "App: New draft ready: MYTHORMAGIC#2 (Colour psychology) for 6:00 pm IST tomorrow. Have a look and approve it."
     }
   ],
   "app_requests": [
@@ -514,6 +633,15 @@
       "ok": true,
       "message": "Approved. COPYCLINIC#2 (Unit Bias) goes live at 6:00 pm IST tomorrow.",
       "at": "2026-10-19T07:08:30+00:00"
+    },
+    {
+      "id": "mvg93m3g2z2xej",
+      "action": "new",
+      "draft_id": "",
+      "new_draft_id": "20261020-053704",
+      "ok": true,
+      "message": "New draft ready: MYTHORMAGIC#2 (Colour psychology) for 6:00 pm IST tomorrow. Have a look and approve it.",
+      "at": "2026-10-20T05:37:06+00:00"
     }
   ],
   "design_styles": {
