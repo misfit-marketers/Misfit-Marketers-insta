@@ -271,5 +271,20 @@
       "total_interactions": 8,
       "updated_at": "2026-10-20T12:02:26+00:00"
     }
+  },
+  {
+    "id": "20261019-070635",
+    "series": "CopyClinic",
+    "number": 2,
+    "tag": "COPYCLINIC#2",
+    "topic": "\"$365 a year\" vs \"$1 a day\": reframing a price into a smaller unit",
+    "slot": "evening",
+    "principle": "Unit Bias",
+    "at": "2026-10-20T12:31:30+00:00",
+    "status": "posted",
+    "posted_at": "2026-10-20T12:31:30+00:00",
+    "ig_media_id": "18099316970647819",
+    "permalink": "https://www.instagram.com/p/Det1oWwm9Ot/",
+    "format": "carousel"
   }
 ]

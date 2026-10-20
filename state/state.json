@@ -4,160 +4,12 @@
   "series_counters": {
     "MarketingTip": 11,
     "BrandBreakdown": 3,
-    "CopyClinic": 2,
+    "CopyClinic": 3,
     "MythOrMagic": 2,
     "PsychInTheWild": 2,
     "MarketersAssemble": 3
   },
   "drafts": [
-    {
-      "id": "20261019-070635",
-      "series": "CopyClinic",
-      "number": 2,
-      "tag": "COPYCLINIC#2",
-      "theme": "light",
-      "style": null,
-      "topic": "\"$365 a year\" vs \"$1 a day\": reframing a price into a smaller unit",
-      "post": {
-        "topic": "Price unit framing",
-        "principle": "Unit Bias",
-        "hook": "Pricing in the wrong unit?",
-        "slides": [
-          "Before: “Subscribe for Rs 365 a year”",
-          "Why it falls flat: big number feels costly, triggers loss aversion.",
-          "Principle: **Unit Bias**, people prefer smaller, familiar units.",
-          "After: “Just Rs 1 a day”",
-          "Why it works: daily amount feels trivial, lowers perceived cost.",
-          "Quick before/after: “Annual plan Rs 1,200” → “Only Rs 3.30 per day”"
-        ],
-        "takeaway": "Break large prices into small, familiar units to make offers feel instantly affordable.",
-        "caption": "Ever wondered why a Rs 365 yearly fee feels pricey, while Rs 1 a day sounds almost free? It’s not magic, it’s **Unit Bias** at work.\n\nWhen prospects see a smaller, familiar unit, their brain treats the cost as negligible. Reframe the same amount into daily or weekly slices and watch the perceived barrier shrink.\n\nTry swapping “Rs 299 per month” for “just Rs 10 a day” in your next email or landing page.\n\nWhat price formats have you experimented with?",
-        "hashtags": [
-          "#marketingpsychology",
-          "#copywriting",
-          "#pricingstrategy",
-          "#unitbias",
-          "#conversiontips",
-          "#entrepreneurship",
-          "#indiabusiness"
-        ],
-        "fact_check": [
-          {
-            "claim": "Unit Bias causes people to prefer smaller, familiar units",
-            "source": "Wansink, 1996, Journal of Consumer Research",
-            "confidence": "high"
-          },
-          {
-            "claim": "Large numbers trigger loss aversion",
-            "source": "Kahneman & Tversky, 1979, Prospect Theory",
-            "confidence": "high"
-          }
-        ],
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "wrong unit",
-            "emoji": [
-              "💰",
-              "📈"
-            ],
-            "subtitle": "How to reframe prices for instant affordability",
-            "note": "your brain loves small"
-          },
-          "slides": [
-            {
-              "heading": "**Big** annual price",
-              "emoji": "💸",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "⚠",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "Unit **Bias**",
-              "emoji": "🔑",
-              "layout": "big",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Tiny** daily cost",
-              "emoji": "✅",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "💡",
-              "layout": "big",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "📊",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "Break big prices",
-            "emoji": "🧩",
-            "note": ""
-          },
-          "for": "443fd11193d6",
-          "style": "notebook",
-          "source": "ai",
-          "note": "",
-          "v": 2
-        }
-      },
-      "caption": "Ever wondered why a Rs 365 yearly fee feels pricey, while Rs 1 a day sounds almost free? It’s not magic, it’s **Unit Bias** at work.\n\nWhen prospects see a smaller, familiar unit, their brain treats the cost as negligible. Reframe the same amount into daily or weekly slices and watch the perceived barrier shrink.\n\nTry swapping “Rs 299 per month” for “just Rs 10 a day” in your next email or landing page.\n\nWhat price formats have you experimented with?\n\n#marketingpsychology #copywriting #pricingstrategy #unitbias #conversiontips #entrepreneurship #indiabusiness",
-      "images": [
-        "posts/20261019-070635/01.jpg",
-        "posts/20261019-070635/02.jpg",
-        "posts/20261019-070635/03.jpg",
-        "posts/20261019-070635/04.jpg",
-        "posts/20261019-070635/05.jpg",
-        "posts/20261019-070635/06.jpg",
-        "posts/20261019-070635/07.jpg",
-        "posts/20261019-070635/08.jpg"
-      ],
-      "created_at": "2026-10-19T07:06:38+00:00",
-      "reel": "posts/20261019-070635/reel.mp4",
-      "status": "approved",
-      "backlog_line": "[CopyClinic] \"$365 a year\" vs \"$1 a day\": reframing a price into a smaller unit",
-      "slot": "evening",
-      "slot_at": "2026-10-20T12:30:00+00:00",
-      "publish_at": "2026-10-20T12:30:00+00:00",
-      "reminded": false,
-      "msg_ids": [
-        203,
-        204,
-        205,
-        206,
-        207,
-        208,
-        209,
-        210,
-        211
-      ],
-      "approved_at": "2026-10-20T09:21:26+00:00",
-      "note": "",
-      "approved_parts": [
-        "carousel",
-        "reel"
-      ],
-      "reel_tried": true
-    },
     {
       "id": "20261020-053704",
       "series": "MythOrMagic",
@@ -515,6 +367,11 @@
       "at": "2026-10-20T09:21:54+00:00",
       "job": "6. App action",
       "text": "App: Approved the carousel and the Reel of MYTHORMAGIC#2 (Colour psychology). Goes live at 6:00 pm IST tomorrow."
+    },
+    {
+      "at": "2026-10-20T12:31:31+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Live on Instagram: COPYCLINIC#2 (Unit Bias)\nhttps://www.instagram.com/p/Det1oWwm9Ot/\nThe Reel didn't go up: Container 18090603485693614 failed with status ERROR"
     }
   ],
   "app_requests": [
