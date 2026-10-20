@@ -1,7 +1,7 @@
 """Entry point. Run with:  python -m src.main <command>
 
 Commands
-  generate        write drafts for every empty posting slot and send them to Telegram (morning job)
+  generate        write drafts for every empty posting slot (today and tomorrow, see days_ahead) (morning job)
   check           read Telegram taps/messages and act on them (every 10 min)
   post-due        publish approved drafts at their posting slot (slot jobs)
   post-now        read Telegram, then post approved drafts immediately (manual job)
@@ -201,16 +201,30 @@ def slot_backup(cfg: dict, draft: dict) -> datetime:
     return occurrence(sdef, primary.date())[1]
 
 
+def days_ahead(cfg: dict) -> int:
+    """How many upcoming days each slot keeps a draft ready for ("days_ahead" in
+    config.json). 2 means today's and tomorrow's posts are always written, so a
+    day you don't open the app still has a draft you approved the day before."""
+    try:
+        return max(1, min(7, int(cfg.get("days_ahead", 1))))
+    except (TypeError, ValueError):
+        return 1
+
+
 def upcoming_slots(cfg: dict, now: datetime) -> list:
-    """The next occurrence of each slot (one per slot), soonest first."""
+    """The next few occurrences of each slot (days_ahead per slot), soonest first."""
     now = now.astimezone(IST)
+    ahead = days_ahead(cfg)
     out = []
     for sdef in slot_defs(cfg):
-        for d in range(3):
+        found = 0
+        for d in range(ahead + 3):
             primary, _ = occurrence(sdef, now.date() + timedelta(days=d))
             if primary > now + timedelta(minutes=20):
                 out.append((sdef["name"], primary))
-                break
+                found += 1
+                if found >= ahead:
+                    break
     return sorted(out, key=lambda x: x[1])
 
 
@@ -536,7 +550,7 @@ def publish(draft_id: str) -> bool:
         extra = f"\nReel: {reel_result.get('permalink', '')}"
     elif reel_error:
         extra = f"\nThe Reel didn't go up: {html.escape(reel_error)}"
-    telegram.send_message(f"Posted {describe(draft)}\n{result.get('permalink', '')}{extra}")
+    telegram.send_message(f"Live on Instagram: {describe(draft)}\n{result.get('permalink', '')}{extra}", live=True)
     return True
 
 

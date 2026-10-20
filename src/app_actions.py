@@ -143,8 +143,14 @@ def a_new(draft_id, text):
     data = _json(text)
     cfg, state = load_config(), load_state()
     free = m.free_slots(cfg, state["drafts"], m.now_utc())
-    want = data.get("slot")
-    if want:
+    want, want_at = data.get("slot"), data.get("slot_at")
+    if want_at:  # the app names the exact day, since a slot now has a draft for today and tomorrow
+        try:
+            t = datetime.fromisoformat(str(want_at).replace("Z", "+00:00"))
+            free = [f for f in free if abs((f[1] - t).total_seconds()) < 60] or free
+        except ValueError:
+            pass
+    elif want:
         free = [f for f in free if f[0] == want] or free
     if not free:
         raise Refused("Every upcoming slot already has a draft. Skip one first to make room.")

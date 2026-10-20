@@ -54,6 +54,7 @@
       "backup_ist": "19:00"
     }
   ],
+  "days_ahead": 2,
   "theme": "alternate",
   "design": {
     "enabled": true,
@@ -101,7 +102,9 @@
   },
   "auto_post_if_not_reviewed": false,
   "telegram": {
-    "enabled": true
+    "about": "only_live: true means Telegram only tells you when a post has gone live. Everything else (drafts to approve, reminders, problems) is in the app.",
+    "enabled": true,
+    "only_live": true
   },
   "gemini_model": "auto",
   "image_host": "raw",

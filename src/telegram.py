@@ -20,6 +20,13 @@ def enabled() -> bool:
     return bool(load_config().get("telegram", {}).get("enabled", True))
 
 
+def only_live() -> bool:
+    """config.json "telegram": {"only_live": true} keeps Telegram quiet except for
+    the message that a post has gone live. Drafts, reminders, replies and errors
+    still show in the app (Activity and the bell)."""
+    return bool(load_config().get("telegram", {}).get("only_live", False))
+
+
 def event(text: str):
     EVENTS.append(text)
 
@@ -44,11 +51,11 @@ def chat_id() -> str:
     return env("TELEGRAM_CHAT_ID")
 
 
-def send_message(text: str, buttons=None, parse_html: bool = True, log_event: bool = True):
+def send_message(text: str, buttons=None, parse_html: bool = True, log_event: bool = True, live: bool = False):
     OUTBOX.append(text)
     if log_event:
         event(text)
-    if not enabled():
+    if not enabled() or (only_live() and not live):
         return {}
     payload = {"chat_id": chat_id(), "text": text[:4000], "disable_web_page_preview": True}
     if parse_html:
@@ -60,7 +67,7 @@ def send_message(text: str, buttons=None, parse_html: bool = True, log_event: bo
 
 def send_album(paths: list):
     """Sends up to 10 images as one album (uploaded directly, no public URL needed)."""
-    if not enabled():
+    if not enabled() or only_live():
         return []
     media, files = [], {}
     for i, p in enumerate(paths[:10]):
@@ -160,7 +167,7 @@ def send_review(draft: dict, when: str = "") -> list:
               "To change it, <b>reply to this message</b> with your feedback (for example: <i>make the hook punchier</i>)."]
     event(f"New draft ready for review: {draft['tag']} ({post.get('principle', '')})"
           + (f" for {when}" if when else ""))
-    if not enabled():
+    if not enabled() or only_live():
         return ids
     ids += _ids(send_message("\n".join(lines), buttons=review_buttons(draft["id"]), log_event=False))
     return ids

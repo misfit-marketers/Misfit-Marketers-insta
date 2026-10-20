@@ -19,7 +19,16 @@ GitHub Actions at 6 pm IST ──► Instagram API publishes the carousel (and R
 audience that is mostly in India. Examples use Indian brands and everyday life,
 and prices are in rupees (`config.json → audience`).
 
-- **About 6:30 to 7 am IST:** the day's draft arrives in Telegram and the app,
+**Telegram is set to "live only"** (`config.json → telegram → only_live`): it
+only messages you when a post goes live. Drafts, reminders and problems are in
+the MISFIT app. Set `only_live` to `false` to get everything in Telegram again
+(the review flow below).
+
+**Two days ahead** (`config.json → days_ahead: 2`): today's and tomorrow's posts
+always have a draft, so you can approve a day early. Each morning the bot writes
+the next day's post.
+
+- **About 6:30 to 7 am IST:** the next day's draft arrives in the app (and in Telegram if `only_live` is off),
   labelled with its slot ("For 6:00 pm IST today").
 - **At each slot:** approved drafts go live. If a draft isn't approved yet,
   or Instagram refuses it, it goes out at the back-up time an hour later.
