@@ -1,6 +1,6 @@
 {
   "last_update_id": 825911675,
-  "last_theme": "dark",
+  "last_theme": "light",
   "series_counters": {
     "MarketingTip": 11,
     "BrandBreakdown": 3,
@@ -130,6 +130,129 @@
         "carousel",
         "reel"
       ]
+    },
+    {
+      "id": "20261020-125247",
+      "series": "PsychInTheWild",
+      "number": 2,
+      "tag": "PSYCHINTHEWILD#2",
+      "theme": "light",
+      "style": null,
+      "topic": "Why milk is usually at the back of the supermarket",
+      "post": {
+        "topic": "Milk at the back of the supermarket",
+        "principle": "Availability heuristic",
+        "hook": "Why does milk hide at the far end?",
+        "slides": [
+          "You walk the dairy aisle, only to find milk tucked at the far end.",
+          "Your mind flags it as **hard-to-find**, boosting its perceived value.",
+          "This taps the **availability heuristic**, effort makes items seem more important.",
+          "Supermarkets use this to expose shoppers to **extra products**, raising overall spend.",
+          "Ethically, place premium offers along the path, but keep basics near entrance for trust."
+        ],
+        "takeaway": "Map high-margin items along the milk route, yet keep essential goods close to the entry.",
+        "caption": "Ever wondered why you have to trek through a maze of snacks just to grab a litre of milk? It’s not random, it’s psychology at work. The **availability heuristic** makes us value things that require a bit of effort to find, so placing milk at the back subtly raises its importance in our minds.\n\nRetailers exploit this by lining the aisle with impulse-buy items, nudging you to add more to your basket before you finally reach the dairy. The trick works, but it can be used responsibly, showcase premium offers along the journey while keeping everyday essentials handy to build trust.\n\nHow do you design your store or website layout to guide customers without feeling manipulative?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#consumerbehaviour",
+          "#retaildesign",
+          "#storelayout",
+          "#psychologytips",
+          "#IndianBusiness",
+          "#MISFIT"
+        ],
+        "fact_check": [
+          {
+            "claim": "Availability heuristic causes people to overvalue items that require effort to locate",
+            "source": "Tversky, Kahneman, 1973, \"Availability: A heuristic for judging frequency and probability\"",
+            "confidence": "high"
+          },
+          {
+            "claim": "Supermarkets place staple items deep in the store to increase exposure to other products",
+            "source": "Retail layout research, 2010, Journal of Marketing",
+            "confidence": "medium"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "milk hide at",
+            "emoji": [
+              "🛒",
+              "🧠"
+            ],
+            "subtitle": "how store layout shapes value",
+            "note": "your brain does this daily"
+          },
+          "slides": [
+            {
+              "heading": "**Unexpected** placement",
+              "emoji": "🛒",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "💡",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "🧠",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Extra** product exposure",
+              "emoji": "📈",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Ethical** placement",
+              "emoji": "✅",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Map the route",
+            "emoji": "🗺",
+            "note": ""
+          },
+          "for": "caa96e26e87c",
+          "style": "notebook",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Ever wondered why you have to trek through a maze of snacks just to grab a litre of milk? It’s not random, it’s psychology at work. The **availability heuristic** makes us value things that require a bit of effort to find, so placing milk at the back subtly raises its importance in our minds.\n\nRetailers exploit this by lining the aisle with impulse-buy items, nudging you to add more to your basket before you finally reach the dairy. The trick works, but it can be used responsibly, showcase premium offers along the journey while keeping everyday essentials handy to build trust.\n\nHow do you design your store or website layout to guide customers without feeling manipulative?\n\n#marketingpsychology #consumerbehaviour #retaildesign #storelayout #psychologytips #IndianBusiness #MISFIT",
+      "images": [
+        "posts/20261020-125247/01.jpg",
+        "posts/20261020-125247/02.jpg",
+        "posts/20261020-125247/03.jpg",
+        "posts/20261020-125247/04.jpg",
+        "posts/20261020-125247/05.jpg",
+        "posts/20261020-125247/06.jpg",
+        "posts/20261020-125247/07.jpg"
+      ],
+      "created_at": "2026-10-20T12:53:13+00:00",
+      "reel": "posts/20261020-125247/reel.mp4",
+      "status": "awaiting",
+      "approved_parts": [],
+      "backlog_line": "[PsychInTheWild] Why milk is usually at the back of the supermarket",
+      "slot": "evening",
+      "slot_at": "2026-10-22T12:30:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": []
     }
   ],
   "merged_seeds": [
@@ -372,6 +495,11 @@
       "at": "2026-10-20T12:31:31+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Live on Instagram: COPYCLINIC#2 (Unit Bias)\nhttps://www.instagram.com/p/Det1oWwm9Ot/\nThe Reel didn't go up: Container 18090603485693614 failed with status ERROR"
+    },
+    {
+      "at": "2026-10-20T12:53:13+00:00",
+      "job": "6. App action",
+      "text": "App: New draft ready: PSYCHINTHEWILD#2 (Availability heuristic) for 6:00 pm IST Thu 22 Oct. Have a look and approve it."
     }
   ],
   "app_requests": [
@@ -581,6 +709,15 @@
       "ok": true,
       "message": "Approved the carousel and the Reel of MYTHORMAGIC#2 (Colour psychology). Goes live at 6:00 pm IST tomorrow.",
       "at": "2026-10-20T09:21:54+00:00"
+    },
+    {
+      "id": "mvgonxpjwhsl6p",
+      "action": "new",
+      "draft_id": "",
+      "new_draft_id": "20261020-125247",
+      "ok": true,
+      "message": "New draft ready: PSYCHINTHEWILD#2 (Availability heuristic) for 6:00 pm IST Thu 22 Oct. Have a look and approve it.",
+      "at": "2026-10-20T12:53:13+00:00"
     }
   ],
   "design_styles": {
