@@ -48,19 +48,34 @@ def _name(d: dict) -> str:
 
 # ------------------------------------------------------------------ draft actions
 
+def _cap(t):
+    return t[:1].upper() + t[1:]
+
+
+def _parts(text):
+    data = _json(text) if text else {}
+    parts = [p for p in (data.get("parts") or []) if p in ("carousel", "reel")]
+    return parts or None
+
+
 def a_approve(draft_id, text):
     _draft(draft_id)
-    m.approve(draft_id)
+    m.approve(draft_id, _parts(text))
     d = _draft(draft_id)
-    return draft_id, f"Approved. {_name(d)} goes live at {m.when_text(d['publish_at'])}."
+    cfg = load_config()
+    left = [p for p in m.offered_parts(cfg, d) if p not in m.approved_parts(d)]
+    tail = f" {_cap(m.part_names(left))} still needs your approval." if left else ""
+    return draft_id, (f"Approved {m.part_names(m.approved_parts(d))} of {_name(d)}. "
+                      f"Goes live at {m.when_text(d['publish_at'])}.{tail}")
 
 
 def a_unapprove(draft_id, text):
-    d = _draft(draft_id)
-    state = load_state()
-    d = m.find(state, draft_id)
-    d["status"], d["publish_at"], d["note"] = "awaiting", None, ""
-    save_state(state)
+    _draft(draft_id)
+    parts = _parts(text)
+    d = m.unapprove(draft_id, parts)
+    if d["status"] == "approved":
+        return draft_id, (f"Took back {m.part_names(parts)} of {_name(d)}. "
+                          f"{_cap(m.part_names(m.approved_parts(d)))} still goes live at {m.when_text(d['publish_at'])}.")
     return draft_id, f"{_name(d)} is back to waiting for review. It won't go live until you approve it again."
 
 

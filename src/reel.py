@@ -198,7 +198,7 @@ def make_reel(slide_paths, out_path: Path, words=None, kinds=None, accent=(255, 
     else:
         audio_in = ["-stream_loop", "-1", "-i", str(music)]
     cmd = [ffmpeg_exe(), "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
-           "-i", "-", *audio_in, "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+           "-i", "-", *audio_in, "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-maxrate", "2M", "-bufsize", "4M",
            "-pix_fmt", "yuv420p", "-profile:v", "high", "-c:a", "aac", "-b:a", "160k", "-ar", str(SR),
            "-af", f"afade=t=out:st={max(0, total - 1.6):.2f}:d=1.6", "-t", f"{total:.2f}", "-movflags", "+faststart",
            str(out_path)]
@@ -251,5 +251,8 @@ def make_reel(slide_paths, out_path: Path, words=None, kinds=None, accent=(255, 
         raise RuntimeError("ffmpeg could not build the Reel")
     if wav.exists():
         wav.unlink()
+    mb = out_path.stat().st_size / 1e6
+    if mb > 19:  # jsDelivr, which hands the video to Instagram, serves files up to 20 MB
+        raise RuntimeError(f"The Reel came out at {mb:.0f} MB, too big to post")
     log(f"Reel ready: {out_path.name}, {total:.1f}s, {n} slides, music: {music.name if music else 'original lo-fi loop'}")
     return out_path

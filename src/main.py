@@ -92,7 +92,8 @@ def image_urls(draft: dict, cfg: dict) -> list:
 
 def reels_cfg(cfg: dict) -> dict:
     r = cfg.get("reels") or {}
-    return {"make": bool(r.get("make")) or r.get("post", "off") != "off", "post": r.get("post", "off")}
+    return {"make": bool(r.get("make")) or r.get("post", "off") != "off", "post": r.get("post", "off"),
+            "share_to_feed": r.get("share_to_feed", True) is not False}
 
 
 def build_reel(post: dict, series: str, tag: str, out_dir: Path, cfg: dict, style: str = None):
@@ -122,6 +123,33 @@ def video_url(path: str) -> str:
     repo = os.environ.get("GITHUB_REPOSITORY", "OWNER/REPO")
     ref = os.environ.get("GITHUB_SHA") or os.environ.get("GITHUB_REF_NAME", "main")
     return f"https://cdn.jsdelivr.net/gh/{repo}@{ref}/{Path(path).as_posix()}"
+
+
+def offered_parts(cfg: dict, d: dict) -> list:
+    """What can go live for this draft: the carousel, the Reel, or both
+    (config reels.post: off = carousel, both = carousel and Reel, reel = Reel)."""
+    mode = reels_cfg(cfg)["post"]
+    has_reel = bool(d.get("reel"))
+    if mode == "reel" and has_reel:
+        return ["reel"]
+    if mode == "both" and has_reel:
+        return ["carousel", "reel"]
+    return ["carousel"]
+
+
+def approved_parts(d: dict) -> list:
+    """Each part is approved on its own (his rule, 2026-10-20). Older drafts
+    without the field count as fully approved when their status says so."""
+    a = d.get("approved_parts")
+    if a is None:
+        return ["carousel", "reel"] if d.get("status") == "approved" else []
+    return list(a)
+
+
+def part_names(parts: list) -> str:
+    names = {"carousel": "the carousel", "reel": "the Reel"}
+    p = [names[x] for x in ("carousel", "reel") if x in parts]
+    return " and ".join(p) if p else "nothing"
 
 
 def remove_draft_files(draft: dict):
@@ -425,7 +453,7 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
         "id": draft_id, "series": series, "number": number, "tag": tag, "theme": theme, "style": style,
         "topic": topic or post.get("topic"), "post": post, "caption": build_caption(post),
         "images": [str(p.relative_to(ROOT)) for p in paths], "created_at": now_iso(), "reel": reel_path,
-        "status": "awaiting", "backlog_line": backlog_line,
+        "status": "awaiting", "approved_parts": [], "backlog_line": backlog_line,
         "slot": slot_name, "slot_at": iso(slot_at), "publish_at": None, "reminded": False,
     }
     state["drafts"].append(draft)
@@ -467,11 +495,16 @@ def generate(scheduled: bool = False, topic: str = None) -> None:
 
 # ------------------------------------------------------------------ approving and publishing
 
-def approve(draft_id: str):
+def approve(draft_id: str, parts: list = None):
+    """Approves the carousel, the Reel, or both (default: everything on offer).
+    Approvals add up: approving the Reel later keeps the carousel approved."""
     cfg, state = load_config(), load_state()
     d = find(state, draft_id)
     if not d:
         return
+    offer = offered_parts(cfg, d)
+    want = [p for p in (parts or offer) if p in offer] or offer
+    d["approved_parts"] = [p for p in offer if p in set(approved_parts(d)) | set(want)]
     now = now_utc()
     primary = datetime.fromisoformat(d["slot_at"])
     backup = slot_backup(cfg, d)
@@ -489,9 +522,26 @@ def approve(draft_id: str):
     d["note"] = ("" if at == primary else
                  f"Approved after its {when_text(iso(primary))} slot, so it goes live at {when_text(d['publish_at'])}.")
     save_state(state)
-    telegram.send_message(f"Approved. {describe(d)} goes live at {when_text(d['publish_at'])}.\n"
+    telegram.send_message(f"Approved {part_names(d['approved_parts'])} of {describe(d)}. Goes live at "
+                          f"{when_text(d['publish_at'])}.\n"
                           "Tap Post now if you want it up straight away.",
                           buttons=telegram.scheduled_buttons(d["id"]))
+
+
+def unapprove(draft_id: str, parts: list = None):
+    """Takes back the approval of some parts (default: all). With nothing
+    approved, the draft waits for review again."""
+    state = load_state()
+    d = find(state, draft_id)
+    if not d:
+        return
+    gone = set(parts or ["carousel", "reel"])
+    d["approved_parts"] = [p for p in approved_parts(d) if p not in gone]
+    if not d["approved_parts"]:
+        d["status"], d["publish_at"], d["note"] = "awaiting", None, ""
+        d["reminded"] = False
+    save_state(state)
+    return d
 
 
 def publish(draft_id: str) -> bool:
@@ -508,20 +558,33 @@ def publish(draft_id: str) -> bool:
                                       "Is the repository public?")
                 return False
     version = cfg.get("instagram_api_version", "v25.0")
-    mode = reels_cfg(cfg)["post"]
     has_reel = bool(draft.get("reel")) and (ROOT / draft["reel"]).exists()
+    offer = offered_parts(cfg, draft)
+    usable = [p for p in offer if p != "reel" or has_reel]
+    if draft.get("status") != "approved":  # Post now on a draft that wasn't approved: everything on offer
+        ok = usable
+    else:
+        ok = [p for p in approved_parts(draft) if p in usable]
+    if not ok:  # only the Reel was approved and its file went missing
+        unapprove(draft_id)
+        telegram.send_message(f"Couldn't post {describe(draft)}: the Reel file is missing. Approve the carousel "
+                              "in the app to post it instead.")
+        return False
+    share = reels_cfg(cfg)["share_to_feed"]
     reel_result, reel_error = None, ""
     try:
-        if mode == "reel" and has_reel:
-            result = instagram.publish_reel(video_url(draft["reel"]), draft["caption"], version, log)
-            reel_result = result
-        else:
+        if "carousel" in ok:
             result = instagram.publish_carousel(urls, draft["caption"], version, log)
-            if mode == "both" and has_reel:
+            if "reel" in ok:
                 try:
-                    reel_result = instagram.publish_reel(video_url(draft["reel"]), draft["caption"], version, log)
+                    reel_result = instagram.publish_reel(video_url(draft["reel"]), draft["caption"], version, log,
+                                                         share_to_feed=share)
                 except Exception as e:  # the carousel is live; the Reel just gets reported
                     reel_error = str(e)[:300]
+        else:
+            result = instagram.publish_reel(video_url(draft["reel"]), draft["caption"], version, log,
+                                            share_to_feed=share)
+            reel_result = result
     except Exception as e:
         hint = ""
         if "token" in str(e).lower() or "OAuth" in str(e):
@@ -533,7 +596,7 @@ def publish(draft_id: str) -> bool:
     state, history = load_state(), load_history()
     entry = {**_hist(draft), "status": "posted", "posted_at": now_iso(),
              "ig_media_id": result["id"], "permalink": result.get("permalink", ""),
-             "format": "reel" if (mode == "reel" and reel_result is result) else "carousel"}
+             "format": "reel" if reel_result is result else ("both" if reel_result else "carousel")}
     if reel_result and reel_result is not result:
         entry["reel_media_id"], entry["reel_permalink"] = reel_result["id"], reel_result.get("permalink", "")
     history.append(entry)
@@ -550,6 +613,10 @@ def publish(draft_id: str) -> bool:
         extra = f"\nReel: {reel_result.get('permalink', '')}"
     elif reel_error:
         extra = f"\nThe Reel didn't go up: {html.escape(reel_error)}"
+    elif "reel" in offer and has_reel and "reel" not in ok:
+        extra = "\nThe Reel wasn't approved, so only the carousel went up."
+    elif reel_result is result and "carousel" in offer:
+        extra = " (Reel)\nThe carousel wasn't approved, so only the Reel went up."
     telegram.send_message(f"Live on Instagram: {describe(draft)}\n{result.get('permalink', '')}{extra}", live=True)
     return True
 
@@ -761,6 +828,7 @@ def rerender(draft_id: str, reason: str = "Redrawn"):
     d["images"] = [str(p.relative_to(ROOT)) for p in paths]
     if d["status"] == "approved":
         d["status"], d["publish_at"], d["reminded"] = "awaiting", None, False
+        d["approved_parts"] = []
         d["note"] = f"{reason} after you approved it, so it needs your approval again."
         d["unapproved_by_change"] = True
     save_state(state)
@@ -833,10 +901,44 @@ def refresh_old_designs():
             log(f"Couldn't redesign {d['id']}: {e}")
 
 
+def add_missing_reels(cfg: dict, limit: int = 2):
+    """Drafts written before Reels were switched on get one. If such a draft was
+    already approved, the approval is taken back (a Reel is something new going
+    live), and Sachin approves the carousel and the Reel again, each on its own."""
+    if not reels_cfg(cfg)["make"]:
+        return
+    state = load_state()
+    soon = now_utc() + timedelta(minutes=20)
+    done = 0
+    for d in state.get("drafts", []):
+        if done >= limit or d.get("reel") or d.get("reel_tried"):
+            continue
+        if datetime.fromisoformat(d.get("publish_at") or d["slot_at"]) <= soon:
+            continue
+        path = build_reel(d["post"], d["series"], d["tag"], POSTS / d["id"], cfg, d.get("style"))
+        d["reel_tried"] = True  # one attempt per draft, so a failing build doesn't repeat every 10 minutes
+        done += 1
+        if not path:
+            continue
+        d["reel"] = path
+        if d.get("status") == "approved":
+            d["status"], d["publish_at"], d["reminded"] = "awaiting", None, False
+            d["approved_parts"] = []
+            d["note"] = "A Reel was added, so it needs your approval again: approve the carousel and the Reel."
+            d["unapproved_by_change"] = True
+        log(f"Added a Reel to {describe(d)}")
+    if done:
+        save_state(state)
+
+
 def check() -> None:
     cfg = load_config()
     merge_topic_seeds(cfg)
     refresh_old_designs()
+    try:
+        add_missing_reels(cfg)
+    except Exception as e:  # a Reel is extra; never block posting
+        log(f"Couldn't add Reels: {e}")
     try:
         from . import stats
         stats.refresh(cfg, log)

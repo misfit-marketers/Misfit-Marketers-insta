@@ -117,9 +117,10 @@
     "money": "Write prices and money amounts in Indian rupees as Rs with no dot (for example Rs 499 or Rs 1,200, and lakh or crore for big numbers). Never use dollars unless the example is about a US company."
   },
   "reels": {
-    "about": "Reels made from each carousel. make: build a Reel for every draft (shown in the app). post: off, both (carousel and Reel at the same time) or reel (the Reel instead of the carousel).",
-    "make": false,
-    "post": "off"
+    "about": "Reels made from each carousel. make: build a Reel for every draft (shown in the app). post: off, both (carousel and Reel at the same time) or reel (the Reel instead of the carousel). share_to_feed: true shows the Reel in your profile grid and followers' feeds too; false keeps it in the Reels tab only.",
+    "make": true,
+    "post": "both",
+    "share_to_feed": false
   },
   "stats": {
     "about": "Views, reach, likes, comments, saves and shares for each live post, fetched from Instagram every 2 hours and shown in the app's History.",

@@ -217,6 +217,13 @@ writer can't search the web.
   tracks you have the right to use in `assets/music/` (.mp3, .m4a or .wav) and
   one is picked per post; otherwise an original lo-fi loop is generated.
   Instagram's in-app music library can't be added through the API.
+  Switched on (`post: both`) from 20 Oct 2026. The carousel and the Reel are
+  approved separately in the app (`approved_parts` in each draft); only the
+  approved parts go live. Telegram's Approve button approves both. Drafts already approved before a
+  Reel existed go out as a carousel only. `share_to_feed: false` (the setting
+  from 20 Oct 2026) keeps Reels out of the profile grid and followers' feeds:
+  they show in the Reels tab, where non-followers find them. Reels are capped at about 2 Mbit/s so they stay under
+  jsDelivr's 20 MB limit.
 - **Stats:** `config.json → stats`. Every 2 hours the check job reads views,
   reach, likes, comments, saves and shares for posts from the last 60 days,
   plus the follower count, and the app's History shows them. Views, reach,
