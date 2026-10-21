@@ -500,6 +500,16 @@
       "at": "2026-10-20T12:53:13+00:00",
       "job": "6. App action",
       "text": "App: New draft ready: PSYCHINTHEWILD#2 (Availability heuristic) for 6:00 pm IST Thu 22 Oct. Have a look and approve it."
+    },
+    {
+      "at": "2026-10-21T01:27:13+00:00",
+      "job": "1. Write a new draft",
+      "text": "Still waiting for your review:\n• PSYCHINTHEWILD#2 (Availability heuristic) for 6:00 pm IST tomorrow"
+    },
+    {
+      "at": "2026-10-21T01:27:13+00:00",
+      "job": "1. Write a new draft",
+      "text": "Every upcoming slot already has a draft, so I didn't write new ones."
     }
   ],
   "app_requests": [
