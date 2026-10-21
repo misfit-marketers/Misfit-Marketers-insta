@@ -71,7 +71,6 @@ Price-quality heuristic: why a higher price can signal better quality
 [CopyClinic] Testimonials: generic praise vs a specific before-and-after story
 [CopyClinic] Push notifications: "We miss you" vs a reason to come back
 [CopyClinic] Pricing page FAQs that answer the fear behind the question
-[MythOrMagic] "Red buttons convert better": does button color really matter?
 [MythOrMagic] "Our attention span is shorter than a goldfish's": where that claim came from
 [MythOrMagic] "Free always wins": the zero-price effect
 [MythOrMagic] "Subliminal ads make people buy": the popcorn-and-Coke story that wasn't true

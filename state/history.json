@@ -160,7 +160,7 @@
       "saved": 0,
       "shares": 6,
       "total_interactions": 8,
-      "updated_at": "2026-10-20T14:03:09+00:00"
+      "updated_at": "2026-10-21T12:30:14+00:00"
     }
   },
   {
@@ -208,7 +208,7 @@
       "saved": 1,
       "shares": 0,
       "total_interactions": 3,
-      "updated_at": "2026-10-21T10:29:37+00:00"
+      "updated_at": "2026-10-21T12:30:14+00:00"
     }
   },
   {
@@ -232,7 +232,7 @@
       "saved": 0,
       "shares": 3,
       "total_interactions": 6,
-      "updated_at": "2026-10-21T10:29:37+00:00"
+      "updated_at": "2026-10-21T12:30:15+00:00"
     }
   },
   {
@@ -269,7 +269,7 @@
       "saved": 1,
       "shares": 5,
       "total_interactions": 8,
-      "updated_at": "2026-10-21T10:29:37+00:00"
+      "updated_at": "2026-10-21T12:30:15+00:00"
     }
   },
   {
@@ -287,14 +287,31 @@
     "permalink": "https://www.instagram.com/p/Det1oWwm9Ot/",
     "format": "carousel",
     "stats": {
-      "views": 8,
+      "views": 10,
       "reach": 2,
       "likes": 2,
       "comments": 0,
       "saved": 1,
       "shares": 3,
       "total_interactions": 6,
-      "updated_at": "2026-10-21T10:29:38+00:00"
+      "updated_at": "2026-10-21T12:30:15+00:00"
     }
+  },
+  {
+    "id": "20261020-053704",
+    "series": "MythOrMagic",
+    "number": 2,
+    "tag": "MYTHORMAGIC#2",
+    "topic": "\"Red buttons convert better\": does button color really matter?",
+    "slot": "evening",
+    "principle": "Colour psychology",
+    "at": "2026-10-21T12:33:00+00:00",
+    "status": "posted",
+    "posted_at": "2026-10-21T12:33:00+00:00",
+    "ig_media_id": "17987864345882104",
+    "permalink": "https://www.instagram.com/p/DewaY8UFYqD/",
+    "format": "both",
+    "reel_media_id": "18375706063245130",
+    "reel_permalink": "https://www.instagram.com/reel/DewamhpjRnS/"
   }
 ]
