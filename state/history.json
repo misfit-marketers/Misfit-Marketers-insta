@@ -232,7 +232,7 @@
       "saved": 0,
       "shares": 3,
       "total_interactions": 6,
-      "updated_at": "2026-10-21T12:30:15+00:00"
+      "updated_at": "2026-10-21T14:54:27+00:00"
     }
   },
   {
@@ -269,7 +269,7 @@
       "saved": 1,
       "shares": 5,
       "total_interactions": 8,
-      "updated_at": "2026-10-21T12:30:15+00:00"
+      "updated_at": "2026-10-21T14:54:27+00:00"
     }
   },
   {
@@ -294,7 +294,7 @@
       "saved": 1,
       "shares": 3,
       "total_interactions": 6,
-      "updated_at": "2026-10-21T12:30:15+00:00"
+      "updated_at": "2026-10-21T14:54:28+00:00"
     }
   },
   {
@@ -312,6 +312,26 @@
     "permalink": "https://www.instagram.com/p/DewaY8UFYqD/",
     "format": "both",
     "reel_media_id": "18375706063245130",
-    "reel_permalink": "https://www.instagram.com/reel/DewamhpjRnS/"
+    "reel_permalink": "https://www.instagram.com/reel/DewamhpjRnS/",
+    "stats": {
+      "views": 0,
+      "reach": 0,
+      "likes": 0,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "updated_at": "2026-10-21T14:54:28+00:00"
+    },
+    "reel_stats": {
+      "views": 4,
+      "reach": 3,
+      "likes": 1,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 1,
+      "updated_at": "2026-10-21T14:54:29+00:00"
+    }
   }
 ]
