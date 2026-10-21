@@ -65,18 +65,60 @@ def publish_carousel(image_urls: list, caption: str, version: str, log=print) ->
     return {"id": media_id, "permalink": permalink}
 
 
-def publish_reel(video_url: str, caption: str, version: str, log=print, share_to_feed: bool = True) -> dict:
-    """A Reel from a public MP4 URL. Instagram downloads and processes the video
-    first, which can take a minute or two."""
+def _reel_container_from_file(ig_id: str, path: str, caption: str, version: str, share: str, log) -> str:
+    """Resumable upload: the video bytes go straight to Instagram, so no public
+    URL (and no CDN size limit or content-type problem) is involved."""
+    c = _req("POST", f"{ig_id}/media", version, media_type="REELS", upload_type="resumable",
+             caption=caption, share_to_feed=share)
+    uri = c.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{version}/{c['id']}"
+    data = open(path, "rb").read()
+    r = requests.post(uri, data=data, timeout=300, headers={
+        "Authorization": f"OAuth {env('IG_ACCESS_TOKEN')}", "offset": "0", "file_size": str(len(data))})
+    try:
+        body = r.json()
+    except ValueError:
+        body = {"raw": r.text[:300]}
+    if r.status_code != 200 or "error" in body or body.get("success") is False:
+        raise InstagramError(f"Reel upload: {body.get('error', body)}")
+    log(f"Uploaded the Reel to Instagram ({len(data) / 1e6:.1f} MB)")
+    return c["id"]
+
+
+def publish_reel(video_url: str, caption: str, version: str, log=print, share_to_feed: bool = True,
+                 video_path: str = None) -> dict:
+    """A Reel. Tries a direct upload of the local file first, then falls back to
+    Instagram fetching it from video_url. Instagram processes the video before
+    it can be published, which can take a minute or two."""
     if DRY_RUN:
-        log(f"[dry-run] would publish a Reel from {video_url}")
+        log(f"[dry-run] would publish a Reel from {video_path or video_url}")
         return {"id": "dry-run-reel", "permalink": "https://instagram.com/reel/dry-run"}
     me = whoami(version)
     ig_id = me.get("user_id") or me.get("id")
-    c = _req("POST", f"{ig_id}/media", version, media_type="REELS", video_url=video_url, caption=caption,
-             share_to_feed="true" if share_to_feed else "false")
-    _wait_until_ready(c["id"], version, timeout_s=600)
-    published = _req("POST", f"{ig_id}/media_publish", version, creation_id=c["id"])
+    share = "true" if share_to_feed else "false"
+    errors = []
+    container = None
+    if video_path:
+        try:
+            container = _reel_container_from_file(ig_id, video_path, caption, version, share, log)
+            _wait_until_ready(container, version, timeout_s=600)
+        except InstagramError as e:
+            errors.append(f"direct upload: {e}")
+            log(f"Direct Reel upload didn't work ({e}); trying the public link")
+            container = None
+    for url in ([video_url] if isinstance(video_url, str) else list(video_url or [])):
+        if container is not None:
+            break
+        try:
+            c = _req("POST", f"{ig_id}/media", version, media_type="REELS", video_url=url, caption=caption,
+                     share_to_feed=share)
+            container = c["id"]
+            _wait_until_ready(container, version, timeout_s=600)
+        except InstagramError as e:
+            errors.append(f"link {url.split('/')[2]}: {e}")
+            container = None
+    if container is None:
+        raise InstagramError(" | ".join(errors) or "no way to send the Reel")
+    published = _req("POST", f"{ig_id}/media_publish", version, creation_id=container)
     media_id = published["id"]
     try:
         permalink = _req("GET", media_id, version, fields="permalink").get("permalink", "")
@@ -88,11 +130,13 @@ def publish_reel(video_url: str, caption: str, version: str, log=print, share_to
 def _wait_until_ready(container_id: str, version: str, timeout_s: int = 180):
     start = time.time()
     while time.time() - start < timeout_s:
-        status = _req("GET", container_id, version, fields="status_code,status").get("status_code")
+        info = _req("GET", container_id, version, fields="status_code,status")
+        status = info.get("status_code")
         if status == "FINISHED":
             return
         if status in ("ERROR", "EXPIRED"):
-            raise InstagramError(f"Container {container_id} failed with status {status}")
+            detail = f" ({info.get('status')})" if info.get("status") else ""
+            raise InstagramError(f"Container {container_id} failed with status {status}{detail}")
         time.sleep(5)
     raise InstagramError(f"Container {container_id} was not ready after {timeout_s}s")
 

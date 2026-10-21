@@ -223,7 +223,10 @@ writer can't search the web.
   Reel existed go out as a carousel only. `share_to_feed: false` (the setting
   from 20 Oct 2026) keeps Reels out of the profile grid and followers' feeds:
   they show in the Reels tab, where non-followers find them. Reels are capped at about 2 Mbit/s so they stay under
-  jsDelivr's 20 MB limit.
+  jsDelivr's 20 MB limit. At post time the Reel is
+  uploaded straight to Instagram (resumable upload, after a quick clean-up
+  for Instagram's video rules: AAC 128 kbit/s, no MP4 edit lists); public links
+  through jsDelivr and raw GitHub are only a fallback.
 - **Stats:** `config.json → stats`. Every 2 hours the check job reads views,
   reach, likes, comments, saves and shares for posts from the last 60 days,
   plus the follower count, and the app's History shows them. Views, reach,

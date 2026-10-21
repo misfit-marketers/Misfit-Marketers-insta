@@ -118,11 +118,13 @@ def build_reel(post: dict, series: str, tag: str, out_dir: Path, cfg: dict, styl
         return None
 
 
-def video_url(path: str) -> str:
-    """jsDelivr serves the video with the right type and from the exact commit."""
+def video_url(path: str) -> list:
+    """Public links Instagram can fetch the video from, used only if the direct
+    upload fails: jsDelivr (right content type), then raw GitHub."""
     repo = os.environ.get("GITHUB_REPOSITORY", "OWNER/REPO")
     ref = os.environ.get("GITHUB_SHA") or os.environ.get("GITHUB_REF_NAME", "main")
-    return f"https://cdn.jsdelivr.net/gh/{repo}@{ref}/{Path(path).as_posix()}"
+    p = Path(path).as_posix()
+    return [f"https://cdn.jsdelivr.net/gh/{repo}@{ref}/{p}", f"https://raw.githubusercontent.com/{repo}/{ref}/{p}"]
 
 
 def offered_parts(cfg: dict, d: dict) -> list:
@@ -572,18 +574,26 @@ def publish(draft_id: str) -> bool:
         return False
     share = reels_cfg(cfg)["share_to_feed"]
     reel_result, reel_error = None, ""
+    reel_file = None
+    if "reel" in ok:
+        try:
+            from . import reel as reel_mod
+            reel_file = str(reel_mod.instagram_safe(ROOT / draft["reel"]))
+        except Exception as e:  # fall back to the file as it is
+            log(f"Couldn't prepare the Reel file: {e}")
+            reel_file = str(ROOT / draft["reel"])
     try:
         if "carousel" in ok:
             result = instagram.publish_carousel(urls, draft["caption"], version, log)
             if "reel" in ok:
                 try:
                     reel_result = instagram.publish_reel(video_url(draft["reel"]), draft["caption"], version, log,
-                                                         share_to_feed=share)
+                                                         share_to_feed=share, video_path=reel_file)
                 except Exception as e:  # the carousel is live; the Reel just gets reported
                     reel_error = str(e)[:300]
         else:
             result = instagram.publish_reel(video_url(draft["reel"]), draft["caption"], version, log,
-                                            share_to_feed=share)
+                                            share_to_feed=share, video_path=reel_file)
             reel_result = result
     except Exception as e:
         hint = ""

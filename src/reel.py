@@ -137,6 +137,20 @@ def ffmpeg_exe() -> str:
         return "ffmpeg"
 
 
+def instagram_safe(src: Path) -> Path:
+    """A copy that meets Instagram's Reels rules (AAC at 128 kbit/s or less, no
+    MP4 edit lists, moov at the front). The picture is copied as it is, so
+    this takes a second or two. Older Reels were made before these rules."""
+    import tempfile
+    out = Path(tempfile.gettempdir()) / (Path(src).parent.name + "_ig.mp4")  # never committed
+    cmd = [ffmpeg_exe(), "-y", "-loglevel", "error", "-i", str(src), "-map", "0:v:0", "-map", "0:a:0?",
+           "-c:v", "copy", "-c:a", "aac", "-b:a", "128k", "-ac", "2", "-ar", str(SR),
+           "-movflags", "+faststart", "-use_editlist", "0", str(out)]
+    if subprocess.run(cmd).returncode != 0:
+        raise RuntimeError("ffmpeg could not prepare the Reel for Instagram")
+    return out
+
+
 def pick_music(seed: str):
     folder = ASSETS / "music"
     tracks = sorted(p for p in folder.glob("*") if p.suffix.lower() in (".mp3", ".m4a", ".wav", ".aac")) if folder.exists() else []
@@ -199,9 +213,9 @@ def make_reel(slide_paths, out_path: Path, words=None, kinds=None, accent=(255, 
         audio_in = ["-stream_loop", "-1", "-i", str(music)]
     cmd = [ffmpeg_exe(), "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
            "-i", "-", *audio_in, "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-maxrate", "2M", "-bufsize", "4M",
-           "-pix_fmt", "yuv420p", "-profile:v", "high", "-c:a", "aac", "-b:a", "160k", "-ar", str(SR),
+           "-pix_fmt", "yuv420p", "-profile:v", "high", "-g", "60", "-c:a", "aac", "-b:a", "128k", "-ac", "2", "-ar", str(SR),
            "-af", f"afade=t=out:st={max(0, total - 1.6):.2f}:d=1.6", "-t", f"{total:.2f}", "-movflags", "+faststart",
-           str(out_path)]
+           "-use_editlist", "0", str(out_path)]
     proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     frames = int(total * FPS)
     cache = {}
