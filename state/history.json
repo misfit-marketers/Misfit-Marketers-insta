@@ -184,7 +184,7 @@
       "saved": 0,
       "shares": 6,
       "total_interactions": 8,
-      "updated_at": "2026-10-20T20:53:54+00:00"
+      "updated_at": "2026-10-21T19:39:28+00:00"
     }
   },
   {
@@ -232,7 +232,7 @@
       "saved": 0,
       "shares": 3,
       "total_interactions": 6,
-      "updated_at": "2026-10-21T17:14:08+00:00"
+      "updated_at": "2026-10-21T19:39:28+00:00"
     }
   },
   {
@@ -269,7 +269,7 @@
       "saved": 1,
       "shares": 5,
       "total_interactions": 8,
-      "updated_at": "2026-10-21T17:14:08+00:00"
+      "updated_at": "2026-10-21T19:39:29+00:00"
     }
   },
   {
@@ -294,7 +294,7 @@
       "saved": 1,
       "shares": 3,
       "total_interactions": 6,
-      "updated_at": "2026-10-21T17:14:09+00:00"
+      "updated_at": "2026-10-21T19:39:29+00:00"
     }
   },
   {
@@ -321,17 +321,17 @@
       "saved": 0,
       "shares": 0,
       "total_interactions": 0,
-      "updated_at": "2026-10-21T17:14:09+00:00"
+      "updated_at": "2026-10-21T19:39:29+00:00"
     },
     "reel_stats": {
-      "views": 56,
-      "reach": 37,
+      "views": 67,
+      "reach": 53,
       "likes": 2,
       "comments": 0,
       "saved": 0,
       "shares": 3,
       "total_interactions": 5,
-      "updated_at": "2026-10-21T17:14:09+00:00"
+      "updated_at": "2026-10-21T19:39:30+00:00"
     }
   }
 ]
