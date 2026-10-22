@@ -365,5 +365,22 @@
     "at": "2026-10-22T08:42:16+00:00",
     "status": "redone",
     "feedback": ""
+  },
+  {
+    "id": "20261020-125247",
+    "series": "PsychInTheWild",
+    "number": 2,
+    "tag": "PSYCHINTHEWILD#2",
+    "topic": "Why milk is usually at the back of the supermarket",
+    "slot": "evening",
+    "principle": "Availability heuristic",
+    "at": "2026-10-22T12:41:02+00:00",
+    "status": "posted",
+    "posted_at": "2026-10-22T12:41:02+00:00",
+    "ig_media_id": "18033262016887338",
+    "permalink": "https://www.instagram.com/p/DezAN_AkT8L/",
+    "format": "both",
+    "reel_media_id": "18343134925286349",
+    "reel_permalink": "https://www.instagram.com/reel/DezARFaioYM/"
   }
 ]
