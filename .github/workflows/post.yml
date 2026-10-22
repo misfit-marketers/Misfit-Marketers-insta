@@ -1,14 +1,14 @@
 name: 4. Post at the scheduled slots
 
-# Posting slot (IST): 6 pm every day, with a back-up at 7 pm.
-# GitHub often starts timers late, so each run starts about 33 minutes early
-# (11:57 and 12:57 UTC, which is 5:27 pm and 6:27 pm IST). The first job only waits for the exact
-# time (so the app's buttons keep working meanwhile); the second job posts
-# whatever is approved and due. If you change "slots" in config.json, change
-# these times too (about 30 minutes before each slot and back-up, in UTC).
+# Runs every hour at about 17 minutes past the hour IST (GitHub often starts
+# timers late). The first job checks the posting times (set in the app, or in
+# config.json) and, if a slot or back-up is coming up within 45 minutes, waits
+# for it; otherwise it stops and the posting job is skipped. The second job
+# posts whatever is approved and due. Because it runs hourly, changing the
+# times in the app needs no change here.
 on:
   schedule:
-    - cron: "57 11,12 * * *"
+    - cron: "47 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -18,13 +18,17 @@ jobs:
   wait:
     runs-on: ubuntu-latest
     timeout-minutes: 50
+    outputs:
+      go: ${{ steps.slot.outputs.go }}
     steps:
       - uses: actions/checkout@v4
       - name: Wait for the post time
+        id: slot
         run: python3 src/wait_slot.py
 
   post:
     needs: wait
+    if: needs.wait.outputs.go == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     concurrency:
