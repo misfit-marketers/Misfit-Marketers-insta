@@ -208,12 +208,14 @@ writer can't search the web.
 - **When drafts arrive:** edit the `cron:` line in
   `.github/workflows/generate.yml`. Times are in UTC (IST minus 5:30), so
   `"57 0 * * *"` means every day at 6:27 am IST.
-- **When posts go live:** change `"slots"` in `config.json` (each slot has a
-  time and a back-up time, in IST), and change the `cron:` line in
-  `.github/workflows/post.yml` so it runs about 30 minutes before each slot
-  and back-up, in UTC. The current `"57 11,12 * * *"` covers 6 pm and 7 pm
-  IST. Drafts still sitting at an old time move to the next free new slot by
-  themselves, keeping their approval.
+- **When posts go live:** in the app, Status › Posting times › Change: slot 1's
+  time, and a second daily slot you can switch on or off (saved in
+  `state.json` as `slot_settings`, which wins over `"slots"` in `config.json`).
+  Each slot has a back-up an hour later; the two must be at least 2 hours
+  apart. `.github/workflows/post.yml` runs every hour (`"47 * * * *"`) and only
+  posts when a slot or back-up is near, so no workflow edits are needed. Drafts
+  still sitting at an old time move to the next free slot by themselves,
+  keeping their approval.
 - **Reels:** `config.json → reels`. `make: true` builds a 9:16 Reel from every
   draft (the slides as swiping cards with music), shown on the post's page in
   the app. `post` decides what goes live: `off` (carousel only), `both`

@@ -12,6 +12,7 @@ does that if GitHub drops a run) does nothing the second time.
 """
 import json
 import os
+import re
 from datetime import datetime, timedelta
 
 from . import main as m
@@ -332,11 +333,50 @@ def a_stats(draft_id, text):
     return "", "Fetched the latest numbers from Instagram." + tail
 
 
+def a_slots_set(draft_id, text):
+    """Posting times from the app: slot 1 is always on, slot 2 can be switched
+    on or off. Saved in state.json; each slot has a back-up an hour later.
+    Drafts sitting at a time that no longer exists move to the next free slot
+    and keep their approval."""
+    data = _json(text)
+    raw = data.get("slots")
+    if not isinstance(raw, list) or not 1 <= len(raw) <= 2:
+        raise Refused("Send one or two posting times.")
+    out = []
+    for i, x in enumerate(raw):
+        t = str((x or {}).get("time") or "").strip()
+        if not re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", t):
+            raise Refused(f"Slot {i + 1}: '{t}' isn't a time like 18:00.")
+        out.append({"name": f"slot{i + 1}", "time": t, "on": True if i == 0 else bool(x.get("on"))})
+    on = [x for x in out if x["on"]]
+    if len(on) == 2:
+        mins = [int(x["time"][:2]) * 60 + int(x["time"][3:]) for x in on]
+        gap = abs(mins[0] - mins[1])
+        if min(gap, 1440 - gap) < 120:
+            raise Refused("Keep the two slots at least 2 hours apart, so each one's back-up (an hour later) "
+                          "doesn't clash with the other.")
+    state = load_state()
+    state["slot_settings"] = out
+    save_state(state)
+    moved = m.normalise_drafts(load_config()) or []
+    def clock(t):
+        h, mi = int(t[:2]), t[3:]
+        return f"{(h % 12) or 12}:{mi} {'am' if h < 12 else 'pm'}"
+    times = " and ".join(clock(x["time"]) for x in on)
+    msg = f"Posting {'twice' if len(on) == 2 else 'once'} a day from now on: {times} IST."
+    if moved:
+        msg += f" {len(moved)} draft{'s' if len(moved) > 1 else ''} moved to the new times (approvals kept)."
+    if len(on) == 2:
+        msg += " The morning job writes drafts for the new slot, or tap Write a draft now on Today."
+    return None, msg
+
+
 ACTIONS = {
     "approve": a_approve, "unapprove": a_unapprove, "postnow": a_postnow, "skip": a_skip, "drop": a_drop,
     "redo": a_redo, "edit": a_edit, "postpone": a_postpone, "new": a_new,
     "topic_add": a_topic_add, "topic_remove": a_topic_remove, "topic_edit": a_topic_edit,
     "topic_order": a_topic_order, "redesign": a_redesign, "styles_set": a_styles_set, "stats": a_stats,
+    "slots_set": a_slots_set,
 }
 
 

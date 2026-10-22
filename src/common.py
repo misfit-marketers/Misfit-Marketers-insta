@@ -44,11 +44,33 @@ def save_json(path: Path, data) -> None:
         f.write("\n")
 
 
+def plus_hour(hhmm: str) -> str:
+    hh, mm = (int(x) for x in str(hhmm).split(":"))
+    return f"{(hh + 1) % 24:02d}:{mm:02d}"
+
+
+def app_slots(state: dict):
+    """Posting times chosen in the app (state.json "slot_settings"): a list of
+    {"name", "time", "on"}. Returns the slots that are on, in config.json's
+    shape, or None when the app hasn't set any."""
+    raw = state.get("slot_settings")
+    if not isinstance(raw, list):
+        return None
+    out = [{"name": str(x.get("name") or f"slot{i + 1}"), "time_ist": x["time"], "backup_ist": plus_hour(x["time"])}
+           for i, x in enumerate(raw) if isinstance(x, dict) and x.get("on") and re.fullmatch(r"\d\d:\d\d", str(x.get("time", "")))]
+    return out or None
+
+
 def load_config() -> dict:
-    """config.json, plus any slide-style choices made in the app (saved in
-    state.json as "design_styles", because the app can't change config.json)."""
+    """config.json, plus choices made in the app (saved in state.json, because
+    the app can't change config.json): slide styles ("design_styles") and
+    posting times ("slot_settings")."""
     cfg = load_json(ROOT / "config.json", {})
-    picks = load_json(STATE_FILE, {}).get("design_styles") or {}
+    st = load_json(STATE_FILE, {})
+    slots = app_slots(st)
+    if slots:
+        cfg["slots"] = slots
+    picks = st.get("design_styles") or {}
     if picks and isinstance(cfg.get("design"), dict):
         styles = dict(cfg["design"].get("styles") or {})
         for series, pick in picks.items():

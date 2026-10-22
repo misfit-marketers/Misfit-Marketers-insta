@@ -685,6 +685,11 @@ def normalise_drafts(cfg: dict):
         at = datetime.fromisoformat(d["slot_at"]).astimezone(IST)
         if sdef and (at.hour, at.minute) == sdef["time"]:
             continue
+        same = next((x for x in defs.values() if x["time"] == (at.hour, at.minute)), None)
+        if same:  # a slot was only renamed: same time, nothing moves
+            d["slot"] = same["name"]
+            changed = True
+            continue
         d["slot"] = (sdef or slot_defs(cfg)[0])["name"]
         d["slot_at"] = iso(next_free_same_slot(cfg, state["drafts"], d, now_utc() + timedelta(minutes=20)))
         d["reminded"] = False
@@ -701,6 +706,7 @@ def normalise_drafts(cfg: dict):
                                   + "\n".join(moved))
         except Exception as e:  # noqa: BLE001
             log(f"Couldn't send the move notice: {e}")
+    return moved
 
 
 def process_due(notify: bool = True):
