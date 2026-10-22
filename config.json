@@ -45,6 +45,26 @@
       "brief": "A mindset post for marketers about the craft of marketing itself (uncertainty, experimentation, understanding prospects, marketers vs the world), still grounded in psychology.",
       "structure": "Bold provocative hook, then a short series of punchy one-idea slides that build an argument about the craft of marketing, grounded in how people think, ending with a rallying line for marketers in the takeaway.",
       "takeaway_label": "Remember"
+    },
+    "AIPsych": {
+      "tag": "AIPSYCH#{n}",
+      "next_number": 1,
+      "weight": 2,
+      "brief": "Where AI meets buyer psychology: why people trust or resist AI (algorithm aversion, automation bias, the uncanny valley), how AI personalization, chatbots and AI-written content land in the customer's mind, and how marketers can use AI without losing what makes people buy from people.",
+      "structure": "Tension hook about AI in marketing, then the everyday AI moment the reader knows (a chatbot, an AI ad, a recommendation, an AI-written email), then name the psychological principle at work, then why the mind reacts that way, then how a marketer should use or avoid it, end with a practical takeaway. Only cite real, well-known research; describe tools generically (ChatGPT, Claude, Gemini and similar) and never invent product features or numbers."
+    },
+    "Autopilot": {
+      "tag": "AUTOPILOT#{n}",
+      "next_number": 1,
+      "weight": 2,
+      "brief": "How marketing and business work is being automated: funnels, lead pipelines, workflows, AI agents and no-code automations across social media, content, websites, lead capture, email, CRM, ads, sales follow-up, support and reporting. Practical, current and useful to a small team or a solo marketer. Not about psychology.",
+      "structure": "Hook naming a task or process people still do by hand (or a shift in how work gets done, such as AI agents), then what it costs done manually, then the automated version as a short chain (trigger, tool or agent, action, result), then setup tips and the one mistake to avoid, then where a human should stay in the loop, end with a takeaway the reader can set up this week. Cover the whole field: funnels, pipelines, workflows, integrations, AI agents and assistants, not just one company's setup. Name widely used tools generically (Zapier, Make, n8n, HubSpot, Google Sheets, ChatGPT, Claude, Gemini, website forms, email platforms, CRMs, GitHub Actions) and never invent features, prices, statistics or results. Only describe something as our own setup when it is in the facts below; most posts should not mention our setup at all.",
+      "facts": [
+        "This page's posts are written by AI, designed in code, turned into Reels, and posted automatically every day through GitHub Actions and the Instagram API.",
+        "A human (the founder) approves every carousel and Reel in a small phone app before it goes live.",
+        "The same app shows each post's views, reach, saves and shares, fetched automatically every two hours."
+      ],
+      "takeaway_label": "Try this"
     }
   },
   "slots": [
@@ -83,22 +103,34 @@
       "PsychInTheWild": {
         "style": "notebook",
         "accent": "#2B59C3"
+      },
+      "AIPsych": {
+        "style": "poster",
+        "accent": "#7B3FE4"
+      },
+      "Autopilot": {
+        "style": "notebook",
+        "accent": "#1E8E5A"
       }
     }
   },
   "max_body_slides": 6,
   "format": {
-    "about": "How posts are written. style: bullets (the save-first format from 22 Oct 2026: tension hook, 2 or 3 short bullet lines per slide, a final slide asking people to save the post and comment the keyword) or classic (the older sentence slides). cta.keyword is the word people comment; cta.offer is what you send them by DM.",
+    "about": "How posts are written. style: bullets (the save-first format from 22 Oct 2026: tension hook, 2 or 3 short bullet lines per slide, a 'Save this' line on the last body slide, and a final slide asking people to comment the keyword) or classic (the older sentence slides). cta.keyword is the word people comment; cta.offer is what you send them by DM.",
     "style": "bullets",
-    "cta": {"keyword": "PSYCHOLOGY", "offer": "my marketing playbook", "label": "Save this"}
+    "cta": {
+      "keyword": "PSYCHOLOGY",
+      "offer": "my marketing playbook",
+      "label": "Free playbook"
+    }
   },
   "closing_slide": {
     "enabled": false,
     "text": "Follow **{handle}** to learn the psychology underneath marketing."
   },
   "writing": {
-    "spelling": "British/Indian English (colour, realise, behaviour, specialised, programme). The audience is mostly in India.",
-    "voice": "We-voice of a consumer-psychology-driven marketing collective. Smart, plain, a little playful. Talks to marketers, designers, freelancers, founders and small business owners, mostly in India.",
+    "spelling": "American English (color, realize, behavior, specialized, program). The audience is mostly in the US.",
+    "voice": "We-voice of a consumer-psychology-driven marketing collective. Smart, plain, a little playful. Talks to marketers, designers, freelancers, founders and small business owners, mostly in the US.",
     "extra_rules": [
       "Never use em dashes.",
       "Avoid negative parallelism such as 'it's not X, it's Y' or 'not just X but Y'.",
@@ -115,11 +147,11 @@
   "image_host": "raw",
   "instagram_api_version": "v25.0",
   "audience": {
-    "about": "Who the posts are for. Change these lines to switch audience.",
-    "region": "India",
-    "examples": "Use examples that make sense to an Indian audience (Indian brands, apps and everyday life such as Swiggy, Zomato, Flipkart, Myntra, Zepto, Jio, Tata, Amul, kirana stores, festive sales, UPI), while staying understandable worldwide. Global brands are fine when the example is famous.",
-    "currency": "INR",
-    "money": "Write prices and money amounts in Indian rupees as Rs with no dot (for example Rs 499 or Rs 1,200, and lakh or crore for big numbers). Never use dollars unless the example is about a US company."
+    "about": "Who the posts are for. Change these lines to switch audience (India until 22 Oct 2026, US from then).",
+    "region": "US",
+    "examples": "Use examples that make sense to a US audience (US brands, apps and everyday life such as Amazon, Target, Starbucks, Netflix, Costco, Apple, Spotify, DoorDash, Black Friday, Super Bowl ads), while staying understandable worldwide.",
+    "currency": "USD",
+    "money": "Write every price and money amount in US dollars with the $ sign (for example $29 or $1,200). Never use rupees, Rs or INR."
   },
   "reels": {
     "about": "Reels made from each carousel. make: build a Reel for every draft (shown in the app). post: off, both (carousel and Reel at the same time) or reel (the Reel instead of the carousel). share_to_feed: true shows the Reel in your profile grid and followers' feeds too; false keeps it in the Reels tab only.",

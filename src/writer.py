@@ -144,7 +144,7 @@ HOUSE RULES:
 - {aud.get('money', 'Write every price and money amount in US dollars with the $ sign (for example $29 or $1,200). Never use rupees, ₹, Rs or INR.')}
 {rules}
 
-RECENTLY POSTED OR ALREADY DRAFTED (do not repeat these topics or principles):
+{series_facts(series)}RECENTLY POSTED OR ALREADY DRAFTED (do not repeat these topics or principles):
 {recent}
 
 STYLE REFERENCE (past posts):
@@ -176,10 +176,10 @@ Return ONLY a JSON object with exactly these keys:
 
 BULLET_EXAMPLES = """EXAMPLE 1 (MarketingTip):
 {"hook": "Stop showing your cheapest price first",
- "slides": ["- The first number sets the scale\\n- Every price after is judged against it\\n- Show **Rs 4,999** first. Rs 1,999 feels light",
+ "slides": ["- The first number sets the scale\\n- Every price after is judged against it\\n- Show **$499** first. $199 feels light",
             "- Lead with your **premium plan**\\n- Put the one you want sold right after\\n- It looks fair, not cheap",
-            "- No premium plan? Show the **full price**\\n- \\"Was Rs 2,499, now Rs 1,799\\" sells better",
-            "- Too high and it backfires\\n- Keep the anchor **real**\\n- One fake MRP kills trust"],
+            "- No premium plan? Show the **full price**\\n- \\"Was $249, now $179\\" sells better",
+            "- Too high and it backfires\\n- Keep the anchor **real**\\n- One fake list price kills trust"],
  "save_reason": "for your next pricing page"}
 
 EXAMPLE 2 (CopyClinic):
@@ -206,6 +206,7 @@ def build_bullet_prompt(cfg: dict, series_name: str, topic: str, recent_topics: 
     structure = series.get("structure") or "Hook, the principle, why it works, how to use it, the takeaway."
     label = series.get("takeaway_label", "")
     aud = cfg.get("audience") or {}
+    facts = series_facts(series)
     prompt = f"""You write Instagram carousels for MISFIT, a page that teaches marketers and founders the psychology underneath marketing.
 
 What performs: posts people SAVE and linger on. Strong tension hooks, ruthless text minimalism, a stark psychological arc. Every slide must feel like an isolated, high-value nugget someone would save for later.
@@ -218,19 +219,20 @@ SPELLING: {w['spelling']}
 
 FORMAT RULES:
 - hook: the first slide. Creates immediate tension or challenges the status quo. At most 7 words. No asterisks, no question unless it stings.
-- slides: the body, {3} to {max_slides} slides, following this arc: {structure} The arc's final takeaway{(' (the ' + label + ')') if label else ''} is the LAST body slide{(', starting with ' + chr(39) + label + ':' + chr(39)) if label else ''}.
+- slides: the body, {3} to {max_slides} slides, following this arc: {structure} The arc's final takeaway is the LAST body slide{(', starting with **' + label + ':**') if label else ''}.
 - Each body slide is ONE clear idea, as 2 or 3 bullet lines. Each line starts with "- " and is at most 8 words. Lines are separated by "\\n". Short, sharp sentences. No filler, no paragraphs, no intro lines like "Here's the thing".
 - Each slide must make sense on its own, as if someone screenshotted only that slide.
 - Labels the series needs (such as "Before:", "After:", "The belief:") go at the start of a bullet in **double asterisks**, for example "- **Before:** \\"Sign up\\"".
 - Mark 1 key phrase per slide in **double asterisks** (1 to 3 words). Never bold a whole line.
-- Do NOT write the final call-to-action slide; it is added automatically. Instead give "save_reason": a short phrase (at most 8 words) finishing the sentence "Save this ...", tied to when the reader will need it, for example "for your next pricing page".
+- The LAST body slide has at most 2 bullet lines: a "Save this ..." line is added under it automatically. Give "save_reason": a short phrase (at most 8 words) finishing the sentence "Save this ...", tied to when the reader will need it, for example "for your next pricing page".
+- Do NOT write the final call-to-action slide; it is added automatically.
 - A designer adds headings and emoji later, so do not add them.
 - Accuracy matters more than drama. Only cite studies, researchers, years and numbers you are confident are real. If unsure, describe the finding without names or figures. Never invent quotes, statistics or experiments. Before/after copy examples are invented illustrations, so never present them as real results.
 - {aud.get('examples', 'Use examples that make sense to a US audience, while staying understandable worldwide.')}
 - {aud.get('money', 'Write every price in US dollars with the $ sign.')}
 {rules}
 
-RECENTLY POSTED OR ALREADY DRAFTED (do not repeat these topics or principles):
+{facts}RECENTLY POSTED OR ALREADY DRAFTED (do not repeat these topics or principles):
 {recent}
 
 FORMAT EXAMPLES (copy the shape and tone, not the topics):
@@ -259,6 +261,16 @@ Return ONLY a JSON object with exactly these keys:
     return prompt
 
 
+def series_facts(series: dict) -> str:
+    """True things about our own setup the writer may use (and nothing else)."""
+    facts = [str(f).strip() for f in series.get("facts") or [] if str(f).strip()]
+    if not facts:
+        return ""
+    return ("TRUE FACTS ABOUT OUR OWN SETUP (the only things you may present as ours; use them only when the topic is "
+            "about this kind of setup, otherwise leave them out):\n"
+            + "\n".join(f"- {f}" for f in facts) + "\n\n")
+
+
 def bulletise(text: str) -> str:
     """Every line of a body slide as a '- ' bullet, however the AI sent it."""
     if isinstance(text, list):
@@ -284,7 +296,10 @@ def apply_format(post: dict, cfg: dict) -> dict:
     reason = clean_text(str(post.get("save_reason") or "for later")).rstrip(".")
     reason = re.sub(r"^\**\s*save this\s*", "", reason, flags=re.I).strip() or "for later"
     post["save_reason"] = reason
-    post["takeaway"] = f"- **Save this** {reason}\n- Comment **{key}** and I'll DM you {offer}"
+    save = f"- **Save this** {reason}"
+    if post["slides"] and "save this" not in post["slides"][-1].lower():
+        post["slides"][-1] = post["slides"][-1].rstrip() + "\n" + save  # the slide before last says save this
+    post["takeaway"] = f"- Comment **{key}**\n- I'll DM you {offer}, free"  # the last slide asks for the comment
     line = f"Save this {reason}. Comment {key} and I'll DM you {offer}."
     if key.lower() not in post["caption"].lower():
         post["caption"] = post["caption"].rstrip() + "\n\n" + line
@@ -329,8 +344,9 @@ def overrun(post: dict) -> int:
     from .design import split_label
     n = lambda t: len(re.sub(r"\*\*|(^|\n)\s*-\s", " ", t).split())
     if post.get("format") == "bullets":  # at most 3 lines of about 8 words, with a little slack
-        over = sum(max(0, n(x) - 24) for x in post["slides"])
-        over += sum(max(0, len(post["slides"][i].split("\n")) - 3) * 4 for i in range(len(post["slides"])))
+        last = len(post["slides"]) - 1  # the last body slide also carries the "Save this" line
+        over = sum(max(0, n(x) - (32 if i == last else 24)) for i, x in enumerate(post["slides"]))
+        over += sum(max(0, len(x.split("\n")) - (4 if i == last else 3)) * 4 for i, x in enumerate(post["slides"]))
         return over
     over = sum(max(0, n(split_label(x)[1]) - (SLIDE_WORDS + 6)) for x in post["slides"])
     return over + max(0, n(post["takeaway"]) - (TAKEAWAY_WORDS + 6))

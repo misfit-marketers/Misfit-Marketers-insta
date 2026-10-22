@@ -15,9 +15,10 @@ Telegram bot ──► you tap Approve / Redo / Skip (or reply with feedback)
 GitHub Actions at 6 pm IST ──► Instagram API publishes the carousel (and Reel)
 ```
 
-**Default schedule:** one post every day at 6 pm IST (back-up 7 pm), for an
-audience that is mostly in India. Examples use Indian brands and everyday life,
-and prices are in rupees (`config.json → audience`).
+**Default schedule:** one post every day at 6 pm IST (back-up 7 pm), which is
+morning on the US east coast. Posts are written for a US audience: American
+spelling, dollars and US examples (`config.json → audience` and `writing`; the
+page tried an Indian audience from 18 to 22 Oct 2026).
 
 **Telegram is set to "live only"** (`config.json → telegram → only_live`): it
 only messages you when a post goes live. Drafts, reminders and problems are in
@@ -41,7 +42,10 @@ accepts approvals up to 15 minutes after it starts.
 
 **Series:** MarketingTip, BrandBreakdown (real brands decoded), CopyClinic
 (before-and-after rewrites), MythOrMagic (beliefs tested against research),
-PsychInTheWild (everyday moments explained), and MarketersAssemble (mindset).
+PsychInTheWild (everyday moments explained), MarketersAssemble (mindset),
+AIPsych (AI meets buyer psychology) and Autopilot (automation: funnels, pipelines,
+workflows and AI agents; its
+`facts` list in `config.json` is the only setup the writer may call ours).
 The mix follows the `weight` of each series in `config.json`, and the two
 drafts of a day are always from different series when possible. Carousels are
 as long as the idea needs: short when it's simple, longer only when every
@@ -240,8 +244,9 @@ writer can't search the web.
 - **Post format:** `config.json → format`. `style: bullets` (from 22 Oct 2026) writes a
   short tension hook, body slides of 2 or 3 bullet lines (one idea each, about 8
   words a line), and a final slide asking people to save the post and comment
-  `cta.keyword` to get `cta.offer` by DM (you send those DMs yourself). The same
-  line ends the caption. `style: classic` goes back to sentence slides.
+  `cta.keyword` to get `cta.offer` by DM (you send those DMs yourself). The last
+  body slide ends with a "Save this ..." line; the final slide only asks for the
+  comment. The caption ends with both. `style: classic` goes back to sentence slides.
 - **Slide styles per series:** `config.json → design → styles` gives each series
   a look and a highlight colour: `poster` (huge capitals, emoji stickers),
   `editorial` (serif headings, yellow highlighter, handwritten notes), `essay`
