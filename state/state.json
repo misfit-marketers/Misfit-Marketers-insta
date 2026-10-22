@@ -131,7 +131,8 @@
       "slot_at": "2026-10-22T12:30:00+00:00",
       "publish_at": null,
       "reminded": false,
-      "msg_ids": []
+      "msg_ids": [],
+      "reel_v": 2
     },
     {
       "id": "20261022-084134",
