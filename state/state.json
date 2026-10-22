@@ -130,7 +130,7 @@
       "slot": "evening",
       "slot_at": "2026-10-22T12:30:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "msg_ids": [],
       "reel_v": 2
     },
@@ -261,6 +261,7 @@
   ],
   "merged_seeds": [
     "2026-10-15_new_series.txt",
+    "2026-10-22_ai_and_autopilot.txt",
     "front_2026-10-15_restore.txt"
   ],
   "seen_updates": [
@@ -534,6 +535,11 @@
       "at": "2026-10-22T08:42:16+00:00",
       "job": "6. App action",
       "text": "App: Rewrote BRANDBREAKDOWN#3 (Consistency (price constancy) principle) as a fresh take. Have a look and approve it when you're happy."
+    },
+    {
+      "at": "2026-10-22T12:30:16+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but PSYCHINTHEWILD#2 (Availability heuristic) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
     }
   ],
   "app_requests": [

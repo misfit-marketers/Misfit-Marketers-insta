@@ -130,3 +130,32 @@ The compromise effect: why the middle option wins so often
 The rhyme-as-reason effect: why slogans that rhyme feel more true
 The Barnum effect: why vague, personal-sounding messages feel accurate
 The self-reference effect: why "you" copy is remembered better
+[AIPsych] Algorithm aversion: why people forgive a human's mistake but not an AI's
+[AIPsych] Automation bias: why we trust an AI answer more than we should
+[AIPsych] The uncanny valley of AI faces in ads
+[AIPsych] Why "written by AI" labels lower trust, and when they don't
+[AIPsych] Chatbots and reciprocity: why a helpful bot makes people buy
+[AIPsych] Personalization vs creepiness: when AI recommendations feel like surveillance
+[AIPsych] The IKEA effect and AI: why people value what they co-create with a tool
+[AIPsych] Choice overload and AI shopping assistants
+[AIPsych] Why AI-perfect copy can feel cold, and how to add friction back
+[AIPsych] Social proof in the age of AI-generated reviews
+[Autopilot] AI agents vs automations: what each is good at in marketing
+[Autopilot] A lead pipeline that scores, routes and follows up on its own
+[Autopilot] The 3-step funnel you can automate in an afternoon
+[Autopilot] Capture website leads straight into your CRM with a form and a webhook
+[Autopilot] Speed to lead: auto-reply to new leads within 5 minutes, without sounding like a bot
+[Autopilot] Turn one blog post into a week of social posts automatically
+[Autopilot] An AI first draft for every content brief, with a human edit pass
+[Autopilot] Welcome email sequences that run while you sleep
+[Autopilot] Abandoned cart and abandoned form follow-ups on autopilot
+[Autopilot] A weekly marketing report that builds itself
+[Autopilot] Zapier, Make or n8n: picking a workflow tool
+[Autopilot] Let an AI agent do your competitor research every Monday
+[Autopilot] Automate ad reporting and budget alerts before money leaks
+[Autopilot] Support chat that answers FAQs and hands off to a human
+[Autopilot] Repurpose webinar recordings into clips, posts and emails
+[Autopilot] Keep your CRM clean: auto-dedupe, enrich and tag new contacts
+[Autopilot] Meeting booked to CRM to follow-up email, with zero copy-paste
+[Autopilot] The approval step: why every automation needs a human checkpoint
+[Autopilot] How we post to Instagram every day without opening Instagram
