@@ -1,6 +1,6 @@
 {
   "last_update_id": 825911675,
-  "last_theme": "light",
+  "last_theme": "dark",
   "series_counters": {
     "MarketingTip": 11,
     "BrandBreakdown": 3,
@@ -129,6 +129,128 @@
       "backlog_line": "[PsychInTheWild] Why milk is usually at the back of the supermarket",
       "slot": "evening",
       "slot_at": "2026-10-22T12:30:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": []
+    },
+    {
+      "id": "20261022-012611",
+      "series": "BrandBreakdown",
+      "number": 3,
+      "tag": "BRANDBREAKDOWN#3",
+      "theme": "dark",
+      "style": null,
+      "topic": "Costco's $1.50 hot dog combo: why a price that never changes builds trust",
+      "post": {
+        "topic": "Costco hot‑dog price stability",
+        "principle": "Consistency (price constancy) principle",
+        "hook": "Why does Costco never raise its hot-dog price?",
+        "slides": [
+          "Costco keeps the hot-dog combo at Rs 150 for decades.",
+          "This **price constancy** creates a silent promise of reliability.",
+          "Human minds link stable prices with **fairness** and trust.",
+          "Seeing the same price makes shoppers feel respected.",
+          "Lock a core product price for years and showcase a “never-changed” badge."
+        ],
+        "takeaway": "Commit to a long-term price for a flagship item and highlight its stability to build trust.",
+        "caption": "Costco’s $1.50 (Rs 150) hot-dog combo has been the same since the mid-80s. That consistency isn’t just tradition, it’s a psychological contract with customers. When a price never moves, shoppers infer fairness and reliability, strengthening brand trust.\n\nFor Indian businesses, the lesson is simple: pick a core offering, set a price you can sustain, and broadcast that it won’t change. Whether it’s a signature biryani, a monthly subscription, or a popular gadget, a “price-locked” promise can become a trust badge.\n\nWhat price could you lock today to signal reliability to your customers?",
+        "hashtags": [
+          "#marketingpsychology",
+          "#brandtrust",
+          "#pricestrategy",
+          "#consumerbehaviour",
+          "#smallbusiness",
+          "#Costco",
+          "#IndiaBiz"
+        ],
+        "fact_check": [
+          {
+            "claim": "Costco hot‑dog combo price is Rs 150 and has not changed since the mid‑1980s",
+            "source": "Costco official menu, 2023; historical price reports, 2020",
+            "confidence": "high"
+          },
+          {
+            "claim": "Stable prices increase perceived fairness and trust",
+            "source": "Cialdini, Influence, 2009; consistency principle literature",
+            "confidence": "high"
+          }
+        ],
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "never raise its",
+            "emoji": [
+              "🛒"
+            ],
+            "subtitle": "how price stability builds trust",
+            "note": ""
+          },
+          "slides": [
+            {
+              "heading": "Decades of **consistency**",
+              "emoji": "⏳",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "🤝",
+              "layout": "big",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Fairness** linked",
+              "emoji": "💡",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "👀",
+              "layout": "big",
+              "note": "we love stability",
+              "quote": ""
+            },
+            {
+              "heading": "Badge of **stability**",
+              "emoji": "🏷",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Long-term trust",
+            "emoji": "✅",
+            "note": ""
+          },
+          "for": "66e83c986ddb",
+          "style": "editorial",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Costco’s $1.50 (Rs 150) hot-dog combo has been the same since the mid-80s. That consistency isn’t just tradition, it’s a psychological contract with customers. When a price never moves, shoppers infer fairness and reliability, strengthening brand trust.\n\nFor Indian businesses, the lesson is simple: pick a core offering, set a price you can sustain, and broadcast that it won’t change. Whether it’s a signature biryani, a monthly subscription, or a popular gadget, a “price-locked” promise can become a trust badge.\n\nWhat price could you lock today to signal reliability to your customers?\n\n#marketingpsychology #brandtrust #pricestrategy #consumerbehaviour #smallbusiness #Costco #IndiaBiz",
+      "images": [
+        "posts/20261022-012611/01.jpg",
+        "posts/20261022-012611/02.jpg",
+        "posts/20261022-012611/03.jpg",
+        "posts/20261022-012611/04.jpg",
+        "posts/20261022-012611/05.jpg",
+        "posts/20261022-012611/06.jpg",
+        "posts/20261022-012611/07.jpg"
+      ],
+      "created_at": "2026-10-22T01:26:39+00:00",
+      "reel": "posts/20261022-012611/reel.mp4",
+      "status": "awaiting",
+      "approved_parts": [],
+      "backlog_line": "[BrandBreakdown] Costco's $1.50 hot dog combo: why a price that never changes builds trust",
+      "slot": "evening",
+      "slot_at": "2026-10-23T12:30:00+00:00",
       "publish_at": null,
       "reminded": false,
       "msg_ids": []
@@ -394,6 +516,16 @@
       "at": "2026-10-21T12:33:01+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Live on Instagram: MYTHORMAGIC#2 (Colour psychology)\nhttps://www.instagram.com/p/DewaY8UFYqD/\nReel: https://www.instagram.com/reel/DewamhpjRnS/"
+    },
+    {
+      "at": "2026-10-22T01:26:39+00:00",
+      "job": "1. Write a new draft",
+      "text": "Still waiting for your review:\n• PSYCHINTHEWILD#2 (Availability heuristic) for 6:00 pm IST today"
+    },
+    {
+      "at": "2026-10-22T01:26:39+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: BRANDBREAKDOWN#3 (Consistency (price constancy) principle) for 6:00 pm IST tomorrow"
     }
   ],
   "app_requests": [
