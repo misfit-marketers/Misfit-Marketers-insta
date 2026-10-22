@@ -150,8 +150,12 @@ def validate(raw: dict, post: dict, style: str = "") -> dict:
         # thing twice. If the text starts with the heading, the slide is drawn as
         # one continuous line (heading, then the rest of the sentence); otherwise a
         # heading that just restates the text is dropped.
-        if head and not heading_prefix(head, body) and repeats(head, body):
+        bullets = body.lstrip().startswith("- ")
+        if head and (bullets or not heading_prefix(head, body)) and repeats(head, body):
             head = ""
+        lab = re.match(r"\s*-\s*\*\*([^*]+?):\*\*", body) if bullets else None
+        if head and lab and {w for w in _words_of(lab.group(1)) if w not in STOP} & set(_words_of(head)):
+            head = ""  # "The belief" over a bullet that starts "The belief:" says it twice
         layout = str(s.get("layout") or "standard").strip().lower()
         words = len(plain(split_label(post["slides"][i])[1]).split())
         if layout != "big" or words > BIG_MAX_WORDS:
@@ -173,7 +177,22 @@ def validate(raw: dict, post: dict, style: str = "") -> dict:
     t = raw.get("takeaway") or {}
     take = {"heading": _short(t.get("heading"), 4, 30), "emoji": _clean_emoji(t.get("emoji")),
             "note": _short(t.get("note"), 7, 40)}
+    if post.get("format") == "bullets":  # minimal look: no subtitles, notes, quotes or big slides
+        cover_out["subtitle"] = cover_out["note"] = ""
+        take["note"] = ""
+        for x in slides:
+            x.update(layout="standard", quote="", note="")
     return {"cover": cover_out, "slides": slides, "takeaway": take}
+
+
+BULLET_RULES = """THIS CAROUSEL USES THE SAVE-FIRST FORMAT (these rules win over the ones above):
+- The body slides are short bullet lists, one idea each. Keep the look minimal.
+- cover.subtitle is "" and cover.note is "". The hook stands alone.
+- Every slide's layout is "standard" and every quote is "".
+- Each heading is 2 or 3 words naming that slide's one idea, like the label someone would save it under (for example "The anchor", "Order matters", "The catch"). It must not repeat the bullets, and must not repeat a label the slide already starts with (such as "Before:", "The belief:" or "Verdict:"); give those slides a fresh angle instead (for example "Why we fall for it").
+- note: "" on every slide.
+- The final slide asks people to save the post and comment a keyword. Its heading is 2 to 4 words naming what they are saving (for example "Your pricing cheat sheet"), its note is "".
+"""
 
 
 def build_prompt(post: dict, series: str, style: str, note: str = "", spelling: str = "American English") -> str:
@@ -205,7 +224,7 @@ Rules:
   - quote: usually "". At most ONE slide in the whole carousel may have a pull quote (at most 10 words restating that slide's point), and only if it adds punch. Never add facts, numbers or names that the slide does not contain.
 - takeaway: {{"heading": 1 to 3 words for the final slide, "emoji": one emoji from the list, "note": "" or at most 6 words}}.
 - Spelling: {spelling}. Never use em dashes. Avoid "it's not X, it's Y" phrasing.
-
+{BULLET_RULES if post.get("format") == "bullets" else ""}
 Return ONLY JSON:
 {{"cover": {{"highlight": "", "subtitle": "", "emoji": [], "note": ""}},
  "slides": [{{"heading": "", "heading_highlight": "", "emoji": "", "note": "", "quote": ""}}],

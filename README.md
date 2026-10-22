@@ -227,13 +227,21 @@ writer can't search the web.
   uploaded straight to Instagram (resumable upload, after a quick clean-up
   for Instagram's video rules: AAC 128 kbit/s, no MP4 edit lists); public links
   through jsDelivr and raw GitHub are only a fallback.
-- **Stats:** `config.json → stats`. Every 2 hours the check job reads views,
+- **Stats:** `config.json → stats`. Also collected: Reel watch time, profile
+  visits and follows per post, daily account reach (followers vs non-followers),
+  link taps and follows (`state.account_daily`), and follower demographics once
+  the page has 100 followers (`state.audience`). Every 2 hours the check job reads views,
   reach, likes, comments, saves and shares for posts from the last 60 days,
   plus the follower count, and the app's History shows them. Views, reach,
   saves and shares need the `instagram_business_manage_insights` permission on
   the access token; without it only likes and comments come through.
 - **Auto-post without review:** set `"auto_post_if_not_reviewed": true` in
   `config.json`. A draft you haven't reviewed by its slot then posts anyway.
+- **Post format:** `config.json → format`. `style: bullets` (from 22 Oct 2026) writes a
+  short tension hook, body slides of 2 or 3 bullet lines (one idea each, about 8
+  words a line), and a final slide asking people to save the post and comment
+  `cta.keyword` to get `cta.offer` by DM (you send those DMs yourself). The same
+  line ends the caption. `style: classic` goes back to sentence slides.
 - **Slide styles per series:** `config.json → design → styles` gives each series
   a look and a highlight colour: `poster` (huge capitals, emoji stickers),
   `editorial` (serif headings, yellow highlighter, handwritten notes), `essay`

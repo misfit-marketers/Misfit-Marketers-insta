@@ -289,23 +289,47 @@ class Type:
         return t.upper() if self.upper else t
 
 
+class Ln(tuple):
+    """One wrapped line: (words, width). Bullet lines also carry .indent (the
+    hanging indent in px, included in width) and .bullet (draw the dot)."""
+    indent, bullet = 0, False
+
+
+def _ln(line, width, indent=0, bullet=False):
+    out = Ln((line, width + indent))
+    out.indent, out.bullet = indent, bullet
+    return out
+
+
+BULLET = re.compile(r"^\s*(?:[-•*]|\d+[.)])\s+")
+
+
 def layout(text, ty, maxw):
-    """-> list of lines; each line is [(word_pieces, width)], plus line width."""
+    """-> list of lines; each line is [(word_pieces, width)], plus line width.
+    A paragraph starting with "- " becomes a bullet with a hanging indent."""
     lines = []
     space = ty.n.getlength(" ")
     for para in (text or "").split("\n"):
+        indent, bullet = 0, False
+        if BULLET.match(para):
+            para = BULLET.sub("", para, count=1)
+            indent, bullet = int(ty.lh * 0.72), True
+            if lines and getattr(lines[-1], "indent", 0):
+                lines.append(_ln([], 0))  # a gap between bullet points
         line, width = [], 0.0
+        first = True
         for w in words_of(para.strip()):
             ww = sum(ty.f(e).getlength(ty.tx(p)) for p, e in w)
             add = ww if not line else space + ww
-            if line and width + add > maxw:
-                lines.append((line, width))
+            if line and width + add > maxw - indent:
+                lines.append(_ln(line, width, indent, bullet and first))
+                first = False
                 line, width = [w], ww
             else:
                 line.append(w)
                 width += add
         if line:
-            lines.append((line, width))
+            lines.append(_ln(line, width, indent, bullet and first))
     return lines
 
 
@@ -330,6 +354,12 @@ def draw_text(d, lines, ty, x, y, colors, align="left", deco=None, boxw=None):
     for i, (line, width) in enumerate(lines):
         base = y + i * ty.lh + asc
         cx = x if align == "left" else x + ((boxw or 0) - width) / 2
+        ind = getattr(lines[i], "indent", 0)
+        if getattr(lines[i], "bullet", False):
+            r = max(5, int(ty.lh * 0.11))
+            cy = base - asc * 0.36
+            d.ellipse((cx + ind * 0.22, cy - r, cx + ind * 0.22 + 2 * r, cy + r), fill=colors[1])
+        cx += ind
         placed = []  # (x0, x1, text, emph)
         for k, w in enumerate(line):
             if k:
@@ -383,6 +413,12 @@ BODY = {"poster": 40, "editorial": 38, "essay": 36, "notebook": 40}
 BODY_LEADING = 1.22  # line height as a multiple of the font size (tight, like the references)
 
 
+def bsize(style, text):
+    """Bullet slides carry very few words (the 2026-10-22 format), so they get a
+    larger size; every bullet slide in a look still uses the same one."""
+    return BODY[style] + (12 if BULLET.match(text or "") else 0)
+
+
 def body_sizes(size):
     return range(size, 25, -2)
 
@@ -427,7 +463,7 @@ def pieces(post, design, label):
     for i, s in enumerate(post["slides"]):
         lab, body = split_label(s)
         extra = ds[i] if i < len(ds) else {}
-        if extra.get("layout") != "big":
+        if extra.get("layout") != "big" and not BULLET.match(body):  # bullets never continue the heading
             body = drop_words(body, heading_prefix(extra.get("heading", ""), body))
         out.append({"kind": "body", "label": lab, "text": body, "heading": extra.get("heading", ""),
                     "emoji": extra.get("emoji", ""), "note": extra.get("note", ""), "quote": extra.get("quote", ""),
@@ -526,7 +562,7 @@ class Poster(Style):
             blocks.append((len(hl) * hty.lh + 48, lambda y: draw_text(d, hl, hty, 70, y, (self.ink, self.accent))))
         mk = lambda z: Type(body(z, "Regular"), body(z, "Bold"), int(z * BODY_LEADING))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, body_sizes(BODY["poster"]), W - 150, bottom - top - used)
+        ty, lines = fit(safe(s["text"]), mk, body_sizes(bsize("poster", s["text"])), W - 150, bottom - top - used)
         blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 70, y, (self.ink, self.ink))))
         stack(blocks, top, bottom, 0.42)
         note = safe(s.get("note") or "")
@@ -630,7 +666,7 @@ class Editorial(Style):
         qh = (50 + 62 * len(ql)) if ql else 0
         mk = lambda z: Type(body(z, "Regular"), body(z, "Bold"), int(z * BODY_LEADING))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, body_sizes(BODY["editorial"]), W - 160, bottom - top - used - qh)
+        ty, lines = fit(safe(s["text"]), mk, body_sizes(bsize("editorial", s["text"])), W - 160, bottom - top - used - qh)
         blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 70, y, (self.ink, self.ink))))
         if ql:
             def q(y):
@@ -739,7 +775,7 @@ class Essay(Style):
         qh = (56 + 62 * len(ql)) if ql else 0
         mk = lambda z: Type(body(z, "Regular"), body(z, "SemiBold"), int(z * BODY_LEADING))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, body_sizes(BODY["essay"]), W - 160, bottom - top - used - qh)
+        ty, lines = fit(safe(s["text"]), mk, body_sizes(bsize("essay", s["text"])), W - 160, bottom - top - used - qh)
         blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 70, y, (p["mute"], p["ink"]))))
         if ql:
             def q(y):
@@ -844,7 +880,7 @@ class Notebook(Style):
             blocks.append((len(hl) * hty.lh + 50, lambda y: draw_text(d, hl, hty, 150, y, (self.ink, self.ink), deco=self.under)))
         mk = lambda z: Type(body(z, "Regular"), body(z, "Bold"), int(z * BODY_LEADING))
         used = sum(h for h, _ in blocks)
-        ty, lines = fit(safe(s["text"]), mk, body_sizes(BODY["notebook"]), W - 230, bottom - top - used)
+        ty, lines = fit(safe(s["text"]), mk, body_sizes(bsize("notebook", s["text"])), W - 230, bottom - top - used)
         if kind == "before":
             blocks.append((len(lines) * ty.lh, lambda y: draw_text(d, lines, ty, 150, y, (self.grey, self.grey))))
         else:
@@ -867,7 +903,7 @@ class Notebook(Style):
             y = draw_text(d, layout(head, ty, W - 400)[:2], ty, 150, y, (self.ink, self.ink)) + 40
         sticker(img, s.get("emoji") or "✅", (W - 250, 230), 150, angle=-8)
         mk = lambda z: Type(body(z, "Medium"), body(z, "Bold"), int(z * BODY_LEADING))
-        ty, lines = fit(safe(s["text"]), mk, body_sizes(BODY["notebook"]), W - 230, H - 320 - y)
+        ty, lines = fit(safe(s["text"]), mk, body_sizes(bsize("notebook", s["text"])), W - 230, H - 320 - y)
         y = draw_text(d, lines, ty, 150, y, (self.ink, self.ink), deco=self.under)
         if s.get("note"):
             self.note(d, safe(s["note"]), 560, H - 260)

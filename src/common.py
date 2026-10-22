@@ -112,7 +112,7 @@ def clean_text(text: str) -> str:
     text = text.replace("₹", "Rs ")
     # Collapse doubled spaces and stray spaces before punctuation.
     text = re.sub(r"[ \t]{2,}", " ", text)
-    text = re.sub(r" +([,.;:!?])", r"\1", text)
+    text = re.sub(r" +([,.;:!?])(?!\d)", r"\1", text)  # but keep " .99" in "Use .99 endings"
     text = text.replace(",,", ",")
     return text.strip()
 

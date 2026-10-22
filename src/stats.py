@@ -13,6 +13,8 @@ from . import instagram
 from .common import DRY_RUN, load_history, load_state, now_iso, save_history, save_state
 
 METRICS = ["views", "reach", "likes", "comments", "saved", "shares", "total_interactions"]
+EXTRA_METRICS = ["ig_reels_avg_watch_time", "ig_reels_video_view_total_time", "profile_visits", "follows",
+                 "profile_activity"]
 EVERY = timedelta(hours=2)
 
 
@@ -50,7 +52,61 @@ def media_stats(media_id: str, version: str) -> dict:
         except instagram.InstagramError:
             pass
         out["note"] = note
+    # Extras: watch time for Reels; profile visits and follows for carousels.
+    # Asked for one at a time, since Instagram offers different ones per format.
+    for metric in EXTRA_METRICS:
+        if note or metric in out:
+            continue
+        try:
+            body = instagram._req("GET", f"{media_id}/insights", version, metric=metric)
+            for item in body.get("data", []):
+                vals = item.get("values") or [{}]
+                out[item["name"]] = vals[0].get("value", (item.get("total_value") or {}).get("value"))
+        except instagram.InstagramError:
+            pass
     out["updated_at"] = now_iso()
+    return out
+
+
+def _total(item):
+    tv = item.get("total_value") or {}
+    res = {"total": tv.get("value")}
+    for b in tv.get("breakdowns") or []:
+        for r in b.get("results") or []:
+            key = "_".join(str(x).lower() for x in r.get("dimension_values") or [])
+            if key:
+                res[key] = r.get("value")
+    return res
+
+
+def account_day(version: str) -> dict:
+    """Yesterday-and-today account numbers: reach split into followers and
+    non-followers, views, accounts engaged, profile link taps, follows."""
+    out = {}
+    asks = [("reach", {"breakdown": "follow_type"}), ("views", {}), ("accounts_engaged", {}),
+            ("total_interactions", {}), ("profile_links_taps", {}), ("follows_and_unfollows", {"breakdown": "follow_type"})]
+    for metric, extra in asks:
+        try:
+            body = instagram._req("GET", "me/insights", version, metric=metric, period="day",
+                                  metric_type="total_value", **extra)
+            for item in body.get("data", []):
+                out[item["name"]] = _total(item)
+        except instagram.InstagramError as e:
+            out.setdefault("_errors", {})[metric] = str(e)[:160]
+    return out
+
+
+def demographics(version: str) -> dict:
+    """Who follows the page (needs 100+ followers; Instagram's rule)."""
+    out = {}
+    for b in ("age", "gender", "city", "country"):
+        try:
+            body = instagram._req("GET", "me/insights", version, metric="follower_demographics", period="lifetime",
+                                  timeframe="this_month", metric_type="total_value", breakdown=b)
+            for item in body.get("data", []):
+                out[b] = {k: v for k, v in _total(item).items() if k != "total"}
+        except instagram.InstagramError as e:
+            out.setdefault("_errors", {})[b] = str(e)[:160]
     return out
 
 
@@ -87,6 +143,15 @@ def refresh(cfg: dict, log=print, force: bool = False):
                             "username": me.get("username"), "updated_at": now_iso()}
     except instagram.InstagramError as e:
         log(f"Couldn't read the follower count: {str(e)[:200]}")
+    # Account-level numbers: once a day is plenty (kept for 60 days).
+    today = _now().date().isoformat()
+    daily = state.get("account_daily") or {}
+    if today not in daily or force:
+        daily[today] = account_day(version)
+        state["account_daily"] = dict(sorted(daily.items())[-60:])
+    demo = state.get("audience") or {}
+    if force or not demo.get("updated_at") or _now() - _when(demo["updated_at"]) > timedelta(days=7):
+        state["audience"] = {**demographics(version), "updated_at": now_iso()}
     state["stats_checked_at"] = now_iso()
     save_state(state)
     log(f"Stats refreshed for {changed} post(s)")

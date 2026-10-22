@@ -31,13 +31,17 @@ SWIPE = 0.38  # seconds per swipe between slides
 
 # ------------------------------------------------------------------ timing
 
+EXTRA = 2.0  # seconds added to every slide (2026-10-22: slides went by too fast)
+REEL_VERSION = 2  # bump when the look or timing changes; waiting drafts get their Reel rebuilt
+
+
 def slide_seconds(words: int, kind: str) -> float:
     if kind == "cover":
-        return 2.8
+        return 2.8 + EXTRA
     secs = 1.6 + 0.24 * words
     if kind == "takeaway":
         secs += 0.8
-    return max(2.6, min(6.0, secs))
+    return max(2.6, min(6.0, secs)) + EXTRA
 
 
 # ------------------------------------------------------------------ music

@@ -86,7 +86,12 @@
       }
     }
   },
-  "max_body_slides": 7,
+  "max_body_slides": 6,
+  "format": {
+    "about": "How posts are written. style: bullets (the save-first format from 22 Oct 2026: tension hook, 2 or 3 short bullet lines per slide, a final slide asking people to save the post and comment the keyword) or classic (the older sentence slides). cta.keyword is the word people comment; cta.offer is what you send them by DM.",
+    "style": "bullets",
+    "cta": {"keyword": "PSYCHOLOGY", "offer": "my marketing playbook", "label": "Save this"}
+  },
   "closing_slide": {
     "enabled": false,
     "text": "Follow **{handle}** to learn the psychology underneath marketing."

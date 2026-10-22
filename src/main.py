@@ -29,6 +29,7 @@ import requests
 from . import instagram, telegram, writer
 from .common import (CONTENT, DRY_RUN, POSTS, ROOT, add_topic_to_backlog, clean_text, load_config, load_history,
                      load_state, now_iso, remove_topic_from_backlog, save_history, save_state, topic_backlog)
+from .reel import REEL_VERSION
 from .render import render_post
 
 IST = timezone(timedelta(hours=5, minutes=30))
@@ -105,7 +106,7 @@ def build_reel(post: dict, series: str, tag: str, out_dir: Path, cfg: dict, styl
         from .design import split_label
         from .render import style_for
         imgs = sorted(out_dir.glob("[0-9][0-9].jpg"))
-        n = lambda t: len(re.sub(r"\*\*", "", t or "").split())
+        n = lambda t: len(re.sub(r"\*\*|(^|\n)\s*-\s", " ", t or "").split())
         words = [n(post["hook"])] + [n(split_label(x)[1]) for x in post["slides"]] + [n(post["takeaway"])]
         words = (words + [12] * len(imgs))[:len(imgs)]
         pick = style_for(cfg, series, style)
@@ -190,7 +191,11 @@ def closing_text(cfg: dict):
     return None
 
 
-def series_label(cfg: dict, series: str) -> str:
+def series_label(cfg: dict, series: str, post: dict = None) -> str:
+    """The small label on the final slide. Bullet-format posts end with the
+    save + comment slide, labelled "Save this"."""
+    if post and post.get("format") == "bullets":
+        return ((cfg.get("format") or {}).get("cta") or {}).get("label", "Save this")
     return cfg["series"].get(series, {}).get("takeaway_label", "Takeaway")
 
 
@@ -438,7 +443,7 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
         draft_id += "b"
     tag = cfg["series"][series]["tag"].format(n=number)
     paths = render_post(post, theme, tag, POSTS / draft_id, closing=closing_text(cfg),
-                        label=series_label(cfg, series), series=series, cfg=cfg, style=style)
+                        label=series_label(cfg, series, post), series=series, cfg=cfg, style=style)
     reel_path = build_reel(post, series, tag, POSTS / draft_id, cfg, style)
 
     state = load_state()  # reload: the writer call can take a while
@@ -455,6 +460,7 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
         "id": draft_id, "series": series, "number": number, "tag": tag, "theme": theme, "style": style,
         "topic": topic or post.get("topic"), "post": post, "caption": build_caption(post),
         "images": [str(p.relative_to(ROOT)) for p in paths], "created_at": now_iso(), "reel": reel_path,
+        "reel_v": REEL_VERSION,
         "status": "awaiting", "approved_parts": [], "backlog_line": backlog_line,
         "slot": slot_name, "slot_at": iso(slot_at), "publish_at": None, "reminded": False,
     }
@@ -831,8 +837,9 @@ def rerender(draft_id: str, reason: str = "Redrawn"):
     while (POSTS / new_id).exists() or find(state, new_id):
         new_id += "b"
     paths = render_post(d["post"], d["theme"], d["tag"], POSTS / new_id, closing=closing_text(cfg),
-                        label=series_label(cfg, d["series"]), series=d["series"], cfg=cfg, style=d.get("style"))
+                        label=series_label(cfg, d["series"], d["post"]), series=d["series"], cfg=cfg, style=d.get("style"))
     d["reel"] = build_reel(d["post"], d["series"], d["tag"], POSTS / new_id, cfg, d.get("style"))
+    d["reel_v"] = REEL_VERSION
     remove_draft_files(d)
     d["id"] = new_id
     d["images"] = [str(p.relative_to(ROOT)) for p in paths]
@@ -921,16 +928,25 @@ def add_missing_reels(cfg: dict, limit: int = 2):
     soon = now_utc() + timedelta(minutes=20)
     done = 0
     for d in state.get("drafts", []):
-        if done >= limit or d.get("reel") or d.get("reel_tried"):
+        if done >= limit or datetime.fromisoformat(d.get("publish_at") or d["slot_at"]) <= soon:
             continue
-        if datetime.fromisoformat(d.get("publish_at") or d["slot_at"]) <= soon:
+        if d.get("reel") and d.get("status") == "awaiting" and int(d.get("reel_v", 1)) < REEL_VERSION:
+            # Not approved yet, so a better Reel (new timing or look) can replace the old one.
+            path = build_reel(d["post"], d["series"], d["tag"], POSTS / d["id"], cfg, d.get("style"))
+            d["reel_v"] = REEL_VERSION
+            done += 1
+            if path:
+                d["reel"] = path
+                log(f"Rebuilt the Reel of {describe(d)}")
+            continue
+        if d.get("reel") or d.get("reel_tried"):
             continue
         path = build_reel(d["post"], d["series"], d["tag"], POSTS / d["id"], cfg, d.get("style"))
         d["reel_tried"] = True  # one attempt per draft, so a failing build doesn't repeat every 10 minutes
         done += 1
         if not path:
             continue
-        d["reel"] = path
+        d["reel"], d["reel_v"] = path, REEL_VERSION
         if d.get("status") == "approved":
             d["status"], d["publish_at"], d["reminded"] = "awaiting", None, False
             d["approved_parts"] = []
@@ -1153,11 +1169,11 @@ def preview(path: str):
     cfg = load_config()
     data = json.loads(Path(path).read_text(encoding="utf-8"))
     series = data.get("series", default_series(cfg))
-    post = writer.validate(data, int(cfg.get("max_body_slides", 7)))
+    post = writer.apply_format(writer.validate(data, int(cfg.get("max_body_slides", 7))), cfg)
     for theme in ("light", "dark"):
         out = POSTS / "preview" / theme
         paths = render_post(post, theme, cfg["series"][series]["tag"].format(n=0), out,
-                            label=series_label(cfg, series), series=series, cfg=cfg)
+                            label=series_label(cfg, series, post), series=series, cfg=cfg)
         log(f"{theme}: {len(paths)} slides in {out}")
 
 
