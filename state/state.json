@@ -134,7 +134,7 @@
       "msg_ids": []
     },
     {
-      "id": "20261022-012611",
+      "id": "20261022-084134",
       "series": "BrandBreakdown",
       "number": 3,
       "tag": "BRANDBREAKDOWN#3",
@@ -142,110 +142,112 @@
       "style": null,
       "topic": "Costco's $1.50 hot dog combo: why a price that never changes builds trust",
       "post": {
-        "topic": "Costco hot‑dog price stability",
-        "principle": "Consistency (price constancy) principle",
-        "hook": "Why does Costco never raise its hot-dog price?",
+        "topic": "Costco price stability",
+        "principle": "Consistency Principle",
+        "hook": "Why $1.50 still sells everywhere",
         "slides": [
-          "Costco keeps the hot-dog combo at Rs 150 for decades.",
-          "This **price constancy** creates a silent promise of reliability.",
-          "Human minds link stable prices with **fairness** and trust.",
-          "Seeing the same price makes shoppers feel respected.",
-          "Lock a core product price for years and showcase a “never-changed” badge."
+          "- **Move:** Keep hot-dog combo at Rs 150\n- Since 1985, no price hike\n- **Price lock** feels permanent",
+          "- **Principle:** **Consistency** drives loyalty\n- People trust brands that stay steady\n- It signals reliability",
+          "- **Mind:** Predictability reduces anxiety\n- No surprise = smoother purchase\n- Builds subconscious **trust**",
+          "- **Borrow:** Choose a flagship item\n- Freeze its price for years\n- Highlight the unchanged price in promos",
+          "- **Takeaway:** Anchor with a locked price\n- Commit to 3-5 years stability\n- Use it as your brand promise"
         ],
-        "takeaway": "Commit to a long-term price for a flagship item and highlight its stability to build trust.",
-        "caption": "Costco’s $1.50 (Rs 150) hot-dog combo has been the same since the mid-80s. That consistency isn’t just tradition, it’s a psychological contract with customers. When a price never moves, shoppers infer fairness and reliability, strengthening brand trust.\n\nFor Indian businesses, the lesson is simple: pick a core offering, set a price you can sustain, and broadcast that it won’t change. Whether it’s a signature biryani, a monthly subscription, or a popular gadget, a “price-locked” promise can become a trust badge.\n\nWhat price could you lock today to signal reliability to your customers?",
+        "save_reason": "for your pricing stability strategy",
+        "caption": "Costco never raised its iconic hot-dog combo. That isn’t luck, it’s a deliberate consistency play that turns a cheap snack into a trust signal.\n\nSmall brands can mimic this by locking a core product’s price and shouting about the stability. When customers know what to expect, they keep coming back.\n\nSave this for your pricing stability strategy. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
         "hashtags": [
           "#marketingpsychology",
           "#brandtrust",
-          "#pricestrategy",
+          "#pricingstrategy",
+          "#consistency",
           "#consumerbehaviour",
-          "#smallbusiness",
-          "#Costco",
-          "#IndiaBiz"
+          "#indianbusiness",
+          "#founderlife",
+          "#designthinking"
         ],
         "fact_check": [
           {
-            "claim": "Costco hot‑dog combo price is Rs 150 and has not changed since the mid‑1980s",
-            "source": "Costco official menu, 2023; historical price reports, 2020",
-            "confidence": "high"
+            "claim": "Costco hot‑dog combo price has remained Rs 150 (≈$1.50) since 1985",
+            "source": "Costco corporate history, 2022 annual report",
+            "confidence": "medium"
           },
           {
-            "claim": "Stable prices increase perceived fairness and trust",
-            "source": "Cialdini, Influence, 2009; consistency principle literature",
+            "claim": "Consistency principle influences consumer trust",
+            "source": "Cialdini, Influence, 2001",
             "confidence": "high"
           }
         ],
+        "takeaway": "- **Save this** for your pricing stability strategy\n- Comment **PSYCHOLOGY** and I'll DM you my marketing playbook",
+        "format": "bullets",
         "model": "groq:openai/gpt-oss-120b",
         "design": {
           "cover": {
-            "highlight": "never raise its",
-            "emoji": [
-              "🛒"
-            ],
-            "subtitle": "how price stability builds trust",
+            "highlight": "still sells",
+            "emoji": [],
+            "subtitle": "",
             "note": ""
           },
           "slides": [
             {
-              "heading": "Decades of **consistency**",
-              "emoji": "⏳",
+              "heading": "",
+              "emoji": "🔒",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Consistency** wins",
+              "emoji": "✅",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Predictable** comfort",
+              "emoji": "🧠",
               "layout": "standard",
               "note": "",
               "quote": ""
             },
             {
               "heading": "",
-              "emoji": "🤝",
-              "layout": "big",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Fairness** linked",
-              "emoji": "💡",
+              "emoji": "❄",
               "layout": "standard",
               "note": "",
               "quote": ""
             },
             {
-              "heading": "",
-              "emoji": "👀",
-              "layout": "big",
-              "note": "we love stability",
-              "quote": ""
-            },
-            {
-              "heading": "Badge of **stability**",
-              "emoji": "🏷",
+              "heading": "**Anchor** pricing",
+              "emoji": "📈",
               "layout": "standard",
               "note": "",
               "quote": ""
             }
           ],
           "takeaway": {
-            "heading": "Long-term trust",
-            "emoji": "✅",
+            "heading": "Pricing stability cheat",
+            "emoji": "💡",
             "note": ""
           },
-          "for": "66e83c986ddb",
+          "for": "4ce797dffe7d",
           "style": "editorial",
           "source": "ai",
           "note": "",
           "v": 2
         }
       },
-      "caption": "Costco’s $1.50 (Rs 150) hot-dog combo has been the same since the mid-80s. That consistency isn’t just tradition, it’s a psychological contract with customers. When a price never moves, shoppers infer fairness and reliability, strengthening brand trust.\n\nFor Indian businesses, the lesson is simple: pick a core offering, set a price you can sustain, and broadcast that it won’t change. Whether it’s a signature biryani, a monthly subscription, or a popular gadget, a “price-locked” promise can become a trust badge.\n\nWhat price could you lock today to signal reliability to your customers?\n\n#marketingpsychology #brandtrust #pricestrategy #consumerbehaviour #smallbusiness #Costco #IndiaBiz",
+      "caption": "Costco never raised its iconic hot-dog combo. That isn’t luck, it’s a deliberate consistency play that turns a cheap snack into a trust signal.\n\nSmall brands can mimic this by locking a core product’s price and shouting about the stability. When customers know what to expect, they keep coming back.\n\nSave this for your pricing stability strategy. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #brandtrust #pricingstrategy #consistency #consumerbehaviour #indianbusiness #founderlife #designthinking",
       "images": [
-        "posts/20261022-012611/01.jpg",
-        "posts/20261022-012611/02.jpg",
-        "posts/20261022-012611/03.jpg",
-        "posts/20261022-012611/04.jpg",
-        "posts/20261022-012611/05.jpg",
-        "posts/20261022-012611/06.jpg",
-        "posts/20261022-012611/07.jpg"
+        "posts/20261022-084134/01.jpg",
+        "posts/20261022-084134/02.jpg",
+        "posts/20261022-084134/03.jpg",
+        "posts/20261022-084134/04.jpg",
+        "posts/20261022-084134/05.jpg",
+        "posts/20261022-084134/06.jpg",
+        "posts/20261022-084134/07.jpg"
       ],
-      "created_at": "2026-10-22T01:26:39+00:00",
-      "reel": "posts/20261022-012611/reel.mp4",
+      "created_at": "2026-10-22T08:42:16+00:00",
+      "reel": "posts/20261022-084134/reel.mp4",
+      "reel_v": 2,
       "status": "awaiting",
       "approved_parts": [],
       "backlog_line": "[BrandBreakdown] Costco's $1.50 hot dog combo: why a price that never changes builds trust",
@@ -526,6 +528,11 @@
       "at": "2026-10-22T01:26:39+00:00",
       "job": "1. Write a new draft",
       "text": "New draft ready for review: BRANDBREAKDOWN#3 (Consistency (price constancy) principle) for 6:00 pm IST tomorrow"
+    },
+    {
+      "at": "2026-10-22T08:42:16+00:00",
+      "job": "6. App action",
+      "text": "App: Rewrote BRANDBREAKDOWN#3 (Consistency (price constancy) principle) as a fresh take. Have a look and approve it when you're happy."
     }
   ],
   "app_requests": [
@@ -744,6 +751,15 @@
       "ok": true,
       "message": "New draft ready: PSYCHINTHEWILD#2 (Availability heuristic) for 6:00 pm IST Thu 22 Oct. Have a look and approve it.",
       "at": "2026-10-20T12:53:13+00:00"
+    },
+    {
+      "id": "mvjakkpzu7aqlv",
+      "action": "redo",
+      "draft_id": "20261022-012611",
+      "new_draft_id": "20261022-084134",
+      "ok": true,
+      "message": "Rewrote BRANDBREAKDOWN#3 (Consistency (price constancy) principle) as a fresh take. Have a look and approve it when you're happy.",
+      "at": "2026-10-22T08:42:16+00:00"
     }
   ],
   "design_styles": {

@@ -333,5 +333,17 @@
       "total_interactions": 5,
       "updated_at": "2026-10-22T07:27:33+00:00"
     }
+  },
+  {
+    "id": "20261022-012611",
+    "series": "BrandBreakdown",
+    "number": 3,
+    "tag": "BRANDBREAKDOWN#3",
+    "topic": "Costco's $1.50 hot dog combo: why a price that never changes builds trust",
+    "slot": "evening",
+    "principle": "Consistency (price constancy) principle",
+    "at": "2026-10-22T08:42:16+00:00",
+    "status": "redone",
+    "feedback": ""
   }
 ]
