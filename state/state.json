@@ -141,85 +141,6 @@
       "note": ""
     },
     {
-      "id": "20261023-043701",
-      "kind": "reel",
-      "reel_format": "quiz",
-      "series": "Autopilot",
-      "number": 1,
-      "tag": "REEL#1",
-      "theme": "dark",
-      "style": null,
-      "topic": "AI agents vs automations: what each is good at in marketing",
-      "post": {
-        "topic": "AI agents vs automations",
-        "principle": "Task specialization in marketing tech",
-        "hook": "What handles creative tweaks best?",
-        "slides": [
-          "What handles creative tweaks best?",
-          "A. AI agents with contextual memory  (answer)",
-          "B. Rule-based automations",
-          "Why: Agents adapt tone to audience cues",
-          "Why: Automations follow static rules only"
-        ],
-        "takeaway": "",
-        "caption": "AI agents read the room, automations keep the lights on. When you need a copy tweak that feels personal, let the agent decide. For bulk email sends or lead routing, a simple automation wins every time.\n\nPick the right tool, skip the trial-and-error, and keep your funnel humming.\n\nSave this quick decision cheat-sheet. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
-        "hashtags": [
-          "#marketingpsychology",
-          "#automation",
-          "#AIagents",
-          "#growthhacks",
-          "#founderlife",
-          "#smallbiz",
-          "#nocode"
-        ],
-        "fact_check": [
-          {
-            "claim": "AI agents can adapt tone to audience cues using contextual memory",
-            "source": "McKinsey & Company, 2023, \"The rise of generative AI in marketing\"",
-            "confidence": "high"
-          },
-          {
-            "claim": "Rule‑based automations follow static rules only",
-            "source": "Thomas H. Davenport, 2020, \"Automation at work\" Harvard Business Review",
-            "confidence": "high"
-          }
-        ],
-        "kind": "reel",
-        "format": "reel:quiz",
-        "model": "groq:openai/gpt-oss-120b"
-      },
-      "script": {
-        "question": "What handles creative tweaks best?",
-        "options": [
-          "AI agents with contextual memory",
-          "Rule-based automations"
-        ],
-        "answer": 0,
-        "why": [
-          "Agents adapt tone to audience cues",
-          "Automations follow static rules only"
-        ]
-      },
-      "caption": "AI agents read the room, automations keep the lights on. When you need a copy tweak that feels personal, let the agent decide. For bulk email sends or lead routing, a simple automation wins every time.\n\nPick the right tool, skip the trial-and-error, and keep your funnel humming.\n\nSave this quick decision cheat-sheet. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #automation #AIagents #growthhacks #founderlife #smallbiz #nocode",
-      "images": [
-        "posts/20261023-043701/01.jpg"
-      ],
-      "created_at": "2026-10-23T04:37:12+00:00",
-      "reel": "posts/20261023-043701/reel.mp4",
-      "reel_v": 2,
-      "status": "approved",
-      "approved_parts": [
-        "reel"
-      ],
-      "backlog_line": "[Autopilot] AI agents vs automations: what each is good at in marketing",
-      "slot": "slot2",
-      "slot_at": "2026-10-23T16:00:00+00:00",
-      "publish_at": "2026-10-23T16:00:00+00:00",
-      "reminded": false,
-      "approved_at": "2026-10-23T04:38:58+00:00",
-      "note": ""
-    },
-    {
       "id": "20261023-045023",
       "kind": "reel",
       "reel_format": "stock",
@@ -665,6 +586,11 @@
       "at": "2026-10-23T12:32:03+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Live on Instagram: BRANDBREAKDOWN#3 (Consistency Principle)\nhttps://www.instagram.com/p/De1kAvvldW1/\nReel: https://www.instagram.com/reel/De1kDqSD_xM/"
+    },
+    {
+      "at": "2026-10-23T16:00:59+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Live on Instagram: REEL#1 (Task specialization in marketing tech)\nhttps://www.instagram.com/reel/De17_plgDy0/"
     }
   ],
   "app_requests": [
@@ -1084,5 +1010,6 @@
       "kind": "reel"
     }
   ],
-  "auto_approve": true
+  "auto_approve": true,
+  "reel_counter": 2
 }
