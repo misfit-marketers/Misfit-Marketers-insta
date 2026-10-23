@@ -162,5 +162,20 @@
   "stats": {
     "about": "Views, reach, likes, comments, saves and shares for each live post, fetched from Instagram every 2 hours and shown in the app's History.",
     "enabled": true
+  },
+  "format_reels": {
+    "about": "Slot 2 Reels. formats: the formats picked at random (remove any you don't want). voice needs the voice package (installed by the workflows); stock needs a PIXABAY_API_KEY (or PEXELS_API_KEY) secret.",
+    "formats": [
+      "chat",
+      "quiz",
+      "rewrite",
+      "kinetic",
+      "mockui",
+      "flow",
+      "list",
+      "loop",
+      "voice",
+      "stock"
+    ]
   }
 }

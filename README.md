@@ -233,6 +233,14 @@ writer can't search the web.
   uploaded straight to Instagram (resumable upload, after a quick clean-up
   for Instagram's video rules: AAC 128 kbit/s, no MP4 edit lists); public links
   through jsDelivr and raw GitHub are only a fallback.
+- **Format Reels (slot 2):** when the second posting slot is on, it posts a Reel
+  only, in a random format (`src/formats.py` writes the script, `src/reelfx.py`
+  draws it): text chat, guess and reveal, live rewrite, big-text story, mock app
+  screen, workflow diagram, quick list, 7-second loop, voice-over (Kokoro, a free
+  offline voice, installed from `requirements-reels.txt`) and stock footage
+  (needs a free Pixabay API key in the `PIXABAY_API_KEY` secret, or a Pexels
+  key in `PEXELS_API_KEY`; skipped without one). The same format never runs twice in a row; if one fails, another is
+  tried. `format_reels.formats` in `config.json` can limit the list.
 - **Stats:** `config.json → stats`. Also collected: Reel watch time, profile
   visits and follows per post, daily account reach (followers vs non-followers),
   link taps and follows (`state.account_daily`), and follower demographics once

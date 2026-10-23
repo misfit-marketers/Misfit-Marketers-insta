@@ -56,7 +56,8 @@ def app_slots(state: dict):
     raw = state.get("slot_settings")
     if not isinstance(raw, list):
         return None
-    out = [{"name": str(x.get("name") or f"slot{i + 1}"), "time_ist": x["time"], "backup_ist": plus_hour(x["time"])}
+    out = [{"name": str(x.get("name") or f"slot{i + 1}"), "time_ist": x["time"], "backup_ist": plus_hour(x["time"]),
+            "kind": x.get("kind") or ("reel" if i == 1 else "carousel")}
            for i, x in enumerate(raw) if isinstance(x, dict) and x.get("on") and re.fullmatch(r"\d\d:\d\d", str(x.get("time", "")))]
     return out or None
 

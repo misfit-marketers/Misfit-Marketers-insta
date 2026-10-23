@@ -133,6 +133,8 @@ def offered_parts(cfg: dict, d: dict) -> list:
     (config reels.post: off = carousel, both = carousel and Reel, reel = Reel)."""
     mode = reels_cfg(cfg)["post"]
     has_reel = bool(d.get("reel"))
+    if d.get("kind") == "reel":
+        return ["reel"]  # a format Reel has no carousel
     if mode == "reel" and has_reel:
         return ["reel"]
     if mode == "both" and has_reel:
@@ -211,12 +213,18 @@ def slot_defs(cfg: dict) -> list:
     post_times_ist setting (first time = slot, second = back-up)."""
     if cfg.get("slots"):
         out = []
-        for s in cfg["slots"]:
+        for i, s in enumerate(cfg["slots"]):
             out.append({"name": s["name"], "time": _hm(s["time_ist"]),
-                        "backup": _hm(s.get("backup_ist") or s["time_ist"])})
+                        "backup": _hm(s.get("backup_ist") or s["time_ist"]),
+                        "kind": s.get("kind") or "carousel"})
         return out
     times = cfg.get("post_times_ist") or ["18:00", "20:00"]
-    return [{"name": "daily", "time": _hm(times[0]), "backup": _hm(times[-1])}]
+    return [{"name": "daily", "time": _hm(times[0]), "backup": _hm(times[-1]), "kind": "carousel"}]
+
+
+def slot_kind(cfg: dict, slot_name: str) -> str:
+    """'carousel' (a carousel and its Reel) or 'reel' (a Reel in one of the special formats)."""
+    return next((s["kind"] for s in slot_defs(cfg) if s["name"] == slot_name), "carousel")
 
 
 def occurrence(sdef: dict, day) -> tuple:
@@ -411,6 +419,10 @@ def next_theme(cfg: dict, state: dict) -> str:
 def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None, topic: str = None,
                 redo_of: dict = None, feedback: str = None) -> dict:
     """Writes, renders and sends one draft for a slot; saves it to state."""
+    kind = (redo_of or {}).get("kind") or (slot_kind(cfg, slot_name) if not redo_of else "carousel")
+    if kind == "reel":
+        return write_format_draft(cfg, slot_name, slot_at, series=series, topic=topic, redo_of=redo_of,
+                                  feedback=feedback)
     state, history = load_state(), load_history()
     backlog_line = None
     if redo_of:
@@ -474,6 +486,102 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
         d["msg_ids"] = ids
         save_state(state)
     log(f"Draft {draft_id} sent for review ({len(paths)} slides)")
+    return draft
+
+
+def reel_number(state: dict) -> int:
+    n = int(state.get("reel_counter", 1))
+    used = [int(d["number"]) for d in state["drafts"] if d.get("kind") == "reel"]
+    return max([n] + [u + 1 for u in used])
+
+
+def write_format_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None, topic: str = None,
+                       redo_of: dict = None, feedback: str = None, fmt: str = None, new_format: bool = False) -> dict:
+    """Slot 2: a Reel in one of the special formats (chat, quiz, rewrite, big text,
+    mock screen, workflow, list, loop, voice-over, stock footage), picked at random.
+    The AI writes the script, reelfx.py draws and encodes it."""
+    from . import formats, reelfx
+    from .render import style_for
+    state, history = load_state(), load_history()
+    backlog_line = None
+    if redo_of:
+        series, topic, backlog_line = redo_of["series"], redo_of["topic"], redo_of.get("backlog_line")
+        number = redo_of["number"]
+        fmt = fmt or (None if new_format else redo_of.get("reel_format"))
+    else:
+        if topic:
+            hint, topic = parse_topic(topic)
+            series = hint if hint in cfg["series"] else (series or default_series(cfg))
+        else:
+            series = series or choose_series(cfg, history, state["drafts"])
+            exclude = {d.get("backlog_line") for d in state["drafts"]}
+            backlog_line = next_topic_line(cfg, series, exclude)
+            if backlog_line:
+                topic = parse_topic(backlog_line)[1]
+        number = reel_number(state)
+    recent = [h.get("principle") or h.get("topic") for h in history if h.get("status") == "posted"]
+    recent += [d["post"].get("principle") or d.get("topic") for d in state["drafts"]
+               if not redo_of or d["id"] != redo_of["id"]]
+    recent = [r for r in recent if r]
+    tried = [redo_of.get("reel_format")] if (redo_of and new_format) else []
+    data, err = None, ""
+    for _ in range(3):  # a format that fails (script or drawing) gives way to another one
+        fmt = fmt or formats.pick(cfg, state, history, exclude=tried)
+        log(f"Writing a {formats.NAMES[fmt]} Reel ({series}) for {slot_name} slot on: {topic or '(writer chooses)'}")
+        try:
+            data = formats.write(cfg, series, fmt, topic, recent, feedback=feedback,
+                                 previous=(redo_of or {}).get("script") if redo_of else None, log=log)
+            fmt = data.get("fmt", fmt)
+            draft_id = now_utc().strftime("%Y%m%d-%H%M%S")
+            while (POSTS / draft_id).exists() or find(load_state(), draft_id):
+                draft_id += "b"
+            pick = style_for(cfg, series, None)
+            accent = pick[1] if pick else "#FF4D2E"
+            fcfg = cfg.get("format") or {}
+            cta = {**(fcfg.get("cta") or {}), "reason": data["save_reason"], "pexels_key": os.environ.get("PEXELS_API_KEY", "")}
+            tag = f"REEL#{number}"
+            reel_path, cover, extra = reelfx.build(fmt, data["script"], POSTS / draft_id, accent,
+                                                   cfg.get("instagram_handle", "misfit_marketers"), cta, seed=tag + fmt,
+                                                   log=log)
+            break
+        except Exception as e:  # noqa: BLE001
+            err = str(e)[:300]
+            log(f"The {fmt} Reel didn't work ({err}); trying another format")
+            tried.append(fmt)
+            if redo_of:
+                remove_draft_files({"id": locals().get("draft_id", "_none")})
+            fmt, data = None, None
+    if data is None:
+        raise RuntimeError(f"Couldn't make a format Reel: {err}")
+    key = ((cfg.get("format") or {}).get("cta") or {}).get("keyword", "PSYCHOLOGY").upper()
+    offer = ((cfg.get("format") or {}).get("cta") or {}).get("offer", "my marketing playbook")
+    caption = data["caption"].rstrip() + f"\n\nSave this {data['save_reason']}. Comment {key} and I'll DM you {offer}."
+    if extra.get("credit"):
+        caption += f"\n\nVideo: {extra['credit']} on {extra.get('site') or 'Pexels'}"
+    post = {"topic": data.get("topic"), "principle": data.get("principle"), "hook": formats.display(fmt, data["script"])[0],
+            "slides": formats.display(fmt, data["script"]), "takeaway": "", "caption": caption,
+            "hashtags": data.get("hashtags", []), "fact_check": data.get("fact_check", []), "kind": "reel",
+            "format": "reel:" + fmt, "model": data.get("model", "")}
+    state = load_state()
+    if redo_of:
+        history = load_history()
+        history.append({**_hist(redo_of), "status": "redone", "feedback": feedback or ""})
+        save_history(history)
+        remove_draft_files(redo_of)
+        remove(state, redo_of["id"])
+    draft = {
+        "id": draft_id, "kind": "reel", "reel_format": fmt, "series": series, "number": number, "tag": tag,
+        "theme": "dark", "style": None, "topic": topic or data.get("topic"), "post": post, "script": data["script"],
+        "caption": build_caption(post), "images": [str(cover.relative_to(ROOT))], "created_at": now_iso(),
+        "reel": str(reel_path.relative_to(ROOT)), "reel_v": REEL_VERSION, "status": "awaiting", "approved_parts": [],
+        "backlog_line": backlog_line, "slot": slot_name, "slot_at": iso(slot_at), "publish_at": None, "reminded": False,
+        **({"credit": extra} if extra else {}),
+    }
+    state["drafts"].append(draft)
+    save_state(state)
+    telegram.send_message(f"New {formats.NAMES[fmt]} Reel ready: {describe(draft)} for {when_text(draft['slot_at'])}. "
+                          "Watch it in the app and approve it.")
+    log(f"Draft {draft_id}: {formats.NAMES[fmt]} Reel ready")
     return draft
 
 
@@ -558,7 +666,7 @@ def publish(draft_id: str) -> bool:
     if not draft:
         return False
     urls = image_urls(draft, cfg)
-    if not DRY_RUN:
+    if not DRY_RUN and draft.get("kind") != "reel":
         for u in urls:
             r = requests.get(u, timeout=30)
             if r.status_code != 200 or not r.headers.get("content-type", "").startswith("image/"):
@@ -616,8 +724,13 @@ def publish(draft_id: str) -> bool:
     if reel_result and reel_result is not result:
         entry["reel_media_id"], entry["reel_permalink"] = reel_result["id"], reel_result.get("permalink", "")
     history.append(entry)
-    counters = state["series_counters"]
-    counters[draft["series"]] = max(int(counters.get(draft["series"], 0)), int(draft["number"]) + 1)
+    if draft.get("kind") == "reel":
+        state["reel_counter"] = max(int(state.get("reel_counter", 1)), int(draft["number"]) + 1)
+        entry["reel_format"] = draft.get("reel_format")
+        entry["format"] = "reel"
+    else:
+        counters = state["series_counters"]
+        counters[draft["series"]] = max(int(counters.get(draft["series"], 0)), int(draft["number"]) + 1)
     remove(state, draft_id)
     remove_draft_files(draft)
     if draft.get("backlog_line"):
@@ -839,6 +952,10 @@ def rerender(draft_id: str, reason: str = "Redrawn"):
     d = find(state, draft_id)
     if not d:
         return
+    if d.get("kind") == "reel":  # a format Reel is redrawn by writing it again in its format
+        new = write_format_draft(cfg, d["slot"], datetime.fromisoformat(d["slot_at"]), redo_of=d,
+                                 fmt=d.get("reel_format"), feedback=None)
+        return new["id"]
     new_id = now_utc().strftime("%Y%m%d-%H%M%S")
     while (POSTS / new_id).exists() or find(state, new_id):
         new_id += "b"
@@ -934,6 +1051,8 @@ def add_missing_reels(cfg: dict, limit: int = 2):
     soon = now_utc() + timedelta(minutes=20)
     done = 0
     for d in state.get("drafts", []):
+        if d.get("kind") == "reel":
+            continue  # format Reels are made whole when they're written
         if done >= limit or datetime.fromisoformat(d.get("publish_at") or d["slot_at"]) <= soon:
             continue
         if d.get("reel") and d.get("status") == "awaiting" and int(d.get("reel_v", 1)) < REEL_VERSION:

@@ -274,3 +274,55 @@ def make_reel(slide_paths, out_path: Path, words=None, kinds=None, accent=(255, 
         raise RuntimeError(f"The Reel came out at {mb:.0f} MB, too big to post")
     log(f"Reel ready: {out_path.name}, {total:.1f}s, {n} slides, music: {music.name if music else 'original lo-fi loop'}")
     return out_path
+
+
+# ------------------------------------------------------------------ shared encoder (format Reels)
+
+def seed_int(seed: str) -> int:
+    return int(hashlib.sha1(seed.encode()).hexdigest(), 16) % 10_000
+
+
+def track_bpm(seed: str) -> int:
+    """The tempo lofi_track() will use for this seed, so animations can land on the beat."""
+    return 78 + int(np.random.default_rng(seed_int(seed)).integers(0, 10))
+
+
+def encode_frames(frame_at, total: float, out_path: Path, seed="misfit", log=print, voice=None, fade=1.6) -> Path:
+    """frame_at(t) -> RGB PIL image (1080x1920). Music: a track from
+    assets/music or the original lo-fi loop; with a voice-over (mono float
+    array at 48 kHz) the generated loop plays quietly underneath."""
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    wav = out_path.with_suffix(".wav")
+    music = None if voice is not None else pick_music(seed)
+    if music is None:
+        mix = lofi_track(total, seed=seed_int(seed))
+        if voice is not None:
+            v = np.zeros(len(mix))
+            v[: min(len(v), len(voice))] = voice[: len(v)]
+            mix = mix * 0.2 + v * 0.95
+            mix = mix / (np.max(np.abs(mix)) + 1e-9) * 0.9
+        write_wav(wav, mix)
+        audio_in = ["-i", str(wav)]
+    else:
+        audio_in = ["-stream_loop", "-1", "-i", str(music)]
+    cmd = [ffmpeg_exe(), "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
+           "-i", "-", *audio_in, "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "23",
+           "-maxrate", "2M", "-bufsize", "4M", "-pix_fmt", "yuv420p", "-profile:v", "high", "-g", "60",
+           "-c:a", "aac", "-b:a", "128k", "-ac", "2", "-ar", str(SR),
+           "-af", f"afade=t=out:st={max(0, total - fade):.2f}:d={fade}", "-t", f"{total:.2f}",
+           "-movflags", "+faststart", "-use_editlist", "0", str(out_path)]
+    proc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
+    try:
+        for fi in range(int(total * FPS)):
+            proc.stdin.write(frame_at(fi / FPS).convert("RGB").tobytes())
+    finally:
+        proc.stdin.close()
+    if proc.wait() != 0:
+        raise RuntimeError("ffmpeg could not build the Reel")
+    if wav.exists():
+        wav.unlink()
+    mb = out_path.stat().st_size / 1e6
+    if mb > 19:
+        raise RuntimeError(f"The Reel came out at {mb:.0f} MB, too big to post")
+    log(f"Reel ready: {out_path.name}, {total:.1f}s, {mb:.1f} MB")
+    return out_path

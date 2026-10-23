@@ -114,6 +114,8 @@ def a_redo(draft_id, text):
 
 def a_edit(draft_id, text):
     d = _draft(draft_id)
+    if d.get("kind") == "reel":
+        raise Refused("Format Reels can't be edited as text yet. Use Rewrite with feedback, or Try another format.")
     data = _json(text)
     cfg = load_config()
     post = dict(d["post"])
@@ -250,7 +252,13 @@ def a_redesign(draft_id, text):
     """Same words, new art direction. Optional: a style for just this draft
     and a note for the AI designer (for example 'fewer emoji')."""
     from .render import STYLE_NAMES, style_for
-    _draft(draft_id)
+    cur = _draft(draft_id)
+    if cur.get("kind") == "reel":  # for a format Reel, "redesign" means: same topic, another format
+        from . import formats
+        cfg = load_config()
+        new = m.write_format_draft(cfg, cur["slot"], datetime.fromisoformat(cur["slot_at"]), redo_of=cur, new_format=True)
+        return new["id"], (f"Made {_name(new)} again as a {formats.NAMES.get(new.get('reel_format'), 'new')} Reel. "
+                           "Have a look and approve it.")
     data = _json(text)
     cfg = load_config()
     _styles_on(cfg)
@@ -347,7 +355,9 @@ def a_slots_set(draft_id, text):
         t = str((x or {}).get("time") or "").strip()
         if not re.fullmatch(r"([01]\d|2[0-3]):[0-5]\d", t):
             raise Refused(f"Slot {i + 1}: '{t}' isn't a time like 18:00.")
-        out.append({"name": f"slot{i + 1}", "time": t, "on": True if i == 0 else bool(x.get("on"))})
+        kind = str(x.get("kind") or ("reel" if i == 1 else "carousel"))
+        out.append({"name": f"slot{i + 1}", "time": t, "on": True if i == 0 else bool(x.get("on")),
+                    "kind": kind if kind in ("carousel", "reel") else "carousel"})
     on = [x for x in out if x["on"]]
     if len(on) == 2:
         mins = [int(x["time"][:2]) * 60 + int(x["time"][3:]) for x in on]
