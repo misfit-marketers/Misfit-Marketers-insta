@@ -124,7 +124,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-22T09:58:23+00:00"
+      "updated_at": "2026-10-23T08:08:05+00:00"
     }
   },
   {
@@ -327,7 +327,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T06:01:24+00:00"
+      "updated_at": "2026-10-23T08:08:07+00:00"
     }
   },
   {
@@ -347,7 +347,7 @@
     "reel_media_id": "18375706063245130",
     "reel_permalink": "https://www.instagram.com/reel/DewamhpjRnS/",
     "stats": {
-      "views": 18,
+      "views": 19,
       "reach": 2,
       "likes": 1,
       "comments": 0,
@@ -357,7 +357,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T06:01:26+00:00"
+      "updated_at": "2026-10-23T08:08:09+00:00"
     },
     "reel_stats": {
       "views": 71,
@@ -369,7 +369,7 @@
       "total_interactions": 5,
       "ig_reels_avg_watch_time": 2771,
       "ig_reels_video_view_total_time": 174574,
-      "updated_at": "2026-10-23T06:01:28+00:00"
+      "updated_at": "2026-10-23T08:08:11+00:00"
     }
   },
   {
@@ -411,19 +411,19 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T06:01:30+00:00"
+      "updated_at": "2026-10-23T08:08:13+00:00"
     },
     "reel_stats": {
-      "views": 73,
-      "reach": 58,
+      "views": 75,
+      "reach": 59,
       "likes": 2,
       "comments": 0,
       "saved": 2,
       "shares": 4,
       "total_interactions": 8,
-      "ig_reels_avg_watch_time": 4837,
-      "ig_reels_video_view_total_time": 299897,
-      "updated_at": "2026-10-23T06:01:34+00:00"
+      "ig_reels_avg_watch_time": 4755,
+      "ig_reels_video_view_total_time": 304321,
+      "updated_at": "2026-10-23T08:08:15+00:00"
     }
   },
   {
