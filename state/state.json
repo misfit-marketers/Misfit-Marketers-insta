@@ -131,7 +131,7 @@
         "reel"
       ],
       "backlog_line": "[BrandBreakdown] Costco's $1.50 hot dog combo: why a price that never changes builds trust",
-      "slot": "evening",
+      "slot": "slot1",
       "slot_at": "2026-10-23T12:30:00+00:00",
       "publish_at": "2026-10-23T12:30:00+00:00",
       "reminded": false,
@@ -259,7 +259,7 @@
       "status": "awaiting",
       "approved_parts": [],
       "backlog_line": "[AIPsych] Algorithm aversion: why people forgive a human's mistake but not an AI's",
-      "slot": "evening",
+      "slot": "slot1",
       "slot_at": "2026-10-24T12:30:00+00:00",
       "publish_at": null,
       "reminded": false,
@@ -577,6 +577,11 @@
       "at": "2026-10-23T01:29:57+00:00",
       "job": "1. Write a new draft",
       "text": "Every upcoming slot already has a draft, so I didn't write new ones."
+    },
+    {
+      "at": "2026-10-23T04:35:58+00:00",
+      "job": "6. App action",
+      "text": "App: Posting twice a day from now on: 6:00 pm and 9:30 pm IST. The morning job writes drafts for the new slot, or tap Write a draft now on Today."
     }
   ],
   "app_requests": [
@@ -831,6 +836,15 @@
       "ok": true,
       "message": "New draft ready: AIPSYCH#1 (Algorithm aversion) for 6:00 pm IST Sat 24 Oct. Have a look and approve it.",
       "at": "2026-10-22T15:34:31+00:00"
+    },
+    {
+      "id": "mvkh8ky4hy6bg8",
+      "action": "slots_set",
+      "draft_id": "",
+      "new_draft_id": null,
+      "ok": true,
+      "message": "Posting twice a day from now on: 6:00 pm and 9:30 pm IST. The morning job writes drafts for the new slot, or tap Write a draft now on Today.",
+      "at": "2026-10-23T04:35:58+00:00"
     }
   ],
   "design_styles": {
@@ -892,5 +906,19 @@
   },
   "audience": {
     "updated_at": "2026-10-22T09:58:33+00:00"
-  }
+  },
+  "slot_settings": [
+    {
+      "name": "slot1",
+      "time": "18:00",
+      "on": true,
+      "kind": "carousel"
+    },
+    {
+      "name": "slot2",
+      "time": "21:30",
+      "on": true,
+      "kind": "reel"
+    }
+  ]
 }
