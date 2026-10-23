@@ -1,8 +1,9 @@
 name: 1. Write a new draft
 
 # Times are UTC. 00:57 UTC = 6:27 am IST, every day. GitHub sometimes starts
-# timers 5 to 30 minutes late, so the drafts reach Telegram by about 7 am.
-# It writes one draft for each empty posting slot (7:30 pm and 3:30 am IST).
+# timers 5 to 30 minutes late, so the drafts are ready by about 7 am.
+# It writes one draft for each empty posting slot (today and tomorrow): a
+# carousel with its Reel for slot 1, a format Reel (chat, quiz, ...) for slot 2.
 on:
   schedule:
     - cron: "57 0 * * *"
@@ -22,7 +23,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,6 +31,12 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Extras for format Reels (voice-over)
+        run: pip install -r requirements-reels.txt || echo "Voice-over Reels are skipped this run"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/misfit-tts
+          key: misfit-tts-kokoro-v1
       - name: Write, render and send to Telegram
         run: python -m src.main generate
         env:
@@ -37,6 +44,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           TOPIC: ${{ github.event.inputs.topic }}
       - name: Save drafts and state back to the repository
         if: always()

@@ -44,6 +44,12 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Extras for format Reels (voice-over)
+        run: pip install -r requirements-reels.txt || echo "Voice-over Reels are skipped this run"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/misfit-tts
+          key: misfit-tts-kokoro-v1
       - name: Do what the app asked
         run: python -m src.main app
         env:
@@ -55,6 +61,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
       - name: Save drafts and state back to the repository
         if: always()
         run: |
