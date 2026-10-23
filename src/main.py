@@ -486,6 +486,7 @@ def write_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str = None
         d["msg_ids"] = ids
         save_state(state)
     log(f"Draft {draft_id} sent for review ({len(paths)} slides)")
+    maybe_auto_approve(draft_id, cfg)
     return draft
 
 
@@ -582,6 +583,7 @@ def write_format_draft(cfg: dict, slot_name: str, slot_at: datetime, series: str
     telegram.send_message(f"New {formats.NAMES[fmt]} Reel ready: {describe(draft)} for {when_text(draft['slot_at'])}. "
                           "Watch it in the app and approve it.")
     log(f"Draft {draft_id}: {formats.NAMES[fmt]} Reel ready")
+    maybe_auto_approve(draft_id, cfg)
     return draft
 
 
@@ -642,6 +644,30 @@ def approve(draft_id: str, parts: list = None):
                           f"{when_text(d['publish_at'])}.\n"
                           "Tap Post now if you want it up straight away.",
                           buttons=telegram.scheduled_buttons(d["id"]))
+
+
+def auto_approve_on(cfg: dict = None) -> bool:
+    return bool((cfg or load_config()).get("auto_approve"))
+
+
+def maybe_auto_approve(draft_id: str, cfg: dict = None) -> bool:
+    """With Auto-approve on (Status tab), a waiting draft is approved straight
+    away, carousel and Reel alike, and goes live at its slot."""
+    cfg = cfg or load_config()
+    if not auto_approve_on(cfg):
+        return False
+    d = find(load_state(), draft_id)
+    if not d or d.get("status") == "approved":
+        return False
+    approve(draft_id)
+    state = load_state()
+    d = find(state, draft_id)
+    if d:
+        d["note"] = (d.get("note") + " " if d.get("note") and "after its" in d.get("note", "") else "") + \
+            "Approved automatically (Auto-approve is on)."
+        d["auto_approved"] = True
+        save_state(state)
+    return True
 
 
 def unapprove(draft_id: str, parts: list = None):
@@ -827,6 +853,9 @@ def process_due(notify: bool = True):
     drafts at their slot; moves drafts that missed their back-up to the next day."""
     cfg = load_config()
     normalise_drafts(cfg)
+    if auto_approve_on(cfg):
+        for d in list(load_state()["drafts"]):
+            maybe_auto_approve(d["id"], cfg)
     now = now_utc()
     state = load_state()
     for d in drafts_of(state):
@@ -979,6 +1008,7 @@ def rerender(draft_id: str, reason: str = "Redrawn"):
     if d:
         d["msg_ids"] = (d.get("msg_ids") or []) + ids
         save_state(state)
+    maybe_auto_approve(new_id, cfg)
     return new_id
 
 

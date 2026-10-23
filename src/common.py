@@ -71,6 +71,8 @@ def load_config() -> dict:
     slots = app_slots(st)
     if slots:
         cfg["slots"] = slots
+    if "auto_approve" in st:  # the Auto-approve switch in the app's Status tab
+        cfg["auto_approve"] = bool(st["auto_approve"])
     picks = st.get("design_styles") or {}
     if picks and isinstance(cfg.get("design"), dict):
         styles = dict(cfg["design"].get("styles") or {})

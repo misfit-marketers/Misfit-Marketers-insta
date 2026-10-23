@@ -381,12 +381,29 @@ def a_slots_set(draft_id, text):
     return None, msg
 
 
+def a_auto_approve(draft_id, text):
+    """The Auto-approve switch in Status. On: every draft is approved as soon as
+    it's written (carousel and Reel) and goes live at its slot without waiting
+    for you. Off: the usual approval. Saved in state.json."""
+    data = _json(text)
+    on = bool(data.get("on"))
+    state = load_state()
+    state["auto_approve"] = on
+    save_state(state)
+    if not on:
+        return None, "Auto-approve is off. New drafts wait for your approval again (drafts already approved stay approved)."
+    cfg = load_config()
+    done = [d for d in list(load_state()["drafts"]) if m.maybe_auto_approve(d["id"], cfg)]
+    tail = f" Approved {len(done)} waiting draft{'s' if len(done) != 1 else ''} now." if done else ""
+    return None, "Auto-approve is on. New drafts go live at their slot without waiting for you." + tail
+
+
 ACTIONS = {
     "approve": a_approve, "unapprove": a_unapprove, "postnow": a_postnow, "skip": a_skip, "drop": a_drop,
     "redo": a_redo, "edit": a_edit, "postpone": a_postpone, "new": a_new,
     "topic_add": a_topic_add, "topic_remove": a_topic_remove, "topic_edit": a_topic_edit,
     "topic_order": a_topic_order, "redesign": a_redesign, "styles_set": a_styles_set, "stats": a_stats,
-    "slots_set": a_slots_set,
+    "slots_set": a_slots_set, "auto_approve": a_auto_approve,
 }
 
 
