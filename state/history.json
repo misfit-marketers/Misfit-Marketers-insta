@@ -357,7 +357,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T12:30:19+00:00"
+      "updated_at": "2026-10-23T14:36:20+00:00"
     },
     "reel_stats": {
       "views": 71,
@@ -369,7 +369,7 @@
       "total_interactions": 5,
       "ig_reels_avg_watch_time": 2771,
       "ig_reels_video_view_total_time": 174574,
-      "updated_at": "2026-10-23T12:30:21+00:00"
+      "updated_at": "2026-10-23T14:36:21+00:00"
     }
   },
   {
@@ -411,7 +411,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T12:30:22+00:00"
+      "updated_at": "2026-10-23T14:36:22+00:00"
     },
     "reel_stats": {
       "views": 81,
@@ -423,7 +423,7 @@
       "total_interactions": 8,
       "ig_reels_avg_watch_time": 4428,
       "ig_reels_video_view_total_time": 310008,
-      "updated_at": "2026-10-23T12:30:24+00:00"
+      "updated_at": "2026-10-23T14:36:22+00:00"
     }
   },
   {
@@ -453,6 +453,31 @@
     "permalink": "https://www.instagram.com/p/De1kAvvldW1/",
     "format": "both",
     "reel_media_id": "17920234005495694",
-    "reel_permalink": "https://www.instagram.com/reel/De1kDqSD_xM/"
+    "reel_permalink": "https://www.instagram.com/reel/De1kDqSD_xM/",
+    "stats": {
+      "views": 1,
+      "reach": 1,
+      "likes": 0,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "profile_visits": 0,
+      "follows": 0,
+      "profile_activity": 0,
+      "updated_at": "2026-10-23T14:36:24+00:00"
+    },
+    "reel_stats": {
+      "views": 3,
+      "reach": 1,
+      "likes": 0,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 0,
+      "ig_reels_avg_watch_time": 6218,
+      "ig_reels_video_view_total_time": 6218,
+      "updated_at": "2026-10-23T14:36:25+00:00"
+    }
   }
 ]
