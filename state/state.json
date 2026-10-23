@@ -349,7 +349,7 @@
       "note": ""
     },
     {
-      "id": "20261023-044047",
+      "id": "20261023-045023",
       "kind": "reel",
       "reel_format": "stock",
       "series": "MarketingTip",
@@ -359,33 +359,38 @@
       "style": null,
       "topic": "Scarcity: why \"only 3 left\" makes us want it more",
       "post": {
-        "topic": "Scarcity Effect",
-        "principle": "Scarcity",
+        "topic": "Scarcity Hook",
+        "principle": "Scarcity Effect",
         "hook": "Footage: online shopping cart",
         "slides": [
           "Footage: online shopping cart",
-          "Only **3** left, instantly spikes desire.",
-          "Our brains link scarcity to **value**.",
-          "Cialdini shows scarcity triggers loss **aversion**.",
-          "Show limited stock, watch clicks **multiply**.",
+          "Seeing **only 3 left** spikes urgency instantly.",
+          "Our brain reads scarcity as **high value**.",
+          "Cialdini (2009) shows scarcity triggers loss **aversion**.",
+          "Display limited stock, watch clicks **multiply**.",
           "Add a countdown, create urgent **action**."
         ],
         "takeaway": "",
-        "caption": "When you see \"only 3 left,\" your brain flips to loss-avoidance mode. That's the Scarcity principle in action, people value what they think they might lose. Use real-time inventory or a ticking clock, and you’ll see urgency explode.\n\nMarketers love this because it’s a tiny tweak with massive impact. Deploy it on product pages, email subject lines, or ads, and watch conversion rates jump.\n\nSave this quick scarcity hack. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\nVideo: Skylent on Pixabay",
+        "caption": "Want shoppers to act like it’s the last item on the shelf? Show them a tiny remaining count and watch desire skyrocket. The brain equates scarcity with value, so a simple “only 3 left” can turn browsers into buyers.\n\nPro tip: pair the count with a ticking timer for maximum urgency. No fluff, just psychology that sells.\n\nSave this instant conversion boost tip. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\nVideo: Skylent on Pixabay",
         "hashtags": [
           "#marketingpsychology",
           "#scarcity",
-          "#consumerbehavior",
-          "#growthhacks",
+          "#conversion",
           "#ecomtips",
-          "#founderlife",
-          "#designthinking"
+          "#growthhacking",
+          "#behaviormarketing",
+          "#founderlife"
         ],
         "fact_check": [
           {
-            "claim": "Scarcity triggers loss aversion and increases perceived value",
-            "source": "Robert Cialdini, Influence: The Psychology of Persuasion, 2009",
+            "claim": "Cialdini (2009) shows scarcity triggers loss aversion.",
+            "source": "Robert Cialdini, Influence: Science and Practice, 2009",
             "confidence": "high"
+          },
+          {
+            "claim": "Scarcity is perceived as high value by the brain.",
+            "source": "Various consumer behavior studies, 2010‑2020 meta‑analyses",
+            "confidence": "medium"
           }
         ],
         "kind": "reel",
@@ -395,19 +400,19 @@
       "script": {
         "query": "online shopping cart",
         "lines": [
-          "Only **3** left, instantly spikes desire.",
-          "Our brains link scarcity to **value**.",
-          "Cialdini shows scarcity triggers loss **aversion**.",
-          "Show limited stock, watch clicks **multiply**.",
+          "Seeing **only 3 left** spikes urgency instantly.",
+          "Our brain reads scarcity as **high value**.",
+          "Cialdini (2009) shows scarcity triggers loss **aversion**.",
+          "Display limited stock, watch clicks **multiply**.",
           "Add a countdown, create urgent **action**."
         ]
       },
-      "caption": "When you see \"only 3 left,\" your brain flips to loss-avoidance mode. That's the Scarcity principle in action, people value what they think they might lose. Use real-time inventory or a ticking clock, and you’ll see urgency explode.\n\nMarketers love this because it’s a tiny tweak with massive impact. Deploy it on product pages, email subject lines, or ads, and watch conversion rates jump.\n\nSave this quick scarcity hack. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\nVideo: Skylent on Pixabay\n\n#marketingpsychology #scarcity #consumerbehavior #growthhacks #ecomtips #founderlife #designthinking",
+      "caption": "Want shoppers to act like it’s the last item on the shelf? Show them a tiny remaining count and watch desire skyrocket. The brain equates scarcity with value, so a simple “only 3 left” can turn browsers into buyers.\n\nPro tip: pair the count with a ticking timer for maximum urgency. No fluff, just psychology that sells.\n\nSave this instant conversion boost tip. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\nVideo: Skylent on Pixabay\n\n#marketingpsychology #scarcity #conversion #ecomtips #growthhacking #behaviormarketing #founderlife",
       "images": [
-        "posts/20261023-044047/01.jpg"
+        "posts/20261023-045023/01.jpg"
       ],
-      "created_at": "2026-10-23T04:41:20+00:00",
-      "reel": "posts/20261023-044047/reel.mp4",
+      "created_at": "2026-10-23T04:50:58+00:00",
+      "reel": "posts/20261023-045023/reel.mp4",
       "reel_v": 2,
       "status": "awaiting",
       "approved_parts": [],
@@ -769,6 +774,11 @@
       "at": "2026-10-23T04:41:49+00:00",
       "job": "6. App action",
       "text": "App: Approved the carousel of AIPSYCH#1 (Algorithm aversion). Goes live at 6:00 pm IST tomorrow. The Reel still needs your approval."
+    },
+    {
+      "at": "2026-10-23T04:50:58+00:00",
+      "job": "6. App action",
+      "text": "App: Rewrote REEL#2 (Scarcity) with your feedback. Have a look and approve it when you're happy."
     }
   ],
   "app_requests": [
@@ -1086,6 +1096,15 @@
       "ok": true,
       "message": "Approved the carousel of AIPSYCH#1 (Algorithm aversion). Goes live at 6:00 pm IST tomorrow. The Reel still needs your approval.",
       "at": "2026-10-23T04:41:49+00:00"
+    },
+    {
+      "id": "mvkhqzxz2v0wv2",
+      "action": "redo",
+      "draft_id": "20261023-044047",
+      "new_draft_id": "20261023-045023",
+      "ok": true,
+      "message": "Rewrote REEL#2 (Scarcity) with your feedback. Have a look and approve it when you're happy.",
+      "at": "2026-10-23T04:50:58+00:00"
     }
   ],
   "design_styles": {

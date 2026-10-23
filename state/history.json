@@ -425,5 +425,17 @@
       "ig_reels_video_view_total_time": 298828,
       "updated_at": "2026-10-23T03:38:53+00:00"
     }
+  },
+  {
+    "id": "20261023-044047",
+    "series": "MarketingTip",
+    "number": 2,
+    "tag": "REEL#2",
+    "topic": "Scarcity: why \"only 3 left\" makes us want it more",
+    "slot": "slot2",
+    "principle": "Scarcity",
+    "at": "2026-10-23T04:50:58+00:00",
+    "status": "redone",
+    "feedback": "The opening only 3 left opens with no context. Use better hooks"
   }
 ]
