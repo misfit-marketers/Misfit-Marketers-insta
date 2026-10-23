@@ -327,7 +327,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T10:27:40+00:00"
+      "updated_at": "2026-10-23T12:30:18+00:00"
     }
   },
   {
@@ -347,7 +347,7 @@
     "reel_media_id": "18375706063245130",
     "reel_permalink": "https://www.instagram.com/reel/DewamhpjRnS/",
     "stats": {
-      "views": 19,
+      "views": 21,
       "reach": 2,
       "likes": 1,
       "comments": 0,
@@ -357,7 +357,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T10:27:41+00:00"
+      "updated_at": "2026-10-23T12:30:19+00:00"
     },
     "reel_stats": {
       "views": 71,
@@ -369,7 +369,7 @@
       "total_interactions": 5,
       "ig_reels_avg_watch_time": 2771,
       "ig_reels_video_view_total_time": 174574,
-      "updated_at": "2026-10-23T10:27:43+00:00"
+      "updated_at": "2026-10-23T12:30:21+00:00"
     }
   },
   {
@@ -411,19 +411,19 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T10:27:44+00:00"
+      "updated_at": "2026-10-23T12:30:22+00:00"
     },
     "reel_stats": {
-      "views": 80,
-      "reach": 64,
+      "views": 81,
+      "reach": 65,
       "likes": 2,
       "comments": 0,
       "saved": 2,
       "shares": 4,
       "total_interactions": 8,
-      "ig_reels_avg_watch_time": 4483,
-      "ig_reels_video_view_total_time": 309346,
-      "updated_at": "2026-10-23T10:27:45+00:00"
+      "ig_reels_avg_watch_time": 4428,
+      "ig_reels_video_view_total_time": 310008,
+      "updated_at": "2026-10-23T12:30:24+00:00"
     }
   },
   {
@@ -437,5 +437,22 @@
     "at": "2026-10-23T04:50:58+00:00",
     "status": "redone",
     "feedback": "The opening only 3 left opens with no context. Use better hooks"
+  },
+  {
+    "id": "20261022-084134",
+    "series": "BrandBreakdown",
+    "number": 3,
+    "tag": "BRANDBREAKDOWN#3",
+    "topic": "Costco's $1.50 hot dog combo: why a price that never changes builds trust",
+    "slot": "slot1",
+    "principle": "Consistency Principle",
+    "at": "2026-10-23T12:32:02+00:00",
+    "status": "posted",
+    "posted_at": "2026-10-23T12:32:02+00:00",
+    "ig_media_id": "18115686593028533",
+    "permalink": "https://www.instagram.com/p/De1kAvvldW1/",
+    "format": "both",
+    "reel_media_id": "17920234005495694",
+    "reel_permalink": "https://www.instagram.com/reel/De1kDqSD_xM/"
   }
 ]
