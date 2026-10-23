@@ -414,18 +414,23 @@
       "created_at": "2026-10-23T04:50:58+00:00",
       "reel": "posts/20261023-045023/reel.mp4",
       "reel_v": 2,
-      "status": "awaiting",
-      "approved_parts": [],
+      "status": "approved",
+      "approved_parts": [
+        "reel"
+      ],
       "backlog_line": "Scarcity: why \"only 3 left\" makes us want it more",
       "slot": "slot2",
       "slot_at": "2026-10-24T16:00:00+00:00",
-      "publish_at": null,
+      "publish_at": "2026-10-24T16:00:00+00:00",
       "reminded": false,
       "credit": {
         "credit": "Skylent",
         "credit_url": "https://pixabay.com/videos/id-3735/",
         "site": "Pixabay"
-      }
+      },
+      "approved_at": "2026-10-23T05:15:14+00:00",
+      "note": "Approved automatically (Auto-approve is on).",
+      "auto_approved": true
     }
   ],
   "merged_seeds": [
@@ -779,6 +784,11 @@
       "at": "2026-10-23T04:50:58+00:00",
       "job": "6. App action",
       "text": "App: Rewrote REEL#2 (Scarcity) with your feedback. Have a look and approve it when you're happy."
+    },
+    {
+      "at": "2026-10-23T05:15:14+00:00",
+      "job": "6. App action",
+      "text": "App: Auto-approve is on. New drafts go live at their slot without waiting for you. Approved 1 waiting draft now."
     }
   ],
   "app_requests": [
@@ -1105,6 +1115,15 @@
       "ok": true,
       "message": "Rewrote REEL#2 (Scarcity) with your feedback. Have a look and approve it when you're happy.",
       "at": "2026-10-23T04:50:58+00:00"
+    },
+    {
+      "id": "mvkimy95t1d216",
+      "action": "auto_approve",
+      "draft_id": "",
+      "new_draft_id": null,
+      "ok": true,
+      "message": "Auto-approve is on. New drafts go live at their slot without waiting for you. Approved 1 waiting draft now.",
+      "at": "2026-10-23T05:15:14+00:00"
     }
   ],
   "design_styles": {
@@ -1188,5 +1207,6 @@
       "on": true,
       "kind": "reel"
     }
-  ]
+  ],
+  "auto_approve": true
 }
