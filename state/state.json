@@ -264,6 +264,81 @@
       "publish_at": null,
       "reminded": false,
       "msg_ids": []
+    },
+    {
+      "id": "20261023-043701",
+      "kind": "reel",
+      "reel_format": "quiz",
+      "series": "Autopilot",
+      "number": 1,
+      "tag": "REEL#1",
+      "theme": "dark",
+      "style": null,
+      "topic": "AI agents vs automations: what each is good at in marketing",
+      "post": {
+        "topic": "AI agents vs automations",
+        "principle": "Task specialization in marketing tech",
+        "hook": "What handles creative tweaks best?",
+        "slides": [
+          "What handles creative tweaks best?",
+          "A. AI agents with contextual memory  (answer)",
+          "B. Rule-based automations",
+          "Why: Agents adapt tone to audience cues",
+          "Why: Automations follow static rules only"
+        ],
+        "takeaway": "",
+        "caption": "AI agents read the room, automations keep the lights on. When you need a copy tweak that feels personal, let the agent decide. For bulk email sends or lead routing, a simple automation wins every time.\n\nPick the right tool, skip the trial-and-error, and keep your funnel humming.\n\nSave this quick decision cheat-sheet. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingpsychology",
+          "#automation",
+          "#AIagents",
+          "#growthhacks",
+          "#founderlife",
+          "#smallbiz",
+          "#nocode"
+        ],
+        "fact_check": [
+          {
+            "claim": "AI agents can adapt tone to audience cues using contextual memory",
+            "source": "McKinsey & Company, 2023, \"The rise of generative AI in marketing\"",
+            "confidence": "high"
+          },
+          {
+            "claim": "Rule‑based automations follow static rules only",
+            "source": "Thomas H. Davenport, 2020, \"Automation at work\" Harvard Business Review",
+            "confidence": "high"
+          }
+        ],
+        "kind": "reel",
+        "format": "reel:quiz",
+        "model": "groq:openai/gpt-oss-120b"
+      },
+      "script": {
+        "question": "What handles creative tweaks best?",
+        "options": [
+          "AI agents with contextual memory",
+          "Rule-based automations"
+        ],
+        "answer": 0,
+        "why": [
+          "Agents adapt tone to audience cues",
+          "Automations follow static rules only"
+        ]
+      },
+      "caption": "AI agents read the room, automations keep the lights on. When you need a copy tweak that feels personal, let the agent decide. For bulk email sends or lead routing, a simple automation wins every time.\n\nPick the right tool, skip the trial-and-error, and keep your funnel humming.\n\nSave this quick decision cheat-sheet. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #automation #AIagents #growthhacks #founderlife #smallbiz #nocode",
+      "images": [
+        "posts/20261023-043701/01.jpg"
+      ],
+      "created_at": "2026-10-23T04:37:12+00:00",
+      "reel": "posts/20261023-043701/reel.mp4",
+      "reel_v": 2,
+      "status": "awaiting",
+      "approved_parts": [],
+      "backlog_line": "[Autopilot] AI agents vs automations: what each is good at in marketing",
+      "slot": "slot2",
+      "slot_at": "2026-10-23T16:00:00+00:00",
+      "publish_at": null,
+      "reminded": false
     }
   ],
   "merged_seeds": [
@@ -582,6 +657,11 @@
       "at": "2026-10-23T04:35:58+00:00",
       "job": "6. App action",
       "text": "App: Posting twice a day from now on: 6:00 pm and 9:30 pm IST. The morning job writes drafts for the new slot, or tap Write a draft now on Today."
+    },
+    {
+      "at": "2026-10-23T04:37:12+00:00",
+      "job": "6. App action",
+      "text": "App: New draft ready: REEL#1 (Task specialization in marketing tech) for 9:30 pm IST today. Have a look and approve it."
     }
   ],
   "app_requests": [
@@ -845,6 +925,15 @@
       "ok": true,
       "message": "Posting twice a day from now on: 6:00 pm and 9:30 pm IST. The morning job writes drafts for the new slot, or tap Write a draft now on Today.",
       "at": "2026-10-23T04:35:58+00:00"
+    },
+    {
+      "id": "mvkh9sxz6wyyku",
+      "action": "new",
+      "draft_id": "",
+      "new_draft_id": "20261023-043701",
+      "ok": true,
+      "message": "New draft ready: REEL#1 (Task specialization in marketing tech) for 9:30 pm IST today. Have a look and approve it.",
+      "at": "2026-10-23T04:37:12+00:00"
     }
   ],
   "design_styles": {
