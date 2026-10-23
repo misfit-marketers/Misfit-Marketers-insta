@@ -140,7 +140,7 @@
       "note": ""
     },
     {
-      "id": "20261022-153403",
+      "id": "20261023-043738",
       "series": "AIPsych",
       "number": 1,
       "tag": "AIPSYCH#1",
@@ -245,16 +245,16 @@
       },
       "caption": "AI can boost speed, but a single glitch erodes trust faster than any human slip. People expect transparency and a safety net when machines make mistakes.\n\nBlend AI with real people: let a live agent step in, and clearly flag AI limits. That simple combo keeps confidence high and keeps your funnel flowing.\n\nSave this for when you roll out AI features. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #algorithmaversion #AItrust #customerexperience #brandstrategy #UXdesign #founderinsights",
       "images": [
-        "posts/20261022-153403/01.jpg",
-        "posts/20261022-153403/02.jpg",
-        "posts/20261022-153403/03.jpg",
-        "posts/20261022-153403/04.jpg",
-        "posts/20261022-153403/05.jpg",
-        "posts/20261022-153403/06.jpg",
-        "posts/20261022-153403/07.jpg"
+        "posts/20261023-043738/01.jpg",
+        "posts/20261023-043738/02.jpg",
+        "posts/20261023-043738/03.jpg",
+        "posts/20261023-043738/04.jpg",
+        "posts/20261023-043738/05.jpg",
+        "posts/20261023-043738/06.jpg",
+        "posts/20261023-043738/07.jpg"
       ],
       "created_at": "2026-10-22T15:34:31+00:00",
-      "reel": "posts/20261022-153403/reel.mp4",
+      "reel": "posts/20261023-043738/reel.mp4",
       "reel_v": 2,
       "status": "awaiting",
       "approved_parts": [],
@@ -662,6 +662,11 @@
       "at": "2026-10-23T04:37:12+00:00",
       "job": "6. App action",
       "text": "App: New draft ready: REEL#1 (Task specialization in marketing tech) for 9:30 pm IST today. Have a look and approve it."
+    },
+    {
+      "at": "2026-10-23T04:37:58+00:00",
+      "job": "6. App action",
+      "text": "App: AIPsych now uses the Poster style. Redrew 1 waiting draft."
     }
   ],
   "app_requests": [
@@ -934,6 +939,15 @@
       "ok": true,
       "message": "New draft ready: REEL#1 (Task specialization in marketing tech) for 9:30 pm IST today. Have a look and approve it.",
       "at": "2026-10-23T04:37:12+00:00"
+    },
+    {
+      "id": "mvkhafom0w33zx",
+      "action": "styles_set",
+      "draft_id": "",
+      "new_draft_id": "",
+      "ok": true,
+      "message": "AIPsych now uses the Poster style. Redrew 1 waiting draft.",
+      "at": "2026-10-23T04:37:58+00:00"
     }
   ],
   "design_styles": {
@@ -942,6 +956,10 @@
       "accent": "#FF4D2E"
     },
     "MarketersAssemble": {
+      "style": "poster",
+      "accent": "#FF4D2E"
+    },
+    "AIPsych": {
       "style": "poster",
       "accent": "#FF4D2E"
     }
