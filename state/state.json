@@ -667,6 +667,11 @@
       "at": "2026-10-23T04:37:58+00:00",
       "job": "6. App action",
       "text": "App: AIPsych now uses the Poster style. Redrew 1 waiting draft."
+    },
+    {
+      "at": "2026-10-23T04:38:27+00:00",
+      "job": "6. App action",
+      "text": "App: Autopilot now uses the Notebook style. New drafts will use it."
     }
   ],
   "app_requests": [
@@ -948,6 +953,15 @@
       "ok": true,
       "message": "AIPsych now uses the Poster style. Redrew 1 waiting draft.",
       "at": "2026-10-23T04:37:58+00:00"
+    },
+    {
+      "id": "mvkhalzs277zry",
+      "action": "styles_set",
+      "draft_id": "",
+      "new_draft_id": "",
+      "ok": true,
+      "message": "Autopilot now uses the Notebook style. New drafts will use it.",
+      "at": "2026-10-23T04:38:27+00:00"
     }
   ],
   "design_styles": {
@@ -962,6 +976,10 @@
     "AIPsych": {
       "style": "poster",
       "accent": "#FF4D2E"
+    },
+    "Autopilot": {
+      "style": "notebook",
+      "accent": "#F5C842"
     }
   },
   "account": {
