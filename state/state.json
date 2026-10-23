@@ -256,14 +256,18 @@
       "created_at": "2026-10-22T15:34:31+00:00",
       "reel": "posts/20261023-043738/reel.mp4",
       "reel_v": 2,
-      "status": "awaiting",
-      "approved_parts": [],
+      "status": "approved",
+      "approved_parts": [
+        "carousel"
+      ],
       "backlog_line": "[AIPsych] Algorithm aversion: why people forgive a human's mistake but not an AI's",
       "slot": "slot1",
       "slot_at": "2026-10-24T12:30:00+00:00",
-      "publish_at": null,
+      "publish_at": "2026-10-24T12:30:00+00:00",
       "reminded": false,
-      "msg_ids": []
+      "msg_ids": [],
+      "approved_at": "2026-10-23T04:41:49+00:00",
+      "note": ""
     },
     {
       "id": "20261023-043701",
@@ -760,6 +764,11 @@
       "at": "2026-10-23T04:41:20+00:00",
       "job": "6. App action",
       "text": "App: New draft ready: REEL#2 (Scarcity) for 9:30 pm IST tomorrow. Have a look and approve it."
+    },
+    {
+      "at": "2026-10-23T04:41:49+00:00",
+      "job": "6. App action",
+      "text": "App: Approved the carousel of AIPSYCH#1 (Algorithm aversion). Goes live at 6:00 pm IST tomorrow. The Reel still needs your approval."
     }
   ],
   "app_requests": [
@@ -1068,6 +1077,15 @@
       "ok": true,
       "message": "New draft ready: REEL#2 (Scarcity) for 9:30 pm IST tomorrow. Have a look and approve it.",
       "at": "2026-10-23T04:41:20+00:00"
+    },
+    {
+      "id": "mvkhf0u13qu7rr",
+      "action": "approve",
+      "draft_id": "20261023-043738",
+      "new_draft_id": "20261023-043738",
+      "ok": true,
+      "message": "Approved the carousel of AIPSYCH#1 (Algorithm aversion). Goes live at 6:00 pm IST tomorrow. The Reel still needs your approval.",
+      "at": "2026-10-23T04:41:49+00:00"
     }
   ],
   "design_styles": {
