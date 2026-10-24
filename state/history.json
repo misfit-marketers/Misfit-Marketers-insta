@@ -178,7 +178,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T10:27:36+00:00"
+      "updated_at": "2026-10-24T08:37:16+00:00"
     }
   },
   {
@@ -232,7 +232,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T10:27:38+00:00"
+      "updated_at": "2026-10-24T08:37:18+00:00"
     }
   },
   {
@@ -299,7 +299,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T10:27:39+00:00"
+      "updated_at": "2026-10-24T08:37:19+00:00"
     }
   },
   {
@@ -357,7 +357,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-24T06:13:23+00:00"
+      "updated_at": "2026-10-24T08:37:20+00:00"
     },
     "reel_stats": {
       "views": 71,
@@ -369,7 +369,7 @@
       "total_interactions": 5,
       "ig_reels_avg_watch_time": 2771,
       "ig_reels_video_view_total_time": 174574,
-      "updated_at": "2026-10-24T06:13:24+00:00"
+      "updated_at": "2026-10-24T08:37:21+00:00"
     }
   },
   {
@@ -411,7 +411,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-24T06:13:25+00:00"
+      "updated_at": "2026-10-24T08:37:23+00:00"
     },
     "reel_stats": {
       "views": 84,
@@ -423,7 +423,7 @@
       "total_interactions": 8,
       "ig_reels_avg_watch_time": 4472,
       "ig_reels_video_view_total_time": 326457,
-      "updated_at": "2026-10-24T06:13:26+00:00"
+      "updated_at": "2026-10-24T08:37:24+00:00"
     }
   },
   {
@@ -465,7 +465,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-24T06:13:27+00:00"
+      "updated_at": "2026-10-24T08:37:26+00:00"
     },
     "reel_stats": {
       "views": 10,
@@ -477,7 +477,7 @@
       "total_interactions": 7,
       "ig_reels_avg_watch_time": 10423,
       "ig_reels_video_view_total_time": 72961,
-      "updated_at": "2026-10-24T06:13:28+00:00"
+      "updated_at": "2026-10-24T08:37:27+00:00"
     }
   },
   {
@@ -497,15 +497,15 @@
     "reel_format": "quiz",
     "stats": {
       "views": 7,
-      "reach": 4,
+      "reach": 5,
       "likes": 2,
       "comments": 2,
       "saved": 0,
       "shares": 3,
       "total_interactions": 7,
-      "ig_reels_avg_watch_time": 9404,
-      "ig_reels_video_view_total_time": 47023,
-      "updated_at": "2026-10-24T06:13:29+00:00"
+      "ig_reels_avg_watch_time": 7948,
+      "ig_reels_video_view_total_time": 47690,
+      "updated_at": "2026-10-24T08:37:28+00:00"
     }
   }
 ]
