@@ -1,6 +1,6 @@
 {
   "last_update_id": 825911675,
-  "last_theme": "light",
+  "last_theme": "dark",
   "series_counters": {
     "MarketingTip": 11,
     "BrandBreakdown": 4,
@@ -221,6 +221,220 @@
         "site": "Pixabay"
       },
       "approved_at": "2026-10-23T05:15:14+00:00",
+      "note": "Approved automatically (Auto-approve is on).",
+      "auto_approved": true
+    },
+    {
+      "id": "20261024-013143",
+      "series": "Autopilot",
+      "number": 1,
+      "tag": "AUTOPILOT#1",
+      "theme": "dark",
+      "style": null,
+      "topic": "A lead pipeline that scores, routes and follows up on its own",
+      "post": {
+        "topic": "Automated Lead Scoring Pipeline",
+        "principle": "Automation",
+        "hook": "Your lead pipeline still needs manual clicks",
+        "slides": [
+          "- **Before:** manual score sheet\n- Teams enter lead data by hand\n- Mistakes pile up fast",
+          "- **Cost:** lost hours daily\n- Inconsistent grades hurt nurture\n- Missed revenue from delayed follow-up",
+          "- **After:** form submit → Zapier → HubSpot → email\n- **Trigger-action** chain runs instantly\n- Leads get real-time score and route",
+          "- **Setup tip:** use Google Sheets as a buffer\n- **Zapier trap:** over-complicate with too many steps\n- Keep one clean path for scoring",
+          "- **Try this:** connect website form to Make, add ChatGPT scoring, push to CRM\n- Keep a human review for high-value leads\n- **Save this** for your next lead automation rollout"
+        ],
+        "save_reason": "for your next lead automation rollout",
+        "caption": "Stop wasting hours on spreadsheets. A webhook can turn a form submit into a scored, routed lead in seconds.\n\nPlug a simple AI scorer into your CRM and let the system do the heavy lifting. Keep a human eye on the big tickets, and you’ll move faster than ever.\n\nSave this for your next lead automation rollout. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingautomation",
+          "#leadscoring",
+          "#nocode",
+          "#zapier",
+          "#make",
+          "#hubspot",
+          "#founders"
+        ],
+        "fact_check": [],
+        "takeaway": "- Comment **PSYCHOLOGY**\n- I'll DM you my marketing playbook, free",
+        "format": "bullets",
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "lead pipeline still",
+            "emoji": [
+              "📈"
+            ],
+            "subtitle": "",
+            "note": ""
+          },
+          "slides": [
+            {
+              "heading": "Manual **chaos**",
+              "emoji": "📉",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "⏰",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "Instant **automation**",
+              "emoji": "⚡",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "🧩",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "✅",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Lead automation cheat",
+            "emoji": "🚀",
+            "note": ""
+          },
+          "for": "c9d3c3e7b0ef",
+          "style": "notebook",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Stop wasting hours on spreadsheets. A webhook can turn a form submit into a scored, routed lead in seconds.\n\nPlug a simple AI scorer into your CRM and let the system do the heavy lifting. Keep a human eye on the big tickets, and you’ll move faster than ever.\n\nSave this for your next lead automation rollout. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingautomation #leadscoring #nocode #zapier #make #hubspot #founders",
+      "images": [
+        "posts/20261024-013143/01.jpg",
+        "posts/20261024-013143/02.jpg",
+        "posts/20261024-013143/03.jpg",
+        "posts/20261024-013143/04.jpg",
+        "posts/20261024-013143/05.jpg",
+        "posts/20261024-013143/06.jpg",
+        "posts/20261024-013143/07.jpg"
+      ],
+      "created_at": "2026-10-24T01:32:23+00:00",
+      "reel": "posts/20261024-013143/reel.mp4",
+      "reel_v": 2,
+      "status": "approved",
+      "approved_parts": [
+        "carousel",
+        "reel"
+      ],
+      "backlog_line": "[Autopilot] A lead pipeline that scores, routes and follows up on its own",
+      "slot": "slot1",
+      "slot_at": "2026-10-25T12:30:00+00:00",
+      "publish_at": "2026-10-25T12:30:00+00:00",
+      "reminded": false,
+      "msg_ids": [],
+      "approved_at": "2026-10-24T01:32:23+00:00",
+      "note": "Approved automatically (Auto-approve is on).",
+      "auto_approved": true
+    },
+    {
+      "id": "20261024-013225",
+      "kind": "reel",
+      "reel_format": "mockui",
+      "series": "BrandBreakdown",
+      "number": 3,
+      "tag": "REEL#3",
+      "theme": "dark",
+      "style": null,
+      "topic": "Duolingo streaks: how loss aversion keeps millions practicing daily",
+      "post": {
+        "topic": "Duolingo streaks",
+        "principle": "Endowment Effect",
+        "hook": "Screen: product",
+        "slides": [
+          "Screen: product",
+          "Circle badge: Endowment cue",
+          "Circle stock: Scarcity push",
+          "Your streak feels owned.",
+          "Break it, you lose value."
+        ],
+        "takeaway": "",
+        "caption": "We decoded why a tiny $4.99 boost locks users into daily practice. The streak becomes a personal asset, so the fear of losing it spikes usage. Minimal design, maximal grip.\nMarketers, designers, founders, tap into ownership to boost retention.\n\nSave this psychology cheat. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingpsychology",
+          "#behavioraldevelopment",
+          "#userretention",
+          "#growthhacking",
+          "#psychologytips",
+          "#designstrategy"
+        ],
+        "fact_check": [
+          {
+            "claim": "Endowment effect makes people value owned items more than identical unowned items",
+            "source": "Kahneman, Knetsch, and Thaler, 1990, Journal of Economic Perspectives",
+            "confidence": "high"
+          },
+          {
+            "claim": "Loss aversion drives higher engagement when a streak can be broken",
+            "source": "Tversky & Kahneman, 1991, Psychological Review",
+            "confidence": "high"
+          }
+        ],
+        "kind": "reel",
+        "format": "reel:mockui",
+        "model": "groq:openai/gpt-oss-120b"
+      },
+      "script": {
+        "screen": "product",
+        "brand": "LinguaLift",
+        "heading": "Your daily streak",
+        "product": "Streak Booster",
+        "price": "$4.99",
+        "emoji": "🔥",
+        "button": "Activate",
+        "badge": "7‑day lock",
+        "stock": "Only 1 boost left",
+        "viewers": "12 users watching",
+        "timer": "Ends in 02:13",
+        "callouts": [
+          {
+            "target": "badge",
+            "text": "Endowment cue"
+          },
+          {
+            "target": "stock",
+            "text": "Scarcity push"
+          }
+        ],
+        "lines": [
+          "Your streak feels owned.",
+          "Break it, you lose value."
+        ]
+      },
+      "caption": "We decoded why a tiny $4.99 boost locks users into daily practice. The streak becomes a personal asset, so the fear of losing it spikes usage. Minimal design, maximal grip.\nMarketers, designers, founders, tap into ownership to boost retention.\n\nSave this psychology cheat. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #behavioraldevelopment #userretention #growthhacking #psychologytips #designstrategy",
+      "images": [
+        "posts/20261024-013225/01.jpg"
+      ],
+      "created_at": "2026-10-24T01:32:38+00:00",
+      "reel": "posts/20261024-013225/reel.mp4",
+      "reel_v": 2,
+      "status": "approved",
+      "approved_parts": [
+        "reel"
+      ],
+      "backlog_line": "[BrandBreakdown] Duolingo streaks: how loss aversion keeps millions practicing daily",
+      "slot": "slot2",
+      "slot_at": "2026-10-25T16:00:00+00:00",
+      "publish_at": "2026-10-25T16:00:00+00:00",
+      "reminded": false,
+      "approved_at": "2026-10-24T01:32:38+00:00",
       "note": "Approved automatically (Auto-approve is on).",
       "auto_approved": true
     }
@@ -591,6 +805,26 @@
       "at": "2026-10-23T16:00:59+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Live on Instagram: REEL#1 (Task specialization in marketing tech)\nhttps://www.instagram.com/reel/De17_plgDy0/"
+    },
+    {
+      "at": "2026-10-24T01:32:38+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: AUTOPILOT#1 (Automation) for 6:00 pm IST tomorrow"
+    },
+    {
+      "at": "2026-10-24T01:32:38+00:00",
+      "job": "1. Write a new draft",
+      "text": "Approved the carousel and the Reel of AUTOPILOT#1 (Automation). Goes live at 6:00 pm IST tomorrow.\nTap Post now if you want it up straight away."
+    },
+    {
+      "at": "2026-10-24T01:32:38+00:00",
+      "job": "1. Write a new draft",
+      "text": "New Mock app screen Reel ready: REEL#3 (Endowment Effect) for 9:30 pm IST tomorrow. Watch it in the app and approve it."
+    },
+    {
+      "at": "2026-10-24T01:32:38+00:00",
+      "job": "1. Write a new draft",
+      "text": "Approved the Reel of REEL#3 (Endowment Effect). Goes live at 9:30 pm IST tomorrow.\nTap Post now if you want it up straight away."
     }
   ],
   "app_requests": [
