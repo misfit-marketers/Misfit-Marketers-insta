@@ -535,5 +535,21 @@
       "profile_activity": 0,
       "updated_at": "2026-10-24T15:36:46+00:00"
     }
+  },
+  {
+    "id": "20261023-045023",
+    "series": "MarketingTip",
+    "number": 2,
+    "tag": "REEL#2",
+    "topic": "Scarcity: why \"only 3 left\" makes us want it more",
+    "slot": "slot2",
+    "principle": "Scarcity Effect",
+    "at": "2026-10-24T16:06:17+00:00",
+    "status": "posted",
+    "posted_at": "2026-10-24T16:06:17+00:00",
+    "ig_media_id": "18095607785662110",
+    "permalink": "https://www.instagram.com/reel/De4hZXMGJR9/",
+    "format": "reel",
+    "reel_format": "stock"
   }
 ]
