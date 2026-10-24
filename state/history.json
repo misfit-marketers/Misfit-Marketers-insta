@@ -507,5 +507,20 @@
       "ig_reels_video_view_total_time": 47690,
       "updated_at": "2026-10-24T11:04:44+00:00"
     }
+  },
+  {
+    "id": "20261023-043738",
+    "series": "AIPsych",
+    "number": 1,
+    "tag": "AIPSYCH#1",
+    "topic": "Algorithm aversion: why people forgive a human's mistake but not an AI's",
+    "slot": "slot1",
+    "principle": "Algorithm aversion",
+    "at": "2026-10-24T12:31:05+00:00",
+    "status": "posted",
+    "posted_at": "2026-10-24T12:31:05+00:00",
+    "ig_media_id": "18169672066493095",
+    "permalink": "https://www.instagram.com/p/De4IzAXmzDu/",
+    "format": "carousel"
   }
 ]

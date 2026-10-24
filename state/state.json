@@ -7,139 +7,10 @@
     "CopyClinic": 3,
     "MythOrMagic": 3,
     "PsychInTheWild": 3,
-    "MarketersAssemble": 3
+    "MarketersAssemble": 3,
+    "AIPsych": 2
   },
   "drafts": [
-    {
-      "id": "20261023-043738",
-      "series": "AIPsych",
-      "number": 1,
-      "tag": "AIPSYCH#1",
-      "theme": "light",
-      "style": null,
-      "topic": "Algorithm aversion: why people forgive a human's mistake but not an AI's",
-      "post": {
-        "topic": "Algorithm aversion",
-        "principle": "Algorithm aversion",
-        "hook": "Humans forgive mistakes, AI doesn't",
-        "slides": [
-          "- **Everyday AI:** Chatbot misreads a request\n- User sees error instantly\n- Frustration spikes faster than with a human",
-          "- **The principle:** **Algorithm aversion**\n- People trust their own errors more\n- Trust drops 30% after a single AI slip (Dietvorst et al., 2015)",
-          "- **Why it hits:** Responsibility is clear\n- AI is seen as a cold system\n- Errors feel intentional, not accidental",
-          "- **Marketer move:** Add a human fallback\n- Show “Chat with a specialist” option\n- Explain AI limits openly to soften blame",
-          "- **Takeaway:** Pair AI with human touch\n- Test fallback flow before full launch\n- **Save this** for when you roll out AI features"
-        ],
-        "save_reason": "for when you roll out AI features",
-        "caption": "AI can boost speed, but a single glitch erodes trust faster than any human slip. People expect transparency and a safety net when machines make mistakes.\n\nBlend AI with real people: let a live agent step in, and clearly flag AI limits. That simple combo keeps confidence high and keeps your funnel flowing.\n\nSave this for when you roll out AI features. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
-        "hashtags": [
-          "#marketingpsychology",
-          "#algorithmaversion",
-          "#AItrust",
-          "#customerexperience",
-          "#brandstrategy",
-          "#UXdesign",
-          "#founderinsights"
-        ],
-        "fact_check": [
-          {
-            "claim": "Trust drops 30% after a single AI slip (Dietvorst et al., 2015)",
-            "source": "Dietvorst, B., Simmons, J.P., & Massey, C., 2015, Journal of Consumer Research",
-            "confidence": "high"
-          },
-          {
-            "claim": "People trust their own errors more than AI errors",
-            "source": "Same study, observed higher forgiveness for human mistakes",
-            "confidence": "high"
-          }
-        ],
-        "takeaway": "- Comment **PSYCHOLOGY**\n- I'll DM you my marketing playbook, free",
-        "format": "bullets",
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "AI doesn't",
-            "emoji": [
-              "🧠",
-              "💡"
-            ],
-            "subtitle": "",
-            "note": ""
-          },
-          "slides": [
-            {
-              "heading": "Instant **frustration**",
-              "emoji": "⚡",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "📉",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "❓",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "🤝",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Save** this",
-              "emoji": "📌",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "AI + humans",
-            "emoji": "🤝",
-            "note": ""
-          },
-          "for": "9c4f43f85c8e",
-          "style": "poster",
-          "source": "ai",
-          "note": "",
-          "v": 2
-        }
-      },
-      "caption": "AI can boost speed, but a single glitch erodes trust faster than any human slip. People expect transparency and a safety net when machines make mistakes.\n\nBlend AI with real people: let a live agent step in, and clearly flag AI limits. That simple combo keeps confidence high and keeps your funnel flowing.\n\nSave this for when you roll out AI features. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #algorithmaversion #AItrust #customerexperience #brandstrategy #UXdesign #founderinsights",
-      "images": [
-        "posts/20261023-043738/01.jpg",
-        "posts/20261023-043738/02.jpg",
-        "posts/20261023-043738/03.jpg",
-        "posts/20261023-043738/04.jpg",
-        "posts/20261023-043738/05.jpg",
-        "posts/20261023-043738/06.jpg",
-        "posts/20261023-043738/07.jpg"
-      ],
-      "created_at": "2026-10-22T15:34:31+00:00",
-      "reel": "posts/20261023-043738/reel.mp4",
-      "reel_v": 2,
-      "status": "approved",
-      "approved_parts": [
-        "carousel"
-      ],
-      "backlog_line": "[AIPsych] Algorithm aversion: why people forgive a human's mistake but not an AI's",
-      "slot": "slot1",
-      "slot_at": "2026-10-24T12:30:00+00:00",
-      "publish_at": "2026-10-24T12:30:00+00:00",
-      "reminded": false,
-      "msg_ids": [],
-      "approved_at": "2026-10-23T04:41:49+00:00",
-      "note": ""
-    },
     {
       "id": "20261023-045023",
       "kind": "reel",
@@ -825,6 +696,11 @@
       "at": "2026-10-24T01:32:38+00:00",
       "job": "1. Write a new draft",
       "text": "Approved the Reel of REEL#3 (Endowment Effect). Goes live at 9:30 pm IST tomorrow.\nTap Post now if you want it up straight away."
+    },
+    {
+      "at": "2026-10-24T12:31:06+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Live on Instagram: AIPSYCH#1 (Algorithm aversion)\nhttps://www.instagram.com/p/De4IzAXmzDu/\nThe Reel wasn't approved, so only the carousel went up."
     }
   ],
   "app_requests": [
