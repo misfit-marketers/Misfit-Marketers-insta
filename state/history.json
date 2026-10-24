@@ -327,7 +327,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-23T12:30:18+00:00"
+      "updated_at": "2026-10-24T11:04:33+00:00"
     }
   },
   {
@@ -357,7 +357,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-24T08:37:20+00:00"
+      "updated_at": "2026-10-24T11:04:34+00:00"
     },
     "reel_stats": {
       "views": 71,
@@ -369,7 +369,7 @@
       "total_interactions": 5,
       "ig_reels_avg_watch_time": 2771,
       "ig_reels_video_view_total_time": 174574,
-      "updated_at": "2026-10-24T08:37:21+00:00"
+      "updated_at": "2026-10-24T11:04:35+00:00"
     }
   },
   {
@@ -411,7 +411,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-24T08:37:23+00:00"
+      "updated_at": "2026-10-24T11:04:37+00:00"
     },
     "reel_stats": {
       "views": 84,
@@ -423,7 +423,7 @@
       "total_interactions": 8,
       "ig_reels_avg_watch_time": 4472,
       "ig_reels_video_view_total_time": 326457,
-      "updated_at": "2026-10-24T08:37:24+00:00"
+      "updated_at": "2026-10-24T11:04:39+00:00"
     }
   },
   {
@@ -455,7 +455,7 @@
     "reel_media_id": "17920234005495694",
     "reel_permalink": "https://www.instagram.com/reel/De1kDqSD_xM/",
     "stats": {
-      "views": 13,
+      "views": 17,
       "reach": 2,
       "likes": 1,
       "comments": 2,
@@ -465,7 +465,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-24T08:37:26+00:00"
+      "updated_at": "2026-10-24T11:04:41+00:00"
     },
     "reel_stats": {
       "views": 10,
@@ -477,7 +477,7 @@
       "total_interactions": 7,
       "ig_reels_avg_watch_time": 10423,
       "ig_reels_video_view_total_time": 72961,
-      "updated_at": "2026-10-24T08:37:27+00:00"
+      "updated_at": "2026-10-24T11:04:42+00:00"
     }
   },
   {
@@ -505,7 +505,7 @@
       "total_interactions": 7,
       "ig_reels_avg_watch_time": 7948,
       "ig_reels_video_view_total_time": 47690,
-      "updated_at": "2026-10-24T08:37:28+00:00"
+      "updated_at": "2026-10-24T11:04:44+00:00"
     }
   }
 ]
