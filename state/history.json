@@ -151,7 +151,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-24T15:36:35+00:00"
+      "updated_at": "2026-10-25T13:48:56+00:00"
     }
   },
   {
@@ -205,7 +205,7 @@
       "profile_visits": 1,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-24T15:36:37+00:00"
+      "updated_at": "2026-10-25T13:48:58+00:00"
     }
   },
   {
@@ -465,7 +465,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-25T11:41:58+00:00"
+      "updated_at": "2026-10-25T13:49:01+00:00"
     },
     "reel_stats": {
       "views": 10,
@@ -477,7 +477,7 @@
       "total_interactions": 7,
       "ig_reels_avg_watch_time": 10423,
       "ig_reels_video_view_total_time": 72961,
-      "updated_at": "2026-10-25T11:41:59+00:00"
+      "updated_at": "2026-10-25T13:49:03+00:00"
     }
   },
   {
@@ -505,7 +505,7 @@
       "total_interactions": 7,
       "ig_reels_avg_watch_time": 7948,
       "ig_reels_video_view_total_time": 47690,
-      "updated_at": "2026-10-25T11:42:00+00:00"
+      "updated_at": "2026-10-25T13:49:06+00:00"
     }
   },
   {
@@ -533,7 +533,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-25T11:42:01+00:00"
+      "updated_at": "2026-10-25T13:49:09+00:00"
     }
   },
   {
@@ -553,7 +553,7 @@
     "reel_format": "stock",
     "stats": {
       "note": "insights permission missing",
-      "updated_at": "2026-10-25T11:42:02+00:00"
+      "updated_at": "2026-10-25T13:49:09+00:00"
     }
   },
   {
@@ -571,6 +571,31 @@
     "permalink": "https://www.instagram.com/p/De6tmlLG8gq/",
     "format": "both",
     "reel_media_id": "17970059922183767",
-    "reel_permalink": "https://www.instagram.com/reel/De6torIEZnr/"
+    "reel_permalink": "https://www.instagram.com/reel/De6torIEZnr/",
+    "stats": {
+      "views": 3,
+      "reach": 1,
+      "likes": 1,
+      "comments": 0,
+      "saved": 0,
+      "shares": 0,
+      "total_interactions": 1,
+      "profile_visits": 1,
+      "follows": 0,
+      "profile_activity": 0,
+      "updated_at": "2026-10-25T13:49:12+00:00"
+    },
+    "reel_stats": {
+      "views": 2,
+      "reach": 1,
+      "likes": 1,
+      "comments": 0,
+      "saved": 1,
+      "shares": 2,
+      "total_interactions": 4,
+      "ig_reels_avg_watch_time": 27446,
+      "ig_reels_video_view_total_time": 54892,
+      "updated_at": "2026-10-25T13:49:14+00:00"
+    }
   }
 ]
