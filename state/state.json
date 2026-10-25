@@ -13,100 +13,6 @@
   },
   "drafts": [
     {
-      "id": "20261024-013225",
-      "kind": "reel",
-      "reel_format": "mockui",
-      "series": "BrandBreakdown",
-      "number": 3,
-      "tag": "REEL#3",
-      "theme": "dark",
-      "style": null,
-      "topic": "Duolingo streaks: how loss aversion keeps millions practicing daily",
-      "post": {
-        "topic": "Duolingo streaks",
-        "principle": "Endowment Effect",
-        "hook": "Screen: product",
-        "slides": [
-          "Screen: product",
-          "Circle badge: Endowment cue",
-          "Circle stock: Scarcity push",
-          "Your streak feels owned.",
-          "Break it, you lose value."
-        ],
-        "takeaway": "",
-        "caption": "We decoded why a tiny $4.99 boost locks users into daily practice. The streak becomes a personal asset, so the fear of losing it spikes usage. Minimal design, maximal grip.\nMarketers, designers, founders, tap into ownership to boost retention.\n\nSave this psychology cheat. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
-        "hashtags": [
-          "#marketingpsychology",
-          "#behavioraldevelopment",
-          "#userretention",
-          "#growthhacking",
-          "#psychologytips",
-          "#designstrategy"
-        ],
-        "fact_check": [
-          {
-            "claim": "Endowment effect makes people value owned items more than identical unowned items",
-            "source": "Kahneman, Knetsch, and Thaler, 1990, Journal of Economic Perspectives",
-            "confidence": "high"
-          },
-          {
-            "claim": "Loss aversion drives higher engagement when a streak can be broken",
-            "source": "Tversky & Kahneman, 1991, Psychological Review",
-            "confidence": "high"
-          }
-        ],
-        "kind": "reel",
-        "format": "reel:mockui",
-        "model": "groq:openai/gpt-oss-120b"
-      },
-      "script": {
-        "screen": "product",
-        "brand": "LinguaLift",
-        "heading": "Your daily streak",
-        "product": "Streak Booster",
-        "price": "$4.99",
-        "emoji": "🔥",
-        "button": "Activate",
-        "badge": "7‑day lock",
-        "stock": "Only 1 boost left",
-        "viewers": "12 users watching",
-        "timer": "Ends in 02:13",
-        "callouts": [
-          {
-            "target": "badge",
-            "text": "Endowment cue"
-          },
-          {
-            "target": "stock",
-            "text": "Scarcity push"
-          }
-        ],
-        "lines": [
-          "Your streak feels owned.",
-          "Break it, you lose value."
-        ]
-      },
-      "caption": "We decoded why a tiny $4.99 boost locks users into daily practice. The streak becomes a personal asset, so the fear of losing it spikes usage. Minimal design, maximal grip.\nMarketers, designers, founders, tap into ownership to boost retention.\n\nSave this psychology cheat. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #behavioraldevelopment #userretention #growthhacking #psychologytips #designstrategy",
-      "images": [
-        "posts/20261024-013225/01.jpg"
-      ],
-      "created_at": "2026-10-24T01:32:38+00:00",
-      "reel": "posts/20261024-013225/reel.mp4",
-      "reel_v": 2,
-      "status": "approved",
-      "approved_parts": [
-        "reel"
-      ],
-      "backlog_line": "[BrandBreakdown] Duolingo streaks: how loss aversion keeps millions practicing daily",
-      "slot": "slot2",
-      "slot_at": "2026-10-25T16:00:00+00:00",
-      "publish_at": "2026-10-25T16:00:00+00:00",
-      "reminded": false,
-      "approved_at": "2026-10-24T01:32:38+00:00",
-      "note": "Approved automatically (Auto-approve is on).",
-      "auto_approved": true
-    },
-    {
       "id": "20261025-012442",
       "series": "AIPsych",
       "number": 2,
@@ -320,11 +226,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-16T01:23:15+00:00",
-      "job": "1. Write a new draft",
-      "text": "New draft ready for review: MYTHORMAGIC#1 (Paradox of Choice) for 7:30 pm IST today"
-    },
     {
       "at": "2026-10-16T01:23:15+00:00",
       "job": "1. Write a new draft",
@@ -719,6 +620,11 @@
       "at": "2026-10-25T12:31:55+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Live on Instagram: AUTOPILOT#1 (Automation)\nhttps://www.instagram.com/p/De6tmlLG8gq/\nReel: https://www.instagram.com/reel/De6torIEZnr/"
+    },
+    {
+      "at": "2026-10-25T16:06:39+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "Live on Instagram: REEL#3 (Endowment Effect)\nhttps://www.instagram.com/reel/De7GOlpjYZ6/"
     }
   ],
   "app_requests": [
@@ -1078,9 +984,9 @@
     "followers": 89,
     "posts": 26,
     "username": "misfit_marketers",
-    "updated_at": "2026-10-25T13:49:15+00:00"
+    "updated_at": "2026-10-25T16:06:04+00:00"
   },
-  "stats_checked_at": "2026-10-25T13:49:15+00:00",
+  "stats_checked_at": "2026-10-25T16:06:04+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
@@ -1177,5 +1083,5 @@
     }
   ],
   "auto_approve": true,
-  "reel_counter": 3
+  "reel_counter": 4
 }
