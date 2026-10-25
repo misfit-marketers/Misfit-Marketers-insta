@@ -32,7 +32,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-24T22:20:53+00:00"
+      "updated_at": "2026-10-25T20:47:59+00:00"
     }
   },
   {
@@ -59,7 +59,7 @@
       "profile_visits": 2,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-24T22:20:56+00:00"
+      "updated_at": "2026-10-25T20:48:01+00:00"
     }
   },
   {
@@ -86,7 +86,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-24T22:20:59+00:00"
+      "updated_at": "2026-10-25T20:48:03+00:00"
     }
   },
   {
@@ -465,7 +465,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-25T18:30:35+00:00"
+      "updated_at": "2026-10-25T20:48:04+00:00"
     },
     "reel_stats": {
       "views": 10,
@@ -477,7 +477,7 @@
       "total_interactions": 7,
       "ig_reels_avg_watch_time": 10423,
       "ig_reels_video_view_total_time": 72961,
-      "updated_at": "2026-10-25T18:30:37+00:00"
+      "updated_at": "2026-10-25T20:48:06+00:00"
     }
   },
   {
@@ -505,7 +505,7 @@
       "total_interactions": 7,
       "ig_reels_avg_watch_time": 7948,
       "ig_reels_video_view_total_time": 47690,
-      "updated_at": "2026-10-25T18:30:39+00:00"
+      "updated_at": "2026-10-25T20:48:07+00:00"
     }
   },
   {
@@ -533,7 +533,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-25T18:30:41+00:00"
+      "updated_at": "2026-10-25T20:48:09+00:00"
     }
   },
   {
@@ -553,7 +553,7 @@
     "reel_format": "stock",
     "stats": {
       "note": "insights permission missing",
-      "updated_at": "2026-10-25T18:30:41+00:00"
+      "updated_at": "2026-10-25T20:48:09+00:00"
     }
   },
   {
@@ -583,19 +583,19 @@
       "profile_visits": 1,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-25T18:30:43+00:00"
+      "updated_at": "2026-10-25T20:48:11+00:00"
     },
     "reel_stats": {
-      "views": 2,
-      "reach": 1,
+      "views": 4,
+      "reach": 3,
       "likes": 1,
       "comments": 0,
       "saved": 1,
       "shares": 2,
       "total_interactions": 4,
-      "ig_reels_avg_watch_time": 27446,
-      "ig_reels_video_view_total_time": 54892,
-      "updated_at": "2026-10-25T18:30:45+00:00"
+      "ig_reels_avg_watch_time": 14893,
+      "ig_reels_video_view_total_time": 59575,
+      "updated_at": "2026-10-25T20:48:13+00:00"
     }
   },
   {
@@ -614,16 +614,16 @@
     "format": "reel",
     "reel_format": "mockui",
     "stats": {
-      "views": 3,
-      "reach": 2,
+      "views": 8,
+      "reach": 4,
       "likes": 2,
       "comments": 0,
       "saved": 0,
-      "shares": 0,
-      "total_interactions": 2,
-      "ig_reels_avg_watch_time": 11918,
-      "ig_reels_video_view_total_time": 23836,
-      "updated_at": "2026-10-25T18:30:46+00:00"
+      "shares": 3,
+      "total_interactions": 5,
+      "ig_reels_avg_watch_time": 10863,
+      "ig_reels_video_view_total_time": 43453,
+      "updated_at": "2026-10-25T20:48:14+00:00"
     }
   }
 ]
