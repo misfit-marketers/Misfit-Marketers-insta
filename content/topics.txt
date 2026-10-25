@@ -136,7 +136,6 @@ The self-reference effect: why "you" copy is remembered better
 [AIPsych] Choice overload and AI shopping assistants
 [AIPsych] Why AI-perfect copy can feel cold, and how to add friction back
 [AIPsych] Social proof in the age of AI-generated reviews
-[Autopilot] A lead pipeline that scores, routes and follows up on its own
 [Autopilot] The 3-step funnel you can automate in an afternoon
 [Autopilot] Capture website leads straight into your CRM with a form and a webhook
 [Autopilot] Speed to lead: auto-reply to new leads within 5 minutes, without sounding like a bot

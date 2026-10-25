@@ -8,129 +8,10 @@
     "MythOrMagic": 3,
     "PsychInTheWild": 3,
     "MarketersAssemble": 3,
-    "AIPsych": 2
+    "AIPsych": 2,
+    "Autopilot": 2
   },
   "drafts": [
-    {
-      "id": "20261024-013143",
-      "series": "Autopilot",
-      "number": 1,
-      "tag": "AUTOPILOT#1",
-      "theme": "dark",
-      "style": null,
-      "topic": "A lead pipeline that scores, routes and follows up on its own",
-      "post": {
-        "topic": "Automated Lead Scoring Pipeline",
-        "principle": "Automation",
-        "hook": "Your lead pipeline still needs manual clicks",
-        "slides": [
-          "- **Before:** manual score sheet\n- Teams enter lead data by hand\n- Mistakes pile up fast",
-          "- **Cost:** lost hours daily\n- Inconsistent grades hurt nurture\n- Missed revenue from delayed follow-up",
-          "- **After:** form submit → Zapier → HubSpot → email\n- **Trigger-action** chain runs instantly\n- Leads get real-time score and route",
-          "- **Setup tip:** use Google Sheets as a buffer\n- **Zapier trap:** over-complicate with too many steps\n- Keep one clean path for scoring",
-          "- **Try this:** connect website form to Make, add ChatGPT scoring, push to CRM\n- Keep a human review for high-value leads\n- **Save this** for your next lead automation rollout"
-        ],
-        "save_reason": "for your next lead automation rollout",
-        "caption": "Stop wasting hours on spreadsheets. A webhook can turn a form submit into a scored, routed lead in seconds.\n\nPlug a simple AI scorer into your CRM and let the system do the heavy lifting. Keep a human eye on the big tickets, and you’ll move faster than ever.\n\nSave this for your next lead automation rollout. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
-        "hashtags": [
-          "#marketingautomation",
-          "#leadscoring",
-          "#nocode",
-          "#zapier",
-          "#make",
-          "#hubspot",
-          "#founders"
-        ],
-        "fact_check": [],
-        "takeaway": "- Comment **PSYCHOLOGY**\n- I'll DM you my marketing playbook, free",
-        "format": "bullets",
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "lead pipeline still",
-            "emoji": [
-              "📈"
-            ],
-            "subtitle": "",
-            "note": ""
-          },
-          "slides": [
-            {
-              "heading": "Manual **chaos**",
-              "emoji": "📉",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "⏰",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "Instant **automation**",
-              "emoji": "⚡",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "🧩",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "✅",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "Lead automation cheat",
-            "emoji": "🚀",
-            "note": ""
-          },
-          "for": "c9d3c3e7b0ef",
-          "style": "notebook",
-          "source": "ai",
-          "note": "",
-          "v": 2
-        }
-      },
-      "caption": "Stop wasting hours on spreadsheets. A webhook can turn a form submit into a scored, routed lead in seconds.\n\nPlug a simple AI scorer into your CRM and let the system do the heavy lifting. Keep a human eye on the big tickets, and you’ll move faster than ever.\n\nSave this for your next lead automation rollout. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingautomation #leadscoring #nocode #zapier #make #hubspot #founders",
-      "images": [
-        "posts/20261024-013143/01.jpg",
-        "posts/20261024-013143/02.jpg",
-        "posts/20261024-013143/03.jpg",
-        "posts/20261024-013143/04.jpg",
-        "posts/20261024-013143/05.jpg",
-        "posts/20261024-013143/06.jpg",
-        "posts/20261024-013143/07.jpg"
-      ],
-      "created_at": "2026-10-24T01:32:23+00:00",
-      "reel": "posts/20261024-013143/reel.mp4",
-      "reel_v": 2,
-      "status": "approved",
-      "approved_parts": [
-        "carousel",
-        "reel"
-      ],
-      "backlog_line": "[Autopilot] A lead pipeline that scores, routes and follows up on its own",
-      "slot": "slot1",
-      "slot_at": "2026-10-25T12:30:00+00:00",
-      "publish_at": "2026-10-25T12:30:00+00:00",
-      "reminded": false,
-      "msg_ids": [],
-      "approved_at": "2026-10-24T01:32:23+00:00",
-      "note": "Approved automatically (Auto-approve is on).",
-      "auto_approved": true
-    },
     {
       "id": "20261024-013225",
       "kind": "reel",
@@ -439,11 +320,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-15T22:00:55+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Posted COPYCLINIC#1 (Self‑Reference Effect)\nhttps://www.instagram.com/p/Deh-2t_GjHA/"
-    },
     {
       "at": "2026-10-16T01:23:15+00:00",
       "job": "1. Write a new draft",
@@ -838,6 +714,11 @@
       "at": "2026-10-25T01:25:16+00:00",
       "job": "1. Write a new draft",
       "text": "Approved the Reel of REEL#4 (Reciprocity). Goes live at 9:30 pm IST tomorrow.\nTap Post now if you want it up straight away."
+    },
+    {
+      "at": "2026-10-25T12:31:55+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Live on Instagram: AUTOPILOT#1 (Automation)\nhttps://www.instagram.com/p/De6tmlLG8gq/\nReel: https://www.instagram.com/reel/De6torIEZnr/"
     }
   ],
   "app_requests": [
