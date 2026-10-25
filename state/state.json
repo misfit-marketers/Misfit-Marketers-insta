@@ -1,6 +1,6 @@
 {
   "last_update_id": 825911675,
-  "last_theme": "dark",
+  "last_theme": "light",
   "series_counters": {
     "MarketingTip": 11,
     "BrandBreakdown": 4,
@@ -224,6 +224,207 @@
       "approved_at": "2026-10-24T01:32:38+00:00",
       "note": "Approved automatically (Auto-approve is on).",
       "auto_approved": true
+    },
+    {
+      "id": "20261025-012442",
+      "series": "AIPsych",
+      "number": 2,
+      "tag": "AIPSYCH#2",
+      "theme": "light",
+      "style": null,
+      "topic": "Automation bias: why we trust an AI answer more than we should",
+      "post": {
+        "topic": "Automation bias",
+        "principle": "Automation bias",
+        "hook": "Your AI answer is stealing trust",
+        "slides": [
+          "- **Hook:** AI sounds smarter than it is\n- Marketers flaunt algorithmic certainty\n- Readers accept it without question",
+          "- **Moment:** Chatbot solves query instantly\n- “Got it!” pops up, you nod\n- Speed feels like expertise",
+          "- **Principle:** **Automation bias** kicks in\n- People over-trust automated output\n- Errors become invisible",
+          "- **Why:** Brain links speed with accuracy\n- Cognitive load drops, confidence rises\n- Trust replaces scrutiny",
+          "- **Action:** Add a human sanity check\n- Flag AI-generated copy for review\n- **Save this** for your next AI workflow"
+        ],
+        "save_reason": "for your next AI workflow",
+        "caption": "AI can feel like a shortcut to certainty, but it also blinds us. When a chatbot answers in a flash, we assume it's right and skip the mental vetting. That's automation bias at work, the brain swaps effort for trust.\n\nUse this insight to build a safety net. Pair every AI-crafted message with a quick human audit, and you keep the speed without the blind spot.\n\nYour audience will thank you for the extra layer of reliability.\n\nSave this for your next AI workflow. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingpsychology",
+          "#automationbias",
+          "#AItrust",
+          "#copywriting",
+          "#founderTips",
+          "#designThinking",
+          "#growthHacking",
+          "#brandStrategy"
+        ],
+        "fact_check": [
+          {
+            "claim": "Automation bias causes people to over‑trust automated output",
+            "source": "Parasuraman, 2000, Human Factors",
+            "confidence": "high"
+          },
+          {
+            "claim": "Speed of response increases perceived accuracy",
+            "source": "Lee & See, 2004, Human Factors",
+            "confidence": "high"
+          }
+        ],
+        "takeaway": "- Comment **PSYCHOLOGY**\n- I'll DM you my marketing playbook, free",
+        "format": "bullets",
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "AI answer is",
+            "emoji": [
+              "🧠",
+              "⚡"
+            ],
+            "subtitle": "",
+            "note": ""
+          },
+          "slides": [
+            {
+              "heading": "False **confidence**",
+              "emoji": "💡",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Instant** answer",
+              "emoji": "⚡",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "🔍",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Speed** illusion",
+              "emoji": "📉",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "✅",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Trust checklist",
+            "emoji": "📌",
+            "note": ""
+          },
+          "for": "2baa08f6e434",
+          "style": "poster",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "AI can feel like a shortcut to certainty, but it also blinds us. When a chatbot answers in a flash, we assume it's right and skip the mental vetting. That's automation bias at work, the brain swaps effort for trust.\n\nUse this insight to build a safety net. Pair every AI-crafted message with a quick human audit, and you keep the speed without the blind spot.\n\nYour audience will thank you for the extra layer of reliability.\n\nSave this for your next AI workflow. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #automationbias #AItrust #copywriting #founderTips #designThinking #growthHacking #brandStrategy",
+      "images": [
+        "posts/20261025-012442/01.jpg",
+        "posts/20261025-012442/02.jpg",
+        "posts/20261025-012442/03.jpg",
+        "posts/20261025-012442/04.jpg",
+        "posts/20261025-012442/05.jpg",
+        "posts/20261025-012442/06.jpg",
+        "posts/20261025-012442/07.jpg"
+      ],
+      "created_at": "2026-10-25T01:25:08+00:00",
+      "reel": "posts/20261025-012442/reel.mp4",
+      "reel_v": 2,
+      "status": "approved",
+      "approved_parts": [
+        "carousel",
+        "reel"
+      ],
+      "backlog_line": "[AIPsych] Automation bias: why we trust an AI answer more than we should",
+      "slot": "slot1",
+      "slot_at": "2026-10-26T12:30:00+00:00",
+      "publish_at": "2026-10-26T12:30:00+00:00",
+      "reminded": false,
+      "msg_ids": [],
+      "approved_at": "2026-10-25T01:25:08+00:00",
+      "note": "Approved automatically (Auto-approve is on).",
+      "auto_approved": true
+    },
+    {
+      "id": "20261025-012510",
+      "kind": "reel",
+      "reel_format": "loop",
+      "series": "MarketingTip",
+      "number": 4,
+      "tag": "REEL#4",
+      "theme": "dark",
+      "style": null,
+      "topic": "Reciprocity: why giving something useful first makes people buy later",
+      "post": {
+        "topic": "Reciprocity",
+        "principle": "Reciprocity",
+        "hook": "Give value first, then watch the **buy** flood in.",
+        "slides": [
+          "Give value first, then watch the **buy** flood in."
+        ],
+        "takeaway": "",
+        "caption": "People feel obliged when you give them something useful, it's wired in the brain. A free tip, a cheat sheet, or a sample triggers a mental debt.\n\nMarketers who front-load value see higher conversion rates, especially when the gift is relevant and easy to use. Use it in emails, landing pages, or product demos and the purchase comes later.\n\nSave this quick conversion hack. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingpsychology",
+          "#reciprocity",
+          "#conversiontips",
+          "#founderlife",
+          "#designthinking",
+          "#growthhacking",
+          "#psychology",
+          "#branding"
+        ],
+        "fact_check": [
+          {
+            "claim": "Reciprocity is a well‑documented social norm where receiving a favor creates an obligation to return it.",
+            "source": "Cialdini, Robert B., 1993, Influence: The Psychology of Persuasion",
+            "confidence": "high"
+          },
+          {
+            "claim": "Free samples increase purchase likelihood by up to 20% in retail contexts.",
+            "source": "Cialdini, Robert B., 1993, Influence: The Psychology of Persuasion",
+            "confidence": "medium"
+          }
+        ],
+        "kind": "reel",
+        "format": "reel:loop",
+        "model": "groq:openai/gpt-oss-120b"
+      },
+      "script": {
+        "line": "Give value first, then watch the **buy** flood in."
+      },
+      "caption": "People feel obliged when you give them something useful, it's wired in the brain. A free tip, a cheat sheet, or a sample triggers a mental debt.\n\nMarketers who front-load value see higher conversion rates, especially when the gift is relevant and easy to use. Use it in emails, landing pages, or product demos and the purchase comes later.\n\nSave this quick conversion hack. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #reciprocity #conversiontips #founderlife #designthinking #growthhacking #psychology #branding",
+      "images": [
+        "posts/20261025-012510/01.jpg"
+      ],
+      "created_at": "2026-10-25T01:25:15+00:00",
+      "reel": "posts/20261025-012510/reel.mp4",
+      "reel_v": 2,
+      "status": "approved",
+      "approved_parts": [
+        "reel"
+      ],
+      "backlog_line": "Reciprocity: why giving something useful first makes people buy later",
+      "slot": "slot2",
+      "slot_at": "2026-10-26T16:00:00+00:00",
+      "publish_at": "2026-10-26T16:00:00+00:00",
+      "reminded": false,
+      "approved_at": "2026-10-25T01:25:15+00:00",
+      "note": "Approved automatically (Auto-approve is on).",
+      "auto_approved": true
     }
   ],
   "merged_seeds": [
@@ -238,11 +439,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-15T14:01:06+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Posted BRANDBREAKDOWN#1 (Contrast (or Decoy) Effect)\nhttps://www.instagram.com/p/DehH8iAlW10/"
-    },
     {
       "at": "2026-10-15T22:00:55+00:00",
       "job": "4. Post at the scheduled slots",
@@ -622,6 +818,26 @@
       "at": "2026-10-24T16:06:18+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "Live on Instagram: REEL#2 (Scarcity Effect)\nhttps://www.instagram.com/reel/De4hZXMGJR9/"
+    },
+    {
+      "at": "2026-10-25T01:25:16+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: AIPSYCH#2 (Automation bias) for 6:00 pm IST tomorrow"
+    },
+    {
+      "at": "2026-10-25T01:25:16+00:00",
+      "job": "1. Write a new draft",
+      "text": "Approved the carousel and the Reel of AIPSYCH#2 (Automation bias). Goes live at 6:00 pm IST tomorrow.\nTap Post now if you want it up straight away."
+    },
+    {
+      "at": "2026-10-25T01:25:16+00:00",
+      "job": "1. Write a new draft",
+      "text": "New 7-second loop Reel ready: REEL#4 (Reciprocity) for 9:30 pm IST tomorrow. Watch it in the app and approve it."
+    },
+    {
+      "at": "2026-10-25T01:25:16+00:00",
+      "job": "1. Write a new draft",
+      "text": "Approved the Reel of REEL#4 (Reciprocity). Goes live at 9:30 pm IST tomorrow.\nTap Post now if you want it up straight away."
     }
   ],
   "app_requests": [
