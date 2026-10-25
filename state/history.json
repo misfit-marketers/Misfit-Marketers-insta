@@ -465,7 +465,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-25T20:48:04+00:00"
+      "updated_at": "2026-10-25T22:53:10+00:00"
     },
     "reel_stats": {
       "views": 10,
@@ -477,7 +477,7 @@
       "total_interactions": 7,
       "ig_reels_avg_watch_time": 10423,
       "ig_reels_video_view_total_time": 72961,
-      "updated_at": "2026-10-25T20:48:06+00:00"
+      "updated_at": "2026-10-25T22:53:11+00:00"
     }
   },
   {
@@ -505,7 +505,7 @@
       "total_interactions": 7,
       "ig_reels_avg_watch_time": 7948,
       "ig_reels_video_view_total_time": 47690,
-      "updated_at": "2026-10-25T20:48:07+00:00"
+      "updated_at": "2026-10-25T22:53:12+00:00"
     }
   },
   {
@@ -533,7 +533,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-25T20:48:09+00:00"
+      "updated_at": "2026-10-25T22:53:14+00:00"
     }
   },
   {
@@ -553,7 +553,7 @@
     "reel_format": "stock",
     "stats": {
       "note": "insights permission missing",
-      "updated_at": "2026-10-25T20:48:09+00:00"
+      "updated_at": "2026-10-25T22:53:14+00:00"
     }
   },
   {
@@ -583,7 +583,7 @@
       "profile_visits": 1,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-25T20:48:11+00:00"
+      "updated_at": "2026-10-25T22:53:16+00:00"
     },
     "reel_stats": {
       "views": 4,
@@ -595,7 +595,7 @@
       "total_interactions": 4,
       "ig_reels_avg_watch_time": 14893,
       "ig_reels_video_view_total_time": 59575,
-      "updated_at": "2026-10-25T20:48:13+00:00"
+      "updated_at": "2026-10-25T22:53:17+00:00"
     }
   },
   {
@@ -615,7 +615,7 @@
     "reel_format": "mockui",
     "stats": {
       "views": 8,
-      "reach": 4,
+      "reach": 5,
       "likes": 2,
       "comments": 0,
       "saved": 0,
@@ -623,7 +623,7 @@
       "total_interactions": 5,
       "ig_reels_avg_watch_time": 10863,
       "ig_reels_video_view_total_time": 43453,
-      "updated_at": "2026-10-25T20:48:14+00:00"
+      "updated_at": "2026-10-25T22:53:19+00:00"
     }
   }
 ]
