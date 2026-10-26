@@ -126,7 +126,6 @@ The compromise effect: why the middle option wins so often
 The rhyme-as-reason effect: why slogans that rhyme feel more true
 The Barnum effect: why vague, personal-sounding messages feel accurate
 The self-reference effect: why "you" copy is remembered better
-[AIPsych] Automation bias: why we trust an AI answer more than we should
 [AIPsych] The uncanny valley of AI faces in ads
 [AIPsych] Why "written by AI" labels lower trust, and when they don't
 [AIPsych] Chatbots and reciprocity: why a helpful bot makes people buy

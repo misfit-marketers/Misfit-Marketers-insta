@@ -151,7 +151,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-25T13:48:56+00:00"
+      "updated_at": "2026-10-26T14:00:11+00:00"
     }
   },
   {
@@ -205,7 +205,7 @@
       "profile_visits": 1,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-25T13:48:58+00:00"
+      "updated_at": "2026-10-26T14:00:12+00:00"
     }
   },
   {
@@ -505,7 +505,7 @@
       "total_interactions": 7,
       "ig_reels_avg_watch_time": 7948,
       "ig_reels_video_view_total_time": 47690,
-      "updated_at": "2026-10-26T11:00:13+00:00"
+      "updated_at": "2026-10-26T14:00:13+00:00"
     }
   },
   {
@@ -533,7 +533,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-26T11:00:15+00:00"
+      "updated_at": "2026-10-26T14:00:14+00:00"
     }
   },
   {
@@ -553,7 +553,7 @@
     "reel_format": "stock",
     "stats": {
       "note": "insights permission missing",
-      "updated_at": "2026-10-26T11:00:15+00:00"
+      "updated_at": "2026-10-26T14:00:14+00:00"
     }
   },
   {
@@ -583,7 +583,7 @@
       "profile_visits": 1,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-26T11:00:16+00:00"
+      "updated_at": "2026-10-26T14:00:15+00:00"
     },
     "reel_stats": {
       "views": 5,
@@ -595,7 +595,7 @@
       "total_interactions": 4,
       "ig_reels_avg_watch_time": 12203,
       "ig_reels_video_view_total_time": 61018,
-      "updated_at": "2026-10-26T11:00:18+00:00"
+      "updated_at": "2026-10-26T14:00:17+00:00"
     }
   },
   {
@@ -623,7 +623,24 @@
       "total_interactions": 5,
       "ig_reels_avg_watch_time": 9619,
       "ig_reels_video_view_total_time": 57719,
-      "updated_at": "2026-10-26T11:00:19+00:00"
+      "updated_at": "2026-10-26T14:00:19+00:00"
     }
+  },
+  {
+    "id": "20261025-012442",
+    "series": "AIPsych",
+    "number": 2,
+    "tag": "AIPSYCH#2",
+    "topic": "Automation bias: why we trust an AI answer more than we should",
+    "slot": "slot1",
+    "principle": "Automation bias",
+    "at": "2026-10-26T14:01:32+00:00",
+    "status": "posted",
+    "posted_at": "2026-10-26T14:01:32+00:00",
+    "ig_media_id": "17881084587631367",
+    "permalink": "https://www.instagram.com/p/De9crFeFF1j/",
+    "format": "both",
+    "reel_media_id": "18229963276329567",
+    "reel_permalink": "https://www.instagram.com/reel/De9ctFnCH7p/"
   }
 ]

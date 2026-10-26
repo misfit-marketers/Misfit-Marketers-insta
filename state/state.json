@@ -8,143 +8,10 @@
     "MythOrMagic": 3,
     "PsychInTheWild": 3,
     "MarketersAssemble": 3,
-    "AIPsych": 2,
+    "AIPsych": 3,
     "Autopilot": 2
   },
   "drafts": [
-    {
-      "id": "20261025-012442",
-      "series": "AIPsych",
-      "number": 2,
-      "tag": "AIPSYCH#2",
-      "theme": "light",
-      "style": null,
-      "topic": "Automation bias: why we trust an AI answer more than we should",
-      "post": {
-        "topic": "Automation bias",
-        "principle": "Automation bias",
-        "hook": "Your AI answer is stealing trust",
-        "slides": [
-          "- **Hook:** AI sounds smarter than it is\n- Marketers flaunt algorithmic certainty\n- Readers accept it without question",
-          "- **Moment:** Chatbot solves query instantly\n- “Got it!” pops up, you nod\n- Speed feels like expertise",
-          "- **Principle:** **Automation bias** kicks in\n- People over-trust automated output\n- Errors become invisible",
-          "- **Why:** Brain links speed with accuracy\n- Cognitive load drops, confidence rises\n- Trust replaces scrutiny",
-          "- **Action:** Add a human sanity check\n- Flag AI-generated copy for review\n- **Save this** for your next AI workflow"
-        ],
-        "save_reason": "for your next AI workflow",
-        "caption": "AI can feel like a shortcut to certainty, but it also blinds us. When a chatbot answers in a flash, we assume it's right and skip the mental vetting. That's automation bias at work, the brain swaps effort for trust.\n\nUse this insight to build a safety net. Pair every AI-crafted message with a quick human audit, and you keep the speed without the blind spot.\n\nYour audience will thank you for the extra layer of reliability.\n\nSave this for your next AI workflow. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
-        "hashtags": [
-          "#marketingpsychology",
-          "#automationbias",
-          "#AItrust",
-          "#copywriting",
-          "#founderTips",
-          "#designThinking",
-          "#growthHacking",
-          "#brandStrategy"
-        ],
-        "fact_check": [
-          {
-            "claim": "Automation bias causes people to over‑trust automated output",
-            "source": "Parasuraman, 2000, Human Factors",
-            "confidence": "high"
-          },
-          {
-            "claim": "Speed of response increases perceived accuracy",
-            "source": "Lee & See, 2004, Human Factors",
-            "confidence": "high"
-          }
-        ],
-        "takeaway": "- Comment **PSYCHOLOGY**\n- I'll DM you my marketing playbook, free",
-        "format": "bullets",
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "AI answer is",
-            "emoji": [
-              "🧠",
-              "⚡"
-            ],
-            "subtitle": "",
-            "note": ""
-          },
-          "slides": [
-            {
-              "heading": "False **confidence**",
-              "emoji": "💡",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Instant** answer",
-              "emoji": "⚡",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "🔍",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Speed** illusion",
-              "emoji": "📉",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "✅",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "Trust checklist",
-            "emoji": "📌",
-            "note": ""
-          },
-          "for": "2baa08f6e434",
-          "style": "poster",
-          "source": "ai",
-          "note": "",
-          "v": 2
-        }
-      },
-      "caption": "AI can feel like a shortcut to certainty, but it also blinds us. When a chatbot answers in a flash, we assume it's right and skip the mental vetting. That's automation bias at work, the brain swaps effort for trust.\n\nUse this insight to build a safety net. Pair every AI-crafted message with a quick human audit, and you keep the speed without the blind spot.\n\nYour audience will thank you for the extra layer of reliability.\n\nSave this for your next AI workflow. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #automationbias #AItrust #copywriting #founderTips #designThinking #growthHacking #brandStrategy",
-      "images": [
-        "posts/20261025-012442/01.jpg",
-        "posts/20261025-012442/02.jpg",
-        "posts/20261025-012442/03.jpg",
-        "posts/20261025-012442/04.jpg",
-        "posts/20261025-012442/05.jpg",
-        "posts/20261025-012442/06.jpg",
-        "posts/20261025-012442/07.jpg"
-      ],
-      "created_at": "2026-10-25T01:25:08+00:00",
-      "reel": "posts/20261025-012442/reel.mp4",
-      "reel_v": 2,
-      "status": "approved",
-      "approved_parts": [
-        "carousel",
-        "reel"
-      ],
-      "backlog_line": "[AIPsych] Automation bias: why we trust an AI answer more than we should",
-      "slot": "slot1",
-      "slot_at": "2026-10-26T12:30:00+00:00",
-      "publish_at": "2026-10-26T12:30:00+00:00",
-      "reminded": false,
-      "msg_ids": [],
-      "approved_at": "2026-10-25T01:25:08+00:00",
-      "note": "Approved automatically (Auto-approve is on).",
-      "auto_approved": true
-    },
     {
       "id": "20261025-012510",
       "kind": "reel",
@@ -479,11 +346,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-16T09:46:11+00:00",
-      "job": "6. App action",
-      "text": "App: Approved. MYTHORMAGIC#1 (Emotion vs. logic in decision making) goes live at 7:30 pm IST today."
-    },
     {
       "at": "2026-10-16T09:47:40+00:00",
       "job": "6. App action",
@@ -878,6 +740,11 @@
       "at": "2026-10-26T01:34:54+00:00",
       "job": "1. Write a new draft",
       "text": "Approved the Reel of REEL#5 (Attention span perception). Goes live at 9:30 pm IST tomorrow.\nTap Post now if you want it up straight away."
+    },
+    {
+      "at": "2026-10-26T14:01:33+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "Live on Instagram: AIPSYCH#2 (Automation bias)\nhttps://www.instagram.com/p/De9crFeFF1j/\nReel: https://www.instagram.com/reel/De9ctFnCH7p/"
     }
   ],
   "app_requests": [
@@ -1237,9 +1104,9 @@
     "followers": 89,
     "posts": 26,
     "username": "misfit_marketers",
-    "updated_at": "2026-10-26T11:00:20+00:00"
+    "updated_at": "2026-10-26T14:00:19+00:00"
   },
-  "stats_checked_at": "2026-10-26T11:00:20+00:00",
+  "stats_checked_at": "2026-10-26T14:00:19+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
