@@ -1,6 +1,6 @@
 {
   "last_update_id": 825911675,
-  "last_theme": "light",
+  "last_theme": "dark",
   "series_counters": {
     "MarketingTip": 11,
     "BrandBreakdown": 4,
@@ -212,6 +212,259 @@
       "approved_at": "2026-10-25T01:25:15+00:00",
       "note": "Approved automatically (Auto-approve is on).",
       "auto_approved": true
+    },
+    {
+      "id": "20261026-013400",
+      "series": "CopyClinic",
+      "number": 3,
+      "tag": "COPYCLINIC#3",
+      "theme": "dark",
+      "style": null,
+      "topic": "\"20% off\" vs \"$20 off\": which discount format feels bigger, and when",
+      "post": {
+        "topic": "Discount Formatting",
+        "principle": "Magnitude Framing",
+        "hook": "Your discount looks smaller than it is",
+        "slides": [
+          "- **Before:** \"20% off\"\n- Vague percentage\n- No concrete dollar reference",
+          "- Percentages trigger **ratio bias**\n- Readers compare to unknown price\n- Discount feels abstract",
+          "- **The principle:** Magnitude Framing\n- Concrete numbers feel bigger\n- Brain evaluates absolute value first",
+          "- **After:** \"$20 off\"\n- Specific dollar amount\n- Instantly visualizable",
+          "- Dollar value creates **anchor strength**\n- Saves mental conversion effort\n- Perceived savings spike",
+          "- Apply **specific dollars** whenever price > $50\n- Test both formats on low-ticket items\n- **Save this** for your next promo copy"
+        ],
+        "save_reason": "for your next promo copy",
+        "caption": "Switching from a percentage to a dollar amount can instantly boost perceived value. The brain loves concrete numbers, $20 feels bigger than 20% when the original price is $100.\n\nWhen the price is low, percentages still work. Use magnitude framing wisely and watch your conversion lift.\n\nSave this for your next promo copy. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingpsychology",
+          "#copywriting",
+          "#discountstrategy",
+          "#branding",
+          "#founders",
+          "#design",
+          "#growthhacking"
+        ],
+        "fact_check": [
+          {
+            "claim": "Concrete numbers create stronger anchors than percentages",
+            "source": "Kahneman, 2011, Thinking, Fast and Slow",
+            "confidence": "high"
+          },
+          {
+            "claim": "Percentages trigger ratio bias, making discounts feel abstract",
+            "source": "Tversky & Kahneman, 1974, Judgment under Uncertainty",
+            "confidence": "medium"
+          }
+        ],
+        "takeaway": "- Comment **PSYCHOLOGY**\n- I'll DM you my marketing playbook, free",
+        "format": "bullets",
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "discount looks smaller",
+            "emoji": [
+              "💸",
+              "📈"
+            ],
+            "subtitle": "",
+            "note": ""
+          },
+          "slides": [
+            {
+              "heading": "**Vague** pricing",
+              "emoji": "❓",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "📊",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "💡",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Concrete** dollars",
+              "emoji": "💵",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Anchor** power",
+              "emoji": "📈",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Implementation** tip",
+              "emoji": "✅",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Save pricing cheat",
+            "emoji": "📌",
+            "note": ""
+          },
+          "for": "021d047a987a",
+          "style": "notebook",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Switching from a percentage to a dollar amount can instantly boost perceived value. The brain loves concrete numbers, $20 feels bigger than 20% when the original price is $100.\n\nWhen the price is low, percentages still work. Use magnitude framing wisely and watch your conversion lift.\n\nSave this for your next promo copy. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #copywriting #discountstrategy #branding #founders #design #growthhacking",
+      "images": [
+        "posts/20261026-013400/01.jpg",
+        "posts/20261026-013400/02.jpg",
+        "posts/20261026-013400/03.jpg",
+        "posts/20261026-013400/04.jpg",
+        "posts/20261026-013400/05.jpg",
+        "posts/20261026-013400/06.jpg",
+        "posts/20261026-013400/07.jpg",
+        "posts/20261026-013400/08.jpg"
+      ],
+      "created_at": "2026-10-26T01:34:33+00:00",
+      "reel": "posts/20261026-013400/reel.mp4",
+      "reel_v": 2,
+      "status": "approved",
+      "approved_parts": [
+        "carousel",
+        "reel"
+      ],
+      "backlog_line": "[CopyClinic] \"20% off\" vs \"$20 off\": which discount format feels bigger, and when",
+      "slot": "slot1",
+      "slot_at": "2026-10-27T12:30:00+00:00",
+      "publish_at": "2026-10-27T12:30:00+00:00",
+      "reminded": false,
+      "msg_ids": [],
+      "approved_at": "2026-10-26T01:34:33+00:00",
+      "note": "Approved automatically (Auto-approve is on).",
+      "auto_approved": true
+    },
+    {
+      "id": "20261026-013435",
+      "kind": "reel",
+      "reel_format": "chat",
+      "series": "MythOrMagic",
+      "number": 5,
+      "tag": "REEL#5",
+      "theme": "dark",
+      "style": null,
+      "topic": "\"Our attention span is shorter than a goldfish's\": where that claim came from",
+      "post": {
+        "topic": "Goldfish attention myth",
+        "principle": "Attention span perception",
+        "hook": "Alex: Everyone says our attention is shorter than a goldfish's.",
+        "slides": [
+          "Alex: Everyone says our attention is shorter than a goldfish's.",
+          "Us: That line traces back to a 2015 internet meme, not research.",
+          "Alex: So where did the goldfish number come from?",
+          "Us: A misquoted study on fish memory, not attention.",
+          "Alex: What does actual attention research show?",
+          "Us: Humans sustain focus about 15-20 minutes on a task.",
+          "Alex: That's far longer than a goldfish myth suggests.",
+          "Us: Use that reality to design longer, engaging content loops.",
+          "Lesson: Attention lasts minutes, not seconds."
+        ],
+        "takeaway": "",
+        "caption": "The goldfish story? Pure internet lore, not science. Real human attention spans hover around fifteen minutes, give or take. Knowing the truth lets you craft content that actually holds eyes, not just feeds hype.\n\nStop basing strategy on myths, lean on solid psychology.\n\nSave this myth-busting insight. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingpsychology",
+          "#attention",
+          "#mythbusting",
+          "#consumerbehavior",
+          "#design",
+          "#contentstrategy",
+          "#psychology",
+          "#mythorMagic"
+        ],
+        "fact_check": [
+          {
+            "claim": "Goldfish have a 3‑second memory and humans have 15‑20 minute sustained attention",
+            "source": "M. S. Gazzaniga, 2018, *Cognitive Neuroscience*, and various attention span studies 2010‑2020",
+            "confidence": "medium"
+          },
+          {
+            "claim": "The goldfish attention claim originated from a 2015 internet meme, not a scientific study",
+            "source": "Trace of meme origins on Snopes.com, 2021",
+            "confidence": "high"
+          }
+        ],
+        "kind": "reel",
+        "format": "reel:chat",
+        "model": "groq:openai/gpt-oss-120b"
+      },
+      "script": {
+        "contact": "Alex",
+        "role": "Freelance marketer",
+        "messages": [
+          {
+            "from": "them",
+            "text": "Everyone says our attention is shorter than a goldfish's."
+          },
+          {
+            "from": "me",
+            "text": "That line traces back to a 2015 internet meme, not research."
+          },
+          {
+            "from": "them",
+            "text": "So where did the goldfish number come from?"
+          },
+          {
+            "from": "me",
+            "text": "A misquoted study on fish memory, not attention."
+          },
+          {
+            "from": "them",
+            "text": "What does actual attention research show?"
+          },
+          {
+            "from": "me",
+            "text": "Humans sustain focus about 15-20 minutes on a task."
+          },
+          {
+            "from": "them",
+            "text": "That's far longer than a goldfish myth suggests."
+          },
+          {
+            "from": "me",
+            "text": "Use that reality to design longer, engaging content loops."
+          }
+        ],
+        "lesson": "Attention lasts minutes, not seconds."
+      },
+      "caption": "The goldfish story? Pure internet lore, not science. Real human attention spans hover around fifteen minutes, give or take. Knowing the truth lets you craft content that actually holds eyes, not just feeds hype.\n\nStop basing strategy on myths, lean on solid psychology.\n\nSave this myth-busting insight. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #attention #mythbusting #consumerbehavior #design #contentstrategy #psychology #mythorMagic",
+      "images": [
+        "posts/20261026-013435/01.jpg"
+      ],
+      "created_at": "2026-10-26T01:34:54+00:00",
+      "reel": "posts/20261026-013435/reel.mp4",
+      "reel_v": 2,
+      "status": "approved",
+      "approved_parts": [
+        "reel"
+      ],
+      "backlog_line": "[MythOrMagic] \"Our attention span is shorter than a goldfish's\": where that claim came from",
+      "slot": "slot2",
+      "slot_at": "2026-10-27T16:00:00+00:00",
+      "publish_at": "2026-10-27T16:00:00+00:00",
+      "reminded": false,
+      "approved_at": "2026-10-26T01:34:54+00:00",
+      "note": "Approved automatically (Auto-approve is on).",
+      "auto_approved": true
     }
   ],
   "merged_seeds": [
@@ -226,26 +479,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-16T01:23:15+00:00",
-      "job": "1. Write a new draft",
-      "text": "New draft ready for review: MARKETINGTIP#8 (Anchoring Effect) for 3:30 am IST tonight"
-    },
-    {
-      "at": "2026-10-16T06:01:57+00:00",
-      "job": "6. App action",
-      "text": "App: Removed the topic of MYTHORMAGIC#1 (Paradox of Choice) for good. Its slot is free: tap Write a draft to fill it."
-    },
-    {
-      "at": "2026-10-16T06:02:58+00:00",
-      "job": "6. App action",
-      "text": "App: New draft ready: MYTHORMAGIC#1 (Emotion vs. logic in decision making) for 7:30 pm IST today. Have a look and approve it."
-    },
-    {
-      "at": "2026-10-16T09:07:53+00:00",
-      "job": "6. App action",
-      "text": "App: Saved your edits and redrew the slides. Approve it when you're happy."
-    },
     {
       "at": "2026-10-16T09:46:11+00:00",
       "job": "6. App action",
@@ -625,6 +858,26 @@
       "at": "2026-10-25T16:06:39+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "Live on Instagram: REEL#3 (Endowment Effect)\nhttps://www.instagram.com/reel/De7GOlpjYZ6/"
+    },
+    {
+      "at": "2026-10-26T01:34:54+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: COPYCLINIC#3 (Magnitude Framing) for 6:00 pm IST tomorrow"
+    },
+    {
+      "at": "2026-10-26T01:34:54+00:00",
+      "job": "1. Write a new draft",
+      "text": "Approved the carousel and the Reel of COPYCLINIC#3 (Magnitude Framing). Goes live at 6:00 pm IST tomorrow.\nTap Post now if you want it up straight away."
+    },
+    {
+      "at": "2026-10-26T01:34:54+00:00",
+      "job": "1. Write a new draft",
+      "text": "New Text chat Reel ready: REEL#5 (Attention span perception) for 9:30 pm IST tomorrow. Watch it in the app and approve it."
+    },
+    {
+      "at": "2026-10-26T01:34:54+00:00",
+      "job": "1. Write a new draft",
+      "text": "Approved the Reel of REEL#5 (Attention span perception). Goes live at 9:30 pm IST tomorrow.\nTap Post now if you want it up straight away."
     }
   ],
   "app_requests": [
