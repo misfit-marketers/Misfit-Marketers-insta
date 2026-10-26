@@ -13,74 +13,6 @@
   },
   "drafts": [
     {
-      "id": "20261025-012510",
-      "kind": "reel",
-      "reel_format": "loop",
-      "series": "MarketingTip",
-      "number": 4,
-      "tag": "REEL#4",
-      "theme": "dark",
-      "style": null,
-      "topic": "Reciprocity: why giving something useful first makes people buy later",
-      "post": {
-        "topic": "Reciprocity",
-        "principle": "Reciprocity",
-        "hook": "Give value first, then watch the **buy** flood in.",
-        "slides": [
-          "Give value first, then watch the **buy** flood in."
-        ],
-        "takeaway": "",
-        "caption": "People feel obliged when you give them something useful, it's wired in the brain. A free tip, a cheat sheet, or a sample triggers a mental debt.\n\nMarketers who front-load value see higher conversion rates, especially when the gift is relevant and easy to use. Use it in emails, landing pages, or product demos and the purchase comes later.\n\nSave this quick conversion hack. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
-        "hashtags": [
-          "#marketingpsychology",
-          "#reciprocity",
-          "#conversiontips",
-          "#founderlife",
-          "#designthinking",
-          "#growthhacking",
-          "#psychology",
-          "#branding"
-        ],
-        "fact_check": [
-          {
-            "claim": "Reciprocity is a well‑documented social norm where receiving a favor creates an obligation to return it.",
-            "source": "Cialdini, Robert B., 1993, Influence: The Psychology of Persuasion",
-            "confidence": "high"
-          },
-          {
-            "claim": "Free samples increase purchase likelihood by up to 20% in retail contexts.",
-            "source": "Cialdini, Robert B., 1993, Influence: The Psychology of Persuasion",
-            "confidence": "medium"
-          }
-        ],
-        "kind": "reel",
-        "format": "reel:loop",
-        "model": "groq:openai/gpt-oss-120b"
-      },
-      "script": {
-        "line": "Give value first, then watch the **buy** flood in."
-      },
-      "caption": "People feel obliged when you give them something useful, it's wired in the brain. A free tip, a cheat sheet, or a sample triggers a mental debt.\n\nMarketers who front-load value see higher conversion rates, especially when the gift is relevant and easy to use. Use it in emails, landing pages, or product demos and the purchase comes later.\n\nSave this quick conversion hack. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #reciprocity #conversiontips #founderlife #designthinking #growthhacking #psychology #branding",
-      "images": [
-        "posts/20261025-012510/01.jpg"
-      ],
-      "created_at": "2026-10-25T01:25:15+00:00",
-      "reel": "posts/20261025-012510/reel.mp4",
-      "reel_v": 2,
-      "status": "approved",
-      "approved_parts": [
-        "reel"
-      ],
-      "backlog_line": "Reciprocity: why giving something useful first makes people buy later",
-      "slot": "slot2",
-      "slot_at": "2026-10-26T16:00:00+00:00",
-      "publish_at": "2026-10-26T16:00:00+00:00",
-      "reminded": false,
-      "approved_at": "2026-10-25T01:25:15+00:00",
-      "note": "Approved automatically (Auto-approve is on).",
-      "auto_approved": true
-    },
-    {
       "id": "20261026-013400",
       "series": "CopyClinic",
       "number": 3,
@@ -346,11 +278,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-16T09:47:40+00:00",
-      "job": "6. App action",
-      "text": "App: Approved. MARKETINGTIP#8 (Anchoring Effect) goes live at 3:30 am IST tonight."
-    },
     {
       "at": "2026-10-16T10:16:23+00:00",
       "job": "2. Check Telegram for approvals",
@@ -745,6 +672,11 @@
       "at": "2026-10-26T14:01:33+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "Live on Instagram: AIPSYCH#2 (Automation bias)\nhttps://www.instagram.com/p/De9crFeFF1j/\nReel: https://www.instagram.com/reel/De9ctFnCH7p/"
+    },
+    {
+      "at": "2026-10-26T16:01:13+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Live on Instagram: REEL#4 (Reciprocity)\nhttps://www.instagram.com/reel/De9qaTIHJwo/"
     }
   ],
   "app_requests": [
@@ -1102,11 +1034,11 @@
   },
   "account": {
     "followers": 89,
-    "posts": 26,
+    "posts": 27,
     "username": "misfit_marketers",
-    "updated_at": "2026-10-26T14:00:19+00:00"
+    "updated_at": "2026-10-26T16:00:42+00:00"
   },
-  "stats_checked_at": "2026-10-26T14:00:19+00:00",
+  "stats_checked_at": "2026-10-26T16:00:42+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
@@ -1222,5 +1154,5 @@
     }
   ],
   "auto_approve": true,
-  "reel_counter": 4
+  "reel_counter": 5
 }

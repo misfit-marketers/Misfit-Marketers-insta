@@ -2,7 +2,6 @@
 # Start a line with [MarketersAssemble] to make it a mindset post.
 # When this list runs out, the writer picks fresh topics on its own.
 # You can also add topics from Telegram with: /topic your idea
-Reciprocity: why giving something useful first makes people buy later
 The endowment effect: why free trials and "try at home" work
 Commitment and consistency: the foot-in-the-door technique
 The IKEA effect: why people value what they help create
