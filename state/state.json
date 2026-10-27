@@ -13,118 +13,6 @@
   },
   "drafts": [
     {
-      "id": "20261026-013435",
-      "kind": "reel",
-      "reel_format": "chat",
-      "series": "MythOrMagic",
-      "number": 5,
-      "tag": "REEL#5",
-      "theme": "dark",
-      "style": null,
-      "topic": "\"Our attention span is shorter than a goldfish's\": where that claim came from",
-      "post": {
-        "topic": "Goldfish attention myth",
-        "principle": "Attention span perception",
-        "hook": "Alex: Everyone says our attention is shorter than a goldfish's.",
-        "slides": [
-          "Alex: Everyone says our attention is shorter than a goldfish's.",
-          "Us: That line traces back to a 2015 internet meme, not research.",
-          "Alex: So where did the goldfish number come from?",
-          "Us: A misquoted study on fish memory, not attention.",
-          "Alex: What does actual attention research show?",
-          "Us: Humans sustain focus about 15-20 minutes on a task.",
-          "Alex: That's far longer than a goldfish myth suggests.",
-          "Us: Use that reality to design longer, engaging content loops.",
-          "Lesson: Attention lasts minutes, not seconds."
-        ],
-        "takeaway": "",
-        "caption": "The goldfish story? Pure internet lore, not science. Real human attention spans hover around fifteen minutes, give or take. Knowing the truth lets you craft content that actually holds eyes, not just feeds hype.\n\nStop basing strategy on myths, lean on solid psychology.\n\nSave this myth-busting insight. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
-        "hashtags": [
-          "#marketingpsychology",
-          "#attention",
-          "#mythbusting",
-          "#consumerbehavior",
-          "#design",
-          "#contentstrategy",
-          "#psychology",
-          "#mythorMagic"
-        ],
-        "fact_check": [
-          {
-            "claim": "Goldfish have a 3‑second memory and humans have 15‑20 minute sustained attention",
-            "source": "M. S. Gazzaniga, 2018, *Cognitive Neuroscience*, and various attention span studies 2010‑2020",
-            "confidence": "medium"
-          },
-          {
-            "claim": "The goldfish attention claim originated from a 2015 internet meme, not a scientific study",
-            "source": "Trace of meme origins on Snopes.com, 2021",
-            "confidence": "high"
-          }
-        ],
-        "kind": "reel",
-        "format": "reel:chat",
-        "model": "groq:openai/gpt-oss-120b"
-      },
-      "script": {
-        "contact": "Alex",
-        "role": "Freelance marketer",
-        "messages": [
-          {
-            "from": "them",
-            "text": "Everyone says our attention is shorter than a goldfish's."
-          },
-          {
-            "from": "me",
-            "text": "That line traces back to a 2015 internet meme, not research."
-          },
-          {
-            "from": "them",
-            "text": "So where did the goldfish number come from?"
-          },
-          {
-            "from": "me",
-            "text": "A misquoted study on fish memory, not attention."
-          },
-          {
-            "from": "them",
-            "text": "What does actual attention research show?"
-          },
-          {
-            "from": "me",
-            "text": "Humans sustain focus about 15-20 minutes on a task."
-          },
-          {
-            "from": "them",
-            "text": "That's far longer than a goldfish myth suggests."
-          },
-          {
-            "from": "me",
-            "text": "Use that reality to design longer, engaging content loops."
-          }
-        ],
-        "lesson": "Attention lasts minutes, not seconds."
-      },
-      "caption": "The goldfish story? Pure internet lore, not science. Real human attention spans hover around fifteen minutes, give or take. Knowing the truth lets you craft content that actually holds eyes, not just feeds hype.\n\nStop basing strategy on myths, lean on solid psychology.\n\nSave this myth-busting insight. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #attention #mythbusting #consumerbehavior #design #contentstrategy #psychology #mythorMagic",
-      "images": [
-        "posts/20261026-013435/01.jpg"
-      ],
-      "created_at": "2026-10-26T01:34:54+00:00",
-      "reel": "posts/20261026-013435/reel.mp4",
-      "reel_v": 2,
-      "status": "approved",
-      "approved_parts": [
-        "reel"
-      ],
-      "backlog_line": "[MythOrMagic] \"Our attention span is shorter than a goldfish's\": where that claim came from",
-      "slot": "slot2",
-      "slot_at": "2026-10-27T16:00:00+00:00",
-      "publish_at": "2026-10-27T16:00:00+00:00",
-      "reminded": false,
-      "approved_at": "2026-10-26T01:34:54+00:00",
-      "note": "Approved automatically (Auto-approve is on).",
-      "auto_approved": true
-    },
-    {
       "id": "20261027-013243",
       "series": "PsychInTheWild",
       "number": 3,
@@ -358,11 +246,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-16T14:33:50+00:00",
-      "job": "6. App action",
-      "text": "App: PsychInTheWild now uses the Notebook style. New drafts will use it."
-    },
     {
       "at": "2026-10-16T14:34:10+00:00",
       "job": "6. App action",
@@ -757,6 +640,11 @@
       "at": "2026-10-27T12:32:20+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Live on Instagram: COPYCLINIC#3 (Magnitude Framing)\nhttps://www.instagram.com/p/De_3NXwkQ8N/\nReel: https://www.instagram.com/reel/De_3P7aD3Ss/"
+    },
+    {
+      "at": "2026-10-27T16:00:54+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Live on Instagram: REEL#5 (Attention span perception)\nhttps://www.instagram.com/reel/DfAPKNVIHgd/"
     }
   ],
   "app_requests": [
@@ -1262,5 +1150,5 @@
     }
   ],
   "auto_approve": false,
-  "reel_counter": 5
+  "reel_counter": 6
 }

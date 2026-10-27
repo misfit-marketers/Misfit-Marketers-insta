@@ -737,5 +737,21 @@
       "ig_reels_video_view_total_time": 5001,
       "updated_at": "2026-10-27T14:52:56+00:00"
     }
+  },
+  {
+    "id": "20261026-013435",
+    "series": "MythOrMagic",
+    "number": 5,
+    "tag": "REEL#5",
+    "topic": "\"Our attention span is shorter than a goldfish's\": where that claim came from",
+    "slot": "slot2",
+    "principle": "Attention span perception",
+    "at": "2026-10-27T16:00:53+00:00",
+    "status": "posted",
+    "posted_at": "2026-10-27T16:00:53+00:00",
+    "ig_media_id": "17973892185153442",
+    "permalink": "https://www.instagram.com/reel/DfAPKNVIHgd/",
+    "format": "reel",
+    "reel_format": "chat"
   }
 ]
