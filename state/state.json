@@ -1,6 +1,6 @@
 {
   "last_update_id": 825911675,
-  "last_theme": "dark",
+  "last_theme": "light",
   "series_counters": {
     "MarketingTip": 11,
     "BrandBreakdown": 4,
@@ -264,6 +264,227 @@
       "approved_at": "2026-10-26T01:34:54+00:00",
       "note": "Approved automatically (Auto-approve is on).",
       "auto_approved": true
+    },
+    {
+      "id": "20261027-013243",
+      "series": "PsychInTheWild",
+      "number": 3,
+      "tag": "PSYCHINTHEWILD#3",
+      "theme": "light",
+      "style": null,
+      "topic": "Surge pricing: why paying more feels worse when you see the multiplier",
+      "post": {
+        "topic": "Surge Pricing Multiplier",
+        "principle": "Multiplier Effect",
+        "hook": "Paying more hurts when you see the multiplier",
+        "slides": [
+          "- **Moment:** You open DoorDash, see $12 fare\n- Then a **3× surge** flashes, price jumps to $36\n- Heart rate spikes, you stare at the screen",
+          "- **Brain:** It treats the **multiplier** as loss\n- Relative increase feels bigger than absolute cost\n- **Loss aversion** kicks in instantly",
+          "- **Why:** Humans compare ratios, not raw numbers\n- A 300% jump triggers stronger emotional reaction\n- Studies show ratio framing amplifies perceived unfairness",
+          "- **Ethical play:** Show original price **before** surge\n- Highlight saved amount when surge ends\n- Transparency keeps trust while using the effect",
+          "- **Takeaway:** Use multiplier framing **sparingly**\n- A/B test impact before full rollout\n- **Save this** for your next pricing experiment"
+        ],
+        "save_reason": "for your next pricing experiment",
+        "caption": "Surge pricing isn’t just a higher number, it’s a psychological multiplier that magnifies loss perception. When a rider sees a 3× surge, the brain reacts far stronger than to a flat $24 increase.\n\nLeverage this by being transparent: show the base fare, then the multiplier, and always highlight the eventual discount when the surge drops. Test it, keep it honest, and watch conversion lift.\n\nRemember, the power lies in the ratio, not the dollar amount.\n\nSave this for your next pricing experiment. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingpsychology",
+          "#pricingstrategy",
+          "#surgepricing",
+          "#behaviormarketing",
+          "#founderlife",
+          "#designthinking",
+          "#growthhacking",
+          "#consumerinsights"
+        ],
+        "fact_check": [
+          {
+            "claim": "Loss aversion causes stronger reaction to relative increases than absolute costs",
+            "source": "Kahneman & Tversky, 1979, Prospect Theory",
+            "confidence": "high"
+          },
+          {
+            "claim": "Ratio framing amplifies perceived unfairness",
+            "source": "Research on framing effects, 2010s, various journals",
+            "confidence": "medium"
+          }
+        ],
+        "takeaway": "- Comment **PSYCHOLOGY**\n- I'll DM you my marketing playbook, free",
+        "format": "bullets",
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "Paying more hurts",
+            "emoji": [
+              "💸"
+            ],
+            "subtitle": "",
+            "note": ""
+          },
+          "slides": [
+            {
+              "heading": "Surge **shock**",
+              "emoji": "🚀",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Loss** signal",
+              "emoji": "💡",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Ratio** bias",
+              "emoji": "📈",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "✅",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "🧠",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Pricing cheat sheet",
+            "emoji": "📌",
+            "note": ""
+          },
+          "for": "42c3ec8336af",
+          "style": "notebook",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Surge pricing isn’t just a higher number, it’s a psychological multiplier that magnifies loss perception. When a rider sees a 3× surge, the brain reacts far stronger than to a flat $24 increase.\n\nLeverage this by being transparent: show the base fare, then the multiplier, and always highlight the eventual discount when the surge drops. Test it, keep it honest, and watch conversion lift.\n\nRemember, the power lies in the ratio, not the dollar amount.\n\nSave this for your next pricing experiment. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #pricingstrategy #surgepricing #behaviormarketing #founderlife #designthinking #growthhacking #consumerinsights",
+      "images": [
+        "posts/20261027-013243/01.jpg",
+        "posts/20261027-013243/02.jpg",
+        "posts/20261027-013243/03.jpg",
+        "posts/20261027-013243/04.jpg",
+        "posts/20261027-013243/05.jpg",
+        "posts/20261027-013243/06.jpg",
+        "posts/20261027-013243/07.jpg"
+      ],
+      "created_at": "2026-10-27T01:33:27+00:00",
+      "reel": "posts/20261027-013243/reel.mp4",
+      "reel_v": 2,
+      "status": "approved",
+      "approved_parts": [
+        "carousel",
+        "reel"
+      ],
+      "backlog_line": "[PsychInTheWild] Surge pricing: why paying more feels worse when you see the multiplier",
+      "slot": "slot1",
+      "slot_at": "2026-10-28T12:30:00+00:00",
+      "publish_at": "2026-10-28T12:30:00+00:00",
+      "reminded": false,
+      "msg_ids": [],
+      "approved_at": "2026-10-27T01:33:27+00:00",
+      "note": "Approved automatically (Auto-approve is on).",
+      "auto_approved": true
+    },
+    {
+      "id": "20261027-013329",
+      "kind": "reel",
+      "reel_format": "list",
+      "series": "AIPsych",
+      "number": 6,
+      "tag": "REEL#6",
+      "theme": "dark",
+      "style": null,
+      "topic": "The uncanny valley of AI faces in ads",
+      "post": {
+        "topic": "Uncanny Valley in Ad Faces",
+        "principle": "Uncanny Valley",
+        "hook": "3 AI face traps hurting ads",
+        "slides": [
+          "3 AI face traps hurting ads",
+          "1. Too perfect: Hyper-real looks trigger **discomfort** in viewers",
+          "2. Almost human: Near-human eyes create **unease** and lower click-through",
+          "3. Static stare: Lack of micro-expressions feels **fake**, drops recall"
+        ],
+        "takeaway": "",
+        "caption": "AI can make ad faces look flawless, until they cross the uncanny valley. That tiny flicker of oddness is enough to make a consumer pull back. \n\nKnow the sweet spot: natural micro-expressions, imperfect texture, and a hint of humanity. Keep your AI-generated creatives in the comfort zone.\n\nSave this quick sanity check. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingpsychology",
+          "#AIinMarketing",
+          "#UncannyValley",
+          "#AdDesign",
+          "#BrandTrust",
+          "#ConsumerBehavior",
+          "#DesignTips"
+        ],
+        "fact_check": [
+          {
+            "claim": "The uncanny valley describes discomfort toward near‑human artificial faces",
+            "source": "Mori, 1970, Energy, 1970",
+            "confidence": "high"
+          },
+          {
+            "claim": "Near‑human eyes create unease and lower click‑through rates",
+            "source": "Schmidt et al., 2022, Journal of Advertising Research",
+            "confidence": "medium"
+          },
+          {
+            "claim": "Lack of micro‑expressions reduces recall of ads",
+            "source": "Krumhuber & Kappas, 2020, Frontiers in Psychology",
+            "confidence": "medium"
+          }
+        ],
+        "kind": "reel",
+        "format": "reel:list",
+        "model": "groq:openai/gpt-oss-120b"
+      },
+      "script": {
+        "title": "3 AI face traps hurting ads",
+        "items": [
+          {
+            "head": "Too perfect",
+            "sub": "Hyper-real looks trigger **discomfort** in viewers"
+          },
+          {
+            "head": "Almost human",
+            "sub": "Near-human eyes create **unease** and lower click-through"
+          },
+          {
+            "head": "Static stare",
+            "sub": "Lack of micro-expressions feels **fake**, drops recall"
+          }
+        ]
+      },
+      "caption": "AI can make ad faces look flawless, until they cross the uncanny valley. That tiny flicker of oddness is enough to make a consumer pull back. \n\nKnow the sweet spot: natural micro-expressions, imperfect texture, and a hint of humanity. Keep your AI-generated creatives in the comfort zone.\n\nSave this quick sanity check. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #AIinMarketing #UncannyValley #AdDesign #BrandTrust #ConsumerBehavior #DesignTips",
+      "images": [
+        "posts/20261027-013329/01.jpg"
+      ],
+      "created_at": "2026-10-27T01:33:38+00:00",
+      "reel": "posts/20261027-013329/reel.mp4",
+      "reel_v": 2,
+      "status": "approved",
+      "approved_parts": [
+        "reel"
+      ],
+      "backlog_line": "[AIPsych] The uncanny valley of AI faces in ads",
+      "slot": "slot2",
+      "slot_at": "2026-10-28T16:00:00+00:00",
+      "publish_at": "2026-10-28T16:00:00+00:00",
+      "reminded": false,
+      "approved_at": "2026-10-27T01:33:38+00:00",
+      "note": "Approved automatically (Auto-approve is on).",
+      "auto_approved": true
     }
   ],
   "merged_seeds": [
@@ -278,26 +499,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-16T10:16:23+00:00",
-      "job": "2. Check Telegram for approvals",
-      "text": "Redrawn. MYTHORMAGIC#1 (Emotion vs. logic in decision making) is still scheduled for 7:30 pm IST today."
-    },
-    {
-      "at": "2026-10-16T10:16:23+00:00",
-      "job": "2. Check Telegram for approvals",
-      "text": "Redrawn. MARKETINGTIP#8 (Anchoring Effect) is still scheduled for 3:30 am IST tonight."
-    },
-    {
-      "at": "2026-10-16T13:40:19+00:00",
-      "job": "6. App action",
-      "text": "App: Redesigned MYTHORMAGIC#1 (Emotion vs. logic in decision making) in the Essay style. It's still scheduled for 7:30 pm IST today."
-    },
-    {
-      "at": "2026-10-16T13:57:49+00:00",
-      "job": "6. App action",
-      "text": "App: Redesigned MYTHORMAGIC#1 (Emotion vs. logic in decision making) in the Essay style. It's still scheduled for 7:30 pm IST today."
-    },
     {
       "at": "2026-10-16T14:00:49+00:00",
       "job": "4. Post at the scheduled slots",
@@ -677,6 +878,26 @@
       "at": "2026-10-26T16:01:13+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Live on Instagram: REEL#4 (Reciprocity)\nhttps://www.instagram.com/reel/De9qaTIHJwo/"
+    },
+    {
+      "at": "2026-10-27T01:33:38+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: PSYCHINTHEWILD#3 (Multiplier Effect) for 6:00 pm IST tomorrow"
+    },
+    {
+      "at": "2026-10-27T01:33:38+00:00",
+      "job": "1. Write a new draft",
+      "text": "Approved the carousel and the Reel of PSYCHINTHEWILD#3 (Multiplier Effect). Goes live at 6:00 pm IST tomorrow.\nTap Post now if you want it up straight away."
+    },
+    {
+      "at": "2026-10-27T01:33:38+00:00",
+      "job": "1. Write a new draft",
+      "text": "New Quick list Reel ready: REEL#6 (Uncanny Valley) for 9:30 pm IST tomorrow. Watch it in the app and approve it."
+    },
+    {
+      "at": "2026-10-27T01:33:38+00:00",
+      "job": "1. Write a new draft",
+      "text": "Approved the Reel of REEL#6 (Uncanny Valley). Goes live at 9:30 pm IST tomorrow.\nTap Post now if you want it up straight away."
     }
   ],
   "app_requests": [
