@@ -4,7 +4,7 @@
   "series_counters": {
     "MarketingTip": 11,
     "BrandBreakdown": 4,
-    "CopyClinic": 3,
+    "CopyClinic": 4,
     "MythOrMagic": 3,
     "PsychInTheWild": 3,
     "MarketersAssemble": 3,
@@ -12,147 +12,6 @@
     "Autopilot": 2
   },
   "drafts": [
-    {
-      "id": "20261026-013400",
-      "series": "CopyClinic",
-      "number": 3,
-      "tag": "COPYCLINIC#3",
-      "theme": "dark",
-      "style": null,
-      "topic": "\"20% off\" vs \"$20 off\": which discount format feels bigger, and when",
-      "post": {
-        "topic": "Discount Formatting",
-        "principle": "Magnitude Framing",
-        "hook": "Your discount looks smaller than it is",
-        "slides": [
-          "- **Before:** \"20% off\"\n- Vague percentage\n- No concrete dollar reference",
-          "- Percentages trigger **ratio bias**\n- Readers compare to unknown price\n- Discount feels abstract",
-          "- **The principle:** Magnitude Framing\n- Concrete numbers feel bigger\n- Brain evaluates absolute value first",
-          "- **After:** \"$20 off\"\n- Specific dollar amount\n- Instantly visualizable",
-          "- Dollar value creates **anchor strength**\n- Saves mental conversion effort\n- Perceived savings spike",
-          "- Apply **specific dollars** whenever price > $50\n- Test both formats on low-ticket items\n- **Save this** for your next promo copy"
-        ],
-        "save_reason": "for your next promo copy",
-        "caption": "Switching from a percentage to a dollar amount can instantly boost perceived value. The brain loves concrete numbers, $20 feels bigger than 20% when the original price is $100.\n\nWhen the price is low, percentages still work. Use magnitude framing wisely and watch your conversion lift.\n\nSave this for your next promo copy. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
-        "hashtags": [
-          "#marketingpsychology",
-          "#copywriting",
-          "#discountstrategy",
-          "#branding",
-          "#founders",
-          "#design",
-          "#growthhacking"
-        ],
-        "fact_check": [
-          {
-            "claim": "Concrete numbers create stronger anchors than percentages",
-            "source": "Kahneman, 2011, Thinking, Fast and Slow",
-            "confidence": "high"
-          },
-          {
-            "claim": "Percentages trigger ratio bias, making discounts feel abstract",
-            "source": "Tversky & Kahneman, 1974, Judgment under Uncertainty",
-            "confidence": "medium"
-          }
-        ],
-        "takeaway": "- Comment **PSYCHOLOGY**\n- I'll DM you my marketing playbook, free",
-        "format": "bullets",
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "discount looks smaller",
-            "emoji": [
-              "💸",
-              "📈"
-            ],
-            "subtitle": "",
-            "note": ""
-          },
-          "slides": [
-            {
-              "heading": "**Vague** pricing",
-              "emoji": "❓",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "📊",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "💡",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Concrete** dollars",
-              "emoji": "💵",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Anchor** power",
-              "emoji": "📈",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Implementation** tip",
-              "emoji": "✅",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "Save pricing cheat",
-            "emoji": "📌",
-            "note": ""
-          },
-          "for": "021d047a987a",
-          "style": "notebook",
-          "source": "ai",
-          "note": "",
-          "v": 2
-        }
-      },
-      "caption": "Switching from a percentage to a dollar amount can instantly boost perceived value. The brain loves concrete numbers, $20 feels bigger than 20% when the original price is $100.\n\nWhen the price is low, percentages still work. Use magnitude framing wisely and watch your conversion lift.\n\nSave this for your next promo copy. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #copywriting #discountstrategy #branding #founders #design #growthhacking",
-      "images": [
-        "posts/20261026-013400/01.jpg",
-        "posts/20261026-013400/02.jpg",
-        "posts/20261026-013400/03.jpg",
-        "posts/20261026-013400/04.jpg",
-        "posts/20261026-013400/05.jpg",
-        "posts/20261026-013400/06.jpg",
-        "posts/20261026-013400/07.jpg",
-        "posts/20261026-013400/08.jpg"
-      ],
-      "created_at": "2026-10-26T01:34:33+00:00",
-      "reel": "posts/20261026-013400/reel.mp4",
-      "reel_v": 2,
-      "status": "approved",
-      "approved_parts": [
-        "carousel",
-        "reel"
-      ],
-      "backlog_line": "[CopyClinic] \"20% off\" vs \"$20 off\": which discount format feels bigger, and when",
-      "slot": "slot1",
-      "slot_at": "2026-10-27T12:30:00+00:00",
-      "publish_at": "2026-10-27T12:30:00+00:00",
-      "reminded": false,
-      "msg_ids": [],
-      "approved_at": "2026-10-26T01:34:33+00:00",
-      "note": "Approved automatically (Auto-approve is on).",
-      "auto_approved": true
-    },
     {
       "id": "20261026-013435",
       "kind": "reel",
@@ -499,11 +358,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-16T14:28:47+00:00",
-      "job": "6. App action",
-      "text": "App: Redesigned MARKETINGTIP#8 (Anchoring Effect) in the Poster style. It's still scheduled for 3:30 am IST tonight."
-    },
     {
       "at": "2026-10-16T14:33:50+00:00",
       "job": "6. App action",
@@ -898,6 +752,11 @@
       "at": "2026-10-27T05:31:51+00:00",
       "job": "6. App action",
       "text": "App: Auto-approve is off. New drafts wait for your approval again (drafts already approved stay approved)."
+    },
+    {
+      "at": "2026-10-27T12:32:20+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Live on Instagram: COPYCLINIC#3 (Magnitude Framing)\nhttps://www.instagram.com/p/De_3NXwkQ8N/\nReel: https://www.instagram.com/reel/De_3P7aD3Ss/"
     }
   ],
   "app_requests": [
@@ -1266,9 +1125,9 @@
     "followers": 89,
     "posts": 27,
     "username": "misfit_marketers",
-    "updated_at": "2026-10-27T10:24:52+00:00"
+    "updated_at": "2026-10-27T12:30:29+00:00"
   },
-  "stats_checked_at": "2026-10-27T10:24:52+00:00",
+  "stats_checked_at": "2026-10-27T12:30:29+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {

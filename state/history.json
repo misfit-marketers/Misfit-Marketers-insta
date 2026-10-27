@@ -151,7 +151,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-26T14:00:11+00:00"
+      "updated_at": "2026-10-27T12:30:16+00:00"
     }
   },
   {
@@ -205,7 +205,7 @@
       "profile_visits": 1,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-26T14:00:12+00:00"
+      "updated_at": "2026-10-27T12:30:18+00:00"
     }
   },
   {
@@ -533,7 +533,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-27T10:24:42+00:00"
+      "updated_at": "2026-10-27T12:30:19+00:00"
     }
   },
   {
@@ -553,7 +553,7 @@
     "reel_format": "stock",
     "stats": {
       "note": "insights permission missing",
-      "updated_at": "2026-10-27T10:24:42+00:00"
+      "updated_at": "2026-10-27T12:30:20+00:00"
     }
   },
   {
@@ -583,7 +583,7 @@
       "profile_visits": 1,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-27T10:24:44+00:00"
+      "updated_at": "2026-10-27T12:30:22+00:00"
     },
     "reel_stats": {
       "views": 5,
@@ -595,7 +595,7 @@
       "total_interactions": 4,
       "ig_reels_avg_watch_time": 12203,
       "ig_reels_video_view_total_time": 61018,
-      "updated_at": "2026-10-27T10:24:46+00:00"
+      "updated_at": "2026-10-27T12:30:23+00:00"
     }
   },
   {
@@ -623,7 +623,7 @@
       "total_interactions": 5,
       "ig_reels_avg_watch_time": 9619,
       "ig_reels_video_view_total_time": 57719,
-      "updated_at": "2026-10-27T10:24:47+00:00"
+      "updated_at": "2026-10-27T12:30:25+00:00"
     }
   },
   {
@@ -643,7 +643,7 @@
     "reel_media_id": "18229963276329567",
     "reel_permalink": "https://www.instagram.com/reel/De9ctFnCH7p/",
     "stats": {
-      "views": 14,
+      "views": 16,
       "reach": 2,
       "likes": 1,
       "comments": 0,
@@ -653,7 +653,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-10-27T10:24:49+00:00"
+      "updated_at": "2026-10-27T12:30:26+00:00"
     },
     "reel_stats": {
       "views": 9,
@@ -665,7 +665,7 @@
       "total_interactions": 4,
       "ig_reels_avg_watch_time": 7846,
       "ig_reels_video_view_total_time": 39234,
-      "updated_at": "2026-10-27T10:24:50+00:00"
+      "updated_at": "2026-10-27T12:30:28+00:00"
     }
   },
   {
@@ -693,7 +693,24 @@
       "total_interactions": 4,
       "ig_reels_avg_watch_time": 7246,
       "ig_reels_video_view_total_time": 14493,
-      "updated_at": "2026-10-27T10:24:52+00:00"
+      "updated_at": "2026-10-27T12:30:29+00:00"
     }
+  },
+  {
+    "id": "20261026-013400",
+    "series": "CopyClinic",
+    "number": 3,
+    "tag": "COPYCLINIC#3",
+    "topic": "\"20% off\" vs \"$20 off\": which discount format feels bigger, and when",
+    "slot": "slot1",
+    "principle": "Magnitude Framing",
+    "at": "2026-10-27T12:32:20+00:00",
+    "status": "posted",
+    "posted_at": "2026-10-27T12:32:20+00:00",
+    "ig_media_id": "18134394157662352",
+    "permalink": "https://www.instagram.com/p/De_3NXwkQ8N/",
+    "format": "both",
+    "reel_media_id": "18125659279913203",
+    "reel_permalink": "https://www.instagram.com/reel/De_3P7aD3Ss/"
   }
 ]
