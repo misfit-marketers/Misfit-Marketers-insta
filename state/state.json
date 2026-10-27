@@ -500,11 +500,6 @@
   ],
   "events": [
     {
-      "at": "2026-10-16T14:00:49+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Posted MYTHORMAGIC#1 (Emotion vs. logic in decision making)\nhttps://www.instagram.com/p/DejstI5FoL-/"
-    },
-    {
       "at": "2026-10-16T14:28:47+00:00",
       "job": "6. App action",
       "text": "App: Redesigned MARKETINGTIP#8 (Anchoring Effect) in the Poster style. It's still scheduled for 3:30 am IST tonight."
@@ -898,6 +893,11 @@
       "at": "2026-10-27T01:33:38+00:00",
       "job": "1. Write a new draft",
       "text": "Approved the Reel of REEL#6 (Uncanny Valley). Goes live at 9:30 pm IST tomorrow.\nTap Post now if you want it up straight away."
+    },
+    {
+      "at": "2026-10-27T05:31:51+00:00",
+      "job": "6. App action",
+      "text": "App: Auto-approve is off. New drafts wait for your approval again (drafts already approved stay approved)."
     }
   ],
   "app_requests": [
@@ -1233,6 +1233,15 @@
       "ok": true,
       "message": "Auto-approve is on. New drafts go live at their slot without waiting for you. Approved 1 waiting draft now.",
       "at": "2026-10-23T05:15:14+00:00"
+    },
+    {
+      "id": "mvq8zqran4r8lj",
+      "action": "auto_approve",
+      "draft_id": "",
+      "new_draft_id": null,
+      "ok": true,
+      "message": "Auto-approve is off. New drafts wait for your approval again (drafts already approved stay approved).",
+      "at": "2026-10-27T05:31:51+00:00"
     }
   ],
   "design_styles": {
@@ -1393,6 +1402,6 @@
       "kind": "reel"
     }
   ],
-  "auto_approve": true,
+  "auto_approve": false,
   "reel_counter": 5
 }
