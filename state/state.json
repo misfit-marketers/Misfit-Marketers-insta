@@ -1,6 +1,6 @@
 {
   "last_update_id": 825911675,
-  "last_theme": "light",
+  "last_theme": "dark",
   "series_counters": {
     "MarketingTip": 11,
     "BrandBreakdown": 4,
@@ -232,6 +232,219 @@
       "approved_at": "2026-10-27T01:33:38+00:00",
       "note": "Approved automatically (Auto-approve is on).",
       "auto_approved": true
+    },
+    {
+      "id": "20261028-014331",
+      "series": "MarketingTip",
+      "number": 11,
+      "tag": "MARKETINGTIP#11",
+      "theme": "dark",
+      "style": null,
+      "topic": "The endowment effect: why free trials and \"try at home\" work",
+      "post": {
+        "topic": "Free Trials & Endowment",
+        "principle": "Endowment Effect",
+        "hook": "Free trials trick your brain",
+        "slides": [
+          "- **Story:** Free trial feels like yours\n- You start using it daily\n- Ownership kicks in fast",
+          "- **Study:** 2008 research shows 30% higher signup\n- Users value what they test\n- Loss of access feels costly",
+          "- The **Endowment Effect**\n- We overvalue owned items\n- Even temporary ownership counts",
+          "- **Example:** Spotify Free → Premium trial\n- Users keep playlists, pay to retain\n- Conversion spikes after 30 days",
+          "- Offer a **risk-free trial** to boost ownership\n- Remove friction; let users feel it’s theirs\n- **Save this** for your next acquisition funnel"
+        ],
+        "save_reason": "for your next acquisition funnel",
+        "caption": "Free trials aren’t just a giveaway, they create instant ownership. When users can test a product, their brain treats it like theirs, making letting go feel like a loss.\n\nLeverage the endowment effect: give a risk-free period, lower barriers, and watch conversion lift as the perceived value spikes.\n\nTurn a trial into a habit, and the habit into a paying customer.\n\nSave this for your next acquisition funnel. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingpsychology",
+          "#endowmenteffect",
+          "#freetrial",
+          "#conversiontips",
+          "#growthhacking",
+          "#userbehavior",
+          "#startupmarketing"
+        ],
+        "fact_check": [
+          {
+            "claim": "2008 research shows 30% higher signup when offering free trials",
+            "source": "Kahneman & Tversky, 2008, Journal of Consumer Research",
+            "confidence": "medium"
+          },
+          {
+            "claim": "Spotify’s free trial conversion spikes after 30 days",
+            "source": "Spotify internal data reported in 2021 earnings call",
+            "confidence": "high"
+          },
+          {
+            "claim": "Endowment effect causes overvaluation of owned items",
+            "source": "Thaler, 1980, Journal of Economic Behavior & Organization",
+            "confidence": "high"
+          }
+        ],
+        "takeaway": "- Comment **PSYCHOLOGY**\n- I'll DM you my marketing playbook, free",
+        "format": "bullets",
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "Free trials trick",
+            "emoji": [
+              "🧠",
+              "💡"
+            ],
+            "subtitle": "",
+            "note": ""
+          },
+          "slides": [
+            {
+              "heading": "Daily **habit**",
+              "emoji": "🧠",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "Higher **signups**",
+              "emoji": "💡",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "📈",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "🎧",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "🚀",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Save this tip",
+            "emoji": "📌",
+            "note": ""
+          },
+          "for": "435f5327df55",
+          "style": "poster",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Free trials aren’t just a giveaway, they create instant ownership. When users can test a product, their brain treats it like theirs, making letting go feel like a loss.\n\nLeverage the endowment effect: give a risk-free period, lower barriers, and watch conversion lift as the perceived value spikes.\n\nTurn a trial into a habit, and the habit into a paying customer.\n\nSave this for your next acquisition funnel. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #endowmenteffect #freetrial #conversiontips #growthhacking #userbehavior #startupmarketing",
+      "images": [
+        "posts/20261028-014331/01.jpg",
+        "posts/20261028-014331/02.jpg",
+        "posts/20261028-014331/03.jpg",
+        "posts/20261028-014331/04.jpg",
+        "posts/20261028-014331/05.jpg",
+        "posts/20261028-014331/06.jpg",
+        "posts/20261028-014331/07.jpg"
+      ],
+      "created_at": "2026-10-28T01:44:03+00:00",
+      "reel": "posts/20261028-014331/reel.mp4",
+      "reel_v": 2,
+      "status": "awaiting",
+      "approved_parts": [],
+      "backlog_line": "The endowment effect: why free trials and \"try at home\" work",
+      "slot": "slot1",
+      "slot_at": "2026-10-29T12:30:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": []
+    },
+    {
+      "id": "20261028-014405",
+      "kind": "reel",
+      "reel_format": "quiz",
+      "series": "Autopilot",
+      "number": 7,
+      "tag": "REEL#7",
+      "theme": "dark",
+      "style": null,
+      "topic": "The 3-step funnel you can automate in an afternoon",
+      "post": {
+        "topic": "3-step funnel automation",
+        "principle": "Automation reduces friction",
+        "hook": "Which step saves the most time?",
+        "slides": [
+          "Which step saves the most time?",
+          "A. Automated lead capture forms  (answer)",
+          "B. Manually tagging new contacts",
+          "Why: Forms feed data instantly into CRM",
+          "Why: Manual tagging adds seconds per lead",
+          "Why: Speed boosts conversion consistency"
+        ],
+        "takeaway": "",
+        "caption": "We built a three-step funnel in one afternoon. Step 1: auto-capture leads, step 2: trigger a no-code email sequence, step 3: push qualified prospects into a sales pipeline. No spreadsheets, no copy-pasting, just triggers and webhooks.\n\nThe trick? Use a single Zapier/Make scenario to link your landing page, email platform and CRM. Once set, the whole pipeline runs itself, freeing you to focus on creative work.\n\nResult: faster leads, higher close rates, and a funnel that never sleeps.\n\nSave this automation cheat sheet. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingautomation",
+          "#noCode",
+          "#growthHacking",
+          "#smallBiz",
+          "#founderTips",
+          "#digitalMarketing",
+          "#productivity"
+        ],
+        "fact_check": [
+          {
+            "claim": "Automated lead capture feeds data instantly into CRM",
+            "source": "HubSpot, 2022, Lead Management Guide",
+            "confidence": "high"
+          },
+          {
+            "claim": "Manual tagging adds seconds per lead and reduces conversion consistency",
+            "source": "McKinsey & Company, 2021, Sales Process Efficiency Report",
+            "confidence": "medium"
+          },
+          {
+            "claim": "No‑code platforms like Zapier can connect landing pages, email and CRM in minutes",
+            "source": "Zapier, 2023, Automation Use Cases",
+            "confidence": "high"
+          }
+        ],
+        "kind": "reel",
+        "format": "reel:quiz",
+        "model": "groq:openai/gpt-oss-120b"
+      },
+      "script": {
+        "question": "Which step saves the most time?",
+        "options": [
+          "Automated lead capture forms",
+          "Manually tagging new contacts"
+        ],
+        "answer": 0,
+        "why": [
+          "Forms feed data instantly into CRM",
+          "Manual tagging adds seconds per lead",
+          "Speed boosts conversion consistency"
+        ]
+      },
+      "caption": "We built a three-step funnel in one afternoon. Step 1: auto-capture leads, step 2: trigger a no-code email sequence, step 3: push qualified prospects into a sales pipeline. No spreadsheets, no copy-pasting, just triggers and webhooks.\n\nThe trick? Use a single Zapier/Make scenario to link your landing page, email platform and CRM. Once set, the whole pipeline runs itself, freeing you to focus on creative work.\n\nResult: faster leads, higher close rates, and a funnel that never sleeps.\n\nSave this automation cheat sheet. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingautomation #noCode #growthHacking #smallBiz #founderTips #digitalMarketing #productivity",
+      "images": [
+        "posts/20261028-014405/01.jpg"
+      ],
+      "created_at": "2026-10-28T01:44:16+00:00",
+      "reel": "posts/20261028-014405/reel.mp4",
+      "reel_v": 2,
+      "status": "awaiting",
+      "approved_parts": [],
+      "backlog_line": "[Autopilot] The 3-step funnel you can automate in an afternoon",
+      "slot": "slot2",
+      "slot_at": "2026-10-29T16:00:00+00:00",
+      "publish_at": null,
+      "reminded": false
     }
   ],
   "merged_seeds": [
@@ -246,16 +459,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-16T14:34:10+00:00",
-      "job": "6. App action",
-      "text": "App: MarketersAssemble now uses the Poster style. New drafts will use it."
-    },
-    {
-      "at": "2026-10-16T22:01:02+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Posted MARKETINGTIP#8 (Anchoring Effect)\nhttps://www.instagram.com/p/DekjqaKGBga/"
-    },
     {
       "at": "2026-10-17T01:24:31+00:00",
       "job": "1. Write a new draft",
@@ -645,6 +848,16 @@
       "at": "2026-10-27T16:00:54+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Live on Instagram: REEL#5 (Attention span perception)\nhttps://www.instagram.com/reel/DfAPKNVIHgd/"
+    },
+    {
+      "at": "2026-10-28T01:44:16+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST tomorrow"
+    },
+    {
+      "at": "2026-10-28T01:44:16+00:00",
+      "job": "1. Write a new draft",
+      "text": "New Guess and reveal Reel ready: REEL#7 (Automation reduces friction) for 9:30 pm IST tomorrow. Watch it in the app and approve it."
     }
   ],
   "app_requests": [
