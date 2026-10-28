@@ -82,7 +82,6 @@ Price-quality heuristic: why a higher price can signal better quality
 [MythOrMagic] "You need seven touchpoints before someone buys": the rule of seven
 [MythOrMagic] "Customers can tell you what they want": why surveys and behavior disagree
 [MythOrMagic] "Happy customers always leave reviews": who actually writes reviews
-[PsychInTheWild] Surge pricing: why paying more feels worse when you see the multiplier
 [PsychInTheWild] Countdown timers on sale pages: why a ticking clock speeds you up
 [PsychInTheWild] Menus without dollar signs: why restaurants drop the $
 [PsychInTheWild] Infinite scroll: why you can't stop at "just one more"

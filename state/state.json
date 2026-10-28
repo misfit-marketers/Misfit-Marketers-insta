@@ -6,144 +6,12 @@
     "BrandBreakdown": 4,
     "CopyClinic": 4,
     "MythOrMagic": 3,
-    "PsychInTheWild": 3,
+    "PsychInTheWild": 4,
     "MarketersAssemble": 3,
     "AIPsych": 3,
     "Autopilot": 2
   },
   "drafts": [
-    {
-      "id": "20261027-013243",
-      "series": "PsychInTheWild",
-      "number": 3,
-      "tag": "PSYCHINTHEWILD#3",
-      "theme": "light",
-      "style": null,
-      "topic": "Surge pricing: why paying more feels worse when you see the multiplier",
-      "post": {
-        "topic": "Surge Pricing Multiplier",
-        "principle": "Multiplier Effect",
-        "hook": "Paying more hurts when you see the multiplier",
-        "slides": [
-          "- **Moment:** You open DoorDash, see $12 fare\n- Then a **3× surge** flashes, price jumps to $36\n- Heart rate spikes, you stare at the screen",
-          "- **Brain:** It treats the **multiplier** as loss\n- Relative increase feels bigger than absolute cost\n- **Loss aversion** kicks in instantly",
-          "- **Why:** Humans compare ratios, not raw numbers\n- A 300% jump triggers stronger emotional reaction\n- Studies show ratio framing amplifies perceived unfairness",
-          "- **Ethical play:** Show original price **before** surge\n- Highlight saved amount when surge ends\n- Transparency keeps trust while using the effect",
-          "- **Takeaway:** Use multiplier framing **sparingly**\n- A/B test impact before full rollout\n- **Save this** for your next pricing experiment"
-        ],
-        "save_reason": "for your next pricing experiment",
-        "caption": "Surge pricing isn’t just a higher number, it’s a psychological multiplier that magnifies loss perception. When a rider sees a 3× surge, the brain reacts far stronger than to a flat $24 increase.\n\nLeverage this by being transparent: show the base fare, then the multiplier, and always highlight the eventual discount when the surge drops. Test it, keep it honest, and watch conversion lift.\n\nRemember, the power lies in the ratio, not the dollar amount.\n\nSave this for your next pricing experiment. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
-        "hashtags": [
-          "#marketingpsychology",
-          "#pricingstrategy",
-          "#surgepricing",
-          "#behaviormarketing",
-          "#founderlife",
-          "#designthinking",
-          "#growthhacking",
-          "#consumerinsights"
-        ],
-        "fact_check": [
-          {
-            "claim": "Loss aversion causes stronger reaction to relative increases than absolute costs",
-            "source": "Kahneman & Tversky, 1979, Prospect Theory",
-            "confidence": "high"
-          },
-          {
-            "claim": "Ratio framing amplifies perceived unfairness",
-            "source": "Research on framing effects, 2010s, various journals",
-            "confidence": "medium"
-          }
-        ],
-        "takeaway": "- Comment **PSYCHOLOGY**\n- I'll DM you my marketing playbook, free",
-        "format": "bullets",
-        "model": "groq:openai/gpt-oss-120b",
-        "design": {
-          "cover": {
-            "highlight": "Paying more hurts",
-            "emoji": [
-              "💸"
-            ],
-            "subtitle": "",
-            "note": ""
-          },
-          "slides": [
-            {
-              "heading": "Surge **shock**",
-              "emoji": "🚀",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Loss** signal",
-              "emoji": "💡",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "**Ratio** bias",
-              "emoji": "📈",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "✅",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            },
-            {
-              "heading": "",
-              "emoji": "🧠",
-              "layout": "standard",
-              "note": "",
-              "quote": ""
-            }
-          ],
-          "takeaway": {
-            "heading": "Pricing cheat sheet",
-            "emoji": "📌",
-            "note": ""
-          },
-          "for": "42c3ec8336af",
-          "style": "notebook",
-          "source": "ai",
-          "note": "",
-          "v": 2
-        }
-      },
-      "caption": "Surge pricing isn’t just a higher number, it’s a psychological multiplier that magnifies loss perception. When a rider sees a 3× surge, the brain reacts far stronger than to a flat $24 increase.\n\nLeverage this by being transparent: show the base fare, then the multiplier, and always highlight the eventual discount when the surge drops. Test it, keep it honest, and watch conversion lift.\n\nRemember, the power lies in the ratio, not the dollar amount.\n\nSave this for your next pricing experiment. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #pricingstrategy #surgepricing #behaviormarketing #founderlife #designthinking #growthhacking #consumerinsights",
-      "images": [
-        "posts/20261027-013243/01.jpg",
-        "posts/20261027-013243/02.jpg",
-        "posts/20261027-013243/03.jpg",
-        "posts/20261027-013243/04.jpg",
-        "posts/20261027-013243/05.jpg",
-        "posts/20261027-013243/06.jpg",
-        "posts/20261027-013243/07.jpg"
-      ],
-      "created_at": "2026-10-27T01:33:27+00:00",
-      "reel": "posts/20261027-013243/reel.mp4",
-      "reel_v": 2,
-      "status": "approved",
-      "approved_parts": [
-        "carousel",
-        "reel"
-      ],
-      "backlog_line": "[PsychInTheWild] Surge pricing: why paying more feels worse when you see the multiplier",
-      "slot": "slot1",
-      "slot_at": "2026-10-28T12:30:00+00:00",
-      "publish_at": "2026-10-28T12:30:00+00:00",
-      "reminded": false,
-      "msg_ids": [],
-      "approved_at": "2026-10-27T01:33:27+00:00",
-      "note": "Approved automatically (Auto-approve is on).",
-      "auto_approved": true
-    },
     {
       "id": "20261027-013329",
       "kind": "reel",
@@ -459,11 +327,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-17T01:24:31+00:00",
-      "job": "1. Write a new draft",
-      "text": "New draft ready for review: PSYCHINTHEWILD#1 (Default Effect) for 7:30 pm IST today"
-    },
     {
       "at": "2026-10-17T01:24:31+00:00",
       "job": "1. Write a new draft",
@@ -858,6 +721,11 @@
       "at": "2026-10-28T01:44:16+00:00",
       "job": "1. Write a new draft",
       "text": "New Guess and reveal Reel ready: REEL#7 (Automation reduces friction) for 9:30 pm IST tomorrow. Watch it in the app and approve it."
+    },
+    {
+      "at": "2026-10-28T12:32:56+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Live on Instagram: PSYCHINTHEWILD#3 (Multiplier Effect)\nhttps://www.instagram.com/p/DfCb-6_m_RP/\nReel: https://www.instagram.com/reel/DfCcHc2kiVH/"
     }
   ],
   "app_requests": [

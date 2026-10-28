@@ -765,5 +765,22 @@
       "ig_reels_video_view_total_time": 237678,
       "updated_at": "2026-10-28T11:48:39+00:00"
     }
+  },
+  {
+    "id": "20261027-013243",
+    "series": "PsychInTheWild",
+    "number": 3,
+    "tag": "PSYCHINTHEWILD#3",
+    "topic": "Surge pricing: why paying more feels worse when you see the multiplier",
+    "slot": "slot1",
+    "principle": "Multiplier Effect",
+    "at": "2026-10-28T12:32:56+00:00",
+    "status": "posted",
+    "posted_at": "2026-10-28T12:32:56+00:00",
+    "ig_media_id": "17978803608130937",
+    "permalink": "https://www.instagram.com/p/DfCb-6_m_RP/",
+    "format": "both",
+    "reel_media_id": "17944808892363333",
+    "reel_permalink": "https://www.instagram.com/reel/DfCcHc2kiVH/"
   }
 ]
