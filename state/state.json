@@ -13,95 +13,6 @@
   },
   "drafts": [
     {
-      "id": "20261027-013329",
-      "kind": "reel",
-      "reel_format": "list",
-      "series": "AIPsych",
-      "number": 6,
-      "tag": "REEL#6",
-      "theme": "dark",
-      "style": null,
-      "topic": "The uncanny valley of AI faces in ads",
-      "post": {
-        "topic": "Uncanny Valley in Ad Faces",
-        "principle": "Uncanny Valley",
-        "hook": "3 AI face traps hurting ads",
-        "slides": [
-          "3 AI face traps hurting ads",
-          "1. Too perfect: Hyper-real looks trigger **discomfort** in viewers",
-          "2. Almost human: Near-human eyes create **unease** and lower click-through",
-          "3. Static stare: Lack of micro-expressions feels **fake**, drops recall"
-        ],
-        "takeaway": "",
-        "caption": "AI can make ad faces look flawless, until they cross the uncanny valley. That tiny flicker of oddness is enough to make a consumer pull back. \n\nKnow the sweet spot: natural micro-expressions, imperfect texture, and a hint of humanity. Keep your AI-generated creatives in the comfort zone.\n\nSave this quick sanity check. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
-        "hashtags": [
-          "#marketingpsychology",
-          "#AIinMarketing",
-          "#UncannyValley",
-          "#AdDesign",
-          "#BrandTrust",
-          "#ConsumerBehavior",
-          "#DesignTips"
-        ],
-        "fact_check": [
-          {
-            "claim": "The uncanny valley describes discomfort toward near‑human artificial faces",
-            "source": "Mori, 1970, Energy, 1970",
-            "confidence": "high"
-          },
-          {
-            "claim": "Near‑human eyes create unease and lower click‑through rates",
-            "source": "Schmidt et al., 2022, Journal of Advertising Research",
-            "confidence": "medium"
-          },
-          {
-            "claim": "Lack of micro‑expressions reduces recall of ads",
-            "source": "Krumhuber & Kappas, 2020, Frontiers in Psychology",
-            "confidence": "medium"
-          }
-        ],
-        "kind": "reel",
-        "format": "reel:list",
-        "model": "groq:openai/gpt-oss-120b"
-      },
-      "script": {
-        "title": "3 AI face traps hurting ads",
-        "items": [
-          {
-            "head": "Too perfect",
-            "sub": "Hyper-real looks trigger **discomfort** in viewers"
-          },
-          {
-            "head": "Almost human",
-            "sub": "Near-human eyes create **unease** and lower click-through"
-          },
-          {
-            "head": "Static stare",
-            "sub": "Lack of micro-expressions feels **fake**, drops recall"
-          }
-        ]
-      },
-      "caption": "AI can make ad faces look flawless, until they cross the uncanny valley. That tiny flicker of oddness is enough to make a consumer pull back. \n\nKnow the sweet spot: natural micro-expressions, imperfect texture, and a hint of humanity. Keep your AI-generated creatives in the comfort zone.\n\nSave this quick sanity check. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #AIinMarketing #UncannyValley #AdDesign #BrandTrust #ConsumerBehavior #DesignTips",
-      "images": [
-        "posts/20261027-013329/01.jpg"
-      ],
-      "created_at": "2026-10-27T01:33:38+00:00",
-      "reel": "posts/20261027-013329/reel.mp4",
-      "reel_v": 2,
-      "status": "approved",
-      "approved_parts": [
-        "reel"
-      ],
-      "backlog_line": "[AIPsych] The uncanny valley of AI faces in ads",
-      "slot": "slot2",
-      "slot_at": "2026-10-28T16:00:00+00:00",
-      "publish_at": "2026-10-28T16:00:00+00:00",
-      "reminded": false,
-      "approved_at": "2026-10-27T01:33:38+00:00",
-      "note": "Approved automatically (Auto-approve is on).",
-      "auto_approved": true
-    },
-    {
       "id": "20261028-014331",
       "series": "MarketingTip",
       "number": 11,
@@ -327,11 +238,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-17T01:24:31+00:00",
-      "job": "1. Write a new draft",
-      "text": "New draft ready for review: MARKETERSASSEMBLE#2 (Human‑Centered Insight) for 3:30 am IST tonight"
-    },
     {
       "at": "2026-10-17T14:00:18+00:00",
       "job": "4. Post at the scheduled slots",
@@ -726,6 +632,11 @@
       "at": "2026-10-28T12:32:56+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Live on Instagram: PSYCHINTHEWILD#3 (Multiplier Effect)\nhttps://www.instagram.com/p/DfCb-6_m_RP/\nReel: https://www.instagram.com/reel/DfCcHc2kiVH/"
+    },
+    {
+      "at": "2026-10-28T16:01:44+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "Live on Instagram: REEL#6 (Uncanny Valley)\nhttps://www.instagram.com/reel/DfC0EGhD5gJ/"
     }
   ],
   "app_requests": [
@@ -1250,5 +1161,5 @@
     }
   ],
   "auto_approve": false,
-  "reel_counter": 6
+  "reel_counter": 7
 }

@@ -807,5 +807,21 @@
       "ig_reels_video_view_total_time": 10228,
       "updated_at": "2026-10-28T14:26:06+00:00"
     }
+  },
+  {
+    "id": "20261027-013329",
+    "series": "AIPsych",
+    "number": 6,
+    "tag": "REEL#6",
+    "topic": "The uncanny valley of AI faces in ads",
+    "slot": "slot2",
+    "principle": "Uncanny Valley",
+    "at": "2026-10-28T16:01:43+00:00",
+    "status": "posted",
+    "posted_at": "2026-10-28T16:01:43+00:00",
+    "ig_media_id": "18422302252156511",
+    "permalink": "https://www.instagram.com/reel/DfC0EGhD5gJ/",
+    "format": "reel",
+    "reel_format": "list"
   }
 ]
