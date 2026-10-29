@@ -224,7 +224,7 @@
       "slot": "slot2",
       "slot_at": "2026-10-29T16:00:00+00:00",
       "publish_at": null,
-      "reminded": false
+      "reminded": true
     },
     {
       "id": "20261029-014617",
@@ -430,11 +430,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-18T01:24:55+00:00",
-      "job": "1. Write a new draft",
-      "text": "New draft ready for review: MARKETINGTIP#9 (Loss aversion) for 7:30 pm IST today"
-    },
     {
       "at": "2026-10-18T01:24:55+00:00",
       "job": "1. Write a new draft",
@@ -829,6 +824,11 @@
       "at": "2026-10-29T14:40:03+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "MARKETINGTIP#11 (Endowment Effect) wasn't approved in time, so it moved to 6:00 pm IST Sat 31 Oct. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-10-29T16:00:17+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but REEL#7 (Automation reduces friction) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
     }
   ],
   "app_requests": [
