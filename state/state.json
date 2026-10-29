@@ -222,9 +222,10 @@
       "approved_parts": [],
       "backlog_line": "[Autopilot] The 3-step funnel you can automate in an afternoon",
       "slot": "slot2",
-      "slot_at": "2026-10-29T16:00:00+00:00",
+      "slot_at": "2026-10-31T16:00:00+00:00",
       "publish_at": null,
-      "reminded": true
+      "reminded": false,
+      "note": "It wasn't approved in time, so it moved to 9:30 pm IST Sat 31 Oct."
     },
     {
       "id": "20261029-014617",
@@ -430,11 +431,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-18T01:24:55+00:00",
-      "job": "1. Write a new draft",
-      "text": "New draft ready for review: BRANDBREAKDOWN#2 (Framing Effect) for 3:30 am IST tonight"
-    },
     {
       "at": "2026-10-18T04:53:08+00:00",
       "job": "6. App action",
@@ -829,6 +825,11 @@
       "at": "2026-10-29T16:00:17+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "It's post time but REEL#7 (Automation reduces friction) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
+    },
+    {
+      "at": "2026-10-29T17:21:23+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "REEL#7 (Automation reduces friction) wasn't approved in time, so it moved to 9:30 pm IST Sat 31 Oct. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
