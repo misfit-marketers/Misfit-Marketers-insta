@@ -138,10 +138,11 @@
       "approved_parts": [],
       "backlog_line": "The endowment effect: why free trials and \"try at home\" work",
       "slot": "slot1",
-      "slot_at": "2026-10-29T12:30:00+00:00",
+      "slot_at": "2026-10-31T12:30:00+00:00",
       "publish_at": null,
-      "reminded": true,
-      "msg_ids": []
+      "reminded": false,
+      "msg_ids": [],
+      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Sat 31 Oct."
     },
     {
       "id": "20261028-014405",
@@ -429,11 +430,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-17T22:00:59+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Posted MARKETERSASSEMBLE#2 (Human‑Centered Insight)\nhttps://www.instagram.com/p/DenIc6RAZ5i/"
-    },
     {
       "at": "2026-10-18T01:24:55+00:00",
       "job": "1. Write a new draft",
@@ -828,6 +824,11 @@
       "at": "2026-10-29T12:30:16+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "It's post time but MARKETINGTIP#11 (Endowment Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
+    },
+    {
+      "at": "2026-10-29T14:40:03+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "MARKETINGTIP#11 (Endowment Effect) wasn't approved in time, so it moved to 6:00 pm IST Sat 31 Oct. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
@@ -1196,9 +1197,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-10-29T12:01:05+00:00"
+    "updated_at": "2026-10-29T14:40:02+00:00"
   },
-  "stats_checked_at": "2026-10-29T12:01:06+00:00",
+  "stats_checked_at": "2026-10-29T14:40:02+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
