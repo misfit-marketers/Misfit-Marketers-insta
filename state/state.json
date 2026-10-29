@@ -140,7 +140,7 @@
       "slot": "slot1",
       "slot_at": "2026-10-29T12:30:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "msg_ids": []
     },
     {
@@ -429,11 +429,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-17T14:08:49+00:00",
-      "job": "6. App action",
-      "text": "App: Approved. MARKETERSASSEMBLE#2 (Human‑Centered Insight) goes live at 3:30 am IST tonight."
-    },
     {
       "at": "2026-10-17T22:00:59+00:00",
       "job": "4. Post at the scheduled slots",
@@ -828,6 +823,11 @@
       "at": "2026-10-29T01:46:44+00:00",
       "job": "1. Write a new draft",
       "text": "New Guess and reveal Reel ready: REEL#8 (Self-Reference Effect) for 9:30 pm IST tomorrow. Watch it in the app and approve it."
+    },
+    {
+      "at": "2026-10-29T12:30:16+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but MARKETINGTIP#11 (Endowment Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
     }
   ],
   "app_requests": [
