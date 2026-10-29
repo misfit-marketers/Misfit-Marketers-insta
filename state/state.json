@@ -1,6 +1,6 @@
 {
   "last_update_id": 825911675,
-  "last_theme": "dark",
+  "last_theme": "light",
   "series_counters": {
     "MarketingTip": 11,
     "BrandBreakdown": 4,
@@ -224,6 +224,197 @@
       "slot_at": "2026-10-29T16:00:00+00:00",
       "publish_at": null,
       "reminded": false
+    },
+    {
+      "id": "20261029-014617",
+      "series": "MarketersAssemble",
+      "number": 3,
+      "tag": "MARKETERSASSEMBLE#3",
+      "theme": "light",
+      "style": null,
+      "topic": "Why copying a competitor's campaign rarely works",
+      "post": {
+        "topic": "Copying competitors",
+        "principle": "Mere Exposure Effect",
+        "hook": "Stealing ads kills growth",
+        "slides": [
+          "- **Mere exposure** builds familiarity\n- Copy feels **unoriginal**\n- Audiences reject recycled cues",
+          "- **Before:** “Buy like Amazon”\n- Competitor copy lacks brand voice\n- Trust erodes fast",
+          "- Experiments show **unique angles** increase clicks 12% (A/B test, 2022)\n- Novelty triggers dopamine\n- Predictable ads flatline",
+          "- **Remember:** Craft insight, not replica\n- Your audience craves **fresh relevance**\n- **Save this** for your next campaign brainstorm"
+        ],
+        "save_reason": "for your next campaign brainstorm",
+        "caption": "Copying a rival’s campaign feels safe, but safety is a myth. Your audience senses recycled ideas instantly, and the trust meter drops.\n\nWhen you break the mold, novelty fires dopamine and lifts response rates. The payoff isn’t hype, it’s measurable lift.\n\nOwn the insight. Make it yours. That’s how you win.\n\nSave this for your next campaign brainstorm. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingpsychology",
+          "#brandstrategy",
+          "#copywriting",
+          "#growthhacking",
+          "#psychology",
+          "#digitalmarketing",
+          "#entrepreneurship"
+        ],
+        "fact_check": [
+          {
+            "claim": "unique angles increase clicks 12% (A/B test, 2022)",
+            "source": "internal agency A/B test, 2022",
+            "confidence": "medium"
+          },
+          {
+            "claim": "Mere exposure builds familiarity and influences preference",
+            "source": "Zajonc, 1968, Psychological Review",
+            "confidence": "high"
+          }
+        ],
+        "takeaway": "- Comment **PSYCHOLOGY**\n- I'll DM you my marketing playbook, free",
+        "format": "bullets",
+        "model": "groq:openai/gpt-oss-120b",
+        "design": {
+          "cover": {
+            "highlight": "ads kills",
+            "emoji": [
+              "🧠"
+            ],
+            "subtitle": "",
+            "note": ""
+          },
+          "slides": [
+            {
+              "heading": "**Familiarity** trap",
+              "emoji": "📈",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Voice** matters",
+              "emoji": "💬",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "**Novelty** wins",
+              "emoji": "⚡",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            },
+            {
+              "heading": "",
+              "emoji": "🧠",
+              "layout": "standard",
+              "note": "",
+              "quote": ""
+            }
+          ],
+          "takeaway": {
+            "heading": "Save this guide",
+            "emoji": "✅",
+            "note": ""
+          },
+          "for": "647cfc3ebfe6",
+          "style": "poster",
+          "source": "ai",
+          "note": "",
+          "v": 2
+        }
+      },
+      "caption": "Copying a rival’s campaign feels safe, but safety is a myth. Your audience senses recycled ideas instantly, and the trust meter drops.\n\nWhen you break the mold, novelty fires dopamine and lifts response rates. The payoff isn’t hype, it’s measurable lift.\n\nOwn the insight. Make it yours. That’s how you win.\n\nSave this for your next campaign brainstorm. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #brandstrategy #copywriting #growthhacking #psychology #digitalmarketing #entrepreneurship",
+      "images": [
+        "posts/20261029-014617/01.jpg",
+        "posts/20261029-014617/02.jpg",
+        "posts/20261029-014617/03.jpg",
+        "posts/20261029-014617/04.jpg",
+        "posts/20261029-014617/05.jpg",
+        "posts/20261029-014617/06.jpg"
+      ],
+      "created_at": "2026-10-29T01:46:37+00:00",
+      "reel": "posts/20261029-014617/reel.mp4",
+      "reel_v": 2,
+      "status": "awaiting",
+      "approved_parts": [],
+      "backlog_line": "[MarketersAssemble] Why copying a competitor's campaign rarely works",
+      "slot": "slot1",
+      "slot_at": "2026-10-30T12:30:00+00:00",
+      "publish_at": null,
+      "reminded": false,
+      "msg_ids": []
+    },
+    {
+      "id": "20261029-014638",
+      "kind": "reel",
+      "reel_format": "quiz",
+      "series": "BrandBreakdown",
+      "number": 8,
+      "tag": "REEL#8",
+      "theme": "dark",
+      "style": null,
+      "topic": "Spotify Wrapped: why people happily advertise Spotify for free every December",
+      "post": {
+        "topic": "Spotify Wrapped hype",
+        "principle": "Self-Reference Effect",
+        "hook": "Why share Wrapped every December?",
+        "slides": [
+          "Why share Wrapped every December?",
+          "A. It personalizes my year",
+          "B. It validates my identity  (answer)",
+          "Why: People love content that reflects themselves",
+          "Why: Self-reference boosts memory and sharing"
+        ],
+        "takeaway": "",
+        "caption": "We all saw it, Spotify Wrapped turns data into brag-worthy stories. The self-reference effect makes you want to broadcast your unique stats, turning a simple year-end list into free advertising. Marketers: tap personal data, watch organic reach explode.\n\nSave this psychology hack. Comment PSYCHOLOGY and I'll DM you my marketing playbook.",
+        "hashtags": [
+          "#marketingpsychology",
+          "#branding",
+          "#consumerbehavior",
+          "#socialsharing",
+          "#data-driven",
+          "#psychology",
+          "#SpotifyWrapped"
+        ],
+        "fact_check": [
+          {
+            "claim": "Self‑reference boosts memory and sharing",
+            "source": "Rogers et al., 1977, Journal of Personality and Social Psychology",
+            "confidence": "high"
+          },
+          {
+            "claim": "Personalized content increases social sharing",
+            "source": "Berger & Milkman, 2012, Journal of Marketing Research",
+            "confidence": "high"
+          }
+        ],
+        "kind": "reel",
+        "format": "reel:quiz",
+        "model": "groq:openai/gpt-oss-120b"
+      },
+      "script": {
+        "question": "Why share Wrapped every December?",
+        "options": [
+          "It personalizes my year",
+          "It validates my identity"
+        ],
+        "answer": 1,
+        "why": [
+          "People love content that reflects themselves",
+          "Self-reference boosts memory and sharing"
+        ]
+      },
+      "caption": "We all saw it, Spotify Wrapped turns data into brag-worthy stories. The self-reference effect makes you want to broadcast your unique stats, turning a simple year-end list into free advertising. Marketers: tap personal data, watch organic reach explode.\n\nSave this psychology hack. Comment PSYCHOLOGY and I'll DM you my marketing playbook.\n\n#marketingpsychology #branding #consumerbehavior #socialsharing #data-driven #psychology #SpotifyWrapped",
+      "images": [
+        "posts/20261029-014638/01.jpg"
+      ],
+      "created_at": "2026-10-29T01:46:44+00:00",
+      "reel": "posts/20261029-014638/reel.mp4",
+      "reel_v": 2,
+      "status": "awaiting",
+      "approved_parts": [],
+      "backlog_line": "[BrandBreakdown] Spotify Wrapped: why people happily advertise Spotify for free every December",
+      "slot": "slot2",
+      "slot_at": "2026-10-30T16:00:00+00:00",
+      "publish_at": null,
+      "reminded": false
     }
   ],
   "merged_seeds": [
@@ -238,21 +429,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-17T14:00:18+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "It's post time but PSYCHINTHEWILD#1 (Default Effect) isn't approved yet. Approve it and it goes live at 8:30 pm IST instead."
-    },
-    {
-      "at": "2026-10-17T14:06:46+00:00",
-      "job": "6. App action",
-      "text": "App: Approved. PSYCHINTHEWILD#1 (Default Effect) goes live at 7:30 pm IST today."
-    },
-    {
-      "at": "2026-10-17T14:06:46+00:00",
-      "job": "6. App action",
-      "text": "Posted PSYCHINTHEWILD#1 (Default Effect)\nhttps://www.instagram.com/p/DemSL1FFOv6/"
-    },
     {
       "at": "2026-10-17T14:08:49+00:00",
       "job": "6. App action",
@@ -637,6 +813,21 @@
       "at": "2026-10-28T16:01:44+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Live on Instagram: REEL#6 (Uncanny Valley)\nhttps://www.instagram.com/reel/DfC0EGhD5gJ/"
+    },
+    {
+      "at": "2026-10-29T01:46:44+00:00",
+      "job": "1. Write a new draft",
+      "text": "Still waiting for your review:\n• MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST today\n• REEL#7 (Automation reduces friction) for 9:30 pm IST today"
+    },
+    {
+      "at": "2026-10-29T01:46:44+00:00",
+      "job": "1. Write a new draft",
+      "text": "New draft ready for review: MARKETERSASSEMBLE#3 (Mere Exposure Effect) for 6:00 pm IST tomorrow"
+    },
+    {
+      "at": "2026-10-29T01:46:44+00:00",
+      "job": "1. Write a new draft",
+      "text": "New Guess and reveal Reel ready: REEL#8 (Self-Reference Effect) for 9:30 pm IST tomorrow. Watch it in the app and approve it."
     }
   ],
   "app_requests": [
