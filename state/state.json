@@ -338,10 +338,11 @@
       "approved_parts": [],
       "backlog_line": "[MarketersAssemble] Why copying a competitor's campaign rarely works",
       "slot": "slot1",
-      "slot_at": "2026-10-30T12:30:00+00:00",
+      "slot_at": "2026-11-01T12:30:00+00:00",
       "publish_at": null,
-      "reminded": true,
-      "msg_ids": []
+      "reminded": false,
+      "msg_ids": [],
+      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Sun 01 Nov."
     },
     {
       "id": "20261029-014638",
@@ -431,11 +432,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-18T22:00:56+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Posted BRANDBREAKDOWN#2 (Framing Effect)\nhttps://www.instagram.com/p/DeptQR2D9eG/"
-    },
     {
       "at": "2026-10-19T01:27:37+00:00",
       "job": "1. Write a new draft",
@@ -830,6 +826,11 @@
       "at": "2026-10-30T12:30:19+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "It's post time but MARKETERSASSEMBLE#3 (Mere Exposure Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
+    },
+    {
+      "at": "2026-10-30T14:37:48+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "MARKETERSASSEMBLE#3 (Mere Exposure Effect) wasn't approved in time, so it moved to 6:00 pm IST Sun 01 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
