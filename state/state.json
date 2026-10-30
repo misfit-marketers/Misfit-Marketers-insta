@@ -415,9 +415,10 @@
       "approved_parts": [],
       "backlog_line": "[BrandBreakdown] Spotify Wrapped: why people happily advertise Spotify for free every December",
       "slot": "slot2",
-      "slot_at": "2026-10-30T16:00:00+00:00",
+      "slot_at": "2026-11-01T16:00:00+00:00",
       "publish_at": null,
-      "reminded": true
+      "reminded": false,
+      "note": "It wasn't approved in time, so it moved to 9:30 pm IST Sun 01 Nov."
     }
   ],
   "merged_seeds": [
@@ -432,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-19T01:27:37+00:00",
-      "job": "1. Write a new draft",
-      "text": "New draft ready for review: COPYCLINIC#2 (Unit Bias) for 3:30 am IST tonight"
-    },
     {
       "at": "2026-10-19T06:55:51+00:00",
       "job": "2. Check Telegram for approvals",
@@ -831,6 +827,11 @@
       "at": "2026-10-30T16:00:19+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "It's post time but REEL#8 (Self-Reference Effect) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
+    },
+    {
+      "at": "2026-10-30T17:41:23+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "REEL#8 (Self-Reference Effect) wasn't approved in time, so it moved to 9:30 pm IST Sun 01 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
@@ -1199,9 +1200,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-10-30T15:27:29+00:00"
+    "updated_at": "2026-10-30T17:41:22+00:00"
   },
-  "stats_checked_at": "2026-10-30T15:27:29+00:00",
+  "stats_checked_at": "2026-10-30T17:41:22+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
