@@ -432,16 +432,6 @@
   ],
   "events": [
     {
-      "at": "2026-10-18T04:53:08+00:00",
-      "job": "6. App action",
-      "text": "App: Approved. MARKETINGTIP#9 (Loss aversion) goes live at 7:30 pm IST today."
-    },
-    {
-      "at": "2026-10-18T05:55:34+00:00",
-      "job": "6. App action",
-      "text": "App: Approved. BRANDBREAKDOWN#2 (Framing Effect) goes live at 3:30 am IST tonight."
-    },
-    {
       "at": "2026-10-18T14:01:07+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Posted MARKETINGTIP#9 (Loss aversion)\nhttps://www.instagram.com/p/Deo2U3ZEadQ/"
@@ -830,6 +820,16 @@
       "at": "2026-10-29T17:21:23+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "REEL#7 (Automation reduces friction) wasn't approved in time, so it moved to 9:30 pm IST Sat 31 Oct. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-10-30T01:46:33+00:00",
+      "job": "1. Write a new draft",
+      "text": "Still waiting for your review:\n• MARKETERSASSEMBLE#3 (Mere Exposure Effect) for 6:00 pm IST today\n• REEL#8 (Self-Reference Effect) for 9:30 pm IST today\n• MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST tomorrow\n• REEL#7 (Automation reduces friction) for 9:30 pm IST tomorrow"
+    },
+    {
+      "at": "2026-10-30T01:46:33+00:00",
+      "job": "1. Write a new draft",
+      "text": "Every upcoming slot already has a draft, so I didn't write new ones."
     }
   ],
   "app_requests": [
