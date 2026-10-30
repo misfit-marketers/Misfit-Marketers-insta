@@ -340,7 +340,7 @@
       "slot": "slot1",
       "slot_at": "2026-10-30T12:30:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "msg_ids": []
     },
     {
@@ -431,11 +431,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-18T14:01:07+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Posted MARKETINGTIP#9 (Loss aversion)\nhttps://www.instagram.com/p/Deo2U3ZEadQ/"
-    },
     {
       "at": "2026-10-18T22:00:56+00:00",
       "job": "4. Post at the scheduled slots",
@@ -830,6 +825,11 @@
       "at": "2026-10-30T01:46:33+00:00",
       "job": "1. Write a new draft",
       "text": "Every upcoming slot already has a draft, so I didn't write new ones."
+    },
+    {
+      "at": "2026-10-30T12:30:19+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but MARKETERSASSEMBLE#3 (Mere Exposure Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
     }
   ],
   "app_requests": [
