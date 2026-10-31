@@ -434,16 +434,6 @@
   ],
   "events": [
     {
-      "at": "2026-10-19T06:55:51+00:00",
-      "job": "2. Check Telegram for approvals",
-      "text": "The posting time changed, so these drafts moved (approvals are kept):\n• MARKETINGTIP#10 (Social proof): 6:00 pm IST today\n• COPYCLINIC#2 (Unit Bias): 6:00 pm IST tomorrow"
-    },
-    {
-      "at": "2026-10-19T07:05:18+00:00",
-      "job": "6. App action",
-      "text": "App: Approved. MARKETINGTIP#10 (Social proof) goes live at 6:00 pm IST today."
-    },
-    {
       "at": "2026-10-19T07:06:43+00:00",
       "job": "6. App action",
       "text": "App: Rewrote COPYCLINIC#2 (Unit Bias) with your feedback. Have a look and approve it when you're happy."
@@ -832,6 +822,16 @@
       "at": "2026-10-30T17:41:23+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "REEL#8 (Self-Reference Effect) wasn't approved in time, so it moved to 9:30 pm IST Sun 01 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-10-31T01:44:31+00:00",
+      "job": "1. Write a new draft",
+      "text": "Still waiting for your review:\n• MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST today\n• REEL#7 (Automation reduces friction) for 9:30 pm IST today\n• MARKETERSASSEMBLE#3 (Mere Exposure Effect) for 6:00 pm IST tomorrow\n• REEL#8 (Self-Reference Effect) for 9:30 pm IST tomorrow"
+    },
+    {
+      "at": "2026-10-31T01:44:31+00:00",
+      "job": "1. Write a new draft",
+      "text": "Every upcoming slot already has a draft, so I didn't write new ones."
     }
   ],
   "app_requests": [
