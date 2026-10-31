@@ -138,11 +138,11 @@
       "approved_parts": [],
       "backlog_line": "The endowment effect: why free trials and \"try at home\" work",
       "slot": "slot1",
-      "slot_at": "2026-10-31T12:30:00+00:00",
+      "slot_at": "2026-11-02T12:30:00+00:00",
       "publish_at": null,
-      "reminded": true,
+      "reminded": false,
       "msg_ids": [],
-      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Sat 31 Oct."
+      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Mon 02 Nov."
     },
     {
       "id": "20261028-014405",
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-19T07:08:30+00:00",
-      "job": "6. App action",
-      "text": "App: Approved. COPYCLINIC#2 (Unit Bias) goes live at 6:00 pm IST tomorrow."
-    },
     {
       "at": "2026-10-19T12:31:03+00:00",
       "job": "4. Post at the scheduled slots",
@@ -832,6 +827,11 @@
       "at": "2026-10-31T12:30:20+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "It's post time but MARKETINGTIP#11 (Endowment Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
+    },
+    {
+      "at": "2026-10-31T14:17:41+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "MARKETINGTIP#11 (Endowment Effect) wasn't approved in time, so it moved to 6:00 pm IST Mon 02 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
@@ -1200,9 +1200,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-10-31T12:04:04+00:00"
+    "updated_at": "2026-10-31T14:17:40+00:00"
   },
-  "stats_checked_at": "2026-10-31T12:04:04+00:00",
+  "stats_checked_at": "2026-10-31T14:17:40+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
