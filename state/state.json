@@ -140,7 +140,7 @@
       "slot": "slot1",
       "slot_at": "2026-10-31T12:30:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "msg_ids": [],
       "note": "It wasn't approved in time, so it moved to 6:00 pm IST Sat 31 Oct."
     },
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-19T07:06:43+00:00",
-      "job": "6. App action",
-      "text": "App: Rewrote COPYCLINIC#2 (Unit Bias) with your feedback. Have a look and approve it when you're happy."
-    },
     {
       "at": "2026-10-19T07:08:30+00:00",
       "job": "6. App action",
@@ -832,6 +827,11 @@
       "at": "2026-10-31T01:44:31+00:00",
       "job": "1. Write a new draft",
       "text": "Every upcoming slot already has a draft, so I didn't write new ones."
+    },
+    {
+      "at": "2026-10-31T12:30:20+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but MARKETINGTIP#11 (Endowment Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
     }
   ],
   "app_requests": [
