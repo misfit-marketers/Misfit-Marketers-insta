@@ -1200,9 +1200,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-10-30T22:21:06+00:00"
+    "updated_at": "2026-10-31T00:56:12+00:00"
   },
-  "stats_checked_at": "2026-10-30T22:21:06+00:00",
+  "stats_checked_at": "2026-10-31T00:56:13+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
@@ -1370,6 +1370,24 @@
       },
       "total_interactions": {
         "total": 14
+      },
+      "profile_links_taps": {
+        "total": 0
+      }
+    },
+    "2026-10-31": {
+      "reach": {
+        "total": 2,
+        "follower": 2
+      },
+      "views": {
+        "total": 35
+      },
+      "accounts_engaged": {
+        "total": 0
+      },
+      "total_interactions": {
+        "total": 0
       },
       "profile_links_taps": {
         "total": 0
