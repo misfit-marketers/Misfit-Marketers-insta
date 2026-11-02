@@ -224,7 +224,7 @@
       "slot": "slot2",
       "slot_at": "2026-11-02T16:00:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "note": "It wasn't approved in time, so it moved to 9:30 pm IST Mon 02 Nov."
     },
     {
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-21T12:33:01+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Live on Instagram: MYTHORMAGIC#2 (Colour psychology)\nhttps://www.instagram.com/p/DewaY8UFYqD/\nReel: https://www.instagram.com/reel/DewamhpjRnS/"
-    },
     {
       "at": "2026-10-22T01:26:39+00:00",
       "job": "1. Write a new draft",
@@ -832,6 +827,11 @@
       "at": "2026-11-02T14:39:25+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "MARKETINGTIP#11 (Endowment Effect) wasn't approved in time, so it moved to 6:00 pm IST Wed 04 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-02T16:00:22+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but REEL#7 (Automation reduces friction) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
     }
   ],
   "app_requests": [
