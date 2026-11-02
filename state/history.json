@@ -151,7 +151,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-11-01T09:18:14+00:00"
+      "updated_at": "2026-11-02T09:35:04+00:00"
     }
   },
   {
@@ -205,7 +205,7 @@
       "profile_visits": 1,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-11-01T09:18:16+00:00"
+      "updated_at": "2026-11-02T09:35:05+00:00"
     }
   },
   {
@@ -523,7 +523,7 @@
     "permalink": "https://www.instagram.com/p/De4IzAXmzDu/",
     "format": "carousel",
     "stats": {
-      "views": 6,
+      "views": 7,
       "reach": 3,
       "likes": 1,
       "comments": 1,
@@ -533,7 +533,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-11-01T09:18:17+00:00"
+      "updated_at": "2026-11-02T09:35:07+00:00"
     }
   },
   {
@@ -573,7 +573,7 @@
     "reel_media_id": "17970059922183767",
     "reel_permalink": "https://www.instagram.com/reel/De6torIEZnr/",
     "stats": {
-      "views": 8,
+      "views": 14,
       "reach": 3,
       "likes": 2,
       "comments": 0,
@@ -583,7 +583,7 @@
       "profile_visits": 1,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-11-01T09:18:19+00:00"
+      "updated_at": "2026-11-02T09:35:08+00:00"
     },
     "reel_stats": {
       "views": 5,
@@ -595,7 +595,7 @@
       "total_interactions": 4,
       "ig_reels_avg_watch_time": 12203,
       "ig_reels_video_view_total_time": 61018,
-      "updated_at": "2026-11-01T09:18:21+00:00"
+      "updated_at": "2026-11-02T09:35:10+00:00"
     }
   },
   {
@@ -643,17 +643,17 @@
     "reel_media_id": "18229963276329567",
     "reel_permalink": "https://www.instagram.com/reel/De9ctFnCH7p/",
     "stats": {
-      "views": 90,
+      "views": 110,
       "reach": 3,
       "likes": 1,
       "comments": 0,
       "saved": 0,
       "shares": 3,
       "total_interactions": 4,
-      "profile_visits": 0,
+      "profile_visits": 1,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-11-01T09:18:23+00:00"
+      "updated_at": "2026-11-02T09:35:11+00:00"
     },
     "reel_stats": {
       "views": 9,
@@ -665,7 +665,7 @@
       "total_interactions": 4,
       "ig_reels_avg_watch_time": 7846,
       "ig_reels_video_view_total_time": 39234,
-      "updated_at": "2026-11-01T09:18:25+00:00"
+      "updated_at": "2026-11-02T09:35:13+00:00"
     }
   },
   {
@@ -713,7 +713,7 @@
     "reel_media_id": "18125659279913203",
     "reel_permalink": "https://www.instagram.com/reel/De_3P7aD3Ss/",
     "stats": {
-      "views": 8,
+      "views": 10,
       "reach": 3,
       "likes": 1,
       "comments": 0,
@@ -723,7 +723,7 @@
       "profile_visits": 0,
       "follows": 0,
       "profile_activity": 0,
-      "updated_at": "2026-11-01T09:18:26+00:00"
+      "updated_at": "2026-11-02T09:35:14+00:00"
     },
     "reel_stats": {
       "views": 3,
@@ -735,7 +735,7 @@
       "total_interactions": 0,
       "ig_reels_avg_watch_time": 2184,
       "ig_reels_video_view_total_time": 6553,
-      "updated_at": "2026-11-01T09:18:28+00:00"
+      "updated_at": "2026-11-02T09:35:17+00:00"
     }
   },
   {
