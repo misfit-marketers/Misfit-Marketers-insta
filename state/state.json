@@ -434,16 +434,6 @@
   ],
   "events": [
     {
-      "at": "2026-10-20T12:31:31+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Live on Instagram: COPYCLINIC#2 (Unit Bias)\nhttps://www.instagram.com/p/Det1oWwm9Ot/\nThe Reel didn't go up: Container 18090603485693614 failed with status ERROR"
-    },
-    {
-      "at": "2026-10-20T12:53:13+00:00",
-      "job": "6. App action",
-      "text": "App: New draft ready: PSYCHINTHEWILD#2 (Availability heuristic) for 6:00 pm IST Thu 22 Oct. Have a look and approve it."
-    },
-    {
       "at": "2026-10-21T01:27:13+00:00",
       "job": "1. Write a new draft",
       "text": "Still waiting for your review:\n• PSYCHINTHEWILD#2 (Availability heuristic) for 6:00 pm IST tomorrow"
@@ -832,6 +822,16 @@
       "at": "2026-11-01T17:38:25+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "REEL#8 (Self-Reference Effect) wasn't approved in time, so it moved to 9:30 pm IST Tue 03 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-02T01:51:45+00:00",
+      "job": "1. Write a new draft",
+      "text": "Still waiting for your review:\n• MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST today\n• REEL#7 (Automation reduces friction) for 9:30 pm IST today\n• MARKETERSASSEMBLE#3 (Mere Exposure Effect) for 6:00 pm IST tomorrow\n• REEL#8 (Self-Reference Effect) for 9:30 pm IST tomorrow"
+    },
+    {
+      "at": "2026-11-02T01:51:45+00:00",
+      "job": "1. Write a new draft",
+      "text": "Every upcoming slot already has a draft, so I didn't write new ones."
     }
   ],
   "app_requests": [
