@@ -415,10 +415,10 @@
       "approved_parts": [],
       "backlog_line": "[BrandBreakdown] Spotify Wrapped: why people happily advertise Spotify for free every December",
       "slot": "slot2",
-      "slot_at": "2026-11-03T16:00:00+00:00",
+      "slot_at": "2026-11-05T16:00:00+00:00",
       "publish_at": null,
-      "reminded": true,
-      "note": "It wasn't approved in time, so it moved to 9:30 pm IST Tue 03 Nov."
+      "reminded": false,
+      "note": "It wasn't approved in time, so it moved to 9:30 pm IST Thu 05 Nov."
     }
   ],
   "merged_seeds": [
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-22T14:42:17+00:00",
-      "job": "6. App action",
-      "text": "App: Approved the carousel and the Reel of BRANDBREAKDOWN#3 (Consistency Principle). Goes live at 6:00 pm IST tomorrow."
-    },
     {
       "at": "2026-10-22T15:34:31+00:00",
       "job": "6. App action",
@@ -832,6 +827,11 @@
       "at": "2026-11-03T16:00:19+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "It's post time but REEL#8 (Self-Reference Effect) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
+    },
+    {
+      "at": "2026-11-03T17:17:40+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "REEL#8 (Self-Reference Effect) wasn't approved in time, so it moved to 9:30 pm IST Thu 05 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
