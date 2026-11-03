@@ -338,11 +338,11 @@
       "approved_parts": [],
       "backlog_line": "[MarketersAssemble] Why copying a competitor's campaign rarely works",
       "slot": "slot1",
-      "slot_at": "2026-11-03T12:30:00+00:00",
+      "slot_at": "2026-11-05T12:30:00+00:00",
       "publish_at": null,
-      "reminded": true,
+      "reminded": false,
       "msg_ids": [],
-      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Tue 03 Nov."
+      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Thu 05 Nov."
     },
     {
       "id": "20261029-014638",
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-22T12:41:03+00:00",
-      "job": "6. App action",
-      "text": "App: Approved the carousel and the Reel of PSYCHINTHEWILD#2 (Availability heuristic). Goes live at 6:00 pm IST today."
-    },
     {
       "at": "2026-10-22T12:41:03+00:00",
       "job": "6. App action",
@@ -832,6 +827,11 @@
       "at": "2026-11-03T12:31:33+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "It's post time but MARKETERSASSEMBLE#3 (Mere Exposure Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
+    },
+    {
+      "at": "2026-11-03T13:49:22+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "MARKETERSASSEMBLE#3 (Mere Exposure Effect) wasn't approved in time, so it moved to 6:00 pm IST Thu 05 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
