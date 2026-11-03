@@ -417,7 +417,7 @@
       "slot": "slot2",
       "slot_at": "2026-11-03T16:00:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "note": "It wasn't approved in time, so it moved to 9:30 pm IST Tue 03 Nov."
     }
   ],
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-22T12:41:03+00:00",
-      "job": "6. App action",
-      "text": "Live on Instagram: PSYCHINTHEWILD#2 (Availability heuristic)\nhttps://www.instagram.com/p/DezAN_AkT8L/\nReel: https://www.instagram.com/reel/DezARFaioYM/"
-    },
     {
       "at": "2026-10-22T14:42:17+00:00",
       "job": "6. App action",
@@ -832,6 +827,11 @@
       "at": "2026-11-03T13:49:22+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "MARKETERSASSEMBLE#3 (Mere Exposure Effect) wasn't approved in time, so it moved to 6:00 pm IST Thu 05 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-03T16:00:19+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but REEL#8 (Self-Reference Effect) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
     }
   ],
   "app_requests": [
@@ -1200,9 +1200,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-11-03T13:30:32+00:00"
+    "updated_at": "2026-11-03T16:00:18+00:00"
   },
-  "stats_checked_at": "2026-11-03T13:30:32+00:00",
+  "stats_checked_at": "2026-11-03T16:00:18+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
