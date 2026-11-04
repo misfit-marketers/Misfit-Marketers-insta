@@ -138,11 +138,11 @@
       "approved_parts": [],
       "backlog_line": "The endowment effect: why free trials and \"try at home\" work",
       "slot": "slot1",
-      "slot_at": "2026-11-04T12:30:00+00:00",
+      "slot_at": "2026-11-06T12:30:00+00:00",
       "publish_at": null,
-      "reminded": true,
+      "reminded": false,
       "msg_ids": [],
-      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Wed 04 Nov."
+      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Fri 06 Nov."
     },
     {
       "id": "20261028-014405",
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-23T04:35:58+00:00",
-      "job": "6. App action",
-      "text": "App: Posting twice a day from now on: 6:00 pm and 9:30 pm IST. The morning job writes drafts for the new slot, or tap Write a draft now on Today."
-    },
     {
       "at": "2026-10-23T04:37:12+00:00",
       "job": "6. App action",
@@ -832,6 +827,11 @@
       "at": "2026-11-04T12:30:18+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "It's post time but MARKETINGTIP#11 (Endowment Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
+    },
+    {
+      "at": "2026-11-04T14:40:28+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "MARKETINGTIP#11 (Endowment Effect) wasn't approved in time, so it moved to 6:00 pm IST Fri 06 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
