@@ -434,16 +434,6 @@
   ],
   "events": [
     {
-      "at": "2026-10-23T04:38:27+00:00",
-      "job": "6. App action",
-      "text": "App: Autopilot now uses the Notebook style. New drafts will use it."
-    },
-    {
-      "at": "2026-10-23T04:38:58+00:00",
-      "job": "6. App action",
-      "text": "App: Approved the Reel of REEL#1 (Task specialization in marketing tech). Goes live at 9:30 pm IST today."
-    },
-    {
       "at": "2026-10-23T04:41:20+00:00",
       "job": "6. App action",
       "text": "App: New draft ready: REEL#2 (Scarcity) for 9:30 pm IST tomorrow. Have a look and approve it."
@@ -832,6 +822,16 @@
       "at": "2026-11-04T17:22:52+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "REEL#7 (Automation reduces friction) wasn't approved in time, so it moved to 9:30 pm IST Fri 06 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-05T01:57:03+00:00",
+      "job": "1. Write a new draft",
+      "text": "Still waiting for your review:\n• MARKETERSASSEMBLE#3 (Mere Exposure Effect) for 6:00 pm IST today\n• REEL#8 (Self-Reference Effect) for 9:30 pm IST today\n• MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST tomorrow\n• REEL#7 (Automation reduces friction) for 9:30 pm IST tomorrow"
+    },
+    {
+      "at": "2026-11-05T01:57:03+00:00",
+      "job": "1. Write a new draft",
+      "text": "Every upcoming slot already has a draft, so I didn't write new ones."
     }
   ],
   "app_requests": [
