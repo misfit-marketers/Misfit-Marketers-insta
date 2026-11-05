@@ -338,11 +338,11 @@
       "approved_parts": [],
       "backlog_line": "[MarketersAssemble] Why copying a competitor's campaign rarely works",
       "slot": "slot1",
-      "slot_at": "2026-11-05T12:30:00+00:00",
+      "slot_at": "2026-11-07T12:30:00+00:00",
       "publish_at": null,
-      "reminded": true,
+      "reminded": false,
       "msg_ids": [],
-      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Thu 05 Nov."
+      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Sat 07 Nov."
     },
     {
       "id": "20261029-014638",
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-23T04:41:49+00:00",
-      "job": "6. App action",
-      "text": "App: Approved the carousel of AIPSYCH#1 (Algorithm aversion). Goes live at 6:00 pm IST tomorrow. The Reel still needs your approval."
-    },
     {
       "at": "2026-10-23T04:50:58+00:00",
       "job": "6. App action",
@@ -832,6 +827,11 @@
       "at": "2026-11-05T12:36:11+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "It's post time but MARKETERSASSEMBLE#3 (Mere Exposure Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
+    },
+    {
+      "at": "2026-11-05T13:45:19+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "MARKETERSASSEMBLE#3 (Mere Exposure Effect) wasn't approved in time, so it moved to 6:00 pm IST Sat 07 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
