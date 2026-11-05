@@ -417,7 +417,7 @@
       "slot": "slot2",
       "slot_at": "2026-11-05T16:00:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "note": "It wasn't approved in time, so it moved to 9:30 pm IST Thu 05 Nov."
     }
   ],
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-23T04:50:58+00:00",
-      "job": "6. App action",
-      "text": "App: Rewrote REEL#2 (Scarcity) with your feedback. Have a look and approve it when you're happy."
-    },
     {
       "at": "2026-10-23T05:15:14+00:00",
       "job": "6. App action",
@@ -832,6 +827,11 @@
       "at": "2026-11-05T13:45:19+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "MARKETERSASSEMBLE#3 (Mere Exposure Effect) wasn't approved in time, so it moved to 6:00 pm IST Sat 07 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-05T16:00:18+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but REEL#8 (Self-Reference Effect) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
     }
   ],
   "app_requests": [
