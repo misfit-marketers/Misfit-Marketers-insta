@@ -415,10 +415,10 @@
       "approved_parts": [],
       "backlog_line": "[BrandBreakdown] Spotify Wrapped: why people happily advertise Spotify for free every December",
       "slot": "slot2",
-      "slot_at": "2026-11-07T16:00:00+00:00",
+      "slot_at": "2026-11-09T16:00:00+00:00",
       "publish_at": null,
-      "reminded": true,
-      "note": "It wasn't approved in time, so it moved to 9:30 pm IST Sat 07 Nov."
+      "reminded": false,
+      "note": "It wasn't approved in time, so it moved to 9:30 pm IST Mon 09 Nov."
     }
   ],
   "merged_seeds": [
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-25T01:25:16+00:00",
-      "job": "1. Write a new draft",
-      "text": "Approved the Reel of REEL#4 (Reciprocity). Goes live at 9:30 pm IST tomorrow.\nTap Post now if you want it up straight away."
-    },
     {
       "at": "2026-10-25T12:31:55+00:00",
       "job": "4. Post at the scheduled slots",
@@ -832,6 +827,11 @@
       "at": "2026-11-07T16:34:15+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "It's post time but REEL#8 (Self-Reference Effect) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
+    },
+    {
+      "at": "2026-11-07T17:15:28+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "REEL#8 (Self-Reference Effect) wasn't approved in time, so it moved to 9:30 pm IST Mon 09 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
