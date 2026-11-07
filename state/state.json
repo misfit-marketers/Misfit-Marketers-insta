@@ -434,16 +434,6 @@
   ],
   "events": [
     {
-      "at": "2026-10-24T12:31:06+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Live on Instagram: AIPSYCH#1 (Algorithm aversion)\nhttps://www.instagram.com/p/De4IzAXmzDu/\nThe Reel wasn't approved, so only the carousel went up."
-    },
-    {
-      "at": "2026-10-24T16:06:18+00:00",
-      "job": "2. Check Telegram for approvals",
-      "text": "Live on Instagram: REEL#2 (Scarcity Effect)\nhttps://www.instagram.com/reel/De4hZXMGJR9/"
-    },
-    {
       "at": "2026-10-25T01:25:16+00:00",
       "job": "1. Write a new draft",
       "text": "New draft ready for review: AIPSYCH#2 (Automation bias) for 6:00 pm IST tomorrow"
@@ -832,6 +822,16 @@
       "at": "2026-11-06T18:03:47+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "REEL#7 (Automation reduces friction) wasn't approved in time, so it moved to 9:30 pm IST Sun 08 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-07T01:47:03+00:00",
+      "job": "1. Write a new draft",
+      "text": "Still waiting for your review:\n• MARKETERSASSEMBLE#3 (Mere Exposure Effect) for 6:00 pm IST today\n• REEL#8 (Self-Reference Effect) for 9:30 pm IST today\n• MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST tomorrow\n• REEL#7 (Automation reduces friction) for 9:30 pm IST tomorrow"
+    },
+    {
+      "at": "2026-11-07T01:47:03+00:00",
+      "job": "1. Write a new draft",
+      "text": "Every upcoming slot already has a draft, so I didn't write new ones."
     }
   ],
   "app_requests": [
