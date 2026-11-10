@@ -140,7 +140,7 @@
       "slot": "slot1",
       "slot_at": "2026-11-10T12:30:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "msg_ids": [],
       "note": "It wasn't approved in time, so it moved to 6:00 pm IST Tue 10 Nov."
     },
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-27T16:00:54+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Live on Instagram: REEL#5 (Attention span perception)\nhttps://www.instagram.com/reel/DfAPKNVIHgd/"
-    },
     {
       "at": "2026-10-28T01:44:16+00:00",
       "job": "1. Write a new draft",
@@ -832,6 +827,11 @@
       "at": "2026-11-10T01:51:15+00:00",
       "job": "1. Write a new draft",
       "text": "Every upcoming slot already has a draft, so I didn't write new ones."
+    },
+    {
+      "at": "2026-11-10T12:32:22+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but MARKETINGTIP#11 (Endowment Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
     }
   ],
   "app_requests": [
