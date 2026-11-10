@@ -434,16 +434,6 @@
   ],
   "events": [
     {
-      "at": "2026-10-27T05:31:51+00:00",
-      "job": "6. App action",
-      "text": "App: Auto-approve is off. New drafts wait for your approval again (drafts already approved stay approved)."
-    },
-    {
-      "at": "2026-10-27T12:32:20+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Live on Instagram: COPYCLINIC#3 (Magnitude Framing)\nhttps://www.instagram.com/p/De_3NXwkQ8N/\nReel: https://www.instagram.com/reel/De_3P7aD3Ss/"
-    },
-    {
       "at": "2026-10-27T16:00:54+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "Live on Instagram: REEL#5 (Attention span perception)\nhttps://www.instagram.com/reel/DfAPKNVIHgd/"
@@ -832,6 +822,16 @@
       "at": "2026-11-09T17:29:14+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "REEL#8 (Self-Reference Effect) wasn't approved in time, so it moved to 9:30 pm IST Wed 11 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-10T01:51:15+00:00",
+      "job": "1. Write a new draft",
+      "text": "Still waiting for your review:\n• MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST today\n• REEL#7 (Automation reduces friction) for 9:30 pm IST today\n• MARKETERSASSEMBLE#3 (Mere Exposure Effect) for 6:00 pm IST tomorrow\n• REEL#8 (Self-Reference Effect) for 9:30 pm IST tomorrow"
+    },
+    {
+      "at": "2026-11-10T01:51:15+00:00",
+      "job": "1. Write a new draft",
+      "text": "Every upcoming slot already has a draft, so I didn't write new ones."
     }
   ],
   "app_requests": [
