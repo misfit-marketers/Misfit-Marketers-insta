@@ -224,7 +224,7 @@
       "slot": "slot2",
       "slot_at": "2026-11-10T16:00:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "note": "It wasn't approved in time, so it moved to 9:30 pm IST Tue 10 Nov."
     },
     {
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-28T01:44:16+00:00",
-      "job": "1. Write a new draft",
-      "text": "New Guess and reveal Reel ready: REEL#7 (Automation reduces friction) for 9:30 pm IST tomorrow. Watch it in the app and approve it."
-    },
     {
       "at": "2026-10-28T12:32:56+00:00",
       "job": "4. Post at the scheduled slots",
@@ -832,6 +827,11 @@
       "at": "2026-11-10T13:48:52+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "MARKETINGTIP#11 (Endowment Effect) wasn't approved in time, so it moved to 6:00 pm IST Thu 12 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-10T16:11:19+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "It's post time but REEL#7 (Automation reduces friction) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
     }
   ],
   "app_requests": [
@@ -1200,9 +1200,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-11-10T13:28:43+00:00"
+    "updated_at": "2026-11-10T16:11:18+00:00"
   },
-  "stats_checked_at": "2026-11-10T13:28:43+00:00",
+  "stats_checked_at": "2026-11-10T16:11:18+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
