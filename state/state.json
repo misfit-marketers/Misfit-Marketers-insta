@@ -138,11 +138,11 @@
       "approved_parts": [],
       "backlog_line": "The endowment effect: why free trials and \"try at home\" work",
       "slot": "slot1",
-      "slot_at": "2026-11-10T12:30:00+00:00",
+      "slot_at": "2026-11-12T12:30:00+00:00",
       "publish_at": null,
-      "reminded": true,
+      "reminded": false,
       "msg_ids": [],
-      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Tue 10 Nov."
+      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Thu 12 Nov."
     },
     {
       "id": "20261028-014405",
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-28T01:44:16+00:00",
-      "job": "1. Write a new draft",
-      "text": "New draft ready for review: MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST tomorrow"
-    },
     {
       "at": "2026-10-28T01:44:16+00:00",
       "job": "1. Write a new draft",
@@ -832,6 +827,11 @@
       "at": "2026-11-10T12:32:22+00:00",
       "job": "4. Post at the scheduled slots",
       "text": "It's post time but MARKETINGTIP#11 (Endowment Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
+    },
+    {
+      "at": "2026-11-10T13:48:52+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "MARKETINGTIP#11 (Endowment Effect) wasn't approved in time, so it moved to 6:00 pm IST Thu 12 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
