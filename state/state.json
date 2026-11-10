@@ -222,10 +222,10 @@
       "approved_parts": [],
       "backlog_line": "[Autopilot] The 3-step funnel you can automate in an afternoon",
       "slot": "slot2",
-      "slot_at": "2026-11-10T16:00:00+00:00",
+      "slot_at": "2026-11-12T16:00:00+00:00",
       "publish_at": null,
-      "reminded": true,
-      "note": "It wasn't approved in time, so it moved to 9:30 pm IST Tue 10 Nov."
+      "reminded": false,
+      "note": "It wasn't approved in time, so it moved to 9:30 pm IST Thu 12 Nov."
     },
     {
       "id": "20261029-014617",
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-28T12:32:56+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "Live on Instagram: PSYCHINTHEWILD#3 (Multiplier Effect)\nhttps://www.instagram.com/p/DfCb-6_m_RP/\nReel: https://www.instagram.com/reel/DfCcHc2kiVH/"
-    },
     {
       "at": "2026-10-28T16:01:44+00:00",
       "job": "4. Post at the scheduled slots",
@@ -832,6 +827,11 @@
       "at": "2026-11-10T16:11:19+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "It's post time but REEL#7 (Automation reduces friction) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
+    },
+    {
+      "at": "2026-11-10T17:45:02+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "REEL#7 (Automation reduces friction) wasn't approved in time, so it moved to 9:30 pm IST Thu 12 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
