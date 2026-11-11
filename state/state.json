@@ -338,11 +338,11 @@
       "approved_parts": [],
       "backlog_line": "[MarketersAssemble] Why copying a competitor's campaign rarely works",
       "slot": "slot1",
-      "slot_at": "2026-11-11T12:30:00+00:00",
+      "slot_at": "2026-11-13T12:30:00+00:00",
       "publish_at": null,
-      "reminded": true,
+      "reminded": false,
       "msg_ids": [],
-      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Wed 11 Nov."
+      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Fri 13 Nov."
     },
     {
       "id": "20261029-014638",
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-29T01:46:44+00:00",
-      "job": "1. Write a new draft",
-      "text": "New Guess and reveal Reel ready: REEL#8 (Self-Reference Effect) for 9:30 pm IST tomorrow. Watch it in the app and approve it."
-    },
     {
       "at": "2026-10-29T12:30:16+00:00",
       "job": "4. Post at the scheduled slots",
@@ -832,6 +827,11 @@
       "at": "2026-11-11T12:36:31+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "It's post time but MARKETERSASSEMBLE#3 (Mere Exposure Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
+    },
+    {
+      "at": "2026-11-11T13:52:59+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "MARKETERSASSEMBLE#3 (Mere Exposure Effect) wasn't approved in time, so it moved to 6:00 pm IST Fri 13 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
@@ -1200,9 +1200,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-11-11T10:38:50+00:00"
+    "updated_at": "2026-11-11T13:52:58+00:00"
   },
-  "stats_checked_at": "2026-11-11T10:38:50+00:00",
+  "stats_checked_at": "2026-11-11T13:52:58+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
