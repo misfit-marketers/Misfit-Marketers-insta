@@ -140,7 +140,7 @@
       "slot": "slot1",
       "slot_at": "2026-11-12T12:30:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "msg_ids": [],
       "note": "It wasn't approved in time, so it moved to 6:00 pm IST Thu 12 Nov."
     },
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-10-30T01:46:33+00:00",
-      "job": "1. Write a new draft",
-      "text": "Still waiting for your review:\n• MARKETERSASSEMBLE#3 (Mere Exposure Effect) for 6:00 pm IST today\n• REEL#8 (Self-Reference Effect) for 9:30 pm IST today\n• MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST tomorrow\n• REEL#7 (Automation reduces friction) for 9:30 pm IST tomorrow"
-    },
     {
       "at": "2026-10-30T01:46:33+00:00",
       "job": "1. Write a new draft",
@@ -832,6 +827,11 @@
       "at": "2026-11-12T02:04:03+00:00",
       "job": "1. Write a new draft",
       "text": "Every upcoming slot already has a draft, so I didn't write new ones."
+    },
+    {
+      "at": "2026-11-12T12:36:23+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "It's post time but MARKETINGTIP#11 (Endowment Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
     }
   ],
   "app_requests": [
