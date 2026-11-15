@@ -338,11 +338,11 @@
       "approved_parts": [],
       "backlog_line": "[MarketersAssemble] Why copying a competitor's campaign rarely works",
       "slot": "slot1",
-      "slot_at": "2026-11-15T12:30:00+00:00",
+      "slot_at": "2026-11-17T12:30:00+00:00",
       "publish_at": null,
       "reminded": false,
       "msg_ids": [],
-      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Sun 15 Nov."
+      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Tue 17 Nov."
     },
     {
       "id": "20261029-014638",
@@ -415,10 +415,10 @@
       "approved_parts": [],
       "backlog_line": "[BrandBreakdown] Spotify Wrapped: why people happily advertise Spotify for free every December",
       "slot": "slot2",
-      "slot_at": "2026-11-15T16:00:00+00:00",
+      "slot_at": "2026-11-17T16:00:00+00:00",
       "publish_at": null,
       "reminded": false,
-      "note": "It wasn't approved in time, so it moved to 9:30 pm IST tomorrow."
+      "note": "It wasn't approved in time, so it moved to 9:30 pm IST Tue 17 Nov."
     }
   ],
   "merged_seeds": [
@@ -433,16 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-11-01T16:14:35+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "It's post time but REEL#8 (Self-Reference Effect) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
-    },
-    {
-      "at": "2026-11-01T17:38:25+00:00",
-      "job": "2. Check Telegram for approvals",
-      "text": "REEL#8 (Self-Reference Effect) wasn't approved in time, so it moved to 9:30 pm IST Tue 03 Nov. Approve it whenever you're ready."
-    },
     {
       "at": "2026-11-02T01:51:45+00:00",
       "job": "1. Write a new draft",
@@ -832,6 +822,16 @@
       "at": "2026-11-15T07:22:47+00:00",
       "job": "1. Write a new draft",
       "text": "Every upcoming slot already has a draft, so I didn't write new ones."
+    },
+    {
+      "at": "2026-11-15T17:23:48+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "MARKETERSASSEMBLE#3 (Mere Exposure Effect) wasn't approved in time, so it moved to 6:00 pm IST Tue 17 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-15T17:23:48+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "REEL#8 (Self-Reference Effect) wasn't approved in time, so it moved to 9:30 pm IST Tue 17 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
@@ -1200,9 +1200,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-11-15T10:33:41+00:00"
+    "updated_at": "2026-11-15T17:23:48+00:00"
   },
-  "stats_checked_at": "2026-11-15T10:33:41+00:00",
+  "stats_checked_at": "2026-11-15T17:23:48+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
