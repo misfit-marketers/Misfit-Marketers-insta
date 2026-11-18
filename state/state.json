@@ -138,11 +138,11 @@
       "approved_parts": [],
       "backlog_line": "The endowment effect: why free trials and \"try at home\" work",
       "slot": "slot1",
-      "slot_at": "2026-11-18T12:30:00+00:00",
+      "slot_at": "2026-11-20T12:30:00+00:00",
       "publish_at": null,
       "reminded": false,
       "msg_ids": [],
-      "note": "It wasn't approved in time, so it moved to 6:00 pm IST tomorrow."
+      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Fri 20 Nov."
     },
     {
       "id": "20261028-014405",
@@ -222,10 +222,10 @@
       "approved_parts": [],
       "backlog_line": "[Autopilot] The 3-step funnel you can automate in an afternoon",
       "slot": "slot2",
-      "slot_at": "2026-11-18T16:00:00+00:00",
+      "slot_at": "2026-11-20T16:00:00+00:00",
       "publish_at": null,
       "reminded": false,
-      "note": "It wasn't approved in time, so it moved to 9:30 pm IST tomorrow."
+      "note": "It wasn't approved in time, so it moved to 9:30 pm IST Fri 20 Nov."
     },
     {
       "id": "20261029-014617",
@@ -433,16 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-11-03T16:00:19+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "It's post time but REEL#8 (Self-Reference Effect) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
-    },
-    {
-      "at": "2026-11-03T17:17:40+00:00",
-      "job": "2. Check Telegram for approvals",
-      "text": "REEL#8 (Self-Reference Effect) wasn't approved in time, so it moved to 9:30 pm IST Thu 05 Nov. Approve it whenever you're ready."
-    },
     {
       "at": "2026-11-04T01:48:14+00:00",
       "job": "1. Write a new draft",
@@ -832,6 +822,16 @@
       "at": "2026-11-18T08:05:31+00:00",
       "job": "1. Write a new draft",
       "text": "Every upcoming slot already has a draft, so I didn't write new ones."
+    },
+    {
+      "at": "2026-11-18T18:14:42+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "MARKETINGTIP#11 (Endowment Effect) wasn't approved in time, so it moved to 6:00 pm IST Fri 20 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-18T18:14:42+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "REEL#7 (Automation reduces friction) wasn't approved in time, so it moved to 9:30 pm IST Fri 20 Nov. Approve it whenever you're ready."
     }
   ],
   "app_requests": [
@@ -1200,9 +1200,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-11-18T09:21:40+00:00"
+    "updated_at": "2026-11-18T18:14:41+00:00"
   },
-  "stats_checked_at": "2026-11-18T09:21:40+00:00",
+  "stats_checked_at": "2026-11-18T18:14:41+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
