@@ -140,7 +140,7 @@
       "slot": "slot1",
       "slot_at": "2026-11-20T12:30:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "msg_ids": [],
       "note": "It wasn't approved in time, so it moved to 6:00 pm IST Fri 20 Nov."
     },
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-11-05T01:57:03+00:00",
-      "job": "1. Write a new draft",
-      "text": "Every upcoming slot already has a draft, so I didn't write new ones."
-    },
     {
       "at": "2026-11-05T12:36:11+00:00",
       "job": "4. Post at the scheduled slots",
@@ -832,6 +827,11 @@
       "at": "2026-11-20T07:54:46+00:00",
       "job": "1. Write a new draft",
       "text": "Every upcoming slot already has a draft, so I didn't write new ones."
+    },
+    {
+      "at": "2026-11-20T12:44:27+00:00",
+      "job": "2. Check Telegram for approvals",
+      "text": "It's post time but MARKETINGTIP#11 (Endowment Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
     }
   ],
   "app_requests": [
@@ -1200,9 +1200,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-11-20T04:03:13+00:00"
+    "updated_at": "2026-11-20T12:44:27+00:00"
   },
-  "stats_checked_at": "2026-11-20T04:03:15+00:00",
+  "stats_checked_at": "2026-11-20T12:44:27+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
