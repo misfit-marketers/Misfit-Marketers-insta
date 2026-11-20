@@ -138,11 +138,11 @@
       "approved_parts": [],
       "backlog_line": "The endowment effect: why free trials and \"try at home\" work",
       "slot": "slot1",
-      "slot_at": "2026-11-20T12:30:00+00:00",
+      "slot_at": "2026-11-22T12:30:00+00:00",
       "publish_at": null,
-      "reminded": true,
+      "reminded": false,
       "msg_ids": [],
-      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Fri 20 Nov."
+      "note": "It wasn't approved in time, so it moved to 6:00 pm IST Sun 22 Nov."
     },
     {
       "id": "20261028-014405",
@@ -224,7 +224,7 @@
       "slot": "slot2",
       "slot_at": "2026-11-20T16:00:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "note": "It wasn't approved in time, so it moved to 9:30 pm IST Fri 20 Nov."
     },
     {
@@ -433,16 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-11-05T12:36:11+00:00",
-      "job": "4. Post at the scheduled slots",
-      "text": "It's post time but MARKETERSASSEMBLE#3 (Mere Exposure Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
-    },
-    {
-      "at": "2026-11-05T13:45:19+00:00",
-      "job": "2. Check Telegram for approvals",
-      "text": "MARKETERSASSEMBLE#3 (Mere Exposure Effect) wasn't approved in time, so it moved to 6:00 pm IST Sat 07 Nov. Approve it whenever you're ready."
-    },
     {
       "at": "2026-11-05T16:00:18+00:00",
       "job": "4. Post at the scheduled slots",
@@ -832,6 +822,16 @@
       "at": "2026-11-20T12:44:27+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "It's post time but MARKETINGTIP#11 (Endowment Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
+    },
+    {
+      "at": "2026-11-20T17:00:19+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "MARKETINGTIP#11 (Endowment Effect) wasn't approved in time, so it moved to 6:00 pm IST Sun 22 Nov. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-20T17:00:19+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but REEL#7 (Automation reduces friction) isn't approved yet. Approve it and it goes live at 10:30 pm IST instead."
     }
   ],
   "app_requests": [
@@ -1200,9 +1200,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-11-20T12:44:27+00:00"
+    "updated_at": "2026-11-20T17:00:19+00:00"
   },
-  "stats_checked_at": "2026-11-20T12:44:27+00:00",
+  "stats_checked_at": "2026-11-20T17:00:19+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
