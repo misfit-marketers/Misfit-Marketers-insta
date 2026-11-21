@@ -340,7 +340,7 @@
       "slot": "slot1",
       "slot_at": "2026-11-21T12:30:00+00:00",
       "publish_at": null,
-      "reminded": false,
+      "reminded": true,
       "msg_ids": [],
       "note": "It wasn't approved in time, so it moved to 6:00 pm IST Sat 21 Nov."
     },
@@ -433,11 +433,6 @@
     825911675
   ],
   "events": [
-    {
-      "at": "2026-11-06T01:56:07+00:00",
-      "job": "1. Write a new draft",
-      "text": "Every upcoming slot already has a draft, so I didn't write new ones."
-    },
     {
       "at": "2026-11-06T12:33:23+00:00",
       "job": "4. Post at the scheduled slots",
@@ -832,6 +827,11 @@
       "at": "2026-11-21T07:52:53+00:00",
       "job": "1. Write a new draft",
       "text": "Every upcoming slot already has a draft, so I didn't write new ones."
+    },
+    {
+      "at": "2026-11-21T13:30:20+00:00",
+      "job": "4. Post at the scheduled slots",
+      "text": "It's post time but MARKETERSASSEMBLE#3 (Mere Exposure Effect) isn't approved yet. Approve it and it goes live at 7:00 pm IST instead."
     }
   ],
   "app_requests": [
@@ -1200,9 +1200,9 @@
     "followers": 89,
     "posts": 29,
     "username": "misfit_marketers",
-    "updated_at": "2026-11-21T08:51:58+00:00"
+    "updated_at": "2026-11-21T13:30:20+00:00"
   },
-  "stats_checked_at": "2026-11-21T08:51:58+00:00",
+  "stats_checked_at": "2026-11-21T13:30:20+00:00",
   "account_daily": {
     "2026-10-22": {
       "reach": {
