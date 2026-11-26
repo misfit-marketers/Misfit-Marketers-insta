@@ -434,16 +434,6 @@
   ],
   "events": [
     {
-      "at": "2026-11-09T17:29:14+00:00",
-      "job": "2. Check Telegram for approvals",
-      "text": "REEL#8 (Self-Reference Effect) wasn't approved in time, so it moved to 9:30 pm IST Wed 11 Nov. Approve it whenever you're ready."
-    },
-    {
-      "at": "2026-11-10T01:51:15+00:00",
-      "job": "1. Write a new draft",
-      "text": "Still waiting for your review:\n• MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST today\n• REEL#7 (Automation reduces friction) for 9:30 pm IST today\n• MARKETERSASSEMBLE#3 (Mere Exposure Effect) for 6:00 pm IST tomorrow\n• REEL#8 (Self-Reference Effect) for 9:30 pm IST tomorrow"
-    },
-    {
       "at": "2026-11-10T01:51:15+00:00",
       "job": "1. Write a new draft",
       "text": "Every upcoming slot already has a draft, so I didn't write new ones."
@@ -832,6 +822,16 @@
       "at": "2026-11-25T20:38:47+00:00",
       "job": "2. Check Telegram for approvals",
       "text": "REEL#8 (Self-Reference Effect) wasn't approved in time, so it moved to 9:30 pm IST tomorrow. Approve it whenever you're ready."
+    },
+    {
+      "at": "2026-11-26T09:02:11+00:00",
+      "job": "1. Write a new draft",
+      "text": "Still waiting for your review:\n• MARKETINGTIP#11 (Endowment Effect) for 6:00 pm IST today\n• REEL#7 (Automation reduces friction) for 9:30 pm IST today\n• MARKETERSASSEMBLE#3 (Mere Exposure Effect) for 6:00 pm IST tomorrow\n• REEL#8 (Self-Reference Effect) for 9:30 pm IST tomorrow"
+    },
+    {
+      "at": "2026-11-26T09:02:11+00:00",
+      "job": "1. Write a new draft",
+      "text": "Every upcoming slot already has a draft, so I didn't write new ones."
     }
   ],
   "app_requests": [
